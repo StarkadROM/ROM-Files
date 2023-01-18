@@ -1,0 +1,16 @@
+autoImport("PlotStoryView")
+autoImport("NormalButtonCell")
+StoryView = class("StoryView", PlotStoryView)
+function StoryView:Init()
+  self.collider = self:FindGO("Collider")
+  self.collider:SetActive(false)
+  self.skipButton = self:FindGO("CloseButton")
+  self:AddClickEvent(self.skipButton, function()
+    self:SkipPlot(true)
+  end)
+  self.skipButton:SetActive(false)
+  self:FindObj_Subtitle()
+  self:FindObj_Narrator()
+  self.buttonMap = {}
+  self:MapEvent()
+end

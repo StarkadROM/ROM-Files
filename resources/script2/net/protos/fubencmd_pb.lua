@@ -1,0 +1,10924 @@
+local protobuf = protobuf
+autoImport("xCmd_pb")
+local xCmd_pb = xCmd_pb
+autoImport("ProtoCommon_pb")
+local ProtoCommon_pb = ProtoCommon_pb
+autoImport("ChatCmd_pb")
+local ChatCmd_pb = ChatCmd_pb
+autoImport("SceneItem_pb")
+local SceneItem_pb = SceneItem_pb
+module("FuBenCmd_pb")
+FUBENPARAM = protobuf.EnumDescriptor()
+FUBENPARAM_TRACK_FUBEN_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_FAIL_FUBEN_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_LEAVE_FUBEN_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUCCESS_FUBEN_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_WORLD_STAGE_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUB_STAGE_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_START_STAGE_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GET_REWARD_STAGE_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_STAGE_STEP_STAR_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_JOIN_FUBEN_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_MONSTER_COUNT_USER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_FUBEN_STEP_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_FUBEN_GOAL_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_FUBEN_CLEAR_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_RAID_USER_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_RAID_GATE_OPT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_STOP_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_DANGER_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_METALHP_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_CALM_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_RESTART_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_STATUS_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_DATA_SYNC_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_DATA_UPDATE_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_NAME_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_MVPBATTLE_SYNC_MVPINFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_MVPBATTLE_BOSS_DIE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_FUBEN_USERNUM_COUNT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_INFO_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_TOWERINFO_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_METALINFO_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_QUERY_TOWERINFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_REWARD_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_QUERY_USER_DATA_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_MVPBATTLE_END_REPORT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SUPERGVG_METAL_DIE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_INVITE_SUMMON_DEADBOSS_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_REPLY_SUMMON_DEADBOSS_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_QUERY_RAID_TEAMPWS_USERINFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMPWS_END_REPORT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMPWS_SYNC_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMPWS_SELECT_MAGIC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMPWS_UPDATE_MAGIC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMPWS_UPDATE_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_EXIT_RAID_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_BEGIN_FIRE_FUBENCMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMEXP_RAID_REPORT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMEXP_BUY_ITEM_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMEXP_SYNC_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_RELIVE_COUNT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_GROUP_RAID_CHIP_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_GROUP_RAID_QUERY_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMEXP_QUERY_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_GROUP_RAID_STATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_KUMAMOTO_OPER_CMD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_GROUP_FOURTH_QUERY_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_GROUP_FOURTH_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAM_GROUP_FOURTH_GOOUTER_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_RAID_STAGE_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_THANKSGIVING_MONSTER_NUM_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OTHELLO_POINT_OCCUPY_POWER_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OTHELLO_SYNC_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_QUERY_RAID_OTHELLO_USERINFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OTHELLO_END_REPORT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_ROGUELIKE_SYNC_UNLOCKSCENES_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TRANSFERFIGHT_CHOOSE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TRANSFERFIGHT_RANK_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TRANSFERFIGHT_END_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_DATA_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_ITEM_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_ITEM_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_SHOP_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_QUEST_QUERY_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_GROUP_INFO_QUERY_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_RESULT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_BUILDING_HP_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_QUERY_UI_OPER_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TWELVEPVP_USE_ITEM_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_INVITE_ROLL_RAID_REWARD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_REPLY_ROLL_RAID_REARD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMMEMBER_ROLL_PROCESS_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_PRE_REPLY_ROLL_RAID_REARD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_RELIVE_CD_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_POS_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_REQ_ENTER_TOWERPRIVATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TOWERPRIVATE_LAYINFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TOWERPRIVATE_LAYER_COUNTDOWN_NTF_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_FUBEN_RESULT_NTF_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_ENDTIME_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_RESULT_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_COMODO_PHASE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_COMODO_STAT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_TEAMPWS_STATE_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OBSERVER_FLASH_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OBSERVER_ATTACH_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OBSERVER_SELECT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OB_HPSP_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OB_PLAYER_OFFLINE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_MULTI_BOSS_PHASE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_MULTI_BOSS_STAT_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OB_CAMERA_MOVE_PREPARE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_OB_CAMERA_MOVE_END_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_RAID_KILL_NUM_SYNC_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_PVE_PASS_INFO_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_POINT_STATE_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_CONSTRUCT_BUILDING_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_LEVELUP_BUILDING_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_CANCEL_BUILDING_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_STATE_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_USE_BUILDING_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_MORALE_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_PVE_RAID_ACHIEVE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_QUICK_FINISH_CRACK_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_PICKUP_PVE_RAID_ACHIEVE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_ADD_PVECARD_TIMES_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SYNC_PVECARD_OPENSTATE_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_QUICK_FINISH_PVERAID_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_SYNC_PVECARD_DIFFTIMES_ENUM = protobuf.EnumValueDescriptor()
+FUBENPARAM_GVG_PERFECT_STATE_UPDATE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE = protobuf.EnumDescriptor()
+ERAIDTYPE_ERAIDTYPE_MIN_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_FERRISWHEEL_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_NORMAL_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_EXCHANGE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_TOWER_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_LABORATORY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_EXCHANGEGALLERY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_SEAL_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP2_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_DOJO_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_GUILD_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP4_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_ITEMIMAGE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_GUILDRAID_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_GUILDFIRE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_PVP_LLH_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_PVP_SMZL_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_PVP_HLJS_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_DATELAND_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_PVP_POLLY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_WEDDING_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_DIVORCE_ROLLER_COASTER_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_PVECARD_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_MVPBATTLE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_SUPERGVG_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_ALTMAN_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_TEAMPWS_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_TEAMEXP_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_THANATOS_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_THANATOS_MID_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_HOUSE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_THANATOS_SCENE3_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_KUMAMOTO_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_THANATOS_FOURTH_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_GARDEN_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_THANKSGIVING_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_HEADWEAR_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_OTHELLO_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_SPRING_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_ROGUELIKE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_MONSTER_ANSWER_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_MONSTER_PHOTO_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_TRANSFERFIGHT_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_TWELVE_PVP_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_DEADBOSS_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_EINHERJAR_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_QTE_CHASING_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_SLAYERS_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_ENDLESSTOWER_PRIVATE_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_JANUARY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_MAY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_COMODO_TEAM_RAID_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_MANOR_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_DISNEY_MUSIC_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_HEART_LOCK_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_HEADWEARACTIVITY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_CRACK_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_GVG_LOBBY_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_PROFESSION_TRIAL_ENUM = protobuf.EnumValueDescriptor()
+ERAIDTYPE_ERAIDTYPE_MAX_ENUM = protobuf.EnumValueDescriptor()
+EENDLESSPRIVATEMONSTERTYPE = protobuf.EnumDescriptor()
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_NORMAL_ENUM = protobuf.EnumValueDescriptor()
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_ADVANCE_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE = protobuf.EnumDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_COMODO_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_MULTIBOSS_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_HEADWEAR_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CARD_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_ENDLESS_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_DEADBOSS_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_THANATOS_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_ROGUELIKE_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_ONE_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TWO_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_THREE_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FOUR_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FIVE_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SIX_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SEVEN_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_EIGHT_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_NINE_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TEN_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_GUILD_RAID_ENUM = protobuf.EnumValueDescriptor()
+EPVEGROUPTYPE_EPVEGROUPTYPE_MAX_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATESTATE = protobuf.EnumDescriptor()
+EGUILDGATESTATE_EGUILDGATESTATE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATESTATE_EGUILDGATESTATE_LOCK_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATESTATE_EGUILDGATESTATE_CLOSE_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATESTATE_EGUILDGATESTATE_OPEN_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATEOPT = protobuf.EnumDescriptor()
+EGUILDGATEOPT_EGUILDGATEOPT_UNLOCK_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATEOPT_EGUILDGATEOPT_ENTER_ENUM = protobuf.EnumValueDescriptor()
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENTER_ENUM = protobuf.EnumValueDescriptor()
+EGVGPOINTSTATE = protobuf.EnumDescriptor()
+EGVGPOINTSTATE_EGVGPOINT_STATE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGVGPOINTSTATE_EGVGPOINT_STATE_OCCUPIED_ENUM = protobuf.EnumValueDescriptor()
+EGUILDFIRERESULT = protobuf.EnumDescriptor()
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEF_ENUM = protobuf.EnumValueDescriptor()
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEFSPEC_ENUM = protobuf.EnumValueDescriptor()
+EGUILDFIRERESULT_EGUILDFIRERESULT_ATTACK_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE = protobuf.EnumDescriptor()
+EGVGDATATYPE_EGVGDATA_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_PARTINTIME_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_KILLMON_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_RELIVE_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_EXPEL_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_DAMMETAL_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_KILLMETAL_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_KILLUSER_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_HONOR_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_OCCUPY_POINT_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_COIN_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_DEF_POINT_TIME_ENUM = protobuf.EnumValueDescriptor()
+EGVGDATATYPE_EGVGDATA_PARTIN_KILLMETAL_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERSTATE = protobuf.EnumDescriptor()
+EGVGTOWERSTATE_EGVGTOWERSTATE_INITFREE_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERSTATE_EGVGTOWERSTATE_OCCUPY_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERSTATE_EGVGTOWERSTATE_FREE_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERTYPE = protobuf.EnumDescriptor()
+EGVGTOWERTYPE_EGVGTOWERTYPE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERTYPE_EGVGTOWERTYPE_CORE_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERTYPE_EGVGTOWERTYPE_WEST_ENUM = protobuf.EnumValueDescriptor()
+EGVGTOWERTYPE_EGVGTOWERTYPE_EAST_ENUM = protobuf.EnumValueDescriptor()
+EDEADBOSSDIFFICULTY = protobuf.EnumDescriptor()
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_MIN_ENUM = protobuf.EnumValueDescriptor()
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_NORMAL_ENUM = protobuf.EnumValueDescriptor()
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_HARD_ENUM = protobuf.EnumValueDescriptor()
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_SUPER_ENUM = protobuf.EnumValueDescriptor()
+ETEAMPWSCOLOR = protobuf.EnumDescriptor()
+ETEAMPWSCOLOR_ETEAMPWS_MIN_ENUM = protobuf.EnumValueDescriptor()
+ETEAMPWSCOLOR_ETEAMPWS_RED_ENUM = protobuf.EnumValueDescriptor()
+ETEAMPWSCOLOR_ETEAMPWS_BLUE_ENUM = protobuf.EnumValueDescriptor()
+EMAGICBALLTYPE = protobuf.EnumDescriptor()
+EMAGICBALLTYPE_EMAGICBALL_MIN_ENUM = protobuf.EnumValueDescriptor()
+EMAGICBALLTYPE_EMAGICBALL_WIND_ENUM = protobuf.EnumValueDescriptor()
+EMAGICBALLTYPE_EMAGICBALL_EARTH_ENUM = protobuf.EnumValueDescriptor()
+EMAGICBALLTYPE_EMAGICBALL_WATER_ENUM = protobuf.EnumValueDescriptor()
+EMAGICBALLTYPE_EMAGICBALL_FIRE_ENUM = protobuf.EnumValueDescriptor()
+EGROUPRAIDSCENESTATE = protobuf.EnumDescriptor()
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_FIRE_ENUM = protobuf.EnumValueDescriptor()
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_OVER_ENUM = protobuf.EnumValueDescriptor()
+EKUMAMOTOOPER = protobuf.EnumDescriptor()
+EKUMAMOTOOPER_EKUMAMOTOOPER_CREATE_ENUM = protobuf.EnumValueDescriptor()
+EKUMAMOTOOPER_EKUMAMOTOOPER_REWARD_ENUM = protobuf.EnumValueDescriptor()
+EKUMAMOTOOPER_EKUMAMOTOOPER_SCORE_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE = protobuf.EnumDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_MIN_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_PVERAID_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GROUPRAID_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_WORLDBOSS_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_DEADBOSS_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GUILD_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_COMODO_TEAM_RAID_ENUM = protobuf.EnumValueDescriptor()
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID_ENUM = protobuf.EnumValueDescriptor()
+EGROUPCAMP = protobuf.EnumDescriptor()
+EGROUPCAMP_EGROUPCAMP_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGROUPCAMP_EGROUPCAMP_RED_ENUM = protobuf.EnumValueDescriptor()
+EGROUPCAMP_EGROUPCAMP_BLUE_ENUM = protobuf.EnumValueDescriptor()
+EGROUPCAMP_EGROUPCAMP_OBSERVER_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE = protobuf.EnumDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MIN_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_EXP_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_GOLD_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAR_POINT_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PUSH_PLAYER_NUM_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_END_TIME_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_SHOP_CD_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAMP_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_BARRACK_HP_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_HP_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PVP_TYPE_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_LEVEL_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_KILL_NUM_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MAX_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPUI = protobuf.EnumDescriptor()
+ETWELVEPVPUI_ETWELVEPVP_UI_MIN_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPUI_ETWELVEPVP_UI_CRYSTAL_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPUI_ETWELVEPVP_UI_SHOP_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_MIN_ENUM = protobuf.EnumValueDescriptor()
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_ITEM_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDBOSS = protobuf.EnumDescriptor()
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MIN_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_DRAGON_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_CHESS_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_HERO_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MAX_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDPHASE = protobuf.EnumDescriptor()
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_MIN_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_DRAGON_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_CHESS_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_HERO_ENUM = protobuf.EnumValueDescriptor()
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_SAVE_NPC_ENUM = protobuf.EnumValueDescriptor()
+EGVGRAIDSTATE = protobuf.EnumDescriptor()
+EGVGRAIDSTATE_EGVGRAIDSTATE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGVGRAIDSTATE_EGVGRAIDSTATE_PEACE_ENUM = protobuf.EnumValueDescriptor()
+EGVGRAIDSTATE_EGVGRAIDSTATE_FIRE_ENUM = protobuf.EnumValueDescriptor()
+EGVGRAIDSTATE_EGVGRAIDSTATE_CALM_ENUM = protobuf.EnumValueDescriptor()
+EGVGRAIDSTATE_EGVGRAIDSTATE_PERFECT_ENUM = protobuf.EnumValueDescriptor()
+EGVGCITYTYPE = protobuf.EnumDescriptor()
+EGVGCITYTYPE_EGVGCITYTYPE_MIN_ENUM = protobuf.EnumValueDescriptor()
+EGVGCITYTYPE_EGVGCITYTYPE_SMALL_ENUM = protobuf.EnumValueDescriptor()
+EGVGCITYTYPE_EGVGCITYTYPE_MIDDLE_ENUM = protobuf.EnumValueDescriptor()
+EGVGCITYTYPE_EGVGCITYTYPE_LARGE_ENUM = protobuf.EnumValueDescriptor()
+EGVGCITYTYPE_EGVGCITYTYPE_MAX_ENUM = protobuf.EnumValueDescriptor()
+TRACKDATA = protobuf.Descriptor()
+TRACKDATA_STAR_FIELD = protobuf.FieldDescriptor()
+TRACKDATA_ID_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG = protobuf.Descriptor()
+RAIDPCONFIG_RAIDID_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_STARID_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_AUTO_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_WHETHERTRACE_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_FINISHJUMP_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_FAILJUMP_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_SUBSTEP_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_DESCINFO_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_CONTENT_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_TRACEINFO_FIELD = protobuf.FieldDescriptor()
+RAIDPCONFIG_PARAMS_FIELD = protobuf.FieldDescriptor()
+TRACKFUBENUSERCMD = protobuf.Descriptor()
+TRACKFUBENUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TRACKFUBENUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TRACKFUBENUSERCMD_DATA_FIELD = protobuf.FieldDescriptor()
+TRACKFUBENUSERCMD_DMAPID_FIELD = protobuf.FieldDescriptor()
+TRACKFUBENUSERCMD_ENDTIME_FIELD = protobuf.FieldDescriptor()
+FAILFUBENUSERCMD = protobuf.Descriptor()
+FAILFUBENUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+FAILFUBENUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+LEAVEFUBENUSERCMD = protobuf.Descriptor()
+LEAVEFUBENUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+LEAVEFUBENUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+LEAVEFUBENUSERCMD_MAPID_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD = protobuf.Descriptor()
+SUCCESSFUBENUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD_TYPE_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD_PARAM1_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD_PARAM2_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD_PARAM3_FIELD = protobuf.FieldDescriptor()
+SUCCESSFUBENUSERCMD_PARAM4_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEITEM = protobuf.Descriptor()
+WORLDSTAGEITEM_ID_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEITEM_STAR_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEITEM_GETLIST_FIELD = protobuf.FieldDescriptor()
+STAGESTEPITEM = protobuf.Descriptor()
+STAGESTEPITEM_STAGEID_FIELD = protobuf.FieldDescriptor()
+STAGESTEPITEM_STEPID_FIELD = protobuf.FieldDescriptor()
+STAGESTEPITEM_TYPE_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEUSERCMD = protobuf.Descriptor()
+WORLDSTAGEUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEUSERCMD_LIST_FIELD = protobuf.FieldDescriptor()
+WORLDSTAGEUSERCMD_CURINFO_FIELD = protobuf.FieldDescriptor()
+STAGENORMALSTEPITEM = protobuf.Descriptor()
+STAGENORMALSTEPITEM_STEPID_FIELD = protobuf.FieldDescriptor()
+STAGENORMALSTEPITEM_STAR_FIELD = protobuf.FieldDescriptor()
+STAGEHARDSTEPITEM = protobuf.Descriptor()
+STAGEHARDSTEPITEM_STEPID_FIELD = protobuf.FieldDescriptor()
+STAGEHARDSTEPITEM_FINISH_FIELD = protobuf.FieldDescriptor()
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD = protobuf.FieldDescriptor()
+STAGESTEPUSERCMD = protobuf.Descriptor()
+STAGESTEPUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+STAGESTEPUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+STAGESTEPUSERCMD_STAGEID_FIELD = protobuf.FieldDescriptor()
+STAGESTEPUSERCMD_NORMALIST_FIELD = protobuf.FieldDescriptor()
+STAGESTEPUSERCMD_HARDLIST_FIELD = protobuf.FieldDescriptor()
+STARTSTAGEUSERCMD = protobuf.Descriptor()
+STARTSTAGEUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+STARTSTAGEUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+STARTSTAGEUSERCMD_STAGEID_FIELD = protobuf.FieldDescriptor()
+STARTSTAGEUSERCMD_STEPID_FIELD = protobuf.FieldDescriptor()
+STARTSTAGEUSERCMD_TYPE_FIELD = protobuf.FieldDescriptor()
+GETREWARDSTAGEUSERCMD = protobuf.Descriptor()
+GETREWARDSTAGEUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GETREWARDSTAGEUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD = protobuf.FieldDescriptor()
+GETREWARDSTAGEUSERCMD_STARID_FIELD = protobuf.FieldDescriptor()
+STAGESTEPSTARUSERCMD = protobuf.Descriptor()
+STAGESTEPSTARUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+STAGESTEPSTARUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+STAGESTEPSTARUSERCMD_STAGEID_FIELD = protobuf.FieldDescriptor()
+STAGESTEPSTARUSERCMD_STEPID_FIELD = protobuf.FieldDescriptor()
+STAGESTEPSTARUSERCMD_STAR_FIELD = protobuf.FieldDescriptor()
+STAGESTEPSTARUSERCMD_TYPE_FIELD = protobuf.FieldDescriptor()
+MONSTERCOUNTUSERCMD = protobuf.Descriptor()
+MONSTERCOUNTUSERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+MONSTERCOUNTUSERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+MONSTERCOUNTUSERCMD_NUM_FIELD = protobuf.FieldDescriptor()
+FUBENSTEPSYNCCMD = protobuf.Descriptor()
+FUBENSTEPSYNCCMD_CMD_FIELD = protobuf.FieldDescriptor()
+FUBENSTEPSYNCCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+FUBENSTEPSYNCCMD_ID_FIELD = protobuf.FieldDescriptor()
+FUBENSTEPSYNCCMD_DEL_FIELD = protobuf.FieldDescriptor()
+FUBENSTEPSYNCCMD_GROUPID_FIELD = protobuf.FieldDescriptor()
+FUBENSTEPSYNCCMD_CONFIG_FIELD = protobuf.FieldDescriptor()
+FUBENPROGRESSSYNCCMD = protobuf.Descriptor()
+FUBENPROGRESSSYNCCMD_CMD_FIELD = protobuf.FieldDescriptor()
+FUBENPROGRESSSYNCCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+FUBENPROGRESSSYNCCMD_ID_FIELD = protobuf.FieldDescriptor()
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD = protobuf.FieldDescriptor()
+FUBENPROGRESSSYNCCMD_STARID_FIELD = protobuf.FieldDescriptor()
+FUBENCLEARINFOCMD = protobuf.Descriptor()
+FUBENCLEARINFOCMD_CMD_FIELD = protobuf.FieldDescriptor()
+FUBENCLEARINFOCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA = protobuf.Descriptor()
+GUILDGATEDATA_GATENPCID_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA_GROUPINDEX_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA_CLOSETIME_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA_LEVEL_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA_ISSPECIAL_FIELD = protobuf.FieldDescriptor()
+GUILDGATEDATA_STATE_FIELD = protobuf.FieldDescriptor()
+USERGUILDRAIDFUBENCMD = protobuf.Descriptor()
+USERGUILDRAIDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+USERGUILDRAIDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD = protobuf.FieldDescriptor()
+GUILDGATEOPTCMD = protobuf.Descriptor()
+GUILDGATEOPTCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDGATEOPTCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDGATEOPTCMD_GATENPCID_FIELD = protobuf.FieldDescriptor()
+GUILDGATEOPTCMD_OPT_FIELD = protobuf.FieldDescriptor()
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO = protobuf.Descriptor()
+GVGPOINTINFO_POINTID_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO_STATE_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO_GUILDID_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO_PER_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO_GUILDNAME_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO_GUILDPORTRAIT_FIELD = protobuf.FieldDescriptor()
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD = protobuf.Descriptor()
+GUILDFIREINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_POINTS_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD = protobuf.FieldDescriptor()
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTOPFUBENCMD = protobuf.Descriptor()
+GUILDFIRESTOPFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD = protobuf.FieldDescriptor()
+GUILDFIREDANGERFUBENCMD = protobuf.Descriptor()
+GUILDFIREDANGERFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD = protobuf.FieldDescriptor()
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD = protobuf.FieldDescriptor()
+GUILDFIREMETALHPFUBENCMD = protobuf.Descriptor()
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD = protobuf.FieldDescriptor()
+GUILDFIRECALMFUBENCMD = protobuf.Descriptor()
+GUILDFIRECALMFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIRECALMFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIRECALMFUBENCMD_CALM_FIELD = protobuf.FieldDescriptor()
+GUILDFIRENEWDEFFUBENCMD = protobuf.Descriptor()
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD = protobuf.FieldDescriptor()
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD = protobuf.FieldDescriptor()
+GUILDFIRERESTARTFUBENCMD = protobuf.Descriptor()
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTATUSFUBENCMD = protobuf.Descriptor()
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD = protobuf.FieldDescriptor()
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD = protobuf.FieldDescriptor()
+GVGDATA = protobuf.Descriptor()
+GVGDATA_TYPE_FIELD = protobuf.FieldDescriptor()
+GVGDATA_VALUE_FIELD = protobuf.FieldDescriptor()
+GVGDATASYNCCMD = protobuf.Descriptor()
+GVGDATASYNCCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGDATASYNCCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGDATASYNCCMD_DATAS_FIELD = protobuf.FieldDescriptor()
+GVGDATASYNCCMD_CITYTYPE_FIELD = protobuf.FieldDescriptor()
+GVGDATAUPDATECMD = protobuf.Descriptor()
+GVGDATAUPDATECMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGDATAUPDATECMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGDATAUPDATECMD_DATA_FIELD = protobuf.FieldDescriptor()
+GVGDEFNAMECHANGEFUBENCMD = protobuf.Descriptor()
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD = protobuf.FieldDescriptor()
+SYNCMVPINFOFUBENCMD = protobuf.Descriptor()
+SYNCMVPINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SYNCMVPINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD = protobuf.FieldDescriptor()
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD = protobuf.FieldDescriptor()
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD = protobuf.FieldDescriptor()
+BOSSDIEFUBENCMD = protobuf.Descriptor()
+BOSSDIEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+BOSSDIEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+BOSSDIEFUBENCMD_NPCID_FIELD = protobuf.FieldDescriptor()
+UPDATEUSERNUMFUBENCMD = protobuf.Descriptor()
+UPDATEUSERNUMFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD = protobuf.FieldDescriptor()
+GVGTOWERVALUE = protobuf.Descriptor()
+GVGTOWERVALUE_GUILDID_FIELD = protobuf.FieldDescriptor()
+GVGTOWERVALUE_VALUE_FIELD = protobuf.FieldDescriptor()
+GVGTOWERDATA = protobuf.Descriptor()
+GVGTOWERDATA_ETYPE_FIELD = protobuf.FieldDescriptor()
+GVGTOWERDATA_ESTATE_FIELD = protobuf.FieldDescriptor()
+GVGTOWERDATA_OWNER_GUILD_FIELD = protobuf.FieldDescriptor()
+GVGTOWERDATA_INFO_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALINFO = protobuf.Descriptor()
+GVGCRYSTALINFO_RANK_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALINFO_GUILDID_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALINFO_CRYSTALNUM_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALINFO_CHIPNUM_FIELD = protobuf.FieldDescriptor()
+GVGGUILDINFO = protobuf.Descriptor()
+GVGGUILDINFO_INDEX_FIELD = protobuf.FieldDescriptor()
+GVGGUILDINFO_GUILDID_FIELD = protobuf.FieldDescriptor()
+GVGGUILDINFO_GUILDNAME_FIELD = protobuf.FieldDescriptor()
+GVGGUILDINFO_ICON_FIELD = protobuf.FieldDescriptor()
+GVGGUILDINFO_METAL_LIVE_FIELD = protobuf.FieldDescriptor()
+GVGGUILDINFO_CRYSTAL_FIELD = protobuf.FieldDescriptor()
+SUPERGVGSYNCFUBENCMD = protobuf.Descriptor()
+SUPERGVGSYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD = protobuf.FieldDescriptor()
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD = protobuf.FieldDescriptor()
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD = protobuf.FieldDescriptor()
+GVGTOWERUPDATEFUBENCMD = protobuf.Descriptor()
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD = protobuf.FieldDescriptor()
+GVGMETALDIEFUBENCMD = protobuf.Descriptor()
+GVGMETALDIEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGMETALDIEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGMETALDIEFUBENCMD_INDEX_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALUPDATEFUBENCMD = protobuf.Descriptor()
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD = protobuf.FieldDescriptor()
+QUERYGVGTOWERINFOFUBENCMD = protobuf.Descriptor()
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD = protobuf.FieldDescriptor()
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD = protobuf.FieldDescriptor()
+REWARDITEMDATA = protobuf.Descriptor()
+REWARDITEMDATA_ITEMID_FIELD = protobuf.FieldDescriptor()
+REWARDITEMDATA_COUNT_FIELD = protobuf.FieldDescriptor()
+SUPERGVGREWARDDATA = protobuf.Descriptor()
+SUPERGVGREWARDDATA_GUILDID_FIELD = protobuf.FieldDescriptor()
+SUPERGVGREWARDDATA_RANK_FIELD = protobuf.FieldDescriptor()
+SUPERGVGREWARDDATA_ITEMS_FIELD = protobuf.FieldDescriptor()
+SUPERGVGREWARDINFOFUBENCMD = protobuf.Descriptor()
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA = protobuf.Descriptor()
+SUPERGVGUSERDATA_USERNAME_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_PROFESSION_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_DIENUM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_CHIPNUM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_TOWERTIME_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_HEALHP_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_RELIVENUM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGUSERDATA_METALDAMAGE_FIELD = protobuf.FieldDescriptor()
+SUPERGVGGUILDUSERDATA = protobuf.Descriptor()
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD = protobuf.FieldDescriptor()
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD = protobuf.FieldDescriptor()
+SUPERGVGQUERYUSERDATAFUBENCMD = protobuf.Descriptor()
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD = protobuf.FieldDescriptor()
+MVPBATTLETEAMDATA = protobuf.Descriptor()
+MVPBATTLETEAMDATA_TEAMID_FIELD = protobuf.FieldDescriptor()
+MVPBATTLETEAMDATA_TEAMNAME_FIELD = protobuf.FieldDescriptor()
+MVPBATTLETEAMDATA_KILLMVPS_FIELD = protobuf.FieldDescriptor()
+MVPBATTLETEAMDATA_KILLMINIS_FIELD = protobuf.FieldDescriptor()
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD = protobuf.FieldDescriptor()
+MVPBATTLETEAMDATA_DEADBOSS_FIELD = protobuf.FieldDescriptor()
+MVPBATTLEREPORTFUBENCMD = protobuf.Descriptor()
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD = protobuf.FieldDescriptor()
+INVITESUMMONBOSSFUBENCMD = protobuf.Descriptor()
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD = protobuf.FieldDescriptor()
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD = protobuf.FieldDescriptor()
+REPLYSUMMONBOSSFUBENCMD = protobuf.Descriptor()
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD = protobuf.FieldDescriptor()
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD = protobuf.FieldDescriptor()
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO = protobuf.Descriptor()
+TEAMPWSRAIDUSERINFO_CHARID_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_NAME_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_HEAL_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDTEAMINFO = protobuf.Descriptor()
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD = protobuf.FieldDescriptor()
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMPWSUSERINFOFUBENCMD = protobuf.Descriptor()
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+TEAMPWSREPORTFUBENCMD = protobuf.Descriptor()
+TEAMPWSREPORTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD = protobuf.FieldDescriptor()
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA = protobuf.Descriptor()
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA_COLOR_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA_SCORE_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCDATA_BALLS_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCFUBENCMD = protobuf.Descriptor()
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD = protobuf.FieldDescriptor()
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD = protobuf.FieldDescriptor()
+UPDATETEAMPWSINFOFUBENCMD = protobuf.Descriptor()
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+SELECTTEAMPWSMAGICFUBENCMD = protobuf.Descriptor()
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD = protobuf.FieldDescriptor()
+EXITMAPFUBENCMD = protobuf.Descriptor()
+EXITMAPFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+EXITMAPFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+BEGINFIREFUBENCMD = protobuf.Descriptor()
+BEGINFIREFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+BEGINFIREFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMEXPREPORTFUBENCMD = protobuf.Descriptor()
+TEAMEXPREPORTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD = protobuf.FieldDescriptor()
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD = protobuf.FieldDescriptor()
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD = protobuf.FieldDescriptor()
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD = protobuf.FieldDescriptor()
+BUYEXPRAIDITEMFUBENCMD = protobuf.Descriptor()
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD = protobuf.FieldDescriptor()
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD = protobuf.FieldDescriptor()
+TEAMEXPSYNCFUBENCMD = protobuf.Descriptor()
+TEAMEXPSYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD = protobuf.FieldDescriptor()
+TEAMRELIVECOUNTFUBENCMD = protobuf.Descriptor()
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD = protobuf.FieldDescriptor()
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD = protobuf.FieldDescriptor()
+TEAMGROUPRAIDUPDATECHIPNUM = protobuf.Descriptor()
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA = protobuf.Descriptor()
+GROUPRAIDSHOWDATA_CHARID_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA_PROFESSION_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA_NAME_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA_DAMAGE_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA_HEAL_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSHOWDATA_DIENUM_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDTEAMSHOWDATA = protobuf.Descriptor()
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMGROUPRAIDUSERINFO = protobuf.Descriptor()
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD = protobuf.FieldDescriptor()
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSTATESYNCFUBENCMD = protobuf.Descriptor()
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD = protobuf.FieldDescriptor()
+TEAMEXPQUERYINFOFUBENCMD = protobuf.Descriptor()
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD = protobuf.FieldDescriptor()
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDFOURTHSHOWDATA = protobuf.Descriptor()
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD = protobuf.FieldDescriptor()
+UPDATEGROUPRAIDFOURTHSHOWDATA = protobuf.Descriptor()
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD = protobuf.FieldDescriptor()
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD = protobuf.FieldDescriptor()
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD = protobuf.FieldDescriptor()
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD = protobuf.FieldDescriptor()
+QUERYGROUPRAIDFOURTHSHOWDATA = protobuf.Descriptor()
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDFOURTHGOOUTERCMD = protobuf.Descriptor()
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD = protobuf.FieldDescriptor()
+RAIDSTAGESYNCFUBENCMD = protobuf.Descriptor()
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD = protobuf.FieldDescriptor()
+THANKSGIVINGMONSTERFUBENCMD = protobuf.Descriptor()
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD = protobuf.FieldDescriptor()
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD = protobuf.FieldDescriptor()
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD = protobuf.FieldDescriptor()
+KUMAMOTOOPERFUBENCMD = protobuf.Descriptor()
+KUMAMOTOOPERFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD = protobuf.FieldDescriptor()
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD = protobuf.FieldDescriptor()
+OTHELLOOCCUPYITEM = protobuf.Descriptor()
+OTHELLOOCCUPYITEM_POINTID_FIELD = protobuf.FieldDescriptor()
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD = protobuf.FieldDescriptor()
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD = protobuf.FieldDescriptor()
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD = protobuf.FieldDescriptor()
+OTHELLOPOINTOCCUPYPOWERFUBENCMD = protobuf.Descriptor()
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCDATA = protobuf.Descriptor()
+OTHELLOINFOSYNCDATA_TEAMID_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCDATA_COLOR_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCDATA_SCORE_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCFUBENCMD = protobuf.Descriptor()
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD = protobuf.FieldDescriptor()
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO = protobuf.Descriptor()
+OTHELLORAIDUSERINFO_CHARID_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_NAME_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_PROFESSION_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_KILLNUM_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_DIENUM_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_HEAL_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDTEAMINFO = protobuf.Descriptor()
+OTHELLORAIDTEAMINFO_TEAMID_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDTEAMINFO_COLOR_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD = protobuf.FieldDescriptor()
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD = protobuf.FieldDescriptor()
+QUERYOTHELLOUSERINFOFUBENCMD = protobuf.Descriptor()
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+OTHELLOREPORTFUBENCMD = protobuf.Descriptor()
+OTHELLOREPORTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OTHELLOREPORTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD = protobuf.FieldDescriptor()
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD = protobuf.FieldDescriptor()
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD = protobuf.FieldDescriptor()
+ROGUELIKEUNLOCKSCENESYNC = protobuf.Descriptor()
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD = protobuf.FieldDescriptor()
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD = protobuf.FieldDescriptor()
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTCHOOSEFUBENCMD = protobuf.Descriptor()
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD = protobuf.FieldDescriptor()
+RANKSCORE = protobuf.Descriptor()
+RANKSCORE_RANK_FIELD = protobuf.FieldDescriptor()
+RANKSCORE_SCORE_FIELD = protobuf.FieldDescriptor()
+RANKSCORE_NAME_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTRANKFUBENCMD = protobuf.Descriptor()
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTENDFUBENCMD = protobuf.Descriptor()
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD = protobuf.FieldDescriptor()
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD = protobuf.FieldDescriptor()
+INVITEROLLREWARDFUBENCMD = protobuf.Descriptor()
+INVITEROLLREWARDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD = protobuf.FieldDescriptor()
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD = protobuf.FieldDescriptor()
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD = protobuf.FieldDescriptor()
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD = protobuf.FieldDescriptor()
+REPLYROLLREWARDFUBENCMD = protobuf.Descriptor()
+REPLYROLLREWARDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD = protobuf.FieldDescriptor()
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD = protobuf.FieldDescriptor()
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD = protobuf.FieldDescriptor()
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD = protobuf.FieldDescriptor()
+TEAMROLLSTATUSFUBENCMD = protobuf.Descriptor()
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD = protobuf.FieldDescriptor()
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD = protobuf.FieldDescriptor()
+PREREPLYROLLREWARDFUBENCMD = protobuf.Descriptor()
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD = protobuf.FieldDescriptor()
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD = protobuf.FieldDescriptor()
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPDATA = protobuf.Descriptor()
+TWELVEPVPDATA_TYPE_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPDATA_VALUE_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPSYNCCMD = protobuf.Descriptor()
+TWELVEPVPSYNCCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPSYNCCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPSYNCCMD_DATAS_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPSYNCCMD_CAMP_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPSYNCCMD_CHARID_FIELD = protobuf.FieldDescriptor()
+TWEITEMINFO = protobuf.Descriptor()
+TWEITEMINFO_ITEMID_FIELD = protobuf.FieldDescriptor()
+TWEITEMINFO_COUNT_FIELD = protobuf.FieldDescriptor()
+RAIDITEMSYNCCMD = protobuf.Descriptor()
+RAIDITEMSYNCCMD_CMD_FIELD = protobuf.FieldDescriptor()
+RAIDITEMSYNCCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RAIDITEMSYNCCMD_ITEMS_FIELD = protobuf.FieldDescriptor()
+RAIDITEMSYNCCMD_CHARID_FIELD = protobuf.FieldDescriptor()
+RAIDITEMUPDATECMD = protobuf.Descriptor()
+RAIDITEMUPDATECMD_CMD_FIELD = protobuf.FieldDescriptor()
+RAIDITEMUPDATECMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RAIDITEMUPDATECMD_ITEMID_FIELD = protobuf.FieldDescriptor()
+RAIDITEMUPDATECMD_COUNT_FIELD = protobuf.FieldDescriptor()
+RAIDITEMUPDATECMD_CHARID_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSEITEMCMD = protobuf.Descriptor()
+TWELVEPVPUSEITEMCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSEITEMCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSEITEMCMD_COUNT_FIELD = protobuf.FieldDescriptor()
+RAIDSHOPUPDATECMD = protobuf.Descriptor()
+RAIDSHOPUPDATECMD_CMD_FIELD = protobuf.FieldDescriptor()
+RAIDSHOPUPDATECMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD = protobuf.FieldDescriptor()
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUESTDATA = protobuf.Descriptor()
+TWELVEPVPQUESTDATA_QUESTID_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUESTDATA_PROGRESS_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUESTDATA_FINISHED_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUESTQUERYCMD = protobuf.Descriptor()
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO = protobuf.Descriptor()
+TWELVEPVPUSERINFO_CHARID_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_NAME_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_KILLNUM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_DIENUM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_HEAL_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_GOLD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_KILL_MVP_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUSERINFO_PROFESSION_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPGROUPINFO = protobuf.Descriptor()
+TWELVEPVPGROUPINFO_COLOR_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPGROUPINFO_USERINFOS_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUERYGROUPINFOCMD = protobuf.Descriptor()
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD = protobuf.FieldDescriptor()
+CAMPRESULTDATA = protobuf.Descriptor()
+CAMPRESULTDATA_CAMP_FIELD = protobuf.FieldDescriptor()
+CAMPRESULTDATA_KILL_NUM_FIELD = protobuf.FieldDescriptor()
+CAMPRESULTDATA_EXP_FIELD = protobuf.FieldDescriptor()
+CAMPRESULTDATA_KILL_MVP_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPRESULTCMD = protobuf.Descriptor()
+TWELVEPVPRESULTCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPRESULTCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPRESULTCMD_WINTEAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD = protobuf.FieldDescriptor()
+BUILDINGHP = protobuf.Descriptor()
+BUILDINGHP_BUILDING_ID_FIELD = protobuf.FieldDescriptor()
+BUILDINGHP_HP_PER_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPBUILDINGHPUPDATECMD = protobuf.Descriptor()
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUIOPERCMD = protobuf.Descriptor()
+TWELVEPVPUIOPERCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUIOPERCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUIOPERCMD_UI_FIELD = protobuf.FieldDescriptor()
+TWELVEPVPUIOPERCMD_OPEN_FIELD = protobuf.FieldDescriptor()
+RELIVECDFUBENCMD = protobuf.Descriptor()
+RELIVECDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+RELIVECDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD = protobuf.FieldDescriptor()
+POSDATA = protobuf.Descriptor()
+POSDATA_ID_FIELD = protobuf.FieldDescriptor()
+POSDATA_POS_FIELD = protobuf.FieldDescriptor()
+POSDATA_NPCID_FIELD = protobuf.FieldDescriptor()
+POSSYNCFUBENCMD = protobuf.Descriptor()
+POSSYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+POSSYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+POSSYNCFUBENCMD_DATAS_FIELD = protobuf.FieldDescriptor()
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD = protobuf.FieldDescriptor()
+REQENTERTOWERPRIVATE = protobuf.Descriptor()
+REQENTERTOWERPRIVATE_CMD_FIELD = protobuf.FieldDescriptor()
+REQENTERTOWERPRIVATE_PARAM_FIELD = protobuf.FieldDescriptor()
+REQENTERTOWERPRIVATE_RAIDID_FIELD = protobuf.FieldDescriptor()
+LAYERMONSTERTOWERPRIVATE = protobuf.Descriptor()
+LAYERMONSTERTOWERPRIVATE_ID_FIELD = protobuf.FieldDescriptor()
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD = protobuf.FieldDescriptor()
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD = protobuf.FieldDescriptor()
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD = protobuf.FieldDescriptor()
+LAYERREWARDTOWERPRIVATE = protobuf.Descriptor()
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD = protobuf.FieldDescriptor()
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERINFO = protobuf.Descriptor()
+TOWERPRIVATELAYERINFO_CMD_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERINFO_PARAM_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERINFO_RAIDID_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERINFO_LAYER_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERINFO_REWARDS_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERCOUNTDOWNNTF = protobuf.Descriptor()
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD = protobuf.FieldDescriptor()
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD = protobuf.FieldDescriptor()
+FUBENRESULTNTF = protobuf.Descriptor()
+FUBENRESULTNTF_CMD_FIELD = protobuf.FieldDescriptor()
+FUBENRESULTNTF_PARAM_FIELD = protobuf.FieldDescriptor()
+FUBENRESULTNTF_RAIDTYPE_FIELD = protobuf.FieldDescriptor()
+FUBENRESULTNTF_ISWIN_FIELD = protobuf.FieldDescriptor()
+ENDTIMESYNCFUBENCMD = protobuf.Descriptor()
+ENDTIMESYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+ENDTIMESYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD = protobuf.FieldDescriptor()
+RESULTSYNCFUBENCMD = protobuf.Descriptor()
+RESULTSYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+RESULTSYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RESULTSYNCFUBENCMD_SCORE_FIELD = protobuf.FieldDescriptor()
+COMODOPHASEFUBENCMD = protobuf.Descriptor()
+COMODOPHASEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+COMODOPHASEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+COMODOPHASEFUBENCMD_PHASE_FIELD = protobuf.FieldDescriptor()
+COMODOTEAMRAIDSTATDATA = protobuf.Descriptor()
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD = protobuf.FieldDescriptor()
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD = protobuf.FieldDescriptor()
+QUERYCOMODOTEAMRAIDSTAT = protobuf.Descriptor()
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD = protobuf.FieldDescriptor()
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD = protobuf.FieldDescriptor()
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD = protobuf.FieldDescriptor()
+TEAMPWSSTATESYNCFUBENCMD = protobuf.Descriptor()
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD = protobuf.FieldDescriptor()
+OBSERVERFLASHFUBENCMD = protobuf.Descriptor()
+OBSERVERFLASHFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBSERVERFLASHFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OBSERVERFLASHFUBENCMD_X_FIELD = protobuf.FieldDescriptor()
+OBSERVERFLASHFUBENCMD_Y_FIELD = protobuf.FieldDescriptor()
+OBSERVERFLASHFUBENCMD_Z_FIELD = protobuf.FieldDescriptor()
+OBSERVERATTACHFUBENCMD = protobuf.Descriptor()
+OBSERVERATTACHFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBSERVERATTACHFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD = protobuf.FieldDescriptor()
+OBSERVERSELECTFUBENCMD = protobuf.Descriptor()
+OBSERVERSELECTFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBSERVERSELECTFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD = protobuf.FieldDescriptor()
+PLAYERHPSPUPDATE = protobuf.Descriptor()
+PLAYERHPSPUPDATE_CHARID_FIELD = protobuf.FieldDescriptor()
+PLAYERHPSPUPDATE_HPPER_FIELD = protobuf.FieldDescriptor()
+PLAYERHPSPUPDATE_SPPER_FIELD = protobuf.FieldDescriptor()
+OBHPSPUPDATEFUBENCMD = protobuf.Descriptor()
+OBHPSPUPDATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD = protobuf.FieldDescriptor()
+OBPLAYEROFFLINEFUBENCMD = protobuf.Descriptor()
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD = protobuf.FieldDescriptor()
+MULTIBOSSPHASEFUBENCMD = protobuf.Descriptor()
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD = protobuf.FieldDescriptor()
+MULTIBOSSRAIDSTATDATA = protobuf.Descriptor()
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD = protobuf.FieldDescriptor()
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD = protobuf.FieldDescriptor()
+ACHIEVEREWARD = protobuf.Descriptor()
+ACHIEVEREWARD_ACHIEVEID_FIELD = protobuf.FieldDescriptor()
+ACHIEVEREWARD_PICK_FIELD = protobuf.FieldDescriptor()
+PVERAIDACHIEVE = protobuf.Descriptor()
+PVERAIDACHIEVE_GROUPID_FIELD = protobuf.FieldDescriptor()
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD = protobuf.FieldDescriptor()
+QUERYMULTIBOSSRAIDSTAT = protobuf.Descriptor()
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD = protobuf.FieldDescriptor()
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD = protobuf.FieldDescriptor()
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD = protobuf.FieldDescriptor()
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD = protobuf.FieldDescriptor()
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO = protobuf.Descriptor()
+PVEPASSINFO_ID_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_FIRSTPASS_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_PASSTIME_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_OPEN_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_ROUNDREWARDID_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_QUICK_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_PICKUP_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_NORLENFIRST_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_SPARETIME_FIELD = protobuf.FieldDescriptor()
+PVEPASSINFO_PASS_FIELD = protobuf.FieldDescriptor()
+OBMOVECAMERAPREPARECMD = protobuf.Descriptor()
+OBMOVECAMERAPREPARECMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBMOVECAMERAPREPARECMD_PARAM_FIELD = protobuf.FieldDescriptor()
+OBCAMERAMOVEENDCMD = protobuf.Descriptor()
+OBCAMERAMOVEENDCMD_CMD_FIELD = protobuf.FieldDescriptor()
+OBCAMERAMOVEENDCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+KILLNUM = protobuf.Descriptor()
+KILLNUM_CAMP_FIELD = protobuf.FieldDescriptor()
+KILLNUM_KILL_NUM_FIELD = protobuf.FieldDescriptor()
+RAIDKILLNUMSYNCCMD = protobuf.Descriptor()
+RAIDKILLNUMSYNCCMD_CMD_FIELD = protobuf.FieldDescriptor()
+RAIDKILLNUMSYNCCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD = protobuf.Descriptor()
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD = protobuf.FieldDescriptor()
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD = protobuf.FieldDescriptor()
+SYNCPVERAIDACHIEVEFUBENCMD = protobuf.Descriptor()
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD = protobuf.FieldDescriptor()
+QUICKFINISHCRACKRAIDFUBENCMD = protobuf.Descriptor()
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD = protobuf.FieldDescriptor()
+PICKUPPVERAIDACHIEVEFUBENCMD = protobuf.Descriptor()
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD = protobuf.FieldDescriptor()
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD = protobuf.FieldDescriptor()
+GVGPOINTUPDATEFUBENCMD = protobuf.Descriptor()
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD = protobuf.FieldDescriptor()
+GVGRAIDSTATEUPDATEFUBENCMD = protobuf.Descriptor()
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD = protobuf.FieldDescriptor()
+ADDPVECARDTIMESFUBENCMD = protobuf.Descriptor()
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD = protobuf.FieldDescriptor()
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD = protobuf.FieldDescriptor()
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD = protobuf.FieldDescriptor()
+PVECARDPASSINFO = protobuf.Descriptor()
+PVECARDPASSINFO_ID_FIELD = protobuf.FieldDescriptor()
+PVECARDPASSINFO_OPEN_FIELD = protobuf.FieldDescriptor()
+SYNCPVECARDOPENSTATEFUBENCMD = protobuf.Descriptor()
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD = protobuf.FieldDescriptor()
+QUICKFINISHPVERAIDFUBENCMD = protobuf.Descriptor()
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD = protobuf.FieldDescriptor()
+PVECARDREWARDTIMESITEM = protobuf.Descriptor()
+PVECARDREWARDTIMESITEM_DIFF_FIELD = protobuf.FieldDescriptor()
+PVECARDREWARDTIMESITEM_TIMES_FIELD = protobuf.FieldDescriptor()
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD = protobuf.FieldDescriptor()
+SYNCPVECARDREWARDTIMESFUBENCMD = protobuf.Descriptor()
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD = protobuf.FieldDescriptor()
+GVGPERFECTSTATEUPDATEFUBENCMD = protobuf.Descriptor()
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD = protobuf.FieldDescriptor()
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD = protobuf.FieldDescriptor()
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD = protobuf.FieldDescriptor()
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD = protobuf.FieldDescriptor()
+FUBENPARAM_TRACK_FUBEN_USER_CMD_ENUM.name = "TRACK_FUBEN_USER_CMD"
+FUBENPARAM_TRACK_FUBEN_USER_CMD_ENUM.index = 0
+FUBENPARAM_TRACK_FUBEN_USER_CMD_ENUM.number = 1
+FUBENPARAM_FAIL_FUBEN_USER_CMD_ENUM.name = "FAIL_FUBEN_USER_CMD"
+FUBENPARAM_FAIL_FUBEN_USER_CMD_ENUM.index = 1
+FUBENPARAM_FAIL_FUBEN_USER_CMD_ENUM.number = 2
+FUBENPARAM_LEAVE_FUBEN_USER_CMD_ENUM.name = "LEAVE_FUBEN_USER_CMD"
+FUBENPARAM_LEAVE_FUBEN_USER_CMD_ENUM.index = 2
+FUBENPARAM_LEAVE_FUBEN_USER_CMD_ENUM.number = 3
+FUBENPARAM_SUCCESS_FUBEN_USER_CMD_ENUM.name = "SUCCESS_FUBEN_USER_CMD"
+FUBENPARAM_SUCCESS_FUBEN_USER_CMD_ENUM.index = 3
+FUBENPARAM_SUCCESS_FUBEN_USER_CMD_ENUM.number = 4
+FUBENPARAM_WORLD_STAGE_USER_CMD_ENUM.name = "WORLD_STAGE_USER_CMD"
+FUBENPARAM_WORLD_STAGE_USER_CMD_ENUM.index = 4
+FUBENPARAM_WORLD_STAGE_USER_CMD_ENUM.number = 5
+FUBENPARAM_SUB_STAGE_USER_CMD_ENUM.name = "SUB_STAGE_USER_CMD"
+FUBENPARAM_SUB_STAGE_USER_CMD_ENUM.index = 5
+FUBENPARAM_SUB_STAGE_USER_CMD_ENUM.number = 6
+FUBENPARAM_START_STAGE_USER_CMD_ENUM.name = "START_STAGE_USER_CMD"
+FUBENPARAM_START_STAGE_USER_CMD_ENUM.index = 6
+FUBENPARAM_START_STAGE_USER_CMD_ENUM.number = 7
+FUBENPARAM_GET_REWARD_STAGE_USER_CMD_ENUM.name = "GET_REWARD_STAGE_USER_CMD"
+FUBENPARAM_GET_REWARD_STAGE_USER_CMD_ENUM.index = 7
+FUBENPARAM_GET_REWARD_STAGE_USER_CMD_ENUM.number = 8
+FUBENPARAM_STAGE_STEP_STAR_USER_CMD_ENUM.name = "STAGE_STEP_STAR_USER_CMD"
+FUBENPARAM_STAGE_STEP_STAR_USER_CMD_ENUM.index = 8
+FUBENPARAM_STAGE_STEP_STAR_USER_CMD_ENUM.number = 9
+FUBENPARAM_JOIN_FUBEN_USER_CMD_ENUM.name = "JOIN_FUBEN_USER_CMD"
+FUBENPARAM_JOIN_FUBEN_USER_CMD_ENUM.index = 9
+FUBENPARAM_JOIN_FUBEN_USER_CMD_ENUM.number = 10
+FUBENPARAM_MONSTER_COUNT_USER_CMD_ENUM.name = "MONSTER_COUNT_USER_CMD"
+FUBENPARAM_MONSTER_COUNT_USER_CMD_ENUM.index = 10
+FUBENPARAM_MONSTER_COUNT_USER_CMD_ENUM.number = 11
+FUBENPARAM_FUBEN_STEP_SYNC_ENUM.name = "FUBEN_STEP_SYNC"
+FUBENPARAM_FUBEN_STEP_SYNC_ENUM.index = 11
+FUBENPARAM_FUBEN_STEP_SYNC_ENUM.number = 12
+FUBENPARAM_FUBEN_GOAL_SYNC_ENUM.name = "FUBEN_GOAL_SYNC"
+FUBENPARAM_FUBEN_GOAL_SYNC_ENUM.index = 12
+FUBENPARAM_FUBEN_GOAL_SYNC_ENUM.number = 13
+FUBENPARAM_FUBEN_CLEAR_SYNC_ENUM.name = "FUBEN_CLEAR_SYNC"
+FUBENPARAM_FUBEN_CLEAR_SYNC_ENUM.index = 13
+FUBENPARAM_FUBEN_CLEAR_SYNC_ENUM.number = 15
+FUBENPARAM_GUILD_RAID_USER_INFO_ENUM.name = "GUILD_RAID_USER_INFO"
+FUBENPARAM_GUILD_RAID_USER_INFO_ENUM.index = 14
+FUBENPARAM_GUILD_RAID_USER_INFO_ENUM.number = 16
+FUBENPARAM_GUILD_RAID_GATE_OPT_ENUM.name = "GUILD_RAID_GATE_OPT"
+FUBENPARAM_GUILD_RAID_GATE_OPT_ENUM.index = 15
+FUBENPARAM_GUILD_RAID_GATE_OPT_ENUM.number = 17
+FUBENPARAM_GUILD_FIRE_INFO_ENUM.name = "GUILD_FIRE_INFO"
+FUBENPARAM_GUILD_FIRE_INFO_ENUM.index = 16
+FUBENPARAM_GUILD_FIRE_INFO_ENUM.number = 18
+FUBENPARAM_GUILD_FIRE_STOP_ENUM.name = "GUILD_FIRE_STOP"
+FUBENPARAM_GUILD_FIRE_STOP_ENUM.index = 17
+FUBENPARAM_GUILD_FIRE_STOP_ENUM.number = 19
+FUBENPARAM_GUILD_FIRE_DANGER_ENUM.name = "GUILD_FIRE_DANGER"
+FUBENPARAM_GUILD_FIRE_DANGER_ENUM.index = 18
+FUBENPARAM_GUILD_FIRE_DANGER_ENUM.number = 20
+FUBENPARAM_GUILD_FIRE_METALHP_ENUM.name = "GUILD_FIRE_METALHP"
+FUBENPARAM_GUILD_FIRE_METALHP_ENUM.index = 19
+FUBENPARAM_GUILD_FIRE_METALHP_ENUM.number = 21
+FUBENPARAM_GUILD_FIRE_CALM_ENUM.name = "GUILD_FIRE_CALM"
+FUBENPARAM_GUILD_FIRE_CALM_ENUM.index = 20
+FUBENPARAM_GUILD_FIRE_CALM_ENUM.number = 22
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_ENUM.name = "GUILD_FIRE_CHANGE_GUILD"
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_ENUM.index = 21
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_ENUM.number = 23
+FUBENPARAM_GUILD_FIRE_RESTART_ENUM.name = "GUILD_FIRE_RESTART"
+FUBENPARAM_GUILD_FIRE_RESTART_ENUM.index = 22
+FUBENPARAM_GUILD_FIRE_RESTART_ENUM.number = 24
+FUBENPARAM_GUILD_FIRE_STATUS_ENUM.name = "GUILD_FIRE_STATUS"
+FUBENPARAM_GUILD_FIRE_STATUS_ENUM.index = 23
+FUBENPARAM_GUILD_FIRE_STATUS_ENUM.number = 25
+FUBENPARAM_GVG_DATA_SYNC_CMD_ENUM.name = "GVG_DATA_SYNC_CMD"
+FUBENPARAM_GVG_DATA_SYNC_CMD_ENUM.index = 24
+FUBENPARAM_GVG_DATA_SYNC_CMD_ENUM.number = 26
+FUBENPARAM_GVG_DATA_UPDATE_CMD_ENUM.name = "GVG_DATA_UPDATE_CMD"
+FUBENPARAM_GVG_DATA_UPDATE_CMD_ENUM.index = 25
+FUBENPARAM_GVG_DATA_UPDATE_CMD_ENUM.number = 27
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_NAME_ENUM.name = "GUILD_FIRE_CHANGE_GUILD_NAME"
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_NAME_ENUM.index = 26
+FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_NAME_ENUM.number = 28
+FUBENPARAM_MVPBATTLE_SYNC_MVPINFO_ENUM.name = "MVPBATTLE_SYNC_MVPINFO"
+FUBENPARAM_MVPBATTLE_SYNC_MVPINFO_ENUM.index = 27
+FUBENPARAM_MVPBATTLE_SYNC_MVPINFO_ENUM.number = 29
+FUBENPARAM_MVPBATTLE_BOSS_DIE_ENUM.name = "MVPBATTLE_BOSS_DIE"
+FUBENPARAM_MVPBATTLE_BOSS_DIE_ENUM.index = 28
+FUBENPARAM_MVPBATTLE_BOSS_DIE_ENUM.number = 30
+FUBENPARAM_FUBEN_USERNUM_COUNT_ENUM.name = "FUBEN_USERNUM_COUNT"
+FUBENPARAM_FUBEN_USERNUM_COUNT_ENUM.index = 29
+FUBENPARAM_FUBEN_USERNUM_COUNT_ENUM.number = 31
+FUBENPARAM_SUPERGVG_INFO_SYNC_ENUM.name = "SUPERGVG_INFO_SYNC"
+FUBENPARAM_SUPERGVG_INFO_SYNC_ENUM.index = 30
+FUBENPARAM_SUPERGVG_INFO_SYNC_ENUM.number = 32
+FUBENPARAM_SUPERGVG_TOWERINFO_UPDATE_ENUM.name = "SUPERGVG_TOWERINFO_UPDATE"
+FUBENPARAM_SUPERGVG_TOWERINFO_UPDATE_ENUM.index = 31
+FUBENPARAM_SUPERGVG_TOWERINFO_UPDATE_ENUM.number = 33
+FUBENPARAM_SUPERGVG_METALINFO_UPDATE_ENUM.name = "SUPERGVG_METALINFO_UPDATE"
+FUBENPARAM_SUPERGVG_METALINFO_UPDATE_ENUM.index = 32
+FUBENPARAM_SUPERGVG_METALINFO_UPDATE_ENUM.number = 34
+FUBENPARAM_SUPERGVG_QUERY_TOWERINFO_ENUM.name = "SUPERGVG_QUERY_TOWERINFO"
+FUBENPARAM_SUPERGVG_QUERY_TOWERINFO_ENUM.index = 33
+FUBENPARAM_SUPERGVG_QUERY_TOWERINFO_ENUM.number = 35
+FUBENPARAM_SUPERGVG_REWARD_INFO_ENUM.name = "SUPERGVG_REWARD_INFO"
+FUBENPARAM_SUPERGVG_REWARD_INFO_ENUM.index = 34
+FUBENPARAM_SUPERGVG_REWARD_INFO_ENUM.number = 36
+FUBENPARAM_SUPERGVG_QUERY_USER_DATA_ENUM.name = "SUPERGVG_QUERY_USER_DATA"
+FUBENPARAM_SUPERGVG_QUERY_USER_DATA_ENUM.index = 35
+FUBENPARAM_SUPERGVG_QUERY_USER_DATA_ENUM.number = 37
+FUBENPARAM_MVPBATTLE_END_REPORT_ENUM.name = "MVPBATTLE_END_REPORT"
+FUBENPARAM_MVPBATTLE_END_REPORT_ENUM.index = 36
+FUBENPARAM_MVPBATTLE_END_REPORT_ENUM.number = 38
+FUBENPARAM_SUPERGVG_METAL_DIE_ENUM.name = "SUPERGVG_METAL_DIE"
+FUBENPARAM_SUPERGVG_METAL_DIE_ENUM.index = 37
+FUBENPARAM_SUPERGVG_METAL_DIE_ENUM.number = 39
+FUBENPARAM_INVITE_SUMMON_DEADBOSS_ENUM.name = "INVITE_SUMMON_DEADBOSS"
+FUBENPARAM_INVITE_SUMMON_DEADBOSS_ENUM.index = 38
+FUBENPARAM_INVITE_SUMMON_DEADBOSS_ENUM.number = 40
+FUBENPARAM_REPLY_SUMMON_DEADBOSS_ENUM.name = "REPLY_SUMMON_DEADBOSS"
+FUBENPARAM_REPLY_SUMMON_DEADBOSS_ENUM.index = 39
+FUBENPARAM_REPLY_SUMMON_DEADBOSS_ENUM.number = 41
+FUBENPARAM_QUERY_RAID_TEAMPWS_USERINFO_ENUM.name = "QUERY_RAID_TEAMPWS_USERINFO"
+FUBENPARAM_QUERY_RAID_TEAMPWS_USERINFO_ENUM.index = 40
+FUBENPARAM_QUERY_RAID_TEAMPWS_USERINFO_ENUM.number = 42
+FUBENPARAM_TEAMPWS_END_REPORT_ENUM.name = "TEAMPWS_END_REPORT"
+FUBENPARAM_TEAMPWS_END_REPORT_ENUM.index = 41
+FUBENPARAM_TEAMPWS_END_REPORT_ENUM.number = 43
+FUBENPARAM_TEAMPWS_SYNC_INFO_ENUM.name = "TEAMPWS_SYNC_INFO"
+FUBENPARAM_TEAMPWS_SYNC_INFO_ENUM.index = 42
+FUBENPARAM_TEAMPWS_SYNC_INFO_ENUM.number = 44
+FUBENPARAM_TEAMPWS_SELECT_MAGIC_ENUM.name = "TEAMPWS_SELECT_MAGIC"
+FUBENPARAM_TEAMPWS_SELECT_MAGIC_ENUM.index = 43
+FUBENPARAM_TEAMPWS_SELECT_MAGIC_ENUM.number = 45
+FUBENPARAM_TEAMPWS_UPDATE_MAGIC_ENUM.name = "TEAMPWS_UPDATE_MAGIC"
+FUBENPARAM_TEAMPWS_UPDATE_MAGIC_ENUM.index = 44
+FUBENPARAM_TEAMPWS_UPDATE_MAGIC_ENUM.number = 46
+FUBENPARAM_TEAMPWS_UPDATE_INFO_ENUM.name = "TEAMPWS_UPDATE_INFO"
+FUBENPARAM_TEAMPWS_UPDATE_INFO_ENUM.index = 45
+FUBENPARAM_TEAMPWS_UPDATE_INFO_ENUM.number = 47
+FUBENPARAM_EXIT_RAID_CMD_ENUM.name = "EXIT_RAID_CMD"
+FUBENPARAM_EXIT_RAID_CMD_ENUM.index = 46
+FUBENPARAM_EXIT_RAID_CMD_ENUM.number = 48
+FUBENPARAM_BEGIN_FIRE_FUBENCMD_ENUM.name = "BEGIN_FIRE_FUBENCMD"
+FUBENPARAM_BEGIN_FIRE_FUBENCMD_ENUM.index = 47
+FUBENPARAM_BEGIN_FIRE_FUBENCMD_ENUM.number = 49
+FUBENPARAM_TEAMEXP_RAID_REPORT_ENUM.name = "TEAMEXP_RAID_REPORT"
+FUBENPARAM_TEAMEXP_RAID_REPORT_ENUM.index = 48
+FUBENPARAM_TEAMEXP_RAID_REPORT_ENUM.number = 50
+FUBENPARAM_TEAMEXP_BUY_ITEM_ENUM.name = "TEAMEXP_BUY_ITEM"
+FUBENPARAM_TEAMEXP_BUY_ITEM_ENUM.index = 49
+FUBENPARAM_TEAMEXP_BUY_ITEM_ENUM.number = 51
+FUBENPARAM_TEAMEXP_SYNC_CMD_ENUM.name = "TEAMEXP_SYNC_CMD"
+FUBENPARAM_TEAMEXP_SYNC_CMD_ENUM.index = 50
+FUBENPARAM_TEAMEXP_SYNC_CMD_ENUM.number = 52
+FUBENPARAM_TEAM_RELIVE_COUNT_ENUM.name = "TEAM_RELIVE_COUNT"
+FUBENPARAM_TEAM_RELIVE_COUNT_ENUM.index = 51
+FUBENPARAM_TEAM_RELIVE_COUNT_ENUM.number = 53
+FUBENPARAM_TEAM_GROUP_RAID_CHIP_ENUM.name = "TEAM_GROUP_RAID_CHIP"
+FUBENPARAM_TEAM_GROUP_RAID_CHIP_ENUM.index = 52
+FUBENPARAM_TEAM_GROUP_RAID_CHIP_ENUM.number = 54
+FUBENPARAM_TEAM_GROUP_RAID_QUERY_INFO_ENUM.name = "TEAM_GROUP_RAID_QUERY_INFO"
+FUBENPARAM_TEAM_GROUP_RAID_QUERY_INFO_ENUM.index = 53
+FUBENPARAM_TEAM_GROUP_RAID_QUERY_INFO_ENUM.number = 55
+FUBENPARAM_TEAMEXP_QUERY_INFO_ENUM.name = "TEAMEXP_QUERY_INFO"
+FUBENPARAM_TEAMEXP_QUERY_INFO_ENUM.index = 54
+FUBENPARAM_TEAMEXP_QUERY_INFO_ENUM.number = 56
+FUBENPARAM_TEAM_GROUP_RAID_STATE_ENUM.name = "TEAM_GROUP_RAID_STATE"
+FUBENPARAM_TEAM_GROUP_RAID_STATE_ENUM.index = 55
+FUBENPARAM_TEAM_GROUP_RAID_STATE_ENUM.number = 57
+FUBENPARAM_KUMAMOTO_OPER_CMD_ENUM.name = "KUMAMOTO_OPER_CMD"
+FUBENPARAM_KUMAMOTO_OPER_CMD_ENUM.index = 56
+FUBENPARAM_KUMAMOTO_OPER_CMD_ENUM.number = 58
+FUBENPARAM_TEAM_GROUP_FOURTH_QUERY_ENUM.name = "TEAM_GROUP_FOURTH_QUERY"
+FUBENPARAM_TEAM_GROUP_FOURTH_QUERY_ENUM.index = 57
+FUBENPARAM_TEAM_GROUP_FOURTH_QUERY_ENUM.number = 59
+FUBENPARAM_TEAM_GROUP_FOURTH_UPDATE_ENUM.name = "TEAM_GROUP_FOURTH_UPDATE"
+FUBENPARAM_TEAM_GROUP_FOURTH_UPDATE_ENUM.index = 58
+FUBENPARAM_TEAM_GROUP_FOURTH_UPDATE_ENUM.number = 60
+FUBENPARAM_TEAM_GROUP_FOURTH_GOOUTER_ENUM.name = "TEAM_GROUP_FOURTH_GOOUTER"
+FUBENPARAM_TEAM_GROUP_FOURTH_GOOUTER_ENUM.index = 59
+FUBENPARAM_TEAM_GROUP_FOURTH_GOOUTER_ENUM.number = 61
+FUBENPARAM_RAID_STAGE_SYNC_ENUM.name = "RAID_STAGE_SYNC"
+FUBENPARAM_RAID_STAGE_SYNC_ENUM.index = 60
+FUBENPARAM_RAID_STAGE_SYNC_ENUM.number = 62
+FUBENPARAM_THANKSGIVING_MONSTER_NUM_ENUM.name = "THANKSGIVING_MONSTER_NUM"
+FUBENPARAM_THANKSGIVING_MONSTER_NUM_ENUM.index = 61
+FUBENPARAM_THANKSGIVING_MONSTER_NUM_ENUM.number = 63
+FUBENPARAM_OTHELLO_POINT_OCCUPY_POWER_ENUM.name = "OTHELLO_POINT_OCCUPY_POWER"
+FUBENPARAM_OTHELLO_POINT_OCCUPY_POWER_ENUM.index = 62
+FUBENPARAM_OTHELLO_POINT_OCCUPY_POWER_ENUM.number = 64
+FUBENPARAM_OTHELLO_SYNC_INFO_ENUM.name = "OTHELLO_SYNC_INFO"
+FUBENPARAM_OTHELLO_SYNC_INFO_ENUM.index = 63
+FUBENPARAM_OTHELLO_SYNC_INFO_ENUM.number = 65
+FUBENPARAM_QUERY_RAID_OTHELLO_USERINFO_ENUM.name = "QUERY_RAID_OTHELLO_USERINFO"
+FUBENPARAM_QUERY_RAID_OTHELLO_USERINFO_ENUM.index = 64
+FUBENPARAM_QUERY_RAID_OTHELLO_USERINFO_ENUM.number = 66
+FUBENPARAM_OTHELLO_END_REPORT_ENUM.name = "OTHELLO_END_REPORT"
+FUBENPARAM_OTHELLO_END_REPORT_ENUM.index = 65
+FUBENPARAM_OTHELLO_END_REPORT_ENUM.number = 67
+FUBENPARAM_ROGUELIKE_SYNC_UNLOCKSCENES_ENUM.name = "ROGUELIKE_SYNC_UNLOCKSCENES"
+FUBENPARAM_ROGUELIKE_SYNC_UNLOCKSCENES_ENUM.index = 66
+FUBENPARAM_ROGUELIKE_SYNC_UNLOCKSCENES_ENUM.number = 68
+FUBENPARAM_TRANSFERFIGHT_CHOOSE_ENUM.name = "TRANSFERFIGHT_CHOOSE"
+FUBENPARAM_TRANSFERFIGHT_CHOOSE_ENUM.index = 67
+FUBENPARAM_TRANSFERFIGHT_CHOOSE_ENUM.number = 69
+FUBENPARAM_TRANSFERFIGHT_RANK_ENUM.name = "TRANSFERFIGHT_RANK"
+FUBENPARAM_TRANSFERFIGHT_RANK_ENUM.index = 68
+FUBENPARAM_TRANSFERFIGHT_RANK_ENUM.number = 70
+FUBENPARAM_TRANSFERFIGHT_END_ENUM.name = "TRANSFERFIGHT_END"
+FUBENPARAM_TRANSFERFIGHT_END_ENUM.index = 69
+FUBENPARAM_TRANSFERFIGHT_END_ENUM.number = 71
+FUBENPARAM_TWELVEPVP_DATA_SYNC_ENUM.name = "TWELVEPVP_DATA_SYNC"
+FUBENPARAM_TWELVEPVP_DATA_SYNC_ENUM.index = 70
+FUBENPARAM_TWELVEPVP_DATA_SYNC_ENUM.number = 72
+FUBENPARAM_TWELVEPVP_ITEM_SYNC_ENUM.name = "TWELVEPVP_ITEM_SYNC"
+FUBENPARAM_TWELVEPVP_ITEM_SYNC_ENUM.index = 71
+FUBENPARAM_TWELVEPVP_ITEM_SYNC_ENUM.number = 73
+FUBENPARAM_TWELVEPVP_ITEM_UPDATE_ENUM.name = "TWELVEPVP_ITEM_UPDATE"
+FUBENPARAM_TWELVEPVP_ITEM_UPDATE_ENUM.index = 72
+FUBENPARAM_TWELVEPVP_ITEM_UPDATE_ENUM.number = 74
+FUBENPARAM_TWELVEPVP_SHOP_UPDATE_ENUM.name = "TWELVEPVP_SHOP_UPDATE"
+FUBENPARAM_TWELVEPVP_SHOP_UPDATE_ENUM.index = 73
+FUBENPARAM_TWELVEPVP_SHOP_UPDATE_ENUM.number = 75
+FUBENPARAM_TWELVEPVP_QUEST_QUERY_ENUM.name = "TWELVEPVP_QUEST_QUERY"
+FUBENPARAM_TWELVEPVP_QUEST_QUERY_ENUM.index = 74
+FUBENPARAM_TWELVEPVP_QUEST_QUERY_ENUM.number = 76
+FUBENPARAM_TWELVEPVP_GROUP_INFO_QUERY_ENUM.name = "TWELVEPVP_GROUP_INFO_QUERY"
+FUBENPARAM_TWELVEPVP_GROUP_INFO_QUERY_ENUM.index = 75
+FUBENPARAM_TWELVEPVP_GROUP_INFO_QUERY_ENUM.number = 77
+FUBENPARAM_TWELVEPVP_RESULT_ENUM.name = "TWELVEPVP_RESULT"
+FUBENPARAM_TWELVEPVP_RESULT_ENUM.index = 76
+FUBENPARAM_TWELVEPVP_RESULT_ENUM.number = 78
+FUBENPARAM_TWELVEPVP_BUILDING_HP_UPDATE_ENUM.name = "TWELVEPVP_BUILDING_HP_UPDATE"
+FUBENPARAM_TWELVEPVP_BUILDING_HP_UPDATE_ENUM.index = 77
+FUBENPARAM_TWELVEPVP_BUILDING_HP_UPDATE_ENUM.number = 79
+FUBENPARAM_TWELVEPVP_QUERY_UI_OPER_ENUM.name = "TWELVEPVP_QUERY_UI_OPER"
+FUBENPARAM_TWELVEPVP_QUERY_UI_OPER_ENUM.index = 78
+FUBENPARAM_TWELVEPVP_QUERY_UI_OPER_ENUM.number = 80
+FUBENPARAM_TWELVEPVP_USE_ITEM_ENUM.name = "TWELVEPVP_USE_ITEM"
+FUBENPARAM_TWELVEPVP_USE_ITEM_ENUM.index = 79
+FUBENPARAM_TWELVEPVP_USE_ITEM_ENUM.number = 81
+FUBENPARAM_INVITE_ROLL_RAID_REWARD_ENUM.name = "INVITE_ROLL_RAID_REWARD"
+FUBENPARAM_INVITE_ROLL_RAID_REWARD_ENUM.index = 80
+FUBENPARAM_INVITE_ROLL_RAID_REWARD_ENUM.number = 82
+FUBENPARAM_REPLY_ROLL_RAID_REARD_ENUM.name = "REPLY_ROLL_RAID_REARD"
+FUBENPARAM_REPLY_ROLL_RAID_REARD_ENUM.index = 81
+FUBENPARAM_REPLY_ROLL_RAID_REARD_ENUM.number = 83
+FUBENPARAM_TEAMMEMBER_ROLL_PROCESS_ENUM.name = "TEAMMEMBER_ROLL_PROCESS"
+FUBENPARAM_TEAMMEMBER_ROLL_PROCESS_ENUM.index = 82
+FUBENPARAM_TEAMMEMBER_ROLL_PROCESS_ENUM.number = 84
+FUBENPARAM_PRE_REPLY_ROLL_RAID_REARD_ENUM.name = "PRE_REPLY_ROLL_RAID_REARD"
+FUBENPARAM_PRE_REPLY_ROLL_RAID_REARD_ENUM.index = 83
+FUBENPARAM_PRE_REPLY_ROLL_RAID_REARD_ENUM.number = 85
+FUBENPARAM_RELIVE_CD_ENUM.name = "RELIVE_CD"
+FUBENPARAM_RELIVE_CD_ENUM.index = 84
+FUBENPARAM_RELIVE_CD_ENUM.number = 86
+FUBENPARAM_POS_SYNC_ENUM.name = "POS_SYNC"
+FUBENPARAM_POS_SYNC_ENUM.index = 85
+FUBENPARAM_POS_SYNC_ENUM.number = 87
+FUBENPARAM_REQ_ENTER_TOWERPRIVATE_ENUM.name = "REQ_ENTER_TOWERPRIVATE"
+FUBENPARAM_REQ_ENTER_TOWERPRIVATE_ENUM.index = 86
+FUBENPARAM_REQ_ENTER_TOWERPRIVATE_ENUM.number = 88
+FUBENPARAM_TOWERPRIVATE_LAYINFO_ENUM.name = "TOWERPRIVATE_LAYINFO"
+FUBENPARAM_TOWERPRIVATE_LAYINFO_ENUM.index = 87
+FUBENPARAM_TOWERPRIVATE_LAYINFO_ENUM.number = 89
+FUBENPARAM_TOWERPRIVATE_LAYER_COUNTDOWN_NTF_ENUM.name = "TOWERPRIVATE_LAYER_COUNTDOWN_NTF"
+FUBENPARAM_TOWERPRIVATE_LAYER_COUNTDOWN_NTF_ENUM.index = 88
+FUBENPARAM_TOWERPRIVATE_LAYER_COUNTDOWN_NTF_ENUM.number = 90
+FUBENPARAM_FUBEN_RESULT_NTF_ENUM.name = "FUBEN_RESULT_NTF"
+FUBENPARAM_FUBEN_RESULT_NTF_ENUM.index = 89
+FUBENPARAM_FUBEN_RESULT_NTF_ENUM.number = 91
+FUBENPARAM_ENDTIME_SYNC_ENUM.name = "ENDTIME_SYNC"
+FUBENPARAM_ENDTIME_SYNC_ENUM.index = 90
+FUBENPARAM_ENDTIME_SYNC_ENUM.number = 92
+FUBENPARAM_RESULT_SYNC_ENUM.name = "RESULT_SYNC"
+FUBENPARAM_RESULT_SYNC_ENUM.index = 91
+FUBENPARAM_RESULT_SYNC_ENUM.number = 93
+FUBENPARAM_COMODO_PHASE_ENUM.name = "COMODO_PHASE"
+FUBENPARAM_COMODO_PHASE_ENUM.index = 92
+FUBENPARAM_COMODO_PHASE_ENUM.number = 97
+FUBENPARAM_COMODO_STAT_ENUM.name = "COMODO_STAT"
+FUBENPARAM_COMODO_STAT_ENUM.index = 93
+FUBENPARAM_COMODO_STAT_ENUM.number = 98
+FUBENPARAM_TEAMPWS_STATE_SYNC_ENUM.name = "TEAMPWS_STATE_SYNC"
+FUBENPARAM_TEAMPWS_STATE_SYNC_ENUM.index = 94
+FUBENPARAM_TEAMPWS_STATE_SYNC_ENUM.number = 99
+FUBENPARAM_OBSERVER_FLASH_ENUM.name = "OBSERVER_FLASH"
+FUBENPARAM_OBSERVER_FLASH_ENUM.index = 95
+FUBENPARAM_OBSERVER_FLASH_ENUM.number = 100
+FUBENPARAM_OBSERVER_ATTACH_ENUM.name = "OBSERVER_ATTACH"
+FUBENPARAM_OBSERVER_ATTACH_ENUM.index = 96
+FUBENPARAM_OBSERVER_ATTACH_ENUM.number = 101
+FUBENPARAM_OBSERVER_SELECT_ENUM.name = "OBSERVER_SELECT"
+FUBENPARAM_OBSERVER_SELECT_ENUM.index = 97
+FUBENPARAM_OBSERVER_SELECT_ENUM.number = 102
+FUBENPARAM_OB_HPSP_UPDATE_ENUM.name = "OB_HPSP_UPDATE"
+FUBENPARAM_OB_HPSP_UPDATE_ENUM.index = 98
+FUBENPARAM_OB_HPSP_UPDATE_ENUM.number = 104
+FUBENPARAM_OB_PLAYER_OFFLINE_ENUM.name = "OB_PLAYER_OFFLINE"
+FUBENPARAM_OB_PLAYER_OFFLINE_ENUM.index = 99
+FUBENPARAM_OB_PLAYER_OFFLINE_ENUM.number = 105
+FUBENPARAM_MULTI_BOSS_PHASE_ENUM.name = "MULTI_BOSS_PHASE"
+FUBENPARAM_MULTI_BOSS_PHASE_ENUM.index = 100
+FUBENPARAM_MULTI_BOSS_PHASE_ENUM.number = 106
+FUBENPARAM_MULTI_BOSS_STAT_ENUM.name = "MULTI_BOSS_STAT"
+FUBENPARAM_MULTI_BOSS_STAT_ENUM.index = 101
+FUBENPARAM_MULTI_BOSS_STAT_ENUM.number = 107
+FUBENPARAM_OB_CAMERA_MOVE_PREPARE_ENUM.name = "OB_CAMERA_MOVE_PREPARE"
+FUBENPARAM_OB_CAMERA_MOVE_PREPARE_ENUM.index = 102
+FUBENPARAM_OB_CAMERA_MOVE_PREPARE_ENUM.number = 108
+FUBENPARAM_OB_CAMERA_MOVE_END_ENUM.name = "OB_CAMERA_MOVE_END"
+FUBENPARAM_OB_CAMERA_MOVE_END_ENUM.index = 103
+FUBENPARAM_OB_CAMERA_MOVE_END_ENUM.number = 109
+FUBENPARAM_RAID_KILL_NUM_SYNC_ENUM.name = "RAID_KILL_NUM_SYNC"
+FUBENPARAM_RAID_KILL_NUM_SYNC_ENUM.index = 104
+FUBENPARAM_RAID_KILL_NUM_SYNC_ENUM.number = 110
+FUBENPARAM_PVE_PASS_INFO_ENUM.name = "PVE_PASS_INFO"
+FUBENPARAM_PVE_PASS_INFO_ENUM.index = 105
+FUBENPARAM_PVE_PASS_INFO_ENUM.number = 118
+FUBENPARAM_GVG_POINT_STATE_UPDATE_ENUM.name = "GVG_POINT_STATE_UPDATE"
+FUBENPARAM_GVG_POINT_STATE_UPDATE_ENUM.index = 106
+FUBENPARAM_GVG_POINT_STATE_UPDATE_ENUM.number = 119
+FUBENPARAM_GVG_CONSTRUCT_BUILDING_ENUM.name = "GVG_CONSTRUCT_BUILDING"
+FUBENPARAM_GVG_CONSTRUCT_BUILDING_ENUM.index = 107
+FUBENPARAM_GVG_CONSTRUCT_BUILDING_ENUM.number = 120
+FUBENPARAM_GVG_LEVELUP_BUILDING_ENUM.name = "GVG_LEVELUP_BUILDING"
+FUBENPARAM_GVG_LEVELUP_BUILDING_ENUM.index = 108
+FUBENPARAM_GVG_LEVELUP_BUILDING_ENUM.number = 121
+FUBENPARAM_GVG_CANCEL_BUILDING_ENUM.name = "GVG_CANCEL_BUILDING"
+FUBENPARAM_GVG_CANCEL_BUILDING_ENUM.index = 109
+FUBENPARAM_GVG_CANCEL_BUILDING_ENUM.number = 122
+FUBENPARAM_GVG_STATE_UPDATE_ENUM.name = "GVG_STATE_UPDATE"
+FUBENPARAM_GVG_STATE_UPDATE_ENUM.index = 110
+FUBENPARAM_GVG_STATE_UPDATE_ENUM.number = 123
+FUBENPARAM_GVG_USE_BUILDING_ENUM.name = "GVG_USE_BUILDING"
+FUBENPARAM_GVG_USE_BUILDING_ENUM.index = 111
+FUBENPARAM_GVG_USE_BUILDING_ENUM.number = 124
+FUBENPARAM_GVG_MORALE_UPDATE_ENUM.name = "GVG_MORALE_UPDATE"
+FUBENPARAM_GVG_MORALE_UPDATE_ENUM.index = 112
+FUBENPARAM_GVG_MORALE_UPDATE_ENUM.number = 125
+FUBENPARAM_PVE_RAID_ACHIEVE_ENUM.name = "PVE_RAID_ACHIEVE"
+FUBENPARAM_PVE_RAID_ACHIEVE_ENUM.index = 113
+FUBENPARAM_PVE_RAID_ACHIEVE_ENUM.number = 126
+FUBENPARAM_QUICK_FINISH_CRACK_ENUM.name = "QUICK_FINISH_CRACK"
+FUBENPARAM_QUICK_FINISH_CRACK_ENUM.index = 114
+FUBENPARAM_QUICK_FINISH_CRACK_ENUM.number = 127
+FUBENPARAM_PICKUP_PVE_RAID_ACHIEVE_ENUM.name = "PICKUP_PVE_RAID_ACHIEVE"
+FUBENPARAM_PICKUP_PVE_RAID_ACHIEVE_ENUM.index = 115
+FUBENPARAM_PICKUP_PVE_RAID_ACHIEVE_ENUM.number = 128
+FUBENPARAM_ADD_PVECARD_TIMES_ENUM.name = "ADD_PVECARD_TIMES"
+FUBENPARAM_ADD_PVECARD_TIMES_ENUM.index = 116
+FUBENPARAM_ADD_PVECARD_TIMES_ENUM.number = 129
+FUBENPARAM_SYNC_PVECARD_OPENSTATE_ENUM.name = "SYNC_PVECARD_OPENSTATE"
+FUBENPARAM_SYNC_PVECARD_OPENSTATE_ENUM.index = 117
+FUBENPARAM_SYNC_PVECARD_OPENSTATE_ENUM.number = 130
+FUBENPARAM_QUICK_FINISH_PVERAID_ENUM.name = "QUICK_FINISH_PVERAID"
+FUBENPARAM_QUICK_FINISH_PVERAID_ENUM.index = 118
+FUBENPARAM_QUICK_FINISH_PVERAID_ENUM.number = 131
+FUBENPARAM_SYNC_PVECARD_DIFFTIMES_ENUM.name = "SYNC_PVECARD_DIFFTIMES"
+FUBENPARAM_SYNC_PVECARD_DIFFTIMES_ENUM.index = 119
+FUBENPARAM_SYNC_PVECARD_DIFFTIMES_ENUM.number = 132
+FUBENPARAM_GVG_PERFECT_STATE_UPDATE_ENUM.name = "GVG_PERFECT_STATE_UPDATE"
+FUBENPARAM_GVG_PERFECT_STATE_UPDATE_ENUM.index = 120
+FUBENPARAM_GVG_PERFECT_STATE_UPDATE_ENUM.number = 133
+FUBENPARAM.name = "FuBenParam"
+FUBENPARAM.full_name = ".Cmd.FuBenParam"
+FUBENPARAM.values = {
+  FUBENPARAM_TRACK_FUBEN_USER_CMD_ENUM,
+  FUBENPARAM_FAIL_FUBEN_USER_CMD_ENUM,
+  FUBENPARAM_LEAVE_FUBEN_USER_CMD_ENUM,
+  FUBENPARAM_SUCCESS_FUBEN_USER_CMD_ENUM,
+  FUBENPARAM_WORLD_STAGE_USER_CMD_ENUM,
+  FUBENPARAM_SUB_STAGE_USER_CMD_ENUM,
+  FUBENPARAM_START_STAGE_USER_CMD_ENUM,
+  FUBENPARAM_GET_REWARD_STAGE_USER_CMD_ENUM,
+  FUBENPARAM_STAGE_STEP_STAR_USER_CMD_ENUM,
+  FUBENPARAM_JOIN_FUBEN_USER_CMD_ENUM,
+  FUBENPARAM_MONSTER_COUNT_USER_CMD_ENUM,
+  FUBENPARAM_FUBEN_STEP_SYNC_ENUM,
+  FUBENPARAM_FUBEN_GOAL_SYNC_ENUM,
+  FUBENPARAM_FUBEN_CLEAR_SYNC_ENUM,
+  FUBENPARAM_GUILD_RAID_USER_INFO_ENUM,
+  FUBENPARAM_GUILD_RAID_GATE_OPT_ENUM,
+  FUBENPARAM_GUILD_FIRE_INFO_ENUM,
+  FUBENPARAM_GUILD_FIRE_STOP_ENUM,
+  FUBENPARAM_GUILD_FIRE_DANGER_ENUM,
+  FUBENPARAM_GUILD_FIRE_METALHP_ENUM,
+  FUBENPARAM_GUILD_FIRE_CALM_ENUM,
+  FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_ENUM,
+  FUBENPARAM_GUILD_FIRE_RESTART_ENUM,
+  FUBENPARAM_GUILD_FIRE_STATUS_ENUM,
+  FUBENPARAM_GVG_DATA_SYNC_CMD_ENUM,
+  FUBENPARAM_GVG_DATA_UPDATE_CMD_ENUM,
+  FUBENPARAM_GUILD_FIRE_CHANGE_GUILD_NAME_ENUM,
+  FUBENPARAM_MVPBATTLE_SYNC_MVPINFO_ENUM,
+  FUBENPARAM_MVPBATTLE_BOSS_DIE_ENUM,
+  FUBENPARAM_FUBEN_USERNUM_COUNT_ENUM,
+  FUBENPARAM_SUPERGVG_INFO_SYNC_ENUM,
+  FUBENPARAM_SUPERGVG_TOWERINFO_UPDATE_ENUM,
+  FUBENPARAM_SUPERGVG_METALINFO_UPDATE_ENUM,
+  FUBENPARAM_SUPERGVG_QUERY_TOWERINFO_ENUM,
+  FUBENPARAM_SUPERGVG_REWARD_INFO_ENUM,
+  FUBENPARAM_SUPERGVG_QUERY_USER_DATA_ENUM,
+  FUBENPARAM_MVPBATTLE_END_REPORT_ENUM,
+  FUBENPARAM_SUPERGVG_METAL_DIE_ENUM,
+  FUBENPARAM_INVITE_SUMMON_DEADBOSS_ENUM,
+  FUBENPARAM_REPLY_SUMMON_DEADBOSS_ENUM,
+  FUBENPARAM_QUERY_RAID_TEAMPWS_USERINFO_ENUM,
+  FUBENPARAM_TEAMPWS_END_REPORT_ENUM,
+  FUBENPARAM_TEAMPWS_SYNC_INFO_ENUM,
+  FUBENPARAM_TEAMPWS_SELECT_MAGIC_ENUM,
+  FUBENPARAM_TEAMPWS_UPDATE_MAGIC_ENUM,
+  FUBENPARAM_TEAMPWS_UPDATE_INFO_ENUM,
+  FUBENPARAM_EXIT_RAID_CMD_ENUM,
+  FUBENPARAM_BEGIN_FIRE_FUBENCMD_ENUM,
+  FUBENPARAM_TEAMEXP_RAID_REPORT_ENUM,
+  FUBENPARAM_TEAMEXP_BUY_ITEM_ENUM,
+  FUBENPARAM_TEAMEXP_SYNC_CMD_ENUM,
+  FUBENPARAM_TEAM_RELIVE_COUNT_ENUM,
+  FUBENPARAM_TEAM_GROUP_RAID_CHIP_ENUM,
+  FUBENPARAM_TEAM_GROUP_RAID_QUERY_INFO_ENUM,
+  FUBENPARAM_TEAMEXP_QUERY_INFO_ENUM,
+  FUBENPARAM_TEAM_GROUP_RAID_STATE_ENUM,
+  FUBENPARAM_KUMAMOTO_OPER_CMD_ENUM,
+  FUBENPARAM_TEAM_GROUP_FOURTH_QUERY_ENUM,
+  FUBENPARAM_TEAM_GROUP_FOURTH_UPDATE_ENUM,
+  FUBENPARAM_TEAM_GROUP_FOURTH_GOOUTER_ENUM,
+  FUBENPARAM_RAID_STAGE_SYNC_ENUM,
+  FUBENPARAM_THANKSGIVING_MONSTER_NUM_ENUM,
+  FUBENPARAM_OTHELLO_POINT_OCCUPY_POWER_ENUM,
+  FUBENPARAM_OTHELLO_SYNC_INFO_ENUM,
+  FUBENPARAM_QUERY_RAID_OTHELLO_USERINFO_ENUM,
+  FUBENPARAM_OTHELLO_END_REPORT_ENUM,
+  FUBENPARAM_ROGUELIKE_SYNC_UNLOCKSCENES_ENUM,
+  FUBENPARAM_TRANSFERFIGHT_CHOOSE_ENUM,
+  FUBENPARAM_TRANSFERFIGHT_RANK_ENUM,
+  FUBENPARAM_TRANSFERFIGHT_END_ENUM,
+  FUBENPARAM_TWELVEPVP_DATA_SYNC_ENUM,
+  FUBENPARAM_TWELVEPVP_ITEM_SYNC_ENUM,
+  FUBENPARAM_TWELVEPVP_ITEM_UPDATE_ENUM,
+  FUBENPARAM_TWELVEPVP_SHOP_UPDATE_ENUM,
+  FUBENPARAM_TWELVEPVP_QUEST_QUERY_ENUM,
+  FUBENPARAM_TWELVEPVP_GROUP_INFO_QUERY_ENUM,
+  FUBENPARAM_TWELVEPVP_RESULT_ENUM,
+  FUBENPARAM_TWELVEPVP_BUILDING_HP_UPDATE_ENUM,
+  FUBENPARAM_TWELVEPVP_QUERY_UI_OPER_ENUM,
+  FUBENPARAM_TWELVEPVP_USE_ITEM_ENUM,
+  FUBENPARAM_INVITE_ROLL_RAID_REWARD_ENUM,
+  FUBENPARAM_REPLY_ROLL_RAID_REARD_ENUM,
+  FUBENPARAM_TEAMMEMBER_ROLL_PROCESS_ENUM,
+  FUBENPARAM_PRE_REPLY_ROLL_RAID_REARD_ENUM,
+  FUBENPARAM_RELIVE_CD_ENUM,
+  FUBENPARAM_POS_SYNC_ENUM,
+  FUBENPARAM_REQ_ENTER_TOWERPRIVATE_ENUM,
+  FUBENPARAM_TOWERPRIVATE_LAYINFO_ENUM,
+  FUBENPARAM_TOWERPRIVATE_LAYER_COUNTDOWN_NTF_ENUM,
+  FUBENPARAM_FUBEN_RESULT_NTF_ENUM,
+  FUBENPARAM_ENDTIME_SYNC_ENUM,
+  FUBENPARAM_RESULT_SYNC_ENUM,
+  FUBENPARAM_COMODO_PHASE_ENUM,
+  FUBENPARAM_COMODO_STAT_ENUM,
+  FUBENPARAM_TEAMPWS_STATE_SYNC_ENUM,
+  FUBENPARAM_OBSERVER_FLASH_ENUM,
+  FUBENPARAM_OBSERVER_ATTACH_ENUM,
+  FUBENPARAM_OBSERVER_SELECT_ENUM,
+  FUBENPARAM_OB_HPSP_UPDATE_ENUM,
+  FUBENPARAM_OB_PLAYER_OFFLINE_ENUM,
+  FUBENPARAM_MULTI_BOSS_PHASE_ENUM,
+  FUBENPARAM_MULTI_BOSS_STAT_ENUM,
+  FUBENPARAM_OB_CAMERA_MOVE_PREPARE_ENUM,
+  FUBENPARAM_OB_CAMERA_MOVE_END_ENUM,
+  FUBENPARAM_RAID_KILL_NUM_SYNC_ENUM,
+  FUBENPARAM_PVE_PASS_INFO_ENUM,
+  FUBENPARAM_GVG_POINT_STATE_UPDATE_ENUM,
+  FUBENPARAM_GVG_CONSTRUCT_BUILDING_ENUM,
+  FUBENPARAM_GVG_LEVELUP_BUILDING_ENUM,
+  FUBENPARAM_GVG_CANCEL_BUILDING_ENUM,
+  FUBENPARAM_GVG_STATE_UPDATE_ENUM,
+  FUBENPARAM_GVG_USE_BUILDING_ENUM,
+  FUBENPARAM_GVG_MORALE_UPDATE_ENUM,
+  FUBENPARAM_PVE_RAID_ACHIEVE_ENUM,
+  FUBENPARAM_QUICK_FINISH_CRACK_ENUM,
+  FUBENPARAM_PICKUP_PVE_RAID_ACHIEVE_ENUM,
+  FUBENPARAM_ADD_PVECARD_TIMES_ENUM,
+  FUBENPARAM_SYNC_PVECARD_OPENSTATE_ENUM,
+  FUBENPARAM_QUICK_FINISH_PVERAID_ENUM,
+  FUBENPARAM_SYNC_PVECARD_DIFFTIMES_ENUM,
+  FUBENPARAM_GVG_PERFECT_STATE_UPDATE_ENUM
+}
+ERAIDTYPE_ERAIDTYPE_MIN_ENUM.name = "ERAIDTYPE_MIN"
+ERAIDTYPE_ERAIDTYPE_MIN_ENUM.index = 0
+ERAIDTYPE_ERAIDTYPE_MIN_ENUM.number = 0
+ERAIDTYPE_ERAIDTYPE_FERRISWHEEL_ENUM.name = "ERAIDTYPE_FERRISWHEEL"
+ERAIDTYPE_ERAIDTYPE_FERRISWHEEL_ENUM.index = 1
+ERAIDTYPE_ERAIDTYPE_FERRISWHEEL_ENUM.number = 1
+ERAIDTYPE_ERAIDTYPE_NORMAL_ENUM.name = "ERAIDTYPE_NORMAL"
+ERAIDTYPE_ERAIDTYPE_NORMAL_ENUM.index = 2
+ERAIDTYPE_ERAIDTYPE_NORMAL_ENUM.number = 2
+ERAIDTYPE_ERAIDTYPE_EXCHANGE_ENUM.name = "ERAIDTYPE_EXCHANGE"
+ERAIDTYPE_ERAIDTYPE_EXCHANGE_ENUM.index = 3
+ERAIDTYPE_ERAIDTYPE_EXCHANGE_ENUM.number = 3
+ERAIDTYPE_ERAIDTYPE_TOWER_ENUM.name = "ERAIDTYPE_TOWER"
+ERAIDTYPE_ERAIDTYPE_TOWER_ENUM.index = 4
+ERAIDTYPE_ERAIDTYPE_TOWER_ENUM.number = 4
+ERAIDTYPE_ERAIDTYPE_LABORATORY_ENUM.name = "ERAIDTYPE_LABORATORY"
+ERAIDTYPE_ERAIDTYPE_LABORATORY_ENUM.index = 5
+ERAIDTYPE_ERAIDTYPE_LABORATORY_ENUM.number = 5
+ERAIDTYPE_ERAIDTYPE_EXCHANGEGALLERY_ENUM.name = "ERAIDTYPE_EXCHANGEGALLERY"
+ERAIDTYPE_ERAIDTYPE_EXCHANGEGALLERY_ENUM.index = 6
+ERAIDTYPE_ERAIDTYPE_EXCHANGEGALLERY_ENUM.number = 6
+ERAIDTYPE_ERAIDTYPE_SEAL_ENUM.name = "ERAIDTYPE_SEAL"
+ERAIDTYPE_ERAIDTYPE_SEAL_ENUM.index = 7
+ERAIDTYPE_ERAIDTYPE_SEAL_ENUM.number = 7
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP2_ENUM.name = "ERAIDTYPE_RAIDTEMP2"
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP2_ENUM.index = 8
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP2_ENUM.number = 8
+ERAIDTYPE_ERAIDTYPE_DOJO_ENUM.name = "ERAIDTYPE_DOJO"
+ERAIDTYPE_ERAIDTYPE_DOJO_ENUM.index = 9
+ERAIDTYPE_ERAIDTYPE_DOJO_ENUM.number = 9
+ERAIDTYPE_ERAIDTYPE_GUILD_ENUM.name = "ERAIDTYPE_GUILD"
+ERAIDTYPE_ERAIDTYPE_GUILD_ENUM.index = 10
+ERAIDTYPE_ERAIDTYPE_GUILD_ENUM.number = 10
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP4_ENUM.name = "ERAIDTYPE_RAIDTEMP4"
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP4_ENUM.index = 11
+ERAIDTYPE_ERAIDTYPE_RAIDTEMP4_ENUM.number = 11
+ERAIDTYPE_ERAIDTYPE_ITEMIMAGE_ENUM.name = "ERAIDTYPE_ITEMIMAGE"
+ERAIDTYPE_ERAIDTYPE_ITEMIMAGE_ENUM.index = 12
+ERAIDTYPE_ERAIDTYPE_ITEMIMAGE_ENUM.number = 12
+ERAIDTYPE_ERAIDTYPE_GUILDRAID_ENUM.name = "ERAIDTYPE_GUILDRAID"
+ERAIDTYPE_ERAIDTYPE_GUILDRAID_ENUM.index = 13
+ERAIDTYPE_ERAIDTYPE_GUILDRAID_ENUM.number = 13
+ERAIDTYPE_ERAIDTYPE_GUILDFIRE_ENUM.name = "ERAIDTYPE_GUILDFIRE"
+ERAIDTYPE_ERAIDTYPE_GUILDFIRE_ENUM.index = 14
+ERAIDTYPE_ERAIDTYPE_GUILDFIRE_ENUM.number = 14
+ERAIDTYPE_ERAIDTYPE_PVP_LLH_ENUM.name = "ERAIDTYPE_PVP_LLH"
+ERAIDTYPE_ERAIDTYPE_PVP_LLH_ENUM.index = 15
+ERAIDTYPE_ERAIDTYPE_PVP_LLH_ENUM.number = 21
+ERAIDTYPE_ERAIDTYPE_PVP_SMZL_ENUM.name = "ERAIDTYPE_PVP_SMZL"
+ERAIDTYPE_ERAIDTYPE_PVP_SMZL_ENUM.index = 16
+ERAIDTYPE_ERAIDTYPE_PVP_SMZL_ENUM.number = 22
+ERAIDTYPE_ERAIDTYPE_PVP_HLJS_ENUM.name = "ERAIDTYPE_PVP_HLJS"
+ERAIDTYPE_ERAIDTYPE_PVP_HLJS_ENUM.index = 17
+ERAIDTYPE_ERAIDTYPE_PVP_HLJS_ENUM.number = 23
+ERAIDTYPE_ERAIDTYPE_DATELAND_ENUM.name = "ERAIDTYPE_DATELAND"
+ERAIDTYPE_ERAIDTYPE_DATELAND_ENUM.index = 18
+ERAIDTYPE_ERAIDTYPE_DATELAND_ENUM.number = 24
+ERAIDTYPE_ERAIDTYPE_PVP_POLLY_ENUM.name = "ERAIDTYPE_PVP_POLLY"
+ERAIDTYPE_ERAIDTYPE_PVP_POLLY_ENUM.index = 19
+ERAIDTYPE_ERAIDTYPE_PVP_POLLY_ENUM.number = 25
+ERAIDTYPE_ERAIDTYPE_WEDDING_ENUM.name = "ERAIDTYPE_WEDDING"
+ERAIDTYPE_ERAIDTYPE_WEDDING_ENUM.index = 20
+ERAIDTYPE_ERAIDTYPE_WEDDING_ENUM.number = 26
+ERAIDTYPE_ERAIDTYPE_DIVORCE_ROLLER_COASTER_ENUM.name = "ERAIDTYPE_DIVORCE_ROLLER_COASTER"
+ERAIDTYPE_ERAIDTYPE_DIVORCE_ROLLER_COASTER_ENUM.index = 21
+ERAIDTYPE_ERAIDTYPE_DIVORCE_ROLLER_COASTER_ENUM.number = 27
+ERAIDTYPE_ERAIDTYPE_PVECARD_ENUM.name = "ERAIDTYPE_PVECARD"
+ERAIDTYPE_ERAIDTYPE_PVECARD_ENUM.index = 22
+ERAIDTYPE_ERAIDTYPE_PVECARD_ENUM.number = 28
+ERAIDTYPE_ERAIDTYPE_MVPBATTLE_ENUM.name = "ERAIDTYPE_MVPBATTLE"
+ERAIDTYPE_ERAIDTYPE_MVPBATTLE_ENUM.index = 23
+ERAIDTYPE_ERAIDTYPE_MVPBATTLE_ENUM.number = 29
+ERAIDTYPE_ERAIDTYPE_SUPERGVG_ENUM.name = "ERAIDTYPE_SUPERGVG"
+ERAIDTYPE_ERAIDTYPE_SUPERGVG_ENUM.index = 24
+ERAIDTYPE_ERAIDTYPE_SUPERGVG_ENUM.number = 30
+ERAIDTYPE_ERAIDTYPE_ALTMAN_ENUM.name = "ERAIDTYPE_ALTMAN"
+ERAIDTYPE_ERAIDTYPE_ALTMAN_ENUM.index = 25
+ERAIDTYPE_ERAIDTYPE_ALTMAN_ENUM.number = 31
+ERAIDTYPE_ERAIDTYPE_TEAMPWS_ENUM.name = "ERAIDTYPE_TEAMPWS"
+ERAIDTYPE_ERAIDTYPE_TEAMPWS_ENUM.index = 26
+ERAIDTYPE_ERAIDTYPE_TEAMPWS_ENUM.number = 32
+ERAIDTYPE_ERAIDTYPE_TEAMEXP_ENUM.name = "ERAIDTYPE_TEAMEXP"
+ERAIDTYPE_ERAIDTYPE_TEAMEXP_ENUM.index = 27
+ERAIDTYPE_ERAIDTYPE_TEAMEXP_ENUM.number = 34
+ERAIDTYPE_ERAIDTYPE_THANATOS_ENUM.name = "ERAIDTYPE_THANATOS"
+ERAIDTYPE_ERAIDTYPE_THANATOS_ENUM.index = 28
+ERAIDTYPE_ERAIDTYPE_THANATOS_ENUM.number = 35
+ERAIDTYPE_ERAIDTYPE_THANATOS_MID_ENUM.name = "ERAIDTYPE_THANATOS_MID"
+ERAIDTYPE_ERAIDTYPE_THANATOS_MID_ENUM.index = 29
+ERAIDTYPE_ERAIDTYPE_THANATOS_MID_ENUM.number = 36
+ERAIDTYPE_ERAIDTYPE_HOUSE_ENUM.name = "ERAIDTYPE_HOUSE"
+ERAIDTYPE_ERAIDTYPE_HOUSE_ENUM.index = 30
+ERAIDTYPE_ERAIDTYPE_HOUSE_ENUM.number = 37
+ERAIDTYPE_ERAIDTYPE_THANATOS_SCENE3_ENUM.name = "ERAIDTYPE_THANATOS_SCENE3"
+ERAIDTYPE_ERAIDTYPE_THANATOS_SCENE3_ENUM.index = 31
+ERAIDTYPE_ERAIDTYPE_THANATOS_SCENE3_ENUM.number = 38
+ERAIDTYPE_ERAIDTYPE_KUMAMOTO_ENUM.name = "ERAIDTYPE_KUMAMOTO"
+ERAIDTYPE_ERAIDTYPE_KUMAMOTO_ENUM.index = 32
+ERAIDTYPE_ERAIDTYPE_KUMAMOTO_ENUM.number = 39
+ERAIDTYPE_ERAIDTYPE_THANATOS_FOURTH_ENUM.name = "ERAIDTYPE_THANATOS_FOURTH"
+ERAIDTYPE_ERAIDTYPE_THANATOS_FOURTH_ENUM.index = 33
+ERAIDTYPE_ERAIDTYPE_THANATOS_FOURTH_ENUM.number = 40
+ERAIDTYPE_ERAIDTYPE_GARDEN_ENUM.name = "ERAIDTYPE_GARDEN"
+ERAIDTYPE_ERAIDTYPE_GARDEN_ENUM.index = 34
+ERAIDTYPE_ERAIDTYPE_GARDEN_ENUM.number = 41
+ERAIDTYPE_ERAIDTYPE_THANKSGIVING_ENUM.name = "ERAIDTYPE_THANKSGIVING"
+ERAIDTYPE_ERAIDTYPE_THANKSGIVING_ENUM.index = 35
+ERAIDTYPE_ERAIDTYPE_THANKSGIVING_ENUM.number = 42
+ERAIDTYPE_ERAIDTYPE_HEADWEAR_ENUM.name = "ERAIDTYPE_HEADWEAR"
+ERAIDTYPE_ERAIDTYPE_HEADWEAR_ENUM.index = 36
+ERAIDTYPE_ERAIDTYPE_HEADWEAR_ENUM.number = 43
+ERAIDTYPE_ERAIDTYPE_OTHELLO_ENUM.name = "ERAIDTYPE_OTHELLO"
+ERAIDTYPE_ERAIDTYPE_OTHELLO_ENUM.index = 37
+ERAIDTYPE_ERAIDTYPE_OTHELLO_ENUM.number = 44
+ERAIDTYPE_ERAIDTYPE_SPRING_ENUM.name = "ERAIDTYPE_SPRING"
+ERAIDTYPE_ERAIDTYPE_SPRING_ENUM.index = 38
+ERAIDTYPE_ERAIDTYPE_SPRING_ENUM.number = 45
+ERAIDTYPE_ERAIDTYPE_ROGUELIKE_ENUM.name = "ERAIDTYPE_ROGUELIKE"
+ERAIDTYPE_ERAIDTYPE_ROGUELIKE_ENUM.index = 39
+ERAIDTYPE_ERAIDTYPE_ROGUELIKE_ENUM.number = 46
+ERAIDTYPE_ERAIDTYPE_MONSTER_ANSWER_ENUM.name = "ERAIDTYPE_MONSTER_ANSWER"
+ERAIDTYPE_ERAIDTYPE_MONSTER_ANSWER_ENUM.index = 40
+ERAIDTYPE_ERAIDTYPE_MONSTER_ANSWER_ENUM.number = 47
+ERAIDTYPE_ERAIDTYPE_MONSTER_PHOTO_ENUM.name = "ERAIDTYPE_MONSTER_PHOTO"
+ERAIDTYPE_ERAIDTYPE_MONSTER_PHOTO_ENUM.index = 41
+ERAIDTYPE_ERAIDTYPE_MONSTER_PHOTO_ENUM.number = 48
+ERAIDTYPE_ERAIDTYPE_TRANSFERFIGHT_ENUM.name = "ERAIDTYPE_TRANSFERFIGHT"
+ERAIDTYPE_ERAIDTYPE_TRANSFERFIGHT_ENUM.index = 42
+ERAIDTYPE_ERAIDTYPE_TRANSFERFIGHT_ENUM.number = 49
+ERAIDTYPE_ERAIDTYPE_TWELVE_PVP_ENUM.name = "ERAIDTYPE_TWELVE_PVP"
+ERAIDTYPE_ERAIDTYPE_TWELVE_PVP_ENUM.index = 43
+ERAIDTYPE_ERAIDTYPE_TWELVE_PVP_ENUM.number = 50
+ERAIDTYPE_ERAIDTYPE_DEADBOSS_ENUM.name = "ERAIDTYPE_DEADBOSS"
+ERAIDTYPE_ERAIDTYPE_DEADBOSS_ENUM.index = 44
+ERAIDTYPE_ERAIDTYPE_DEADBOSS_ENUM.number = 51
+ERAIDTYPE_ERAIDTYPE_EINHERJAR_ENUM.name = "ERAIDTYPE_EINHERJAR"
+ERAIDTYPE_ERAIDTYPE_EINHERJAR_ENUM.index = 45
+ERAIDTYPE_ERAIDTYPE_EINHERJAR_ENUM.number = 52
+ERAIDTYPE_ERAIDTYPE_QTE_CHASING_ENUM.name = "ERAIDTYPE_QTE_CHASING"
+ERAIDTYPE_ERAIDTYPE_QTE_CHASING_ENUM.index = 46
+ERAIDTYPE_ERAIDTYPE_QTE_CHASING_ENUM.number = 53
+ERAIDTYPE_ERAIDTYPE_SLAYERS_ENUM.name = "ERAIDTYPE_SLAYERS"
+ERAIDTYPE_ERAIDTYPE_SLAYERS_ENUM.index = 47
+ERAIDTYPE_ERAIDTYPE_SLAYERS_ENUM.number = 54
+ERAIDTYPE_ERAIDTYPE_ENDLESSTOWER_PRIVATE_ENUM.name = "ERAIDTYPE_ENDLESSTOWER_PRIVATE"
+ERAIDTYPE_ERAIDTYPE_ENDLESSTOWER_PRIVATE_ENUM.index = 48
+ERAIDTYPE_ERAIDTYPE_ENDLESSTOWER_PRIVATE_ENUM.number = 55
+ERAIDTYPE_ERAIDTYPE_JANUARY_ENUM.name = "ERAIDTYPE_JANUARY"
+ERAIDTYPE_ERAIDTYPE_JANUARY_ENUM.index = 49
+ERAIDTYPE_ERAIDTYPE_JANUARY_ENUM.number = 56
+ERAIDTYPE_ERAIDTYPE_MAY_ENUM.name = "ERAIDTYPE_MAY"
+ERAIDTYPE_ERAIDTYPE_MAY_ENUM.index = 50
+ERAIDTYPE_ERAIDTYPE_MAY_ENUM.number = 57
+ERAIDTYPE_ERAIDTYPE_COMODO_TEAM_RAID_ENUM.name = "ERAIDTYPE_COMODO_TEAM_RAID"
+ERAIDTYPE_ERAIDTYPE_COMODO_TEAM_RAID_ENUM.index = 51
+ERAIDTYPE_ERAIDTYPE_COMODO_TEAM_RAID_ENUM.number = 59
+ERAIDTYPE_ERAIDTYPE_MANOR_ENUM.name = "ERAIDTYPE_MANOR"
+ERAIDTYPE_ERAIDTYPE_MANOR_ENUM.index = 52
+ERAIDTYPE_ERAIDTYPE_MANOR_ENUM.number = 60
+ERAIDTYPE_ERAIDTYPE_DISNEY_MUSIC_ENUM.name = "ERAIDTYPE_DISNEY_MUSIC"
+ERAIDTYPE_ERAIDTYPE_DISNEY_MUSIC_ENUM.index = 53
+ERAIDTYPE_ERAIDTYPE_DISNEY_MUSIC_ENUM.number = 61
+ERAIDTYPE_ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID_ENUM.name = "ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID"
+ERAIDTYPE_ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID_ENUM.index = 54
+ERAIDTYPE_ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID_ENUM.number = 62
+ERAIDTYPE_ERAIDTYPE_HEART_LOCK_ENUM.name = "ERAIDTYPE_HEART_LOCK"
+ERAIDTYPE_ERAIDTYPE_HEART_LOCK_ENUM.index = 55
+ERAIDTYPE_ERAIDTYPE_HEART_LOCK_ENUM.number = 63
+ERAIDTYPE_ERAIDTYPE_HEADWEARACTIVITY_ENUM.name = "ERAIDTYPE_HEADWEARACTIVITY"
+ERAIDTYPE_ERAIDTYPE_HEADWEARACTIVITY_ENUM.index = 56
+ERAIDTYPE_ERAIDTYPE_HEADWEARACTIVITY_ENUM.number = 64
+ERAIDTYPE_ERAIDTYPE_CRACK_ENUM.name = "ERAIDTYPE_CRACK"
+ERAIDTYPE_ERAIDTYPE_CRACK_ENUM.index = 57
+ERAIDTYPE_ERAIDTYPE_CRACK_ENUM.number = 65
+ERAIDTYPE_ERAIDTYPE_GVG_LOBBY_ENUM.name = "ERAIDTYPE_GVG_LOBBY"
+ERAIDTYPE_ERAIDTYPE_GVG_LOBBY_ENUM.index = 58
+ERAIDTYPE_ERAIDTYPE_GVG_LOBBY_ENUM.number = 66
+ERAIDTYPE_ERAIDTYPE_PROFESSION_TRIAL_ENUM.name = "ERAIDTYPE_PROFESSION_TRIAL"
+ERAIDTYPE_ERAIDTYPE_PROFESSION_TRIAL_ENUM.index = 59
+ERAIDTYPE_ERAIDTYPE_PROFESSION_TRIAL_ENUM.number = 67
+ERAIDTYPE_ERAIDTYPE_MAX_ENUM.name = "ERAIDTYPE_MAX"
+ERAIDTYPE_ERAIDTYPE_MAX_ENUM.index = 60
+ERAIDTYPE_ERAIDTYPE_MAX_ENUM.number = 68
+ERAIDTYPE.name = "ERaidType"
+ERAIDTYPE.full_name = ".Cmd.ERaidType"
+ERAIDTYPE.values = {
+  ERAIDTYPE_ERAIDTYPE_MIN_ENUM,
+  ERAIDTYPE_ERAIDTYPE_FERRISWHEEL_ENUM,
+  ERAIDTYPE_ERAIDTYPE_NORMAL_ENUM,
+  ERAIDTYPE_ERAIDTYPE_EXCHANGE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_TOWER_ENUM,
+  ERAIDTYPE_ERAIDTYPE_LABORATORY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_EXCHANGEGALLERY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_SEAL_ENUM,
+  ERAIDTYPE_ERAIDTYPE_RAIDTEMP2_ENUM,
+  ERAIDTYPE_ERAIDTYPE_DOJO_ENUM,
+  ERAIDTYPE_ERAIDTYPE_GUILD_ENUM,
+  ERAIDTYPE_ERAIDTYPE_RAIDTEMP4_ENUM,
+  ERAIDTYPE_ERAIDTYPE_ITEMIMAGE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_GUILDRAID_ENUM,
+  ERAIDTYPE_ERAIDTYPE_GUILDFIRE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_PVP_LLH_ENUM,
+  ERAIDTYPE_ERAIDTYPE_PVP_SMZL_ENUM,
+  ERAIDTYPE_ERAIDTYPE_PVP_HLJS_ENUM,
+  ERAIDTYPE_ERAIDTYPE_DATELAND_ENUM,
+  ERAIDTYPE_ERAIDTYPE_PVP_POLLY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_WEDDING_ENUM,
+  ERAIDTYPE_ERAIDTYPE_DIVORCE_ROLLER_COASTER_ENUM,
+  ERAIDTYPE_ERAIDTYPE_PVECARD_ENUM,
+  ERAIDTYPE_ERAIDTYPE_MVPBATTLE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_SUPERGVG_ENUM,
+  ERAIDTYPE_ERAIDTYPE_ALTMAN_ENUM,
+  ERAIDTYPE_ERAIDTYPE_TEAMPWS_ENUM,
+  ERAIDTYPE_ERAIDTYPE_TEAMEXP_ENUM,
+  ERAIDTYPE_ERAIDTYPE_THANATOS_ENUM,
+  ERAIDTYPE_ERAIDTYPE_THANATOS_MID_ENUM,
+  ERAIDTYPE_ERAIDTYPE_HOUSE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_THANATOS_SCENE3_ENUM,
+  ERAIDTYPE_ERAIDTYPE_KUMAMOTO_ENUM,
+  ERAIDTYPE_ERAIDTYPE_THANATOS_FOURTH_ENUM,
+  ERAIDTYPE_ERAIDTYPE_GARDEN_ENUM,
+  ERAIDTYPE_ERAIDTYPE_THANKSGIVING_ENUM,
+  ERAIDTYPE_ERAIDTYPE_HEADWEAR_ENUM,
+  ERAIDTYPE_ERAIDTYPE_OTHELLO_ENUM,
+  ERAIDTYPE_ERAIDTYPE_SPRING_ENUM,
+  ERAIDTYPE_ERAIDTYPE_ROGUELIKE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_MONSTER_ANSWER_ENUM,
+  ERAIDTYPE_ERAIDTYPE_MONSTER_PHOTO_ENUM,
+  ERAIDTYPE_ERAIDTYPE_TRANSFERFIGHT_ENUM,
+  ERAIDTYPE_ERAIDTYPE_TWELVE_PVP_ENUM,
+  ERAIDTYPE_ERAIDTYPE_DEADBOSS_ENUM,
+  ERAIDTYPE_ERAIDTYPE_EINHERJAR_ENUM,
+  ERAIDTYPE_ERAIDTYPE_QTE_CHASING_ENUM,
+  ERAIDTYPE_ERAIDTYPE_SLAYERS_ENUM,
+  ERAIDTYPE_ERAIDTYPE_ENDLESSTOWER_PRIVATE_ENUM,
+  ERAIDTYPE_ERAIDTYPE_JANUARY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_MAY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_COMODO_TEAM_RAID_ENUM,
+  ERAIDTYPE_ERAIDTYPE_MANOR_ENUM,
+  ERAIDTYPE_ERAIDTYPE_DISNEY_MUSIC_ENUM,
+  ERAIDTYPE_ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID_ENUM,
+  ERAIDTYPE_ERAIDTYPE_HEART_LOCK_ENUM,
+  ERAIDTYPE_ERAIDTYPE_HEADWEARACTIVITY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_CRACK_ENUM,
+  ERAIDTYPE_ERAIDTYPE_GVG_LOBBY_ENUM,
+  ERAIDTYPE_ERAIDTYPE_PROFESSION_TRIAL_ENUM,
+  ERAIDTYPE_ERAIDTYPE_MAX_ENUM
+}
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_NORMAL_ENUM.name = "EEENDLESSPRIVATE_MONSTER_NORMAL"
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_NORMAL_ENUM.index = 0
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_NORMAL_ENUM.number = 0
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_ADVANCE_ENUM.name = "EEENDLESSPRIVATE_MONSTER_ADVANCE"
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_ADVANCE_ENUM.index = 1
+EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_ADVANCE_ENUM.number = 1
+EENDLESSPRIVATEMONSTERTYPE.name = "EEndlessPrivateMonsterType"
+EENDLESSPRIVATEMONSTERTYPE.full_name = ".Cmd.EEndlessPrivateMonsterType"
+EENDLESSPRIVATEMONSTERTYPE.values = {
+  EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_NORMAL_ENUM,
+  EENDLESSPRIVATEMONSTERTYPE_EEENDLESSPRIVATE_MONSTER_ADVANCE_ENUM
+}
+EPVEGROUPTYPE_EPVEGROUPTYPE_MIN_ENUM.name = "EPVEGROUPTYPE_MIN"
+EPVEGROUPTYPE_EPVEGROUPTYPE_MIN_ENUM.index = 0
+EPVEGROUPTYPE_EPVEGROUPTYPE_MIN_ENUM.number = 0
+EPVEGROUPTYPE_EPVEGROUPTYPE_COMODO_ENUM.name = "EPVEGROUPTYPE_COMODO"
+EPVEGROUPTYPE_EPVEGROUPTYPE_COMODO_ENUM.index = 1
+EPVEGROUPTYPE_EPVEGROUPTYPE_COMODO_ENUM.number = 1
+EPVEGROUPTYPE_EPVEGROUPTYPE_MULTIBOSS_ENUM.name = "EPVEGROUPTYPE_MULTIBOSS"
+EPVEGROUPTYPE_EPVEGROUPTYPE_MULTIBOSS_ENUM.index = 2
+EPVEGROUPTYPE_EPVEGROUPTYPE_MULTIBOSS_ENUM.number = 2
+EPVEGROUPTYPE_EPVEGROUPTYPE_HEADWEAR_ENUM.name = "EPVEGROUPTYPE_HEADWEAR"
+EPVEGROUPTYPE_EPVEGROUPTYPE_HEADWEAR_ENUM.index = 3
+EPVEGROUPTYPE_EPVEGROUPTYPE_HEADWEAR_ENUM.number = 3
+EPVEGROUPTYPE_EPVEGROUPTYPE_CARD_ENUM.name = "EPVEGROUPTYPE_CARD"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CARD_ENUM.index = 4
+EPVEGROUPTYPE_EPVEGROUPTYPE_CARD_ENUM.number = 4
+EPVEGROUPTYPE_EPVEGROUPTYPE_ENDLESS_ENUM.name = "EPVEGROUPTYPE_ENDLESS"
+EPVEGROUPTYPE_EPVEGROUPTYPE_ENDLESS_ENUM.index = 5
+EPVEGROUPTYPE_EPVEGROUPTYPE_ENDLESS_ENUM.number = 5
+EPVEGROUPTYPE_EPVEGROUPTYPE_DEADBOSS_ENUM.name = "EPVEGROUPTYPE_DEADBOSS"
+EPVEGROUPTYPE_EPVEGROUPTYPE_DEADBOSS_ENUM.index = 6
+EPVEGROUPTYPE_EPVEGROUPTYPE_DEADBOSS_ENUM.number = 6
+EPVEGROUPTYPE_EPVEGROUPTYPE_THANATOS_ENUM.name = "EPVEGROUPTYPE_THANATOS"
+EPVEGROUPTYPE_EPVEGROUPTYPE_THANATOS_ENUM.index = 7
+EPVEGROUPTYPE_EPVEGROUPTYPE_THANATOS_ENUM.number = 7
+EPVEGROUPTYPE_EPVEGROUPTYPE_ROGUELIKE_ENUM.name = "EPVEGROUPTYPE_ROGUELIKE"
+EPVEGROUPTYPE_EPVEGROUPTYPE_ROGUELIKE_ENUM.index = 8
+EPVEGROUPTYPE_EPVEGROUPTYPE_ROGUELIKE_ENUM.number = 8
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_ONE_ENUM.name = "EPVEGROUPTYPE_CRACK_ONE"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_ONE_ENUM.index = 9
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_ONE_ENUM.number = 9
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TWO_ENUM.name = "EPVEGROUPTYPE_CRACK_TWO"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TWO_ENUM.index = 10
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TWO_ENUM.number = 10
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_THREE_ENUM.name = "EPVEGROUPTYPE_CRACK_THREE"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_THREE_ENUM.index = 11
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_THREE_ENUM.number = 11
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FOUR_ENUM.name = "EPVEGROUPTYPE_CRACK_FOUR"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FOUR_ENUM.index = 12
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FOUR_ENUM.number = 12
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FIVE_ENUM.name = "EPVEGROUPTYPE_CRACK_FIVE"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FIVE_ENUM.index = 13
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FIVE_ENUM.number = 13
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SIX_ENUM.name = "EPVEGROUPTYPE_CRACK_SIX"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SIX_ENUM.index = 14
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SIX_ENUM.number = 14
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SEVEN_ENUM.name = "EPVEGROUPTYPE_CRACK_SEVEN"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SEVEN_ENUM.index = 15
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SEVEN_ENUM.number = 15
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_EIGHT_ENUM.name = "EPVEGROUPTYPE_CRACK_EIGHT"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_EIGHT_ENUM.index = 16
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_EIGHT_ENUM.number = 16
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_NINE_ENUM.name = "EPVEGROUPTYPE_CRACK_NINE"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_NINE_ENUM.index = 17
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_NINE_ENUM.number = 17
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TEN_ENUM.name = "EPVEGROUPTYPE_CRACK_TEN"
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TEN_ENUM.index = 18
+EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TEN_ENUM.number = 18
+EPVEGROUPTYPE_EPVEGROUPTYPE_GUILD_RAID_ENUM.name = "EPVEGROUPTYPE_GUILD_RAID"
+EPVEGROUPTYPE_EPVEGROUPTYPE_GUILD_RAID_ENUM.index = 19
+EPVEGROUPTYPE_EPVEGROUPTYPE_GUILD_RAID_ENUM.number = 19
+EPVEGROUPTYPE_EPVEGROUPTYPE_MAX_ENUM.name = "EPVEGROUPTYPE_MAX"
+EPVEGROUPTYPE_EPVEGROUPTYPE_MAX_ENUM.index = 20
+EPVEGROUPTYPE_EPVEGROUPTYPE_MAX_ENUM.number = 20
+EPVEGROUPTYPE.name = "EPveGroupType"
+EPVEGROUPTYPE.full_name = ".Cmd.EPveGroupType"
+EPVEGROUPTYPE.values = {
+  EPVEGROUPTYPE_EPVEGROUPTYPE_MIN_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_COMODO_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_MULTIBOSS_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_HEADWEAR_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CARD_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_ENDLESS_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_DEADBOSS_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_THANATOS_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_ROGUELIKE_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_ONE_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TWO_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_THREE_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FOUR_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_FIVE_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SIX_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_SEVEN_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_EIGHT_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_NINE_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_CRACK_TEN_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_GUILD_RAID_ENUM,
+  EPVEGROUPTYPE_EPVEGROUPTYPE_MAX_ENUM
+}
+EGUILDGATESTATE_EGUILDGATESTATE_MIN_ENUM.name = "EGUILDGATESTATE_MIN"
+EGUILDGATESTATE_EGUILDGATESTATE_MIN_ENUM.index = 0
+EGUILDGATESTATE_EGUILDGATESTATE_MIN_ENUM.number = 0
+EGUILDGATESTATE_EGUILDGATESTATE_LOCK_ENUM.name = "EGUILDGATESTATE_LOCK"
+EGUILDGATESTATE_EGUILDGATESTATE_LOCK_ENUM.index = 1
+EGUILDGATESTATE_EGUILDGATESTATE_LOCK_ENUM.number = 1
+EGUILDGATESTATE_EGUILDGATESTATE_CLOSE_ENUM.name = "EGUILDGATESTATE_CLOSE"
+EGUILDGATESTATE_EGUILDGATESTATE_CLOSE_ENUM.index = 2
+EGUILDGATESTATE_EGUILDGATESTATE_CLOSE_ENUM.number = 2
+EGUILDGATESTATE_EGUILDGATESTATE_OPEN_ENUM.name = "EGUILDGATESTATE_OPEN"
+EGUILDGATESTATE_EGUILDGATESTATE_OPEN_ENUM.index = 3
+EGUILDGATESTATE_EGUILDGATESTATE_OPEN_ENUM.number = 3
+EGUILDGATESTATE.name = "EGuildGateState"
+EGUILDGATESTATE.full_name = ".Cmd.EGuildGateState"
+EGUILDGATESTATE.values = {
+  EGUILDGATESTATE_EGUILDGATESTATE_MIN_ENUM,
+  EGUILDGATESTATE_EGUILDGATESTATE_LOCK_ENUM,
+  EGUILDGATESTATE_EGUILDGATESTATE_CLOSE_ENUM,
+  EGUILDGATESTATE_EGUILDGATESTATE_OPEN_ENUM
+}
+EGUILDGATEOPT_EGUILDGATEOPT_UNLOCK_ENUM.name = "EGUILDGATEOPT_UNLOCK"
+EGUILDGATEOPT_EGUILDGATEOPT_UNLOCK_ENUM.index = 0
+EGUILDGATEOPT_EGUILDGATEOPT_UNLOCK_ENUM.number = 1
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENUM.name = "EGUILDGATEOPT_OPEN"
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENUM.index = 1
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENUM.number = 2
+EGUILDGATEOPT_EGUILDGATEOPT_ENTER_ENUM.name = "EGUILDGATEOPT_ENTER"
+EGUILDGATEOPT_EGUILDGATEOPT_ENTER_ENUM.index = 2
+EGUILDGATEOPT_EGUILDGATEOPT_ENTER_ENUM.number = 3
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENTER_ENUM.name = "EGUILDGATEOPT_OPEN_ENTER"
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENTER_ENUM.index = 3
+EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENTER_ENUM.number = 4
+EGUILDGATEOPT.name = "EGuildGateOpt"
+EGUILDGATEOPT.full_name = ".Cmd.EGuildGateOpt"
+EGUILDGATEOPT.values = {
+  EGUILDGATEOPT_EGUILDGATEOPT_UNLOCK_ENUM,
+  EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENUM,
+  EGUILDGATEOPT_EGUILDGATEOPT_ENTER_ENUM,
+  EGUILDGATEOPT_EGUILDGATEOPT_OPEN_ENTER_ENUM
+}
+EGVGPOINTSTATE_EGVGPOINT_STATE_MIN_ENUM.name = "EGVGPOINT_STATE_MIN"
+EGVGPOINTSTATE_EGVGPOINT_STATE_MIN_ENUM.index = 0
+EGVGPOINTSTATE_EGVGPOINT_STATE_MIN_ENUM.number = 0
+EGVGPOINTSTATE_EGVGPOINT_STATE_OCCUPIED_ENUM.name = "EGVGPOINT_STATE_OCCUPIED"
+EGVGPOINTSTATE_EGVGPOINT_STATE_OCCUPIED_ENUM.index = 1
+EGVGPOINTSTATE_EGVGPOINT_STATE_OCCUPIED_ENUM.number = 1
+EGVGPOINTSTATE.name = "EGvgPointState"
+EGVGPOINTSTATE.full_name = ".Cmd.EGvgPointState"
+EGVGPOINTSTATE.values = {
+  EGVGPOINTSTATE_EGVGPOINT_STATE_MIN_ENUM,
+  EGVGPOINTSTATE_EGVGPOINT_STATE_OCCUPIED_ENUM
+}
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEF_ENUM.name = "EGUILDFIRERESULT_DEF"
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEF_ENUM.index = 0
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEF_ENUM.number = 1
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEFSPEC_ENUM.name = "EGUILDFIRERESULT_DEFSPEC"
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEFSPEC_ENUM.index = 1
+EGUILDFIRERESULT_EGUILDFIRERESULT_DEFSPEC_ENUM.number = 2
+EGUILDFIRERESULT_EGUILDFIRERESULT_ATTACK_ENUM.name = "EGUILDFIRERESULT_ATTACK"
+EGUILDFIRERESULT_EGUILDFIRERESULT_ATTACK_ENUM.index = 2
+EGUILDFIRERESULT_EGUILDFIRERESULT_ATTACK_ENUM.number = 3
+EGUILDFIRERESULT.name = "EGuildFireResult"
+EGUILDFIRERESULT.full_name = ".Cmd.EGuildFireResult"
+EGUILDFIRERESULT.values = {
+  EGUILDFIRERESULT_EGUILDFIRERESULT_DEF_ENUM,
+  EGUILDFIRERESULT_EGUILDFIRERESULT_DEFSPEC_ENUM,
+  EGUILDFIRERESULT_EGUILDFIRERESULT_ATTACK_ENUM
+}
+EGVGDATATYPE_EGVGDATA_MIN_ENUM.name = "EGVGDATA_MIN"
+EGVGDATATYPE_EGVGDATA_MIN_ENUM.index = 0
+EGVGDATATYPE_EGVGDATA_MIN_ENUM.number = 0
+EGVGDATATYPE_EGVGDATA_PARTINTIME_ENUM.name = "EGVGDATA_PARTINTIME"
+EGVGDATATYPE_EGVGDATA_PARTINTIME_ENUM.index = 1
+EGVGDATATYPE_EGVGDATA_PARTINTIME_ENUM.number = 1
+EGVGDATATYPE_EGVGDATA_KILLMON_ENUM.name = "EGVGDATA_KILLMON"
+EGVGDATATYPE_EGVGDATA_KILLMON_ENUM.index = 2
+EGVGDATATYPE_EGVGDATA_KILLMON_ENUM.number = 2
+EGVGDATATYPE_EGVGDATA_RELIVE_ENUM.name = "EGVGDATA_RELIVE"
+EGVGDATATYPE_EGVGDATA_RELIVE_ENUM.index = 3
+EGVGDATATYPE_EGVGDATA_RELIVE_ENUM.number = 3
+EGVGDATATYPE_EGVGDATA_EXPEL_ENUM.name = "EGVGDATA_EXPEL"
+EGVGDATATYPE_EGVGDATA_EXPEL_ENUM.index = 4
+EGVGDATATYPE_EGVGDATA_EXPEL_ENUM.number = 4
+EGVGDATATYPE_EGVGDATA_DAMMETAL_ENUM.name = "EGVGDATA_DAMMETAL"
+EGVGDATATYPE_EGVGDATA_DAMMETAL_ENUM.index = 5
+EGVGDATATYPE_EGVGDATA_DAMMETAL_ENUM.number = 5
+EGVGDATATYPE_EGVGDATA_KILLMETAL_ENUM.name = "EGVGDATA_KILLMETAL"
+EGVGDATATYPE_EGVGDATA_KILLMETAL_ENUM.index = 6
+EGVGDATATYPE_EGVGDATA_KILLMETAL_ENUM.number = 6
+EGVGDATATYPE_EGVGDATA_KILLUSER_ENUM.name = "EGVGDATA_KILLUSER"
+EGVGDATATYPE_EGVGDATA_KILLUSER_ENUM.index = 7
+EGVGDATATYPE_EGVGDATA_KILLUSER_ENUM.number = 7
+EGVGDATATYPE_EGVGDATA_HONOR_ENUM.name = "EGVGDATA_HONOR"
+EGVGDATATYPE_EGVGDATA_HONOR_ENUM.index = 8
+EGVGDATATYPE_EGVGDATA_HONOR_ENUM.number = 8
+EGVGDATATYPE_EGVGDATA_OCCUPY_POINT_ENUM.name = "EGVGDATA_OCCUPY_POINT"
+EGVGDATATYPE_EGVGDATA_OCCUPY_POINT_ENUM.index = 9
+EGVGDATATYPE_EGVGDATA_OCCUPY_POINT_ENUM.number = 9
+EGVGDATATYPE_EGVGDATA_COIN_ENUM.name = "EGVGDATA_COIN"
+EGVGDATATYPE_EGVGDATA_COIN_ENUM.index = 10
+EGVGDATATYPE_EGVGDATA_COIN_ENUM.number = 10
+EGVGDATATYPE_EGVGDATA_DEF_POINT_TIME_ENUM.name = "EGVGDATA_DEF_POINT_TIME"
+EGVGDATATYPE_EGVGDATA_DEF_POINT_TIME_ENUM.index = 11
+EGVGDATATYPE_EGVGDATA_DEF_POINT_TIME_ENUM.number = 11
+EGVGDATATYPE_EGVGDATA_PARTIN_KILLMETAL_ENUM.name = "EGVGDATA_PARTIN_KILLMETAL"
+EGVGDATATYPE_EGVGDATA_PARTIN_KILLMETAL_ENUM.index = 12
+EGVGDATATYPE_EGVGDATA_PARTIN_KILLMETAL_ENUM.number = 12
+EGVGDATATYPE.name = "EGvgDataType"
+EGVGDATATYPE.full_name = ".Cmd.EGvgDataType"
+EGVGDATATYPE.values = {
+  EGVGDATATYPE_EGVGDATA_MIN_ENUM,
+  EGVGDATATYPE_EGVGDATA_PARTINTIME_ENUM,
+  EGVGDATATYPE_EGVGDATA_KILLMON_ENUM,
+  EGVGDATATYPE_EGVGDATA_RELIVE_ENUM,
+  EGVGDATATYPE_EGVGDATA_EXPEL_ENUM,
+  EGVGDATATYPE_EGVGDATA_DAMMETAL_ENUM,
+  EGVGDATATYPE_EGVGDATA_KILLMETAL_ENUM,
+  EGVGDATATYPE_EGVGDATA_KILLUSER_ENUM,
+  EGVGDATATYPE_EGVGDATA_HONOR_ENUM,
+  EGVGDATATYPE_EGVGDATA_OCCUPY_POINT_ENUM,
+  EGVGDATATYPE_EGVGDATA_COIN_ENUM,
+  EGVGDATATYPE_EGVGDATA_DEF_POINT_TIME_ENUM,
+  EGVGDATATYPE_EGVGDATA_PARTIN_KILLMETAL_ENUM
+}
+EGVGTOWERSTATE_EGVGTOWERSTATE_INITFREE_ENUM.name = "EGVGTOWERSTATE_INITFREE"
+EGVGTOWERSTATE_EGVGTOWERSTATE_INITFREE_ENUM.index = 0
+EGVGTOWERSTATE_EGVGTOWERSTATE_INITFREE_ENUM.number = 1
+EGVGTOWERSTATE_EGVGTOWERSTATE_OCCUPY_ENUM.name = "EGVGTOWERSTATE_OCCUPY"
+EGVGTOWERSTATE_EGVGTOWERSTATE_OCCUPY_ENUM.index = 1
+EGVGTOWERSTATE_EGVGTOWERSTATE_OCCUPY_ENUM.number = 2
+EGVGTOWERSTATE_EGVGTOWERSTATE_FREE_ENUM.name = "EGVGTOWERSTATE_FREE"
+EGVGTOWERSTATE_EGVGTOWERSTATE_FREE_ENUM.index = 2
+EGVGTOWERSTATE_EGVGTOWERSTATE_FREE_ENUM.number = 3
+EGVGTOWERSTATE.name = "EGvgTowerState"
+EGVGTOWERSTATE.full_name = ".Cmd.EGvgTowerState"
+EGVGTOWERSTATE.values = {
+  EGVGTOWERSTATE_EGVGTOWERSTATE_INITFREE_ENUM,
+  EGVGTOWERSTATE_EGVGTOWERSTATE_OCCUPY_ENUM,
+  EGVGTOWERSTATE_EGVGTOWERSTATE_FREE_ENUM
+}
+EGVGTOWERTYPE_EGVGTOWERTYPE_MIN_ENUM.name = "EGVGTOWERTYPE_MIN"
+EGVGTOWERTYPE_EGVGTOWERTYPE_MIN_ENUM.index = 0
+EGVGTOWERTYPE_EGVGTOWERTYPE_MIN_ENUM.number = 0
+EGVGTOWERTYPE_EGVGTOWERTYPE_CORE_ENUM.name = "EGVGTOWERTYPE_CORE"
+EGVGTOWERTYPE_EGVGTOWERTYPE_CORE_ENUM.index = 1
+EGVGTOWERTYPE_EGVGTOWERTYPE_CORE_ENUM.number = 1
+EGVGTOWERTYPE_EGVGTOWERTYPE_WEST_ENUM.name = "EGVGTOWERTYPE_WEST"
+EGVGTOWERTYPE_EGVGTOWERTYPE_WEST_ENUM.index = 2
+EGVGTOWERTYPE_EGVGTOWERTYPE_WEST_ENUM.number = 2
+EGVGTOWERTYPE_EGVGTOWERTYPE_EAST_ENUM.name = "EGVGTOWERTYPE_EAST"
+EGVGTOWERTYPE_EGVGTOWERTYPE_EAST_ENUM.index = 3
+EGVGTOWERTYPE_EGVGTOWERTYPE_EAST_ENUM.number = 3
+EGVGTOWERTYPE.name = "EGvgTowerType"
+EGVGTOWERTYPE.full_name = ".Cmd.EGvgTowerType"
+EGVGTOWERTYPE.values = {
+  EGVGTOWERTYPE_EGVGTOWERTYPE_MIN_ENUM,
+  EGVGTOWERTYPE_EGVGTOWERTYPE_CORE_ENUM,
+  EGVGTOWERTYPE_EGVGTOWERTYPE_WEST_ENUM,
+  EGVGTOWERTYPE_EGVGTOWERTYPE_EAST_ENUM
+}
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_MIN_ENUM.name = "EDEADBOSSDIFF_MIN"
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_MIN_ENUM.index = 0
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_MIN_ENUM.number = 0
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_NORMAL_ENUM.name = "EDEADBOSSDIFF_NORMAL"
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_NORMAL_ENUM.index = 1
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_NORMAL_ENUM.number = 2
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_HARD_ENUM.name = "EDEADBOSSDIFF_HARD"
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_HARD_ENUM.index = 2
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_HARD_ENUM.number = 3
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_SUPER_ENUM.name = "EDEADBOSSDIFF_SUPER"
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_SUPER_ENUM.index = 3
+EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_SUPER_ENUM.number = 4
+EDEADBOSSDIFFICULTY.name = "EDeadBossDifficulty"
+EDEADBOSSDIFFICULTY.full_name = ".Cmd.EDeadBossDifficulty"
+EDEADBOSSDIFFICULTY.values = {
+  EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_MIN_ENUM,
+  EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_NORMAL_ENUM,
+  EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_HARD_ENUM,
+  EDEADBOSSDIFFICULTY_EDEADBOSSDIFF_SUPER_ENUM
+}
+ETEAMPWSCOLOR_ETEAMPWS_MIN_ENUM.name = "ETEAMPWS_MIN"
+ETEAMPWSCOLOR_ETEAMPWS_MIN_ENUM.index = 0
+ETEAMPWSCOLOR_ETEAMPWS_MIN_ENUM.number = 0
+ETEAMPWSCOLOR_ETEAMPWS_RED_ENUM.name = "ETEAMPWS_RED"
+ETEAMPWSCOLOR_ETEAMPWS_RED_ENUM.index = 1
+ETEAMPWSCOLOR_ETEAMPWS_RED_ENUM.number = 1
+ETEAMPWSCOLOR_ETEAMPWS_BLUE_ENUM.name = "ETEAMPWS_BLUE"
+ETEAMPWSCOLOR_ETEAMPWS_BLUE_ENUM.index = 2
+ETEAMPWSCOLOR_ETEAMPWS_BLUE_ENUM.number = 2
+ETEAMPWSCOLOR.name = "ETeamPwsColor"
+ETEAMPWSCOLOR.full_name = ".Cmd.ETeamPwsColor"
+ETEAMPWSCOLOR.values = {
+  ETEAMPWSCOLOR_ETEAMPWS_MIN_ENUM,
+  ETEAMPWSCOLOR_ETEAMPWS_RED_ENUM,
+  ETEAMPWSCOLOR_ETEAMPWS_BLUE_ENUM
+}
+EMAGICBALLTYPE_EMAGICBALL_MIN_ENUM.name = "EMAGICBALL_MIN"
+EMAGICBALLTYPE_EMAGICBALL_MIN_ENUM.index = 0
+EMAGICBALLTYPE_EMAGICBALL_MIN_ENUM.number = 0
+EMAGICBALLTYPE_EMAGICBALL_WIND_ENUM.name = "EMAGICBALL_WIND"
+EMAGICBALLTYPE_EMAGICBALL_WIND_ENUM.index = 1
+EMAGICBALLTYPE_EMAGICBALL_WIND_ENUM.number = 1
+EMAGICBALLTYPE_EMAGICBALL_EARTH_ENUM.name = "EMAGICBALL_EARTH"
+EMAGICBALLTYPE_EMAGICBALL_EARTH_ENUM.index = 2
+EMAGICBALLTYPE_EMAGICBALL_EARTH_ENUM.number = 2
+EMAGICBALLTYPE_EMAGICBALL_WATER_ENUM.name = "EMAGICBALL_WATER"
+EMAGICBALLTYPE_EMAGICBALL_WATER_ENUM.index = 3
+EMAGICBALLTYPE_EMAGICBALL_WATER_ENUM.number = 3
+EMAGICBALLTYPE_EMAGICBALL_FIRE_ENUM.name = "EMAGICBALL_FIRE"
+EMAGICBALLTYPE_EMAGICBALL_FIRE_ENUM.index = 4
+EMAGICBALLTYPE_EMAGICBALL_FIRE_ENUM.number = 4
+EMAGICBALLTYPE.name = "EMagicBallType"
+EMAGICBALLTYPE.full_name = ".Cmd.EMagicBallType"
+EMAGICBALLTYPE.values = {
+  EMAGICBALLTYPE_EMAGICBALL_MIN_ENUM,
+  EMAGICBALLTYPE_EMAGICBALL_WIND_ENUM,
+  EMAGICBALLTYPE_EMAGICBALL_EARTH_ENUM,
+  EMAGICBALLTYPE_EMAGICBALL_WATER_ENUM,
+  EMAGICBALLTYPE_EMAGICBALL_FIRE_ENUM
+}
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_MIN_ENUM.name = "EGROUPRAIDSCENE_MIN"
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_MIN_ENUM.index = 0
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_MIN_ENUM.number = 0
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_FIRE_ENUM.name = "EGROUPRAIDSCENE_FIRE"
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_FIRE_ENUM.index = 1
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_FIRE_ENUM.number = 1
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_OVER_ENUM.name = "EGROUPRAIDSCENE_OVER"
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_OVER_ENUM.index = 2
+EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_OVER_ENUM.number = 2
+EGROUPRAIDSCENESTATE.name = "EGroupRaidSceneState"
+EGROUPRAIDSCENESTATE.full_name = ".Cmd.EGroupRaidSceneState"
+EGROUPRAIDSCENESTATE.values = {
+  EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_MIN_ENUM,
+  EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_FIRE_ENUM,
+  EGROUPRAIDSCENESTATE_EGROUPRAIDSCENE_OVER_ENUM
+}
+EKUMAMOTOOPER_EKUMAMOTOOPER_CREATE_ENUM.name = "EKUMAMOTOOPER_CREATE"
+EKUMAMOTOOPER_EKUMAMOTOOPER_CREATE_ENUM.index = 0
+EKUMAMOTOOPER_EKUMAMOTOOPER_CREATE_ENUM.number = 1
+EKUMAMOTOOPER_EKUMAMOTOOPER_REWARD_ENUM.name = "EKUMAMOTOOPER_REWARD"
+EKUMAMOTOOPER_EKUMAMOTOOPER_REWARD_ENUM.index = 1
+EKUMAMOTOOPER_EKUMAMOTOOPER_REWARD_ENUM.number = 2
+EKUMAMOTOOPER_EKUMAMOTOOPER_SCORE_ENUM.name = "EKUMAMOTOOPER_SCORE"
+EKUMAMOTOOPER_EKUMAMOTOOPER_SCORE_ENUM.index = 2
+EKUMAMOTOOPER_EKUMAMOTOOPER_SCORE_ENUM.number = 3
+EKUMAMOTOOPER.name = "EKumamotoOper"
+EKUMAMOTOOPER.full_name = ".Cmd.EKumamotoOper"
+EKUMAMOTOOPER.values = {
+  EKUMAMOTOOPER_EKUMAMOTOOPER_CREATE_ENUM,
+  EKUMAMOTOOPER_EKUMAMOTOOPER_REWARD_ENUM,
+  EKUMAMOTOOPER_EKUMAMOTOOPER_SCORE_ENUM
+}
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_MIN_ENUM.name = "EROLLRAIDREWARD_MIN"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_MIN_ENUM.index = 0
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_MIN_ENUM.number = 0
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_PVERAID_ENUM.name = "EROLLRAIDREWARD_PVERAID"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_PVERAID_ENUM.index = 1
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_PVERAID_ENUM.number = 1
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GROUPRAID_ENUM.name = "EROLLRAIDREWARD_GROUPRAID"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GROUPRAID_ENUM.index = 2
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GROUPRAID_ENUM.number = 2
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_WORLDBOSS_ENUM.name = "EROLLRAIDREWARD_WORLDBOSS"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_WORLDBOSS_ENUM.index = 3
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_WORLDBOSS_ENUM.number = 3
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_DEADBOSS_ENUM.name = "EROLLRAIDREWARD_DEADBOSS"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_DEADBOSS_ENUM.index = 4
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_DEADBOSS_ENUM.number = 4
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GUILD_ENUM.name = "EROLLRAIDREWARD_GUILD"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GUILD_ENUM.index = 5
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GUILD_ENUM.number = 5
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_COMODO_TEAM_RAID_ENUM.name = "EROLLRAIDREWARD_COMODO_TEAM_RAID"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_COMODO_TEAM_RAID_ENUM.index = 6
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_COMODO_TEAM_RAID_ENUM.number = 6
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID_ENUM.name = "EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID"
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID_ENUM.index = 7
+EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID_ENUM.number = 7
+EROLLRAIDREWARDTYPE.name = "ERollRaidRewardType"
+EROLLRAIDREWARDTYPE.full_name = ".Cmd.ERollRaidRewardType"
+EROLLRAIDREWARDTYPE.values = {
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_MIN_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_PVERAID_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GROUPRAID_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_WORLDBOSS_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_DEADBOSS_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_GUILD_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_COMODO_TEAM_RAID_ENUM,
+  EROLLRAIDREWARDTYPE_EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID_ENUM
+}
+EGROUPCAMP_EGROUPCAMP_MIN_ENUM.name = "EGROUPCAMP_MIN"
+EGROUPCAMP_EGROUPCAMP_MIN_ENUM.index = 0
+EGROUPCAMP_EGROUPCAMP_MIN_ENUM.number = 0
+EGROUPCAMP_EGROUPCAMP_RED_ENUM.name = "EGROUPCAMP_RED"
+EGROUPCAMP_EGROUPCAMP_RED_ENUM.index = 1
+EGROUPCAMP_EGROUPCAMP_RED_ENUM.number = 1
+EGROUPCAMP_EGROUPCAMP_BLUE_ENUM.name = "EGROUPCAMP_BLUE"
+EGROUPCAMP_EGROUPCAMP_BLUE_ENUM.index = 2
+EGROUPCAMP_EGROUPCAMP_BLUE_ENUM.number = 2
+EGROUPCAMP_EGROUPCAMP_OBSERVER_ENUM.name = "EGROUPCAMP_OBSERVER"
+EGROUPCAMP_EGROUPCAMP_OBSERVER_ENUM.index = 3
+EGROUPCAMP_EGROUPCAMP_OBSERVER_ENUM.number = 3
+EGROUPCAMP.name = "EGroupCamp"
+EGROUPCAMP.full_name = ".Cmd.EGroupCamp"
+EGROUPCAMP.values = {
+  EGROUPCAMP_EGROUPCAMP_MIN_ENUM,
+  EGROUPCAMP_EGROUPCAMP_RED_ENUM,
+  EGROUPCAMP_EGROUPCAMP_BLUE_ENUM,
+  EGROUPCAMP_EGROUPCAMP_OBSERVER_ENUM
+}
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MIN_ENUM.name = "ETWELVEPVP_DATA_MIN"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MIN_ENUM.index = 0
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MIN_ENUM.number = 0
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_EXP_ENUM.name = "ETWELVEPVP_DATA_CRYSTAL_EXP"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_EXP_ENUM.index = 1
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_EXP_ENUM.number = 3
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_GOLD_ENUM.name = "ETWELVEPVP_DATA_GOLD"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_GOLD_ENUM.index = 2
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_GOLD_ENUM.number = 4
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAR_POINT_ENUM.name = "ETWELVEPVP_DATA_CAR_POINT"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAR_POINT_ENUM.index = 3
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAR_POINT_ENUM.number = 5
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PUSH_PLAYER_NUM_ENUM.name = "ETWELVEPVP_DATA_PUSH_PLAYER_NUM"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PUSH_PLAYER_NUM_ENUM.index = 4
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PUSH_PLAYER_NUM_ENUM.number = 6
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_END_TIME_ENUM.name = "ETWELVEPVP_DATA_END_TIME"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_END_TIME_ENUM.index = 5
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_END_TIME_ENUM.number = 7
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_SHOP_CD_ENUM.name = "ETWELVEPVP_DATA_SHOP_CD"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_SHOP_CD_ENUM.index = 6
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_SHOP_CD_ENUM.number = 8
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAMP_ENUM.name = "ETWELVEPVP_DATA_CAMP"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAMP_ENUM.index = 7
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAMP_ENUM.number = 9
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_BARRACK_HP_ENUM.name = "ETWELVEPVP_DATA_BARRACK_HP"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_BARRACK_HP_ENUM.index = 8
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_BARRACK_HP_ENUM.number = 10
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_HP_ENUM.name = "ETWELVEPVP_DATA_CRYSTAL_HP"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_HP_ENUM.index = 9
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_HP_ENUM.number = 11
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PVP_TYPE_ENUM.name = "ETWELVEPVP_DATA_PVP_TYPE"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PVP_TYPE_ENUM.index = 10
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PVP_TYPE_ENUM.number = 12
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_LEVEL_ENUM.name = "ETWELVEPVP_DATA_CRYSTAL_LEVEL"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_LEVEL_ENUM.index = 11
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_LEVEL_ENUM.number = 13
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_KILL_NUM_ENUM.name = "ETWELVEPVP_DATA_KILL_NUM"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_KILL_NUM_ENUM.index = 12
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_KILL_NUM_ENUM.number = 14
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MAX_ENUM.name = "ETWELVEPVP_DATA_MAX"
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MAX_ENUM.index = 13
+ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MAX_ENUM.number = 15
+ETWELVEPVPDATATYPE.name = "ETwelvePvpDataType"
+ETWELVEPVPDATATYPE.full_name = ".Cmd.ETwelvePvpDataType"
+ETWELVEPVPDATATYPE.values = {
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MIN_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_EXP_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_GOLD_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAR_POINT_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PUSH_PLAYER_NUM_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_END_TIME_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_SHOP_CD_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CAMP_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_BARRACK_HP_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_HP_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_PVP_TYPE_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_CRYSTAL_LEVEL_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_KILL_NUM_ENUM,
+  ETWELVEPVPDATATYPE_ETWELVEPVP_DATA_MAX_ENUM
+}
+ETWELVEPVPUI_ETWELVEPVP_UI_MIN_ENUM.name = "ETWELVEPVP_UI_MIN"
+ETWELVEPVPUI_ETWELVEPVP_UI_MIN_ENUM.index = 0
+ETWELVEPVPUI_ETWELVEPVP_UI_MIN_ENUM.number = 0
+ETWELVEPVPUI_ETWELVEPVP_UI_CRYSTAL_ENUM.name = "ETWELVEPVP_UI_CRYSTAL"
+ETWELVEPVPUI_ETWELVEPVP_UI_CRYSTAL_ENUM.index = 1
+ETWELVEPVPUI_ETWELVEPVP_UI_CRYSTAL_ENUM.number = 1
+ETWELVEPVPUI_ETWELVEPVP_UI_SHOP_ENUM.name = "ETWELVEPVP_UI_SHOP"
+ETWELVEPVPUI_ETWELVEPVP_UI_SHOP_ENUM.index = 2
+ETWELVEPVPUI_ETWELVEPVP_UI_SHOP_ENUM.number = 2
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_MIN_ENUM.name = "ETWELVEPVP_OBSERVER_UI_MIN"
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_MIN_ENUM.index = 3
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_MIN_ENUM.number = 1000
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_ITEM_ENUM.name = "ETWELVEPVP_OBSERVER_UI_ITEM"
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_ITEM_ENUM.index = 4
+ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_ITEM_ENUM.number = 1001
+ETWELVEPVPUI.name = "ETwelvePvpUI"
+ETWELVEPVPUI.full_name = ".Cmd.ETwelvePvpUI"
+ETWELVEPVPUI.values = {
+  ETWELVEPVPUI_ETWELVEPVP_UI_MIN_ENUM,
+  ETWELVEPVPUI_ETWELVEPVP_UI_CRYSTAL_ENUM,
+  ETWELVEPVPUI_ETWELVEPVP_UI_SHOP_ENUM,
+  ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_MIN_ENUM,
+  ETWELVEPVPUI_ETWELVEPVP_OBSERVER_UI_ITEM_ENUM
+}
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MIN_ENUM.name = "ECOMODO_BOSS_MIN"
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MIN_ENUM.index = 0
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MIN_ENUM.number = 0
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_DRAGON_ENUM.name = "ECOMODO_BOSS_DRAGON"
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_DRAGON_ENUM.index = 1
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_DRAGON_ENUM.number = 1
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_CHESS_ENUM.name = "ECOMODO_BOSS_CHESS"
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_CHESS_ENUM.index = 2
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_CHESS_ENUM.number = 2
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_HERO_ENUM.name = "ECOMODO_BOSS_HERO"
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_HERO_ENUM.index = 3
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_HERO_ENUM.number = 3
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MAX_ENUM.name = "ECOMODO_BOSS_MAX"
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MAX_ENUM.index = 4
+ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MAX_ENUM.number = 4
+ECOMODOTEAMRAIDBOSS.name = "EComodoTeamRaidBoss"
+ECOMODOTEAMRAIDBOSS.full_name = ".Cmd.EComodoTeamRaidBoss"
+ECOMODOTEAMRAIDBOSS.values = {
+  ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MIN_ENUM,
+  ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_DRAGON_ENUM,
+  ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_CHESS_ENUM,
+  ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_HERO_ENUM,
+  ECOMODOTEAMRAIDBOSS_ECOMODO_BOSS_MAX_ENUM
+}
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_MIN_ENUM.name = "ECOMODO_PHASE_MIN"
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_MIN_ENUM.index = 0
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_MIN_ENUM.number = 0
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_DRAGON_ENUM.name = "ECOMODO_PHASE_DRAGON"
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_DRAGON_ENUM.index = 1
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_DRAGON_ENUM.number = 1
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_CHESS_ENUM.name = "ECOMODO_PHASE_CHESS"
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_CHESS_ENUM.index = 2
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_CHESS_ENUM.number = 2
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_HERO_ENUM.name = "ECOMODO_PHASE_HERO"
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_HERO_ENUM.index = 3
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_HERO_ENUM.number = 3
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_SAVE_NPC_ENUM.name = "ECOMODO_PHASE_SAVE_NPC"
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_SAVE_NPC_ENUM.index = 4
+ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_SAVE_NPC_ENUM.number = 4
+ECOMODOTEAMRAIDPHASE.name = "EComodoTeamRaidPhase"
+ECOMODOTEAMRAIDPHASE.full_name = ".Cmd.EComodoTeamRaidPhase"
+ECOMODOTEAMRAIDPHASE.values = {
+  ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_MIN_ENUM,
+  ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_DRAGON_ENUM,
+  ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_CHESS_ENUM,
+  ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_HERO_ENUM,
+  ECOMODOTEAMRAIDPHASE_ECOMODO_PHASE_SAVE_NPC_ENUM
+}
+EGVGRAIDSTATE_EGVGRAIDSTATE_MIN_ENUM.name = "EGVGRAIDSTATE_MIN"
+EGVGRAIDSTATE_EGVGRAIDSTATE_MIN_ENUM.index = 0
+EGVGRAIDSTATE_EGVGRAIDSTATE_MIN_ENUM.number = 0
+EGVGRAIDSTATE_EGVGRAIDSTATE_PEACE_ENUM.name = "EGVGRAIDSTATE_PEACE"
+EGVGRAIDSTATE_EGVGRAIDSTATE_PEACE_ENUM.index = 1
+EGVGRAIDSTATE_EGVGRAIDSTATE_PEACE_ENUM.number = 1
+EGVGRAIDSTATE_EGVGRAIDSTATE_FIRE_ENUM.name = "EGVGRAIDSTATE_FIRE"
+EGVGRAIDSTATE_EGVGRAIDSTATE_FIRE_ENUM.index = 2
+EGVGRAIDSTATE_EGVGRAIDSTATE_FIRE_ENUM.number = 2
+EGVGRAIDSTATE_EGVGRAIDSTATE_CALM_ENUM.name = "EGVGRAIDSTATE_CALM"
+EGVGRAIDSTATE_EGVGRAIDSTATE_CALM_ENUM.index = 3
+EGVGRAIDSTATE_EGVGRAIDSTATE_CALM_ENUM.number = 3
+EGVGRAIDSTATE_EGVGRAIDSTATE_PERFECT_ENUM.name = "EGVGRAIDSTATE_PERFECT"
+EGVGRAIDSTATE_EGVGRAIDSTATE_PERFECT_ENUM.index = 4
+EGVGRAIDSTATE_EGVGRAIDSTATE_PERFECT_ENUM.number = 4
+EGVGRAIDSTATE.name = "EGvgRaidState"
+EGVGRAIDSTATE.full_name = ".Cmd.EGvgRaidState"
+EGVGRAIDSTATE.values = {
+  EGVGRAIDSTATE_EGVGRAIDSTATE_MIN_ENUM,
+  EGVGRAIDSTATE_EGVGRAIDSTATE_PEACE_ENUM,
+  EGVGRAIDSTATE_EGVGRAIDSTATE_FIRE_ENUM,
+  EGVGRAIDSTATE_EGVGRAIDSTATE_CALM_ENUM,
+  EGVGRAIDSTATE_EGVGRAIDSTATE_PERFECT_ENUM
+}
+EGVGCITYTYPE_EGVGCITYTYPE_MIN_ENUM.name = "EGVGCITYTYPE_MIN"
+EGVGCITYTYPE_EGVGCITYTYPE_MIN_ENUM.index = 0
+EGVGCITYTYPE_EGVGCITYTYPE_MIN_ENUM.number = 0
+EGVGCITYTYPE_EGVGCITYTYPE_SMALL_ENUM.name = "EGVGCITYTYPE_SMALL"
+EGVGCITYTYPE_EGVGCITYTYPE_SMALL_ENUM.index = 1
+EGVGCITYTYPE_EGVGCITYTYPE_SMALL_ENUM.number = 1
+EGVGCITYTYPE_EGVGCITYTYPE_MIDDLE_ENUM.name = "EGVGCITYTYPE_MIDDLE"
+EGVGCITYTYPE_EGVGCITYTYPE_MIDDLE_ENUM.index = 2
+EGVGCITYTYPE_EGVGCITYTYPE_MIDDLE_ENUM.number = 2
+EGVGCITYTYPE_EGVGCITYTYPE_LARGE_ENUM.name = "EGVGCITYTYPE_LARGE"
+EGVGCITYTYPE_EGVGCITYTYPE_LARGE_ENUM.index = 3
+EGVGCITYTYPE_EGVGCITYTYPE_LARGE_ENUM.number = 3
+EGVGCITYTYPE_EGVGCITYTYPE_MAX_ENUM.name = "EGVGCITYTYPE_MAX"
+EGVGCITYTYPE_EGVGCITYTYPE_MAX_ENUM.index = 4
+EGVGCITYTYPE_EGVGCITYTYPE_MAX_ENUM.number = 4
+EGVGCITYTYPE.name = "EGvgCityType"
+EGVGCITYTYPE.full_name = ".Cmd.EGvgCityType"
+EGVGCITYTYPE.values = {
+  EGVGCITYTYPE_EGVGCITYTYPE_MIN_ENUM,
+  EGVGCITYTYPE_EGVGCITYTYPE_SMALL_ENUM,
+  EGVGCITYTYPE_EGVGCITYTYPE_MIDDLE_ENUM,
+  EGVGCITYTYPE_EGVGCITYTYPE_LARGE_ENUM,
+  EGVGCITYTYPE_EGVGCITYTYPE_MAX_ENUM
+}
+TRACKDATA_STAR_FIELD.name = "star"
+TRACKDATA_STAR_FIELD.full_name = ".Cmd.TrackData.star"
+TRACKDATA_STAR_FIELD.number = 1
+TRACKDATA_STAR_FIELD.index = 0
+TRACKDATA_STAR_FIELD.label = 1
+TRACKDATA_STAR_FIELD.has_default_value = false
+TRACKDATA_STAR_FIELD.default_value = 0
+TRACKDATA_STAR_FIELD.type = 13
+TRACKDATA_STAR_FIELD.cpp_type = 3
+TRACKDATA_ID_FIELD.name = "id"
+TRACKDATA_ID_FIELD.full_name = ".Cmd.TrackData.id"
+TRACKDATA_ID_FIELD.number = 2
+TRACKDATA_ID_FIELD.index = 1
+TRACKDATA_ID_FIELD.label = 1
+TRACKDATA_ID_FIELD.has_default_value = false
+TRACKDATA_ID_FIELD.default_value = 0
+TRACKDATA_ID_FIELD.type = 13
+TRACKDATA_ID_FIELD.cpp_type = 3
+TRACKDATA.name = "TrackData"
+TRACKDATA.full_name = ".Cmd.TrackData"
+TRACKDATA.nested_types = {}
+TRACKDATA.enum_types = {}
+TRACKDATA.fields = {
+  TRACKDATA_STAR_FIELD,
+  TRACKDATA_ID_FIELD
+}
+TRACKDATA.is_extendable = false
+TRACKDATA.extensions = {}
+RAIDPCONFIG_RAIDID_FIELD.name = "RaidID"
+RAIDPCONFIG_RAIDID_FIELD.full_name = ".Cmd.RaidPConfig.RaidID"
+RAIDPCONFIG_RAIDID_FIELD.number = 1
+RAIDPCONFIG_RAIDID_FIELD.index = 0
+RAIDPCONFIG_RAIDID_FIELD.label = 1
+RAIDPCONFIG_RAIDID_FIELD.has_default_value = true
+RAIDPCONFIG_RAIDID_FIELD.default_value = 0
+RAIDPCONFIG_RAIDID_FIELD.type = 13
+RAIDPCONFIG_RAIDID_FIELD.cpp_type = 3
+RAIDPCONFIG_STARID_FIELD.name = "starID"
+RAIDPCONFIG_STARID_FIELD.full_name = ".Cmd.RaidPConfig.starID"
+RAIDPCONFIG_STARID_FIELD.number = 2
+RAIDPCONFIG_STARID_FIELD.index = 1
+RAIDPCONFIG_STARID_FIELD.label = 1
+RAIDPCONFIG_STARID_FIELD.has_default_value = true
+RAIDPCONFIG_STARID_FIELD.default_value = 0
+RAIDPCONFIG_STARID_FIELD.type = 13
+RAIDPCONFIG_STARID_FIELD.cpp_type = 3
+RAIDPCONFIG_AUTO_FIELD.name = "Auto"
+RAIDPCONFIG_AUTO_FIELD.full_name = ".Cmd.RaidPConfig.Auto"
+RAIDPCONFIG_AUTO_FIELD.number = 3
+RAIDPCONFIG_AUTO_FIELD.index = 2
+RAIDPCONFIG_AUTO_FIELD.label = 1
+RAIDPCONFIG_AUTO_FIELD.has_default_value = true
+RAIDPCONFIG_AUTO_FIELD.default_value = 0
+RAIDPCONFIG_AUTO_FIELD.type = 13
+RAIDPCONFIG_AUTO_FIELD.cpp_type = 3
+RAIDPCONFIG_WHETHERTRACE_FIELD.name = "WhetherTrace"
+RAIDPCONFIG_WHETHERTRACE_FIELD.full_name = ".Cmd.RaidPConfig.WhetherTrace"
+RAIDPCONFIG_WHETHERTRACE_FIELD.number = 4
+RAIDPCONFIG_WHETHERTRACE_FIELD.index = 3
+RAIDPCONFIG_WHETHERTRACE_FIELD.label = 1
+RAIDPCONFIG_WHETHERTRACE_FIELD.has_default_value = true
+RAIDPCONFIG_WHETHERTRACE_FIELD.default_value = 0
+RAIDPCONFIG_WHETHERTRACE_FIELD.type = 13
+RAIDPCONFIG_WHETHERTRACE_FIELD.cpp_type = 3
+RAIDPCONFIG_FINISHJUMP_FIELD.name = "FinishJump"
+RAIDPCONFIG_FINISHJUMP_FIELD.full_name = ".Cmd.RaidPConfig.FinishJump"
+RAIDPCONFIG_FINISHJUMP_FIELD.number = 9
+RAIDPCONFIG_FINISHJUMP_FIELD.index = 4
+RAIDPCONFIG_FINISHJUMP_FIELD.label = 1
+RAIDPCONFIG_FINISHJUMP_FIELD.has_default_value = true
+RAIDPCONFIG_FINISHJUMP_FIELD.default_value = 0
+RAIDPCONFIG_FINISHJUMP_FIELD.type = 13
+RAIDPCONFIG_FINISHJUMP_FIELD.cpp_type = 3
+RAIDPCONFIG_FAILJUMP_FIELD.name = "FailJump"
+RAIDPCONFIG_FAILJUMP_FIELD.full_name = ".Cmd.RaidPConfig.FailJump"
+RAIDPCONFIG_FAILJUMP_FIELD.number = 10
+RAIDPCONFIG_FAILJUMP_FIELD.index = 5
+RAIDPCONFIG_FAILJUMP_FIELD.label = 1
+RAIDPCONFIG_FAILJUMP_FIELD.has_default_value = true
+RAIDPCONFIG_FAILJUMP_FIELD.default_value = 0
+RAIDPCONFIG_FAILJUMP_FIELD.type = 13
+RAIDPCONFIG_FAILJUMP_FIELD.cpp_type = 3
+RAIDPCONFIG_SUBSTEP_FIELD.name = "SubStep"
+RAIDPCONFIG_SUBSTEP_FIELD.full_name = ".Cmd.RaidPConfig.SubStep"
+RAIDPCONFIG_SUBSTEP_FIELD.number = 11
+RAIDPCONFIG_SUBSTEP_FIELD.index = 6
+RAIDPCONFIG_SUBSTEP_FIELD.label = 1
+RAIDPCONFIG_SUBSTEP_FIELD.has_default_value = false
+RAIDPCONFIG_SUBSTEP_FIELD.default_value = 0
+RAIDPCONFIG_SUBSTEP_FIELD.type = 13
+RAIDPCONFIG_SUBSTEP_FIELD.cpp_type = 3
+RAIDPCONFIG_DESCINFO_FIELD.name = "DescInfo"
+RAIDPCONFIG_DESCINFO_FIELD.full_name = ".Cmd.RaidPConfig.DescInfo"
+RAIDPCONFIG_DESCINFO_FIELD.number = 5
+RAIDPCONFIG_DESCINFO_FIELD.index = 7
+RAIDPCONFIG_DESCINFO_FIELD.label = 1
+RAIDPCONFIG_DESCINFO_FIELD.has_default_value = false
+RAIDPCONFIG_DESCINFO_FIELD.default_value = ""
+RAIDPCONFIG_DESCINFO_FIELD.type = 9
+RAIDPCONFIG_DESCINFO_FIELD.cpp_type = 9
+RAIDPCONFIG_CONTENT_FIELD.name = "Content"
+RAIDPCONFIG_CONTENT_FIELD.full_name = ".Cmd.RaidPConfig.Content"
+RAIDPCONFIG_CONTENT_FIELD.number = 6
+RAIDPCONFIG_CONTENT_FIELD.index = 8
+RAIDPCONFIG_CONTENT_FIELD.label = 1
+RAIDPCONFIG_CONTENT_FIELD.has_default_value = false
+RAIDPCONFIG_CONTENT_FIELD.default_value = ""
+RAIDPCONFIG_CONTENT_FIELD.type = 9
+RAIDPCONFIG_CONTENT_FIELD.cpp_type = 9
+RAIDPCONFIG_TRACEINFO_FIELD.name = "TraceInfo"
+RAIDPCONFIG_TRACEINFO_FIELD.full_name = ".Cmd.RaidPConfig.TraceInfo"
+RAIDPCONFIG_TRACEINFO_FIELD.number = 7
+RAIDPCONFIG_TRACEINFO_FIELD.index = 9
+RAIDPCONFIG_TRACEINFO_FIELD.label = 1
+RAIDPCONFIG_TRACEINFO_FIELD.has_default_value = false
+RAIDPCONFIG_TRACEINFO_FIELD.default_value = ""
+RAIDPCONFIG_TRACEINFO_FIELD.type = 9
+RAIDPCONFIG_TRACEINFO_FIELD.cpp_type = 9
+RAIDPCONFIG_PARAMS_FIELD.name = "params"
+RAIDPCONFIG_PARAMS_FIELD.full_name = ".Cmd.RaidPConfig.params"
+RAIDPCONFIG_PARAMS_FIELD.number = 8
+RAIDPCONFIG_PARAMS_FIELD.index = 10
+RAIDPCONFIG_PARAMS_FIELD.label = 1
+RAIDPCONFIG_PARAMS_FIELD.has_default_value = false
+RAIDPCONFIG_PARAMS_FIELD.default_value = nil
+RAIDPCONFIG_PARAMS_FIELD.message_type = ProtoCommon_pb.CONFIGPARAM
+RAIDPCONFIG_PARAMS_FIELD.type = 11
+RAIDPCONFIG_PARAMS_FIELD.cpp_type = 10
+RAIDPCONFIG.name = "RaidPConfig"
+RAIDPCONFIG.full_name = ".Cmd.RaidPConfig"
+RAIDPCONFIG.nested_types = {}
+RAIDPCONFIG.enum_types = {}
+RAIDPCONFIG.fields = {
+  RAIDPCONFIG_RAIDID_FIELD,
+  RAIDPCONFIG_STARID_FIELD,
+  RAIDPCONFIG_AUTO_FIELD,
+  RAIDPCONFIG_WHETHERTRACE_FIELD,
+  RAIDPCONFIG_FINISHJUMP_FIELD,
+  RAIDPCONFIG_FAILJUMP_FIELD,
+  RAIDPCONFIG_SUBSTEP_FIELD,
+  RAIDPCONFIG_DESCINFO_FIELD,
+  RAIDPCONFIG_CONTENT_FIELD,
+  RAIDPCONFIG_TRACEINFO_FIELD,
+  RAIDPCONFIG_PARAMS_FIELD
+}
+RAIDPCONFIG.is_extendable = false
+RAIDPCONFIG.extensions = {}
+TRACKFUBENUSERCMD_CMD_FIELD.name = "cmd"
+TRACKFUBENUSERCMD_CMD_FIELD.full_name = ".Cmd.TrackFuBenUserCmd.cmd"
+TRACKFUBENUSERCMD_CMD_FIELD.number = 1
+TRACKFUBENUSERCMD_CMD_FIELD.index = 0
+TRACKFUBENUSERCMD_CMD_FIELD.label = 1
+TRACKFUBENUSERCMD_CMD_FIELD.has_default_value = true
+TRACKFUBENUSERCMD_CMD_FIELD.default_value = 11
+TRACKFUBENUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TRACKFUBENUSERCMD_CMD_FIELD.type = 14
+TRACKFUBENUSERCMD_CMD_FIELD.cpp_type = 8
+TRACKFUBENUSERCMD_PARAM_FIELD.name = "param"
+TRACKFUBENUSERCMD_PARAM_FIELD.full_name = ".Cmd.TrackFuBenUserCmd.param"
+TRACKFUBENUSERCMD_PARAM_FIELD.number = 2
+TRACKFUBENUSERCMD_PARAM_FIELD.index = 1
+TRACKFUBENUSERCMD_PARAM_FIELD.label = 1
+TRACKFUBENUSERCMD_PARAM_FIELD.has_default_value = true
+TRACKFUBENUSERCMD_PARAM_FIELD.default_value = 1
+TRACKFUBENUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TRACKFUBENUSERCMD_PARAM_FIELD.type = 14
+TRACKFUBENUSERCMD_PARAM_FIELD.cpp_type = 8
+TRACKFUBENUSERCMD_DATA_FIELD.name = "data"
+TRACKFUBENUSERCMD_DATA_FIELD.full_name = ".Cmd.TrackFuBenUserCmd.data"
+TRACKFUBENUSERCMD_DATA_FIELD.number = 3
+TRACKFUBENUSERCMD_DATA_FIELD.index = 2
+TRACKFUBENUSERCMD_DATA_FIELD.label = 3
+TRACKFUBENUSERCMD_DATA_FIELD.has_default_value = false
+TRACKFUBENUSERCMD_DATA_FIELD.default_value = {}
+TRACKFUBENUSERCMD_DATA_FIELD.message_type = TRACKDATA
+TRACKFUBENUSERCMD_DATA_FIELD.type = 11
+TRACKFUBENUSERCMD_DATA_FIELD.cpp_type = 10
+TRACKFUBENUSERCMD_DMAPID_FIELD.name = "dmapid"
+TRACKFUBENUSERCMD_DMAPID_FIELD.full_name = ".Cmd.TrackFuBenUserCmd.dmapid"
+TRACKFUBENUSERCMD_DMAPID_FIELD.number = 4
+TRACKFUBENUSERCMD_DMAPID_FIELD.index = 3
+TRACKFUBENUSERCMD_DMAPID_FIELD.label = 1
+TRACKFUBENUSERCMD_DMAPID_FIELD.has_default_value = false
+TRACKFUBENUSERCMD_DMAPID_FIELD.default_value = 0
+TRACKFUBENUSERCMD_DMAPID_FIELD.type = 13
+TRACKFUBENUSERCMD_DMAPID_FIELD.cpp_type = 3
+TRACKFUBENUSERCMD_ENDTIME_FIELD.name = "endtime"
+TRACKFUBENUSERCMD_ENDTIME_FIELD.full_name = ".Cmd.TrackFuBenUserCmd.endtime"
+TRACKFUBENUSERCMD_ENDTIME_FIELD.number = 5
+TRACKFUBENUSERCMD_ENDTIME_FIELD.index = 4
+TRACKFUBENUSERCMD_ENDTIME_FIELD.label = 1
+TRACKFUBENUSERCMD_ENDTIME_FIELD.has_default_value = false
+TRACKFUBENUSERCMD_ENDTIME_FIELD.default_value = 0
+TRACKFUBENUSERCMD_ENDTIME_FIELD.type = 13
+TRACKFUBENUSERCMD_ENDTIME_FIELD.cpp_type = 3
+TRACKFUBENUSERCMD.name = "TrackFuBenUserCmd"
+TRACKFUBENUSERCMD.full_name = ".Cmd.TrackFuBenUserCmd"
+TRACKFUBENUSERCMD.nested_types = {}
+TRACKFUBENUSERCMD.enum_types = {}
+TRACKFUBENUSERCMD.fields = {
+  TRACKFUBENUSERCMD_CMD_FIELD,
+  TRACKFUBENUSERCMD_PARAM_FIELD,
+  TRACKFUBENUSERCMD_DATA_FIELD,
+  TRACKFUBENUSERCMD_DMAPID_FIELD,
+  TRACKFUBENUSERCMD_ENDTIME_FIELD
+}
+TRACKFUBENUSERCMD.is_extendable = false
+TRACKFUBENUSERCMD.extensions = {}
+FAILFUBENUSERCMD_CMD_FIELD.name = "cmd"
+FAILFUBENUSERCMD_CMD_FIELD.full_name = ".Cmd.FailFuBenUserCmd.cmd"
+FAILFUBENUSERCMD_CMD_FIELD.number = 1
+FAILFUBENUSERCMD_CMD_FIELD.index = 0
+FAILFUBENUSERCMD_CMD_FIELD.label = 1
+FAILFUBENUSERCMD_CMD_FIELD.has_default_value = true
+FAILFUBENUSERCMD_CMD_FIELD.default_value = 11
+FAILFUBENUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+FAILFUBENUSERCMD_CMD_FIELD.type = 14
+FAILFUBENUSERCMD_CMD_FIELD.cpp_type = 8
+FAILFUBENUSERCMD_PARAM_FIELD.name = "param"
+FAILFUBENUSERCMD_PARAM_FIELD.full_name = ".Cmd.FailFuBenUserCmd.param"
+FAILFUBENUSERCMD_PARAM_FIELD.number = 2
+FAILFUBENUSERCMD_PARAM_FIELD.index = 1
+FAILFUBENUSERCMD_PARAM_FIELD.label = 1
+FAILFUBENUSERCMD_PARAM_FIELD.has_default_value = true
+FAILFUBENUSERCMD_PARAM_FIELD.default_value = 2
+FAILFUBENUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+FAILFUBENUSERCMD_PARAM_FIELD.type = 14
+FAILFUBENUSERCMD_PARAM_FIELD.cpp_type = 8
+FAILFUBENUSERCMD.name = "FailFuBenUserCmd"
+FAILFUBENUSERCMD.full_name = ".Cmd.FailFuBenUserCmd"
+FAILFUBENUSERCMD.nested_types = {}
+FAILFUBENUSERCMD.enum_types = {}
+FAILFUBENUSERCMD.fields = {
+  FAILFUBENUSERCMD_CMD_FIELD,
+  FAILFUBENUSERCMD_PARAM_FIELD
+}
+FAILFUBENUSERCMD.is_extendable = false
+FAILFUBENUSERCMD.extensions = {}
+LEAVEFUBENUSERCMD_CMD_FIELD.name = "cmd"
+LEAVEFUBENUSERCMD_CMD_FIELD.full_name = ".Cmd.LeaveFuBenUserCmd.cmd"
+LEAVEFUBENUSERCMD_CMD_FIELD.number = 1
+LEAVEFUBENUSERCMD_CMD_FIELD.index = 0
+LEAVEFUBENUSERCMD_CMD_FIELD.label = 1
+LEAVEFUBENUSERCMD_CMD_FIELD.has_default_value = true
+LEAVEFUBENUSERCMD_CMD_FIELD.default_value = 11
+LEAVEFUBENUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+LEAVEFUBENUSERCMD_CMD_FIELD.type = 14
+LEAVEFUBENUSERCMD_CMD_FIELD.cpp_type = 8
+LEAVEFUBENUSERCMD_PARAM_FIELD.name = "param"
+LEAVEFUBENUSERCMD_PARAM_FIELD.full_name = ".Cmd.LeaveFuBenUserCmd.param"
+LEAVEFUBENUSERCMD_PARAM_FIELD.number = 2
+LEAVEFUBENUSERCMD_PARAM_FIELD.index = 1
+LEAVEFUBENUSERCMD_PARAM_FIELD.label = 1
+LEAVEFUBENUSERCMD_PARAM_FIELD.has_default_value = true
+LEAVEFUBENUSERCMD_PARAM_FIELD.default_value = 3
+LEAVEFUBENUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+LEAVEFUBENUSERCMD_PARAM_FIELD.type = 14
+LEAVEFUBENUSERCMD_PARAM_FIELD.cpp_type = 8
+LEAVEFUBENUSERCMD_MAPID_FIELD.name = "mapid"
+LEAVEFUBENUSERCMD_MAPID_FIELD.full_name = ".Cmd.LeaveFuBenUserCmd.mapid"
+LEAVEFUBENUSERCMD_MAPID_FIELD.number = 3
+LEAVEFUBENUSERCMD_MAPID_FIELD.index = 2
+LEAVEFUBENUSERCMD_MAPID_FIELD.label = 1
+LEAVEFUBENUSERCMD_MAPID_FIELD.has_default_value = false
+LEAVEFUBENUSERCMD_MAPID_FIELD.default_value = 0
+LEAVEFUBENUSERCMD_MAPID_FIELD.type = 13
+LEAVEFUBENUSERCMD_MAPID_FIELD.cpp_type = 3
+LEAVEFUBENUSERCMD.name = "LeaveFuBenUserCmd"
+LEAVEFUBENUSERCMD.full_name = ".Cmd.LeaveFuBenUserCmd"
+LEAVEFUBENUSERCMD.nested_types = {}
+LEAVEFUBENUSERCMD.enum_types = {}
+LEAVEFUBENUSERCMD.fields = {
+  LEAVEFUBENUSERCMD_CMD_FIELD,
+  LEAVEFUBENUSERCMD_PARAM_FIELD,
+  LEAVEFUBENUSERCMD_MAPID_FIELD
+}
+LEAVEFUBENUSERCMD.is_extendable = false
+LEAVEFUBENUSERCMD.extensions = {}
+SUCCESSFUBENUSERCMD_CMD_FIELD.name = "cmd"
+SUCCESSFUBENUSERCMD_CMD_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.cmd"
+SUCCESSFUBENUSERCMD_CMD_FIELD.number = 1
+SUCCESSFUBENUSERCMD_CMD_FIELD.index = 0
+SUCCESSFUBENUSERCMD_CMD_FIELD.label = 1
+SUCCESSFUBENUSERCMD_CMD_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_CMD_FIELD.default_value = 11
+SUCCESSFUBENUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SUCCESSFUBENUSERCMD_CMD_FIELD.type = 14
+SUCCESSFUBENUSERCMD_CMD_FIELD.cpp_type = 8
+SUCCESSFUBENUSERCMD_PARAM_FIELD.name = "param"
+SUCCESSFUBENUSERCMD_PARAM_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.param"
+SUCCESSFUBENUSERCMD_PARAM_FIELD.number = 2
+SUCCESSFUBENUSERCMD_PARAM_FIELD.index = 1
+SUCCESSFUBENUSERCMD_PARAM_FIELD.label = 1
+SUCCESSFUBENUSERCMD_PARAM_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_PARAM_FIELD.default_value = 4
+SUCCESSFUBENUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SUCCESSFUBENUSERCMD_PARAM_FIELD.type = 14
+SUCCESSFUBENUSERCMD_PARAM_FIELD.cpp_type = 8
+SUCCESSFUBENUSERCMD_TYPE_FIELD.name = "type"
+SUCCESSFUBENUSERCMD_TYPE_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.type"
+SUCCESSFUBENUSERCMD_TYPE_FIELD.number = 3
+SUCCESSFUBENUSERCMD_TYPE_FIELD.index = 2
+SUCCESSFUBENUSERCMD_TYPE_FIELD.label = 1
+SUCCESSFUBENUSERCMD_TYPE_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_TYPE_FIELD.default_value = 0
+SUCCESSFUBENUSERCMD_TYPE_FIELD.enum_type = ERAIDTYPE
+SUCCESSFUBENUSERCMD_TYPE_FIELD.type = 14
+SUCCESSFUBENUSERCMD_TYPE_FIELD.cpp_type = 8
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.name = "param1"
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.param1"
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.number = 4
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.index = 3
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.label = 1
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.default_value = 0
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.type = 13
+SUCCESSFUBENUSERCMD_PARAM1_FIELD.cpp_type = 3
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.name = "param2"
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.param2"
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.number = 5
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.index = 4
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.label = 1
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.default_value = 0
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.type = 13
+SUCCESSFUBENUSERCMD_PARAM2_FIELD.cpp_type = 3
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.name = "param3"
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.param3"
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.number = 6
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.index = 5
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.label = 1
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.default_value = 0
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.type = 13
+SUCCESSFUBENUSERCMD_PARAM3_FIELD.cpp_type = 3
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.name = "param4"
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.full_name = ".Cmd.SuccessFuBenUserCmd.param4"
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.number = 7
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.index = 6
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.label = 1
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.has_default_value = true
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.default_value = 0
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.type = 13
+SUCCESSFUBENUSERCMD_PARAM4_FIELD.cpp_type = 3
+SUCCESSFUBENUSERCMD.name = "SuccessFuBenUserCmd"
+SUCCESSFUBENUSERCMD.full_name = ".Cmd.SuccessFuBenUserCmd"
+SUCCESSFUBENUSERCMD.nested_types = {}
+SUCCESSFUBENUSERCMD.enum_types = {}
+SUCCESSFUBENUSERCMD.fields = {
+  SUCCESSFUBENUSERCMD_CMD_FIELD,
+  SUCCESSFUBENUSERCMD_PARAM_FIELD,
+  SUCCESSFUBENUSERCMD_TYPE_FIELD,
+  SUCCESSFUBENUSERCMD_PARAM1_FIELD,
+  SUCCESSFUBENUSERCMD_PARAM2_FIELD,
+  SUCCESSFUBENUSERCMD_PARAM3_FIELD,
+  SUCCESSFUBENUSERCMD_PARAM4_FIELD
+}
+SUCCESSFUBENUSERCMD.is_extendable = false
+SUCCESSFUBENUSERCMD.extensions = {}
+WORLDSTAGEITEM_ID_FIELD.name = "id"
+WORLDSTAGEITEM_ID_FIELD.full_name = ".Cmd.WorldStageItem.id"
+WORLDSTAGEITEM_ID_FIELD.number = 1
+WORLDSTAGEITEM_ID_FIELD.index = 0
+WORLDSTAGEITEM_ID_FIELD.label = 1
+WORLDSTAGEITEM_ID_FIELD.has_default_value = false
+WORLDSTAGEITEM_ID_FIELD.default_value = 0
+WORLDSTAGEITEM_ID_FIELD.type = 13
+WORLDSTAGEITEM_ID_FIELD.cpp_type = 3
+WORLDSTAGEITEM_STAR_FIELD.name = "star"
+WORLDSTAGEITEM_STAR_FIELD.full_name = ".Cmd.WorldStageItem.star"
+WORLDSTAGEITEM_STAR_FIELD.number = 2
+WORLDSTAGEITEM_STAR_FIELD.index = 1
+WORLDSTAGEITEM_STAR_FIELD.label = 1
+WORLDSTAGEITEM_STAR_FIELD.has_default_value = false
+WORLDSTAGEITEM_STAR_FIELD.default_value = 0
+WORLDSTAGEITEM_STAR_FIELD.type = 13
+WORLDSTAGEITEM_STAR_FIELD.cpp_type = 3
+WORLDSTAGEITEM_GETLIST_FIELD.name = "getList"
+WORLDSTAGEITEM_GETLIST_FIELD.full_name = ".Cmd.WorldStageItem.getList"
+WORLDSTAGEITEM_GETLIST_FIELD.number = 3
+WORLDSTAGEITEM_GETLIST_FIELD.index = 2
+WORLDSTAGEITEM_GETLIST_FIELD.label = 3
+WORLDSTAGEITEM_GETLIST_FIELD.has_default_value = false
+WORLDSTAGEITEM_GETLIST_FIELD.default_value = {}
+WORLDSTAGEITEM_GETLIST_FIELD.type = 13
+WORLDSTAGEITEM_GETLIST_FIELD.cpp_type = 3
+WORLDSTAGEITEM.name = "WorldStageItem"
+WORLDSTAGEITEM.full_name = ".Cmd.WorldStageItem"
+WORLDSTAGEITEM.nested_types = {}
+WORLDSTAGEITEM.enum_types = {}
+WORLDSTAGEITEM.fields = {
+  WORLDSTAGEITEM_ID_FIELD,
+  WORLDSTAGEITEM_STAR_FIELD,
+  WORLDSTAGEITEM_GETLIST_FIELD
+}
+WORLDSTAGEITEM.is_extendable = false
+WORLDSTAGEITEM.extensions = {}
+STAGESTEPITEM_STAGEID_FIELD.name = "stageid"
+STAGESTEPITEM_STAGEID_FIELD.full_name = ".Cmd.StageStepItem.stageid"
+STAGESTEPITEM_STAGEID_FIELD.number = 1
+STAGESTEPITEM_STAGEID_FIELD.index = 0
+STAGESTEPITEM_STAGEID_FIELD.label = 1
+STAGESTEPITEM_STAGEID_FIELD.has_default_value = false
+STAGESTEPITEM_STAGEID_FIELD.default_value = 0
+STAGESTEPITEM_STAGEID_FIELD.type = 13
+STAGESTEPITEM_STAGEID_FIELD.cpp_type = 3
+STAGESTEPITEM_STEPID_FIELD.name = "stepid"
+STAGESTEPITEM_STEPID_FIELD.full_name = ".Cmd.StageStepItem.stepid"
+STAGESTEPITEM_STEPID_FIELD.number = 2
+STAGESTEPITEM_STEPID_FIELD.index = 1
+STAGESTEPITEM_STEPID_FIELD.label = 1
+STAGESTEPITEM_STEPID_FIELD.has_default_value = false
+STAGESTEPITEM_STEPID_FIELD.default_value = 0
+STAGESTEPITEM_STEPID_FIELD.type = 13
+STAGESTEPITEM_STEPID_FIELD.cpp_type = 3
+STAGESTEPITEM_TYPE_FIELD.name = "type"
+STAGESTEPITEM_TYPE_FIELD.full_name = ".Cmd.StageStepItem.type"
+STAGESTEPITEM_TYPE_FIELD.number = 3
+STAGESTEPITEM_TYPE_FIELD.index = 2
+STAGESTEPITEM_TYPE_FIELD.label = 1
+STAGESTEPITEM_TYPE_FIELD.has_default_value = false
+STAGESTEPITEM_TYPE_FIELD.default_value = 0
+STAGESTEPITEM_TYPE_FIELD.type = 13
+STAGESTEPITEM_TYPE_FIELD.cpp_type = 3
+STAGESTEPITEM.name = "StageStepItem"
+STAGESTEPITEM.full_name = ".Cmd.StageStepItem"
+STAGESTEPITEM.nested_types = {}
+STAGESTEPITEM.enum_types = {}
+STAGESTEPITEM.fields = {
+  STAGESTEPITEM_STAGEID_FIELD,
+  STAGESTEPITEM_STEPID_FIELD,
+  STAGESTEPITEM_TYPE_FIELD
+}
+STAGESTEPITEM.is_extendable = false
+STAGESTEPITEM.extensions = {}
+WORLDSTAGEUSERCMD_CMD_FIELD.name = "cmd"
+WORLDSTAGEUSERCMD_CMD_FIELD.full_name = ".Cmd.WorldStageUserCmd.cmd"
+WORLDSTAGEUSERCMD_CMD_FIELD.number = 1
+WORLDSTAGEUSERCMD_CMD_FIELD.index = 0
+WORLDSTAGEUSERCMD_CMD_FIELD.label = 1
+WORLDSTAGEUSERCMD_CMD_FIELD.has_default_value = true
+WORLDSTAGEUSERCMD_CMD_FIELD.default_value = 11
+WORLDSTAGEUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+WORLDSTAGEUSERCMD_CMD_FIELD.type = 14
+WORLDSTAGEUSERCMD_CMD_FIELD.cpp_type = 8
+WORLDSTAGEUSERCMD_PARAM_FIELD.name = "param"
+WORLDSTAGEUSERCMD_PARAM_FIELD.full_name = ".Cmd.WorldStageUserCmd.param"
+WORLDSTAGEUSERCMD_PARAM_FIELD.number = 2
+WORLDSTAGEUSERCMD_PARAM_FIELD.index = 1
+WORLDSTAGEUSERCMD_PARAM_FIELD.label = 1
+WORLDSTAGEUSERCMD_PARAM_FIELD.has_default_value = true
+WORLDSTAGEUSERCMD_PARAM_FIELD.default_value = 5
+WORLDSTAGEUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+WORLDSTAGEUSERCMD_PARAM_FIELD.type = 14
+WORLDSTAGEUSERCMD_PARAM_FIELD.cpp_type = 8
+WORLDSTAGEUSERCMD_LIST_FIELD.name = "list"
+WORLDSTAGEUSERCMD_LIST_FIELD.full_name = ".Cmd.WorldStageUserCmd.list"
+WORLDSTAGEUSERCMD_LIST_FIELD.number = 3
+WORLDSTAGEUSERCMD_LIST_FIELD.index = 2
+WORLDSTAGEUSERCMD_LIST_FIELD.label = 3
+WORLDSTAGEUSERCMD_LIST_FIELD.has_default_value = false
+WORLDSTAGEUSERCMD_LIST_FIELD.default_value = {}
+WORLDSTAGEUSERCMD_LIST_FIELD.message_type = WORLDSTAGEITEM
+WORLDSTAGEUSERCMD_LIST_FIELD.type = 11
+WORLDSTAGEUSERCMD_LIST_FIELD.cpp_type = 10
+WORLDSTAGEUSERCMD_CURINFO_FIELD.name = "curinfo"
+WORLDSTAGEUSERCMD_CURINFO_FIELD.full_name = ".Cmd.WorldStageUserCmd.curinfo"
+WORLDSTAGEUSERCMD_CURINFO_FIELD.number = 4
+WORLDSTAGEUSERCMD_CURINFO_FIELD.index = 3
+WORLDSTAGEUSERCMD_CURINFO_FIELD.label = 3
+WORLDSTAGEUSERCMD_CURINFO_FIELD.has_default_value = false
+WORLDSTAGEUSERCMD_CURINFO_FIELD.default_value = {}
+WORLDSTAGEUSERCMD_CURINFO_FIELD.message_type = STAGESTEPITEM
+WORLDSTAGEUSERCMD_CURINFO_FIELD.type = 11
+WORLDSTAGEUSERCMD_CURINFO_FIELD.cpp_type = 10
+WORLDSTAGEUSERCMD.name = "WorldStageUserCmd"
+WORLDSTAGEUSERCMD.full_name = ".Cmd.WorldStageUserCmd"
+WORLDSTAGEUSERCMD.nested_types = {}
+WORLDSTAGEUSERCMD.enum_types = {}
+WORLDSTAGEUSERCMD.fields = {
+  WORLDSTAGEUSERCMD_CMD_FIELD,
+  WORLDSTAGEUSERCMD_PARAM_FIELD,
+  WORLDSTAGEUSERCMD_LIST_FIELD,
+  WORLDSTAGEUSERCMD_CURINFO_FIELD
+}
+WORLDSTAGEUSERCMD.is_extendable = false
+WORLDSTAGEUSERCMD.extensions = {}
+STAGENORMALSTEPITEM_STEPID_FIELD.name = "stepid"
+STAGENORMALSTEPITEM_STEPID_FIELD.full_name = ".Cmd.StageNormalStepItem.stepid"
+STAGENORMALSTEPITEM_STEPID_FIELD.number = 1
+STAGENORMALSTEPITEM_STEPID_FIELD.index = 0
+STAGENORMALSTEPITEM_STEPID_FIELD.label = 1
+STAGENORMALSTEPITEM_STEPID_FIELD.has_default_value = false
+STAGENORMALSTEPITEM_STEPID_FIELD.default_value = 0
+STAGENORMALSTEPITEM_STEPID_FIELD.type = 13
+STAGENORMALSTEPITEM_STEPID_FIELD.cpp_type = 3
+STAGENORMALSTEPITEM_STAR_FIELD.name = "star"
+STAGENORMALSTEPITEM_STAR_FIELD.full_name = ".Cmd.StageNormalStepItem.star"
+STAGENORMALSTEPITEM_STAR_FIELD.number = 2
+STAGENORMALSTEPITEM_STAR_FIELD.index = 1
+STAGENORMALSTEPITEM_STAR_FIELD.label = 1
+STAGENORMALSTEPITEM_STAR_FIELD.has_default_value = false
+STAGENORMALSTEPITEM_STAR_FIELD.default_value = 0
+STAGENORMALSTEPITEM_STAR_FIELD.type = 13
+STAGENORMALSTEPITEM_STAR_FIELD.cpp_type = 3
+STAGENORMALSTEPITEM.name = "StageNormalStepItem"
+STAGENORMALSTEPITEM.full_name = ".Cmd.StageNormalStepItem"
+STAGENORMALSTEPITEM.nested_types = {}
+STAGENORMALSTEPITEM.enum_types = {}
+STAGENORMALSTEPITEM.fields = {
+  STAGENORMALSTEPITEM_STEPID_FIELD,
+  STAGENORMALSTEPITEM_STAR_FIELD
+}
+STAGENORMALSTEPITEM.is_extendable = false
+STAGENORMALSTEPITEM.extensions = {}
+STAGEHARDSTEPITEM_STEPID_FIELD.name = "stepid"
+STAGEHARDSTEPITEM_STEPID_FIELD.full_name = ".Cmd.StageHardStepItem.stepid"
+STAGEHARDSTEPITEM_STEPID_FIELD.number = 1
+STAGEHARDSTEPITEM_STEPID_FIELD.index = 0
+STAGEHARDSTEPITEM_STEPID_FIELD.label = 1
+STAGEHARDSTEPITEM_STEPID_FIELD.has_default_value = false
+STAGEHARDSTEPITEM_STEPID_FIELD.default_value = 0
+STAGEHARDSTEPITEM_STEPID_FIELD.type = 13
+STAGEHARDSTEPITEM_STEPID_FIELD.cpp_type = 3
+STAGEHARDSTEPITEM_FINISH_FIELD.name = "finish"
+STAGEHARDSTEPITEM_FINISH_FIELD.full_name = ".Cmd.StageHardStepItem.finish"
+STAGEHARDSTEPITEM_FINISH_FIELD.number = 2
+STAGEHARDSTEPITEM_FINISH_FIELD.index = 1
+STAGEHARDSTEPITEM_FINISH_FIELD.label = 1
+STAGEHARDSTEPITEM_FINISH_FIELD.has_default_value = false
+STAGEHARDSTEPITEM_FINISH_FIELD.default_value = 0
+STAGEHARDSTEPITEM_FINISH_FIELD.type = 13
+STAGEHARDSTEPITEM_FINISH_FIELD.cpp_type = 3
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.name = "challengeTime"
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.full_name = ".Cmd.StageHardStepItem.challengeTime"
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.number = 3
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.index = 2
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.label = 1
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.has_default_value = false
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.default_value = 0
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.type = 13
+STAGEHARDSTEPITEM_CHALLENGETIME_FIELD.cpp_type = 3
+STAGEHARDSTEPITEM.name = "StageHardStepItem"
+STAGEHARDSTEPITEM.full_name = ".Cmd.StageHardStepItem"
+STAGEHARDSTEPITEM.nested_types = {}
+STAGEHARDSTEPITEM.enum_types = {}
+STAGEHARDSTEPITEM.fields = {
+  STAGEHARDSTEPITEM_STEPID_FIELD,
+  STAGEHARDSTEPITEM_FINISH_FIELD,
+  STAGEHARDSTEPITEM_CHALLENGETIME_FIELD
+}
+STAGEHARDSTEPITEM.is_extendable = false
+STAGEHARDSTEPITEM.extensions = {}
+STAGESTEPUSERCMD_CMD_FIELD.name = "cmd"
+STAGESTEPUSERCMD_CMD_FIELD.full_name = ".Cmd.StageStepUserCmd.cmd"
+STAGESTEPUSERCMD_CMD_FIELD.number = 1
+STAGESTEPUSERCMD_CMD_FIELD.index = 0
+STAGESTEPUSERCMD_CMD_FIELD.label = 1
+STAGESTEPUSERCMD_CMD_FIELD.has_default_value = true
+STAGESTEPUSERCMD_CMD_FIELD.default_value = 11
+STAGESTEPUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+STAGESTEPUSERCMD_CMD_FIELD.type = 14
+STAGESTEPUSERCMD_CMD_FIELD.cpp_type = 8
+STAGESTEPUSERCMD_PARAM_FIELD.name = "param"
+STAGESTEPUSERCMD_PARAM_FIELD.full_name = ".Cmd.StageStepUserCmd.param"
+STAGESTEPUSERCMD_PARAM_FIELD.number = 2
+STAGESTEPUSERCMD_PARAM_FIELD.index = 1
+STAGESTEPUSERCMD_PARAM_FIELD.label = 1
+STAGESTEPUSERCMD_PARAM_FIELD.has_default_value = true
+STAGESTEPUSERCMD_PARAM_FIELD.default_value = 6
+STAGESTEPUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+STAGESTEPUSERCMD_PARAM_FIELD.type = 14
+STAGESTEPUSERCMD_PARAM_FIELD.cpp_type = 8
+STAGESTEPUSERCMD_STAGEID_FIELD.name = "stageid"
+STAGESTEPUSERCMD_STAGEID_FIELD.full_name = ".Cmd.StageStepUserCmd.stageid"
+STAGESTEPUSERCMD_STAGEID_FIELD.number = 3
+STAGESTEPUSERCMD_STAGEID_FIELD.index = 2
+STAGESTEPUSERCMD_STAGEID_FIELD.label = 1
+STAGESTEPUSERCMD_STAGEID_FIELD.has_default_value = false
+STAGESTEPUSERCMD_STAGEID_FIELD.default_value = 0
+STAGESTEPUSERCMD_STAGEID_FIELD.type = 13
+STAGESTEPUSERCMD_STAGEID_FIELD.cpp_type = 3
+STAGESTEPUSERCMD_NORMALIST_FIELD.name = "normalist"
+STAGESTEPUSERCMD_NORMALIST_FIELD.full_name = ".Cmd.StageStepUserCmd.normalist"
+STAGESTEPUSERCMD_NORMALIST_FIELD.number = 4
+STAGESTEPUSERCMD_NORMALIST_FIELD.index = 3
+STAGESTEPUSERCMD_NORMALIST_FIELD.label = 3
+STAGESTEPUSERCMD_NORMALIST_FIELD.has_default_value = false
+STAGESTEPUSERCMD_NORMALIST_FIELD.default_value = {}
+STAGESTEPUSERCMD_NORMALIST_FIELD.message_type = STAGENORMALSTEPITEM
+STAGESTEPUSERCMD_NORMALIST_FIELD.type = 11
+STAGESTEPUSERCMD_NORMALIST_FIELD.cpp_type = 10
+STAGESTEPUSERCMD_HARDLIST_FIELD.name = "hardlist"
+STAGESTEPUSERCMD_HARDLIST_FIELD.full_name = ".Cmd.StageStepUserCmd.hardlist"
+STAGESTEPUSERCMD_HARDLIST_FIELD.number = 5
+STAGESTEPUSERCMD_HARDLIST_FIELD.index = 4
+STAGESTEPUSERCMD_HARDLIST_FIELD.label = 3
+STAGESTEPUSERCMD_HARDLIST_FIELD.has_default_value = false
+STAGESTEPUSERCMD_HARDLIST_FIELD.default_value = {}
+STAGESTEPUSERCMD_HARDLIST_FIELD.message_type = STAGEHARDSTEPITEM
+STAGESTEPUSERCMD_HARDLIST_FIELD.type = 11
+STAGESTEPUSERCMD_HARDLIST_FIELD.cpp_type = 10
+STAGESTEPUSERCMD.name = "StageStepUserCmd"
+STAGESTEPUSERCMD.full_name = ".Cmd.StageStepUserCmd"
+STAGESTEPUSERCMD.nested_types = {}
+STAGESTEPUSERCMD.enum_types = {}
+STAGESTEPUSERCMD.fields = {
+  STAGESTEPUSERCMD_CMD_FIELD,
+  STAGESTEPUSERCMD_PARAM_FIELD,
+  STAGESTEPUSERCMD_STAGEID_FIELD,
+  STAGESTEPUSERCMD_NORMALIST_FIELD,
+  STAGESTEPUSERCMD_HARDLIST_FIELD
+}
+STAGESTEPUSERCMD.is_extendable = false
+STAGESTEPUSERCMD.extensions = {}
+STARTSTAGEUSERCMD_CMD_FIELD.name = "cmd"
+STARTSTAGEUSERCMD_CMD_FIELD.full_name = ".Cmd.StartStageUserCmd.cmd"
+STARTSTAGEUSERCMD_CMD_FIELD.number = 1
+STARTSTAGEUSERCMD_CMD_FIELD.index = 0
+STARTSTAGEUSERCMD_CMD_FIELD.label = 1
+STARTSTAGEUSERCMD_CMD_FIELD.has_default_value = true
+STARTSTAGEUSERCMD_CMD_FIELD.default_value = 11
+STARTSTAGEUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+STARTSTAGEUSERCMD_CMD_FIELD.type = 14
+STARTSTAGEUSERCMD_CMD_FIELD.cpp_type = 8
+STARTSTAGEUSERCMD_PARAM_FIELD.name = "param"
+STARTSTAGEUSERCMD_PARAM_FIELD.full_name = ".Cmd.StartStageUserCmd.param"
+STARTSTAGEUSERCMD_PARAM_FIELD.number = 2
+STARTSTAGEUSERCMD_PARAM_FIELD.index = 1
+STARTSTAGEUSERCMD_PARAM_FIELD.label = 1
+STARTSTAGEUSERCMD_PARAM_FIELD.has_default_value = true
+STARTSTAGEUSERCMD_PARAM_FIELD.default_value = 7
+STARTSTAGEUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+STARTSTAGEUSERCMD_PARAM_FIELD.type = 14
+STARTSTAGEUSERCMD_PARAM_FIELD.cpp_type = 8
+STARTSTAGEUSERCMD_STAGEID_FIELD.name = "stageid"
+STARTSTAGEUSERCMD_STAGEID_FIELD.full_name = ".Cmd.StartStageUserCmd.stageid"
+STARTSTAGEUSERCMD_STAGEID_FIELD.number = 3
+STARTSTAGEUSERCMD_STAGEID_FIELD.index = 2
+STARTSTAGEUSERCMD_STAGEID_FIELD.label = 1
+STARTSTAGEUSERCMD_STAGEID_FIELD.has_default_value = false
+STARTSTAGEUSERCMD_STAGEID_FIELD.default_value = 0
+STARTSTAGEUSERCMD_STAGEID_FIELD.type = 13
+STARTSTAGEUSERCMD_STAGEID_FIELD.cpp_type = 3
+STARTSTAGEUSERCMD_STEPID_FIELD.name = "stepid"
+STARTSTAGEUSERCMD_STEPID_FIELD.full_name = ".Cmd.StartStageUserCmd.stepid"
+STARTSTAGEUSERCMD_STEPID_FIELD.number = 4
+STARTSTAGEUSERCMD_STEPID_FIELD.index = 3
+STARTSTAGEUSERCMD_STEPID_FIELD.label = 1
+STARTSTAGEUSERCMD_STEPID_FIELD.has_default_value = false
+STARTSTAGEUSERCMD_STEPID_FIELD.default_value = 0
+STARTSTAGEUSERCMD_STEPID_FIELD.type = 13
+STARTSTAGEUSERCMD_STEPID_FIELD.cpp_type = 3
+STARTSTAGEUSERCMD_TYPE_FIELD.name = "type"
+STARTSTAGEUSERCMD_TYPE_FIELD.full_name = ".Cmd.StartStageUserCmd.type"
+STARTSTAGEUSERCMD_TYPE_FIELD.number = 5
+STARTSTAGEUSERCMD_TYPE_FIELD.index = 4
+STARTSTAGEUSERCMD_TYPE_FIELD.label = 1
+STARTSTAGEUSERCMD_TYPE_FIELD.has_default_value = false
+STARTSTAGEUSERCMD_TYPE_FIELD.default_value = 0
+STARTSTAGEUSERCMD_TYPE_FIELD.type = 13
+STARTSTAGEUSERCMD_TYPE_FIELD.cpp_type = 3
+STARTSTAGEUSERCMD.name = "StartStageUserCmd"
+STARTSTAGEUSERCMD.full_name = ".Cmd.StartStageUserCmd"
+STARTSTAGEUSERCMD.nested_types = {}
+STARTSTAGEUSERCMD.enum_types = {}
+STARTSTAGEUSERCMD.fields = {
+  STARTSTAGEUSERCMD_CMD_FIELD,
+  STARTSTAGEUSERCMD_PARAM_FIELD,
+  STARTSTAGEUSERCMD_STAGEID_FIELD,
+  STARTSTAGEUSERCMD_STEPID_FIELD,
+  STARTSTAGEUSERCMD_TYPE_FIELD
+}
+STARTSTAGEUSERCMD.is_extendable = false
+STARTSTAGEUSERCMD.extensions = {}
+GETREWARDSTAGEUSERCMD_CMD_FIELD.name = "cmd"
+GETREWARDSTAGEUSERCMD_CMD_FIELD.full_name = ".Cmd.GetRewardStageUserCmd.cmd"
+GETREWARDSTAGEUSERCMD_CMD_FIELD.number = 1
+GETREWARDSTAGEUSERCMD_CMD_FIELD.index = 0
+GETREWARDSTAGEUSERCMD_CMD_FIELD.label = 1
+GETREWARDSTAGEUSERCMD_CMD_FIELD.has_default_value = true
+GETREWARDSTAGEUSERCMD_CMD_FIELD.default_value = 11
+GETREWARDSTAGEUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GETREWARDSTAGEUSERCMD_CMD_FIELD.type = 14
+GETREWARDSTAGEUSERCMD_CMD_FIELD.cpp_type = 8
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.name = "param"
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.full_name = ".Cmd.GetRewardStageUserCmd.param"
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.number = 2
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.index = 1
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.label = 1
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.has_default_value = true
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.default_value = 8
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.type = 14
+GETREWARDSTAGEUSERCMD_PARAM_FIELD.cpp_type = 8
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.name = "stageid"
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.full_name = ".Cmd.GetRewardStageUserCmd.stageid"
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.number = 3
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.index = 2
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.label = 1
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.has_default_value = false
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.default_value = 0
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.type = 13
+GETREWARDSTAGEUSERCMD_STAGEID_FIELD.cpp_type = 3
+GETREWARDSTAGEUSERCMD_STARID_FIELD.name = "starid"
+GETREWARDSTAGEUSERCMD_STARID_FIELD.full_name = ".Cmd.GetRewardStageUserCmd.starid"
+GETREWARDSTAGEUSERCMD_STARID_FIELD.number = 4
+GETREWARDSTAGEUSERCMD_STARID_FIELD.index = 3
+GETREWARDSTAGEUSERCMD_STARID_FIELD.label = 1
+GETREWARDSTAGEUSERCMD_STARID_FIELD.has_default_value = false
+GETREWARDSTAGEUSERCMD_STARID_FIELD.default_value = 0
+GETREWARDSTAGEUSERCMD_STARID_FIELD.type = 13
+GETREWARDSTAGEUSERCMD_STARID_FIELD.cpp_type = 3
+GETREWARDSTAGEUSERCMD.name = "GetRewardStageUserCmd"
+GETREWARDSTAGEUSERCMD.full_name = ".Cmd.GetRewardStageUserCmd"
+GETREWARDSTAGEUSERCMD.nested_types = {}
+GETREWARDSTAGEUSERCMD.enum_types = {}
+GETREWARDSTAGEUSERCMD.fields = {
+  GETREWARDSTAGEUSERCMD_CMD_FIELD,
+  GETREWARDSTAGEUSERCMD_PARAM_FIELD,
+  GETREWARDSTAGEUSERCMD_STAGEID_FIELD,
+  GETREWARDSTAGEUSERCMD_STARID_FIELD
+}
+GETREWARDSTAGEUSERCMD.is_extendable = false
+GETREWARDSTAGEUSERCMD.extensions = {}
+STAGESTEPSTARUSERCMD_CMD_FIELD.name = "cmd"
+STAGESTEPSTARUSERCMD_CMD_FIELD.full_name = ".Cmd.StageStepStarUserCmd.cmd"
+STAGESTEPSTARUSERCMD_CMD_FIELD.number = 1
+STAGESTEPSTARUSERCMD_CMD_FIELD.index = 0
+STAGESTEPSTARUSERCMD_CMD_FIELD.label = 1
+STAGESTEPSTARUSERCMD_CMD_FIELD.has_default_value = true
+STAGESTEPSTARUSERCMD_CMD_FIELD.default_value = 11
+STAGESTEPSTARUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+STAGESTEPSTARUSERCMD_CMD_FIELD.type = 14
+STAGESTEPSTARUSERCMD_CMD_FIELD.cpp_type = 8
+STAGESTEPSTARUSERCMD_PARAM_FIELD.name = "param"
+STAGESTEPSTARUSERCMD_PARAM_FIELD.full_name = ".Cmd.StageStepStarUserCmd.param"
+STAGESTEPSTARUSERCMD_PARAM_FIELD.number = 2
+STAGESTEPSTARUSERCMD_PARAM_FIELD.index = 1
+STAGESTEPSTARUSERCMD_PARAM_FIELD.label = 1
+STAGESTEPSTARUSERCMD_PARAM_FIELD.has_default_value = true
+STAGESTEPSTARUSERCMD_PARAM_FIELD.default_value = 9
+STAGESTEPSTARUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+STAGESTEPSTARUSERCMD_PARAM_FIELD.type = 14
+STAGESTEPSTARUSERCMD_PARAM_FIELD.cpp_type = 8
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.name = "stageid"
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.full_name = ".Cmd.StageStepStarUserCmd.stageid"
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.number = 3
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.index = 2
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.label = 1
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.has_default_value = false
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.default_value = 0
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.type = 13
+STAGESTEPSTARUSERCMD_STAGEID_FIELD.cpp_type = 3
+STAGESTEPSTARUSERCMD_STEPID_FIELD.name = "stepid"
+STAGESTEPSTARUSERCMD_STEPID_FIELD.full_name = ".Cmd.StageStepStarUserCmd.stepid"
+STAGESTEPSTARUSERCMD_STEPID_FIELD.number = 4
+STAGESTEPSTARUSERCMD_STEPID_FIELD.index = 3
+STAGESTEPSTARUSERCMD_STEPID_FIELD.label = 1
+STAGESTEPSTARUSERCMD_STEPID_FIELD.has_default_value = false
+STAGESTEPSTARUSERCMD_STEPID_FIELD.default_value = 0
+STAGESTEPSTARUSERCMD_STEPID_FIELD.type = 13
+STAGESTEPSTARUSERCMD_STEPID_FIELD.cpp_type = 3
+STAGESTEPSTARUSERCMD_STAR_FIELD.name = "star"
+STAGESTEPSTARUSERCMD_STAR_FIELD.full_name = ".Cmd.StageStepStarUserCmd.star"
+STAGESTEPSTARUSERCMD_STAR_FIELD.number = 5
+STAGESTEPSTARUSERCMD_STAR_FIELD.index = 4
+STAGESTEPSTARUSERCMD_STAR_FIELD.label = 1
+STAGESTEPSTARUSERCMD_STAR_FIELD.has_default_value = false
+STAGESTEPSTARUSERCMD_STAR_FIELD.default_value = 0
+STAGESTEPSTARUSERCMD_STAR_FIELD.type = 13
+STAGESTEPSTARUSERCMD_STAR_FIELD.cpp_type = 3
+STAGESTEPSTARUSERCMD_TYPE_FIELD.name = "type"
+STAGESTEPSTARUSERCMD_TYPE_FIELD.full_name = ".Cmd.StageStepStarUserCmd.type"
+STAGESTEPSTARUSERCMD_TYPE_FIELD.number = 6
+STAGESTEPSTARUSERCMD_TYPE_FIELD.index = 5
+STAGESTEPSTARUSERCMD_TYPE_FIELD.label = 1
+STAGESTEPSTARUSERCMD_TYPE_FIELD.has_default_value = false
+STAGESTEPSTARUSERCMD_TYPE_FIELD.default_value = 0
+STAGESTEPSTARUSERCMD_TYPE_FIELD.type = 13
+STAGESTEPSTARUSERCMD_TYPE_FIELD.cpp_type = 3
+STAGESTEPSTARUSERCMD.name = "StageStepStarUserCmd"
+STAGESTEPSTARUSERCMD.full_name = ".Cmd.StageStepStarUserCmd"
+STAGESTEPSTARUSERCMD.nested_types = {}
+STAGESTEPSTARUSERCMD.enum_types = {}
+STAGESTEPSTARUSERCMD.fields = {
+  STAGESTEPSTARUSERCMD_CMD_FIELD,
+  STAGESTEPSTARUSERCMD_PARAM_FIELD,
+  STAGESTEPSTARUSERCMD_STAGEID_FIELD,
+  STAGESTEPSTARUSERCMD_STEPID_FIELD,
+  STAGESTEPSTARUSERCMD_STAR_FIELD,
+  STAGESTEPSTARUSERCMD_TYPE_FIELD
+}
+STAGESTEPSTARUSERCMD.is_extendable = false
+STAGESTEPSTARUSERCMD.extensions = {}
+MONSTERCOUNTUSERCMD_CMD_FIELD.name = "cmd"
+MONSTERCOUNTUSERCMD_CMD_FIELD.full_name = ".Cmd.MonsterCountUserCmd.cmd"
+MONSTERCOUNTUSERCMD_CMD_FIELD.number = 1
+MONSTERCOUNTUSERCMD_CMD_FIELD.index = 0
+MONSTERCOUNTUSERCMD_CMD_FIELD.label = 1
+MONSTERCOUNTUSERCMD_CMD_FIELD.has_default_value = true
+MONSTERCOUNTUSERCMD_CMD_FIELD.default_value = 11
+MONSTERCOUNTUSERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+MONSTERCOUNTUSERCMD_CMD_FIELD.type = 14
+MONSTERCOUNTUSERCMD_CMD_FIELD.cpp_type = 8
+MONSTERCOUNTUSERCMD_PARAM_FIELD.name = "param"
+MONSTERCOUNTUSERCMD_PARAM_FIELD.full_name = ".Cmd.MonsterCountUserCmd.param"
+MONSTERCOUNTUSERCMD_PARAM_FIELD.number = 2
+MONSTERCOUNTUSERCMD_PARAM_FIELD.index = 1
+MONSTERCOUNTUSERCMD_PARAM_FIELD.label = 1
+MONSTERCOUNTUSERCMD_PARAM_FIELD.has_default_value = true
+MONSTERCOUNTUSERCMD_PARAM_FIELD.default_value = 11
+MONSTERCOUNTUSERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+MONSTERCOUNTUSERCMD_PARAM_FIELD.type = 14
+MONSTERCOUNTUSERCMD_PARAM_FIELD.cpp_type = 8
+MONSTERCOUNTUSERCMD_NUM_FIELD.name = "num"
+MONSTERCOUNTUSERCMD_NUM_FIELD.full_name = ".Cmd.MonsterCountUserCmd.num"
+MONSTERCOUNTUSERCMD_NUM_FIELD.number = 3
+MONSTERCOUNTUSERCMD_NUM_FIELD.index = 2
+MONSTERCOUNTUSERCMD_NUM_FIELD.label = 1
+MONSTERCOUNTUSERCMD_NUM_FIELD.has_default_value = false
+MONSTERCOUNTUSERCMD_NUM_FIELD.default_value = 0
+MONSTERCOUNTUSERCMD_NUM_FIELD.type = 13
+MONSTERCOUNTUSERCMD_NUM_FIELD.cpp_type = 3
+MONSTERCOUNTUSERCMD.name = "MonsterCountUserCmd"
+MONSTERCOUNTUSERCMD.full_name = ".Cmd.MonsterCountUserCmd"
+MONSTERCOUNTUSERCMD.nested_types = {}
+MONSTERCOUNTUSERCMD.enum_types = {}
+MONSTERCOUNTUSERCMD.fields = {
+  MONSTERCOUNTUSERCMD_CMD_FIELD,
+  MONSTERCOUNTUSERCMD_PARAM_FIELD,
+  MONSTERCOUNTUSERCMD_NUM_FIELD
+}
+MONSTERCOUNTUSERCMD.is_extendable = false
+MONSTERCOUNTUSERCMD.extensions = {}
+FUBENSTEPSYNCCMD_CMD_FIELD.name = "cmd"
+FUBENSTEPSYNCCMD_CMD_FIELD.full_name = ".Cmd.FubenStepSyncCmd.cmd"
+FUBENSTEPSYNCCMD_CMD_FIELD.number = 1
+FUBENSTEPSYNCCMD_CMD_FIELD.index = 0
+FUBENSTEPSYNCCMD_CMD_FIELD.label = 1
+FUBENSTEPSYNCCMD_CMD_FIELD.has_default_value = true
+FUBENSTEPSYNCCMD_CMD_FIELD.default_value = 11
+FUBENSTEPSYNCCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+FUBENSTEPSYNCCMD_CMD_FIELD.type = 14
+FUBENSTEPSYNCCMD_CMD_FIELD.cpp_type = 8
+FUBENSTEPSYNCCMD_PARAM_FIELD.name = "param"
+FUBENSTEPSYNCCMD_PARAM_FIELD.full_name = ".Cmd.FubenStepSyncCmd.param"
+FUBENSTEPSYNCCMD_PARAM_FIELD.number = 2
+FUBENSTEPSYNCCMD_PARAM_FIELD.index = 1
+FUBENSTEPSYNCCMD_PARAM_FIELD.label = 1
+FUBENSTEPSYNCCMD_PARAM_FIELD.has_default_value = true
+FUBENSTEPSYNCCMD_PARAM_FIELD.default_value = 12
+FUBENSTEPSYNCCMD_PARAM_FIELD.enum_type = FUBENPARAM
+FUBENSTEPSYNCCMD_PARAM_FIELD.type = 14
+FUBENSTEPSYNCCMD_PARAM_FIELD.cpp_type = 8
+FUBENSTEPSYNCCMD_ID_FIELD.name = "id"
+FUBENSTEPSYNCCMD_ID_FIELD.full_name = ".Cmd.FubenStepSyncCmd.id"
+FUBENSTEPSYNCCMD_ID_FIELD.number = 3
+FUBENSTEPSYNCCMD_ID_FIELD.index = 2
+FUBENSTEPSYNCCMD_ID_FIELD.label = 1
+FUBENSTEPSYNCCMD_ID_FIELD.has_default_value = true
+FUBENSTEPSYNCCMD_ID_FIELD.default_value = 0
+FUBENSTEPSYNCCMD_ID_FIELD.type = 13
+FUBENSTEPSYNCCMD_ID_FIELD.cpp_type = 3
+FUBENSTEPSYNCCMD_DEL_FIELD.name = "del"
+FUBENSTEPSYNCCMD_DEL_FIELD.full_name = ".Cmd.FubenStepSyncCmd.del"
+FUBENSTEPSYNCCMD_DEL_FIELD.number = 4
+FUBENSTEPSYNCCMD_DEL_FIELD.index = 3
+FUBENSTEPSYNCCMD_DEL_FIELD.label = 1
+FUBENSTEPSYNCCMD_DEL_FIELD.has_default_value = true
+FUBENSTEPSYNCCMD_DEL_FIELD.default_value = false
+FUBENSTEPSYNCCMD_DEL_FIELD.type = 8
+FUBENSTEPSYNCCMD_DEL_FIELD.cpp_type = 7
+FUBENSTEPSYNCCMD_GROUPID_FIELD.name = "groupid"
+FUBENSTEPSYNCCMD_GROUPID_FIELD.full_name = ".Cmd.FubenStepSyncCmd.groupid"
+FUBENSTEPSYNCCMD_GROUPID_FIELD.number = 6
+FUBENSTEPSYNCCMD_GROUPID_FIELD.index = 4
+FUBENSTEPSYNCCMD_GROUPID_FIELD.label = 1
+FUBENSTEPSYNCCMD_GROUPID_FIELD.has_default_value = true
+FUBENSTEPSYNCCMD_GROUPID_FIELD.default_value = 0
+FUBENSTEPSYNCCMD_GROUPID_FIELD.type = 13
+FUBENSTEPSYNCCMD_GROUPID_FIELD.cpp_type = 3
+FUBENSTEPSYNCCMD_CONFIG_FIELD.name = "config"
+FUBENSTEPSYNCCMD_CONFIG_FIELD.full_name = ".Cmd.FubenStepSyncCmd.config"
+FUBENSTEPSYNCCMD_CONFIG_FIELD.number = 5
+FUBENSTEPSYNCCMD_CONFIG_FIELD.index = 5
+FUBENSTEPSYNCCMD_CONFIG_FIELD.label = 1
+FUBENSTEPSYNCCMD_CONFIG_FIELD.has_default_value = false
+FUBENSTEPSYNCCMD_CONFIG_FIELD.default_value = nil
+FUBENSTEPSYNCCMD_CONFIG_FIELD.message_type = RAIDPCONFIG
+FUBENSTEPSYNCCMD_CONFIG_FIELD.type = 11
+FUBENSTEPSYNCCMD_CONFIG_FIELD.cpp_type = 10
+FUBENSTEPSYNCCMD.name = "FubenStepSyncCmd"
+FUBENSTEPSYNCCMD.full_name = ".Cmd.FubenStepSyncCmd"
+FUBENSTEPSYNCCMD.nested_types = {}
+FUBENSTEPSYNCCMD.enum_types = {}
+FUBENSTEPSYNCCMD.fields = {
+  FUBENSTEPSYNCCMD_CMD_FIELD,
+  FUBENSTEPSYNCCMD_PARAM_FIELD,
+  FUBENSTEPSYNCCMD_ID_FIELD,
+  FUBENSTEPSYNCCMD_DEL_FIELD,
+  FUBENSTEPSYNCCMD_GROUPID_FIELD,
+  FUBENSTEPSYNCCMD_CONFIG_FIELD
+}
+FUBENSTEPSYNCCMD.is_extendable = false
+FUBENSTEPSYNCCMD.extensions = {}
+FUBENPROGRESSSYNCCMD_CMD_FIELD.name = "cmd"
+FUBENPROGRESSSYNCCMD_CMD_FIELD.full_name = ".Cmd.FuBenProgressSyncCmd.cmd"
+FUBENPROGRESSSYNCCMD_CMD_FIELD.number = 1
+FUBENPROGRESSSYNCCMD_CMD_FIELD.index = 0
+FUBENPROGRESSSYNCCMD_CMD_FIELD.label = 1
+FUBENPROGRESSSYNCCMD_CMD_FIELD.has_default_value = true
+FUBENPROGRESSSYNCCMD_CMD_FIELD.default_value = 11
+FUBENPROGRESSSYNCCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+FUBENPROGRESSSYNCCMD_CMD_FIELD.type = 14
+FUBENPROGRESSSYNCCMD_CMD_FIELD.cpp_type = 8
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.name = "param"
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.full_name = ".Cmd.FuBenProgressSyncCmd.param"
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.number = 2
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.index = 1
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.label = 1
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.has_default_value = true
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.default_value = 13
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.enum_type = FUBENPARAM
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.type = 14
+FUBENPROGRESSSYNCCMD_PARAM_FIELD.cpp_type = 8
+FUBENPROGRESSSYNCCMD_ID_FIELD.name = "id"
+FUBENPROGRESSSYNCCMD_ID_FIELD.full_name = ".Cmd.FuBenProgressSyncCmd.id"
+FUBENPROGRESSSYNCCMD_ID_FIELD.number = 3
+FUBENPROGRESSSYNCCMD_ID_FIELD.index = 2
+FUBENPROGRESSSYNCCMD_ID_FIELD.label = 1
+FUBENPROGRESSSYNCCMD_ID_FIELD.has_default_value = true
+FUBENPROGRESSSYNCCMD_ID_FIELD.default_value = 0
+FUBENPROGRESSSYNCCMD_ID_FIELD.type = 13
+FUBENPROGRESSSYNCCMD_ID_FIELD.cpp_type = 3
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.name = "progress"
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.full_name = ".Cmd.FuBenProgressSyncCmd.progress"
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.number = 4
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.index = 3
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.label = 1
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.has_default_value = true
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.default_value = 0
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.type = 13
+FUBENPROGRESSSYNCCMD_PROGRESS_FIELD.cpp_type = 3
+FUBENPROGRESSSYNCCMD_STARID_FIELD.name = "starid"
+FUBENPROGRESSSYNCCMD_STARID_FIELD.full_name = ".Cmd.FuBenProgressSyncCmd.starid"
+FUBENPROGRESSSYNCCMD_STARID_FIELD.number = 5
+FUBENPROGRESSSYNCCMD_STARID_FIELD.index = 4
+FUBENPROGRESSSYNCCMD_STARID_FIELD.label = 1
+FUBENPROGRESSSYNCCMD_STARID_FIELD.has_default_value = true
+FUBENPROGRESSSYNCCMD_STARID_FIELD.default_value = 0
+FUBENPROGRESSSYNCCMD_STARID_FIELD.type = 13
+FUBENPROGRESSSYNCCMD_STARID_FIELD.cpp_type = 3
+FUBENPROGRESSSYNCCMD.name = "FuBenProgressSyncCmd"
+FUBENPROGRESSSYNCCMD.full_name = ".Cmd.FuBenProgressSyncCmd"
+FUBENPROGRESSSYNCCMD.nested_types = {}
+FUBENPROGRESSSYNCCMD.enum_types = {}
+FUBENPROGRESSSYNCCMD.fields = {
+  FUBENPROGRESSSYNCCMD_CMD_FIELD,
+  FUBENPROGRESSSYNCCMD_PARAM_FIELD,
+  FUBENPROGRESSSYNCCMD_ID_FIELD,
+  FUBENPROGRESSSYNCCMD_PROGRESS_FIELD,
+  FUBENPROGRESSSYNCCMD_STARID_FIELD
+}
+FUBENPROGRESSSYNCCMD.is_extendable = false
+FUBENPROGRESSSYNCCMD.extensions = {}
+FUBENCLEARINFOCMD_CMD_FIELD.name = "cmd"
+FUBENCLEARINFOCMD_CMD_FIELD.full_name = ".Cmd.FuBenClearInfoCmd.cmd"
+FUBENCLEARINFOCMD_CMD_FIELD.number = 1
+FUBENCLEARINFOCMD_CMD_FIELD.index = 0
+FUBENCLEARINFOCMD_CMD_FIELD.label = 1
+FUBENCLEARINFOCMD_CMD_FIELD.has_default_value = true
+FUBENCLEARINFOCMD_CMD_FIELD.default_value = 11
+FUBENCLEARINFOCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+FUBENCLEARINFOCMD_CMD_FIELD.type = 14
+FUBENCLEARINFOCMD_CMD_FIELD.cpp_type = 8
+FUBENCLEARINFOCMD_PARAM_FIELD.name = "param"
+FUBENCLEARINFOCMD_PARAM_FIELD.full_name = ".Cmd.FuBenClearInfoCmd.param"
+FUBENCLEARINFOCMD_PARAM_FIELD.number = 2
+FUBENCLEARINFOCMD_PARAM_FIELD.index = 1
+FUBENCLEARINFOCMD_PARAM_FIELD.label = 1
+FUBENCLEARINFOCMD_PARAM_FIELD.has_default_value = true
+FUBENCLEARINFOCMD_PARAM_FIELD.default_value = 15
+FUBENCLEARINFOCMD_PARAM_FIELD.enum_type = FUBENPARAM
+FUBENCLEARINFOCMD_PARAM_FIELD.type = 14
+FUBENCLEARINFOCMD_PARAM_FIELD.cpp_type = 8
+FUBENCLEARINFOCMD.name = "FuBenClearInfoCmd"
+FUBENCLEARINFOCMD.full_name = ".Cmd.FuBenClearInfoCmd"
+FUBENCLEARINFOCMD.nested_types = {}
+FUBENCLEARINFOCMD.enum_types = {}
+FUBENCLEARINFOCMD.fields = {
+  FUBENCLEARINFOCMD_CMD_FIELD,
+  FUBENCLEARINFOCMD_PARAM_FIELD
+}
+FUBENCLEARINFOCMD.is_extendable = false
+FUBENCLEARINFOCMD.extensions = {}
+GUILDGATEDATA_GATENPCID_FIELD.name = "gatenpcid"
+GUILDGATEDATA_GATENPCID_FIELD.full_name = ".Cmd.GuildGateData.gatenpcid"
+GUILDGATEDATA_GATENPCID_FIELD.number = 1
+GUILDGATEDATA_GATENPCID_FIELD.index = 0
+GUILDGATEDATA_GATENPCID_FIELD.label = 2
+GUILDGATEDATA_GATENPCID_FIELD.has_default_value = false
+GUILDGATEDATA_GATENPCID_FIELD.default_value = 0
+GUILDGATEDATA_GATENPCID_FIELD.type = 4
+GUILDGATEDATA_GATENPCID_FIELD.cpp_type = 4
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.name = "killedbossnum"
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.full_name = ".Cmd.GuildGateData.killedbossnum"
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.number = 2
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.index = 1
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.label = 1
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.has_default_value = true
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.default_value = 0
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.type = 13
+GUILDGATEDATA_KILLEDBOSSNUM_FIELD.cpp_type = 3
+GUILDGATEDATA_GROUPINDEX_FIELD.name = "groupindex"
+GUILDGATEDATA_GROUPINDEX_FIELD.full_name = ".Cmd.GuildGateData.groupindex"
+GUILDGATEDATA_GROUPINDEX_FIELD.number = 3
+GUILDGATEDATA_GROUPINDEX_FIELD.index = 2
+GUILDGATEDATA_GROUPINDEX_FIELD.label = 1
+GUILDGATEDATA_GROUPINDEX_FIELD.has_default_value = true
+GUILDGATEDATA_GROUPINDEX_FIELD.default_value = 0
+GUILDGATEDATA_GROUPINDEX_FIELD.type = 13
+GUILDGATEDATA_GROUPINDEX_FIELD.cpp_type = 3
+GUILDGATEDATA_CLOSETIME_FIELD.name = "closetime"
+GUILDGATEDATA_CLOSETIME_FIELD.full_name = ".Cmd.GuildGateData.closetime"
+GUILDGATEDATA_CLOSETIME_FIELD.number = 4
+GUILDGATEDATA_CLOSETIME_FIELD.index = 3
+GUILDGATEDATA_CLOSETIME_FIELD.label = 1
+GUILDGATEDATA_CLOSETIME_FIELD.has_default_value = true
+GUILDGATEDATA_CLOSETIME_FIELD.default_value = 0
+GUILDGATEDATA_CLOSETIME_FIELD.type = 13
+GUILDGATEDATA_CLOSETIME_FIELD.cpp_type = 3
+GUILDGATEDATA_LEVEL_FIELD.name = "level"
+GUILDGATEDATA_LEVEL_FIELD.full_name = ".Cmd.GuildGateData.level"
+GUILDGATEDATA_LEVEL_FIELD.number = 5
+GUILDGATEDATA_LEVEL_FIELD.index = 4
+GUILDGATEDATA_LEVEL_FIELD.label = 1
+GUILDGATEDATA_LEVEL_FIELD.has_default_value = true
+GUILDGATEDATA_LEVEL_FIELD.default_value = 0
+GUILDGATEDATA_LEVEL_FIELD.type = 13
+GUILDGATEDATA_LEVEL_FIELD.cpp_type = 3
+GUILDGATEDATA_ISSPECIAL_FIELD.name = "isspecial"
+GUILDGATEDATA_ISSPECIAL_FIELD.full_name = ".Cmd.GuildGateData.isspecial"
+GUILDGATEDATA_ISSPECIAL_FIELD.number = 6
+GUILDGATEDATA_ISSPECIAL_FIELD.index = 5
+GUILDGATEDATA_ISSPECIAL_FIELD.label = 1
+GUILDGATEDATA_ISSPECIAL_FIELD.has_default_value = true
+GUILDGATEDATA_ISSPECIAL_FIELD.default_value = false
+GUILDGATEDATA_ISSPECIAL_FIELD.type = 8
+GUILDGATEDATA_ISSPECIAL_FIELD.cpp_type = 7
+GUILDGATEDATA_STATE_FIELD.name = "state"
+GUILDGATEDATA_STATE_FIELD.full_name = ".Cmd.GuildGateData.state"
+GUILDGATEDATA_STATE_FIELD.number = 7
+GUILDGATEDATA_STATE_FIELD.index = 6
+GUILDGATEDATA_STATE_FIELD.label = 1
+GUILDGATEDATA_STATE_FIELD.has_default_value = true
+GUILDGATEDATA_STATE_FIELD.default_value = 1
+GUILDGATEDATA_STATE_FIELD.enum_type = EGUILDGATESTATE
+GUILDGATEDATA_STATE_FIELD.type = 14
+GUILDGATEDATA_STATE_FIELD.cpp_type = 8
+GUILDGATEDATA.name = "GuildGateData"
+GUILDGATEDATA.full_name = ".Cmd.GuildGateData"
+GUILDGATEDATA.nested_types = {}
+GUILDGATEDATA.enum_types = {}
+GUILDGATEDATA.fields = {
+  GUILDGATEDATA_GATENPCID_FIELD,
+  GUILDGATEDATA_KILLEDBOSSNUM_FIELD,
+  GUILDGATEDATA_GROUPINDEX_FIELD,
+  GUILDGATEDATA_CLOSETIME_FIELD,
+  GUILDGATEDATA_LEVEL_FIELD,
+  GUILDGATEDATA_ISSPECIAL_FIELD,
+  GUILDGATEDATA_STATE_FIELD
+}
+GUILDGATEDATA.is_extendable = false
+GUILDGATEDATA.extensions = {}
+USERGUILDRAIDFUBENCMD_CMD_FIELD.name = "cmd"
+USERGUILDRAIDFUBENCMD_CMD_FIELD.full_name = ".Cmd.UserGuildRaidFubenCmd.cmd"
+USERGUILDRAIDFUBENCMD_CMD_FIELD.number = 1
+USERGUILDRAIDFUBENCMD_CMD_FIELD.index = 0
+USERGUILDRAIDFUBENCMD_CMD_FIELD.label = 1
+USERGUILDRAIDFUBENCMD_CMD_FIELD.has_default_value = true
+USERGUILDRAIDFUBENCMD_CMD_FIELD.default_value = 11
+USERGUILDRAIDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+USERGUILDRAIDFUBENCMD_CMD_FIELD.type = 14
+USERGUILDRAIDFUBENCMD_CMD_FIELD.cpp_type = 8
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.name = "param"
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.UserGuildRaidFubenCmd.param"
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.number = 2
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.index = 1
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.label = 1
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.has_default_value = true
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.default_value = 16
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.type = 14
+USERGUILDRAIDFUBENCMD_PARAM_FIELD.cpp_type = 8
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.name = "gatedata"
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.full_name = ".Cmd.UserGuildRaidFubenCmd.gatedata"
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.number = 3
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.index = 2
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.label = 3
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.has_default_value = false
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.default_value = {}
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.message_type = GUILDGATEDATA
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.type = 11
+USERGUILDRAIDFUBENCMD_GATEDATA_FIELD.cpp_type = 10
+USERGUILDRAIDFUBENCMD.name = "UserGuildRaidFubenCmd"
+USERGUILDRAIDFUBENCMD.full_name = ".Cmd.UserGuildRaidFubenCmd"
+USERGUILDRAIDFUBENCMD.nested_types = {}
+USERGUILDRAIDFUBENCMD.enum_types = {}
+USERGUILDRAIDFUBENCMD.fields = {
+  USERGUILDRAIDFUBENCMD_CMD_FIELD,
+  USERGUILDRAIDFUBENCMD_PARAM_FIELD,
+  USERGUILDRAIDFUBENCMD_GATEDATA_FIELD
+}
+USERGUILDRAIDFUBENCMD.is_extendable = false
+USERGUILDRAIDFUBENCMD.extensions = {}
+GUILDGATEOPTCMD_CMD_FIELD.name = "cmd"
+GUILDGATEOPTCMD_CMD_FIELD.full_name = ".Cmd.GuildGateOptCmd.cmd"
+GUILDGATEOPTCMD_CMD_FIELD.number = 1
+GUILDGATEOPTCMD_CMD_FIELD.index = 0
+GUILDGATEOPTCMD_CMD_FIELD.label = 1
+GUILDGATEOPTCMD_CMD_FIELD.has_default_value = true
+GUILDGATEOPTCMD_CMD_FIELD.default_value = 11
+GUILDGATEOPTCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDGATEOPTCMD_CMD_FIELD.type = 14
+GUILDGATEOPTCMD_CMD_FIELD.cpp_type = 8
+GUILDGATEOPTCMD_PARAM_FIELD.name = "param"
+GUILDGATEOPTCMD_PARAM_FIELD.full_name = ".Cmd.GuildGateOptCmd.param"
+GUILDGATEOPTCMD_PARAM_FIELD.number = 2
+GUILDGATEOPTCMD_PARAM_FIELD.index = 1
+GUILDGATEOPTCMD_PARAM_FIELD.label = 1
+GUILDGATEOPTCMD_PARAM_FIELD.has_default_value = true
+GUILDGATEOPTCMD_PARAM_FIELD.default_value = 17
+GUILDGATEOPTCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDGATEOPTCMD_PARAM_FIELD.type = 14
+GUILDGATEOPTCMD_PARAM_FIELD.cpp_type = 8
+GUILDGATEOPTCMD_GATENPCID_FIELD.name = "gatenpcid"
+GUILDGATEOPTCMD_GATENPCID_FIELD.full_name = ".Cmd.GuildGateOptCmd.gatenpcid"
+GUILDGATEOPTCMD_GATENPCID_FIELD.number = 3
+GUILDGATEOPTCMD_GATENPCID_FIELD.index = 2
+GUILDGATEOPTCMD_GATENPCID_FIELD.label = 1
+GUILDGATEOPTCMD_GATENPCID_FIELD.has_default_value = false
+GUILDGATEOPTCMD_GATENPCID_FIELD.default_value = 0
+GUILDGATEOPTCMD_GATENPCID_FIELD.type = 4
+GUILDGATEOPTCMD_GATENPCID_FIELD.cpp_type = 4
+GUILDGATEOPTCMD_OPT_FIELD.name = "opt"
+GUILDGATEOPTCMD_OPT_FIELD.full_name = ".Cmd.GuildGateOptCmd.opt"
+GUILDGATEOPTCMD_OPT_FIELD.number = 4
+GUILDGATEOPTCMD_OPT_FIELD.index = 3
+GUILDGATEOPTCMD_OPT_FIELD.label = 1
+GUILDGATEOPTCMD_OPT_FIELD.has_default_value = false
+GUILDGATEOPTCMD_OPT_FIELD.default_value = nil
+GUILDGATEOPTCMD_OPT_FIELD.enum_type = EGUILDGATEOPT
+GUILDGATEOPTCMD_OPT_FIELD.type = 14
+GUILDGATEOPTCMD_OPT_FIELD.cpp_type = 8
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.name = "uplocklevel"
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.full_name = ".Cmd.GuildGateOptCmd.uplocklevel"
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.number = 5
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.index = 4
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.label = 1
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.has_default_value = true
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.default_value = 0
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.type = 13
+GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD.cpp_type = 3
+GUILDGATEOPTCMD.name = "GuildGateOptCmd"
+GUILDGATEOPTCMD.full_name = ".Cmd.GuildGateOptCmd"
+GUILDGATEOPTCMD.nested_types = {}
+GUILDGATEOPTCMD.enum_types = {}
+GUILDGATEOPTCMD.fields = {
+  GUILDGATEOPTCMD_CMD_FIELD,
+  GUILDGATEOPTCMD_PARAM_FIELD,
+  GUILDGATEOPTCMD_GATENPCID_FIELD,
+  GUILDGATEOPTCMD_OPT_FIELD,
+  GUILDGATEOPTCMD_UPLOCKLEVEL_FIELD
+}
+GUILDGATEOPTCMD.is_extendable = false
+GUILDGATEOPTCMD.extensions = {}
+GVGPOINTINFO_POINTID_FIELD.name = "pointid"
+GVGPOINTINFO_POINTID_FIELD.full_name = ".Cmd.GvgPointInfo.pointid"
+GVGPOINTINFO_POINTID_FIELD.number = 1
+GVGPOINTINFO_POINTID_FIELD.index = 0
+GVGPOINTINFO_POINTID_FIELD.label = 1
+GVGPOINTINFO_POINTID_FIELD.has_default_value = false
+GVGPOINTINFO_POINTID_FIELD.default_value = 0
+GVGPOINTINFO_POINTID_FIELD.type = 13
+GVGPOINTINFO_POINTID_FIELD.cpp_type = 3
+GVGPOINTINFO_STATE_FIELD.name = "state"
+GVGPOINTINFO_STATE_FIELD.full_name = ".Cmd.GvgPointInfo.state"
+GVGPOINTINFO_STATE_FIELD.number = 2
+GVGPOINTINFO_STATE_FIELD.index = 1
+GVGPOINTINFO_STATE_FIELD.label = 1
+GVGPOINTINFO_STATE_FIELD.has_default_value = false
+GVGPOINTINFO_STATE_FIELD.default_value = nil
+GVGPOINTINFO_STATE_FIELD.enum_type = EGVGPOINTSTATE
+GVGPOINTINFO_STATE_FIELD.type = 14
+GVGPOINTINFO_STATE_FIELD.cpp_type = 8
+GVGPOINTINFO_GUILDID_FIELD.name = "guildid"
+GVGPOINTINFO_GUILDID_FIELD.full_name = ".Cmd.GvgPointInfo.guildid"
+GVGPOINTINFO_GUILDID_FIELD.number = 3
+GVGPOINTINFO_GUILDID_FIELD.index = 2
+GVGPOINTINFO_GUILDID_FIELD.label = 1
+GVGPOINTINFO_GUILDID_FIELD.has_default_value = false
+GVGPOINTINFO_GUILDID_FIELD.default_value = 0
+GVGPOINTINFO_GUILDID_FIELD.type = 4
+GVGPOINTINFO_GUILDID_FIELD.cpp_type = 4
+GVGPOINTINFO_PER_FIELD.name = "per"
+GVGPOINTINFO_PER_FIELD.full_name = ".Cmd.GvgPointInfo.per"
+GVGPOINTINFO_PER_FIELD.number = 4
+GVGPOINTINFO_PER_FIELD.index = 3
+GVGPOINTINFO_PER_FIELD.label = 1
+GVGPOINTINFO_PER_FIELD.has_default_value = false
+GVGPOINTINFO_PER_FIELD.default_value = 0
+GVGPOINTINFO_PER_FIELD.type = 13
+GVGPOINTINFO_PER_FIELD.cpp_type = 3
+GVGPOINTINFO_GUILDNAME_FIELD.name = "guildname"
+GVGPOINTINFO_GUILDNAME_FIELD.full_name = ".Cmd.GvgPointInfo.guildname"
+GVGPOINTINFO_GUILDNAME_FIELD.number = 7
+GVGPOINTINFO_GUILDNAME_FIELD.index = 4
+GVGPOINTINFO_GUILDNAME_FIELD.label = 1
+GVGPOINTINFO_GUILDNAME_FIELD.has_default_value = false
+GVGPOINTINFO_GUILDNAME_FIELD.default_value = ""
+GVGPOINTINFO_GUILDNAME_FIELD.type = 9
+GVGPOINTINFO_GUILDNAME_FIELD.cpp_type = 9
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.name = "guildportrait"
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.full_name = ".Cmd.GvgPointInfo.guildportrait"
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.number = 8
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.index = 5
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.label = 1
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.has_default_value = false
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.default_value = ""
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.type = 9
+GVGPOINTINFO_GUILDPORTRAIT_FIELD.cpp_type = 9
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.name = "occupied_guilds"
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.full_name = ".Cmd.GvgPointInfo.occupied_guilds"
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.number = 5
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.index = 6
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.label = 3
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.has_default_value = false
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.default_value = {}
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.type = 4
+GVGPOINTINFO_OCCUPIED_GUILDS_FIELD.cpp_type = 4
+GVGPOINTINFO.name = "GvgPointInfo"
+GVGPOINTINFO.full_name = ".Cmd.GvgPointInfo"
+GVGPOINTINFO.nested_types = {}
+GVGPOINTINFO.enum_types = {}
+GVGPOINTINFO.fields = {
+  GVGPOINTINFO_POINTID_FIELD,
+  GVGPOINTINFO_STATE_FIELD,
+  GVGPOINTINFO_GUILDID_FIELD,
+  GVGPOINTINFO_PER_FIELD,
+  GVGPOINTINFO_GUILDNAME_FIELD,
+  GVGPOINTINFO_GUILDPORTRAIT_FIELD,
+  GVGPOINTINFO_OCCUPIED_GUILDS_FIELD
+}
+GVGPOINTINFO.is_extendable = false
+GVGPOINTINFO.extensions = {}
+GUILDFIREINFOFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIREINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.cmd"
+GUILDFIREINFOFUBENCMD_CMD_FIELD.number = 1
+GUILDFIREINFOFUBENCMD_CMD_FIELD.index = 0
+GUILDFIREINFOFUBENCMD_CMD_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIREINFOFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIREINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIREINFOFUBENCMD_CMD_FIELD.type = 14
+GUILDFIREINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.param"
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.default_value = 18
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIREINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.name = "raidstate"
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.raidstate"
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.number = 3
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.index = 2
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.default_value = nil
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.enum_type = EGVGRAIDSTATE
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.type = 14
+GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD.cpp_type = 8
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.name = "def_guildid"
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.def_guildid"
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.number = 4
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.index = 3
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.default_value = 0
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.type = 4
+GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD.cpp_type = 4
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.name = "endfire_time"
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.endfire_time"
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.number = 5
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.index = 4
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.default_value = 0
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.type = 13
+GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD.cpp_type = 3
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.name = "metal_hpper"
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.metal_hpper"
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.number = 6
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.index = 5
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.default_value = 0
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.type = 13
+GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD.cpp_type = 3
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.name = "calm_time"
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.calm_time"
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.number = 7
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.index = 6
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.default_value = 0
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.type = 13
+GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD.cpp_type = 3
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.name = "def_guildname"
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.def_guildname"
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.number = 8
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.index = 7
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.default_value = ""
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.type = 9
+GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD.cpp_type = 9
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.name = "points"
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.points"
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.number = 13
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.index = 8
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.label = 3
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.default_value = {}
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.message_type = GVGPOINTINFO
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.type = 11
+GUILDFIREINFOFUBENCMD_POINTS_FIELD.cpp_type = 10
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.name = "my_smallmetal_cnt"
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.my_smallmetal_cnt"
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.number = 14
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.index = 9
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.default_value = 0
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.type = 13
+GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD.cpp_type = 3
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.name = "perfect_time"
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.full_name = ".Cmd.GuildFireInfoFubenCmd.perfect_time"
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.number = 15
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.index = 10
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.label = 1
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.has_default_value = false
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.default_value = nil
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.message_type = ProtoCommon_pb.GVGPERFECTTIMEINFO
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.type = 11
+GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD.cpp_type = 10
+GUILDFIREINFOFUBENCMD.name = "GuildFireInfoFubenCmd"
+GUILDFIREINFOFUBENCMD.full_name = ".Cmd.GuildFireInfoFubenCmd"
+GUILDFIREINFOFUBENCMD.nested_types = {}
+GUILDFIREINFOFUBENCMD.enum_types = {}
+GUILDFIREINFOFUBENCMD.fields = {
+  GUILDFIREINFOFUBENCMD_CMD_FIELD,
+  GUILDFIREINFOFUBENCMD_PARAM_FIELD,
+  GUILDFIREINFOFUBENCMD_RAIDSTATE_FIELD,
+  GUILDFIREINFOFUBENCMD_DEF_GUILDID_FIELD,
+  GUILDFIREINFOFUBENCMD_ENDFIRE_TIME_FIELD,
+  GUILDFIREINFOFUBENCMD_METAL_HPPER_FIELD,
+  GUILDFIREINFOFUBENCMD_CALM_TIME_FIELD,
+  GUILDFIREINFOFUBENCMD_DEF_GUILDNAME_FIELD,
+  GUILDFIREINFOFUBENCMD_POINTS_FIELD,
+  GUILDFIREINFOFUBENCMD_MY_SMALLMETAL_CNT_FIELD,
+  GUILDFIREINFOFUBENCMD_PERFECT_TIME_FIELD
+}
+GUILDFIREINFOFUBENCMD.is_extendable = false
+GUILDFIREINFOFUBENCMD.extensions = {}
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireStopFubenCmd.cmd"
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.number = 1
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.index = 0
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.label = 1
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.type = 14
+GUILDFIRESTOPFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireStopFubenCmd.param"
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.default_value = 19
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIRESTOPFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.name = "result"
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.full_name = ".Cmd.GuildFireStopFubenCmd.result"
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.number = 3
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.index = 2
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.label = 2
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.has_default_value = false
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.default_value = nil
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.enum_type = EGUILDFIRERESULT
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.type = 14
+GUILDFIRESTOPFUBENCMD_RESULT_FIELD.cpp_type = 8
+GUILDFIRESTOPFUBENCMD.name = "GuildFireStopFubenCmd"
+GUILDFIRESTOPFUBENCMD.full_name = ".Cmd.GuildFireStopFubenCmd"
+GUILDFIRESTOPFUBENCMD.nested_types = {}
+GUILDFIRESTOPFUBENCMD.enum_types = {}
+GUILDFIRESTOPFUBENCMD.fields = {
+  GUILDFIRESTOPFUBENCMD_CMD_FIELD,
+  GUILDFIRESTOPFUBENCMD_PARAM_FIELD,
+  GUILDFIRESTOPFUBENCMD_RESULT_FIELD
+}
+GUILDFIRESTOPFUBENCMD.is_extendable = false
+GUILDFIRESTOPFUBENCMD.extensions = {}
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireDangerFubenCmd.cmd"
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.number = 1
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.index = 0
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.label = 1
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.type = 14
+GUILDFIREDANGERFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireDangerFubenCmd.param"
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.default_value = 20
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIREDANGERFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.name = "danger"
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.full_name = ".Cmd.GuildFireDangerFubenCmd.danger"
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.number = 3
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.index = 2
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.label = 1
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.has_default_value = true
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.default_value = false
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.type = 8
+GUILDFIREDANGERFUBENCMD_DANGER_FIELD.cpp_type = 7
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.name = "danger_time"
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.full_name = ".Cmd.GuildFireDangerFubenCmd.danger_time"
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.number = 4
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.index = 3
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.label = 1
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.has_default_value = true
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.default_value = 0
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.type = 13
+GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD.cpp_type = 3
+GUILDFIREDANGERFUBENCMD.name = "GuildFireDangerFubenCmd"
+GUILDFIREDANGERFUBENCMD.full_name = ".Cmd.GuildFireDangerFubenCmd"
+GUILDFIREDANGERFUBENCMD.nested_types = {}
+GUILDFIREDANGERFUBENCMD.enum_types = {}
+GUILDFIREDANGERFUBENCMD.fields = {
+  GUILDFIREDANGERFUBENCMD_CMD_FIELD,
+  GUILDFIREDANGERFUBENCMD_PARAM_FIELD,
+  GUILDFIREDANGERFUBENCMD_DANGER_FIELD,
+  GUILDFIREDANGERFUBENCMD_DANGER_TIME_FIELD
+}
+GUILDFIREDANGERFUBENCMD.is_extendable = false
+GUILDFIREDANGERFUBENCMD.extensions = {}
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireMetalHpFubenCmd.cmd"
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.number = 1
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.index = 0
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.label = 1
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.type = 14
+GUILDFIREMETALHPFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireMetalHpFubenCmd.param"
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.default_value = 21
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIREMETALHPFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.name = "hpper"
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.full_name = ".Cmd.GuildFireMetalHpFubenCmd.hpper"
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.number = 3
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.index = 2
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.label = 1
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.has_default_value = true
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.default_value = 0
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.type = 13
+GUILDFIREMETALHPFUBENCMD_HPPER_FIELD.cpp_type = 3
+GUILDFIREMETALHPFUBENCMD.name = "GuildFireMetalHpFubenCmd"
+GUILDFIREMETALHPFUBENCMD.full_name = ".Cmd.GuildFireMetalHpFubenCmd"
+GUILDFIREMETALHPFUBENCMD.nested_types = {}
+GUILDFIREMETALHPFUBENCMD.enum_types = {}
+GUILDFIREMETALHPFUBENCMD.fields = {
+  GUILDFIREMETALHPFUBENCMD_CMD_FIELD,
+  GUILDFIREMETALHPFUBENCMD_PARAM_FIELD,
+  GUILDFIREMETALHPFUBENCMD_HPPER_FIELD
+}
+GUILDFIREMETALHPFUBENCMD.is_extendable = false
+GUILDFIREMETALHPFUBENCMD.extensions = {}
+GUILDFIRECALMFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIRECALMFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireCalmFubenCmd.cmd"
+GUILDFIRECALMFUBENCMD_CMD_FIELD.number = 1
+GUILDFIRECALMFUBENCMD_CMD_FIELD.index = 0
+GUILDFIRECALMFUBENCMD_CMD_FIELD.label = 1
+GUILDFIRECALMFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIRECALMFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIRECALMFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIRECALMFUBENCMD_CMD_FIELD.type = 14
+GUILDFIRECALMFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireCalmFubenCmd.param"
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.default_value = 22
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIRECALMFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIRECALMFUBENCMD_CALM_FIELD.name = "calm"
+GUILDFIRECALMFUBENCMD_CALM_FIELD.full_name = ".Cmd.GuildFireCalmFubenCmd.calm"
+GUILDFIRECALMFUBENCMD_CALM_FIELD.number = 3
+GUILDFIRECALMFUBENCMD_CALM_FIELD.index = 2
+GUILDFIRECALMFUBENCMD_CALM_FIELD.label = 1
+GUILDFIRECALMFUBENCMD_CALM_FIELD.has_default_value = true
+GUILDFIRECALMFUBENCMD_CALM_FIELD.default_value = false
+GUILDFIRECALMFUBENCMD_CALM_FIELD.type = 8
+GUILDFIRECALMFUBENCMD_CALM_FIELD.cpp_type = 7
+GUILDFIRECALMFUBENCMD.name = "GuildFireCalmFubenCmd"
+GUILDFIRECALMFUBENCMD.full_name = ".Cmd.GuildFireCalmFubenCmd"
+GUILDFIRECALMFUBENCMD.nested_types = {}
+GUILDFIRECALMFUBENCMD.enum_types = {}
+GUILDFIRECALMFUBENCMD.fields = {
+  GUILDFIRECALMFUBENCMD_CMD_FIELD,
+  GUILDFIRECALMFUBENCMD_PARAM_FIELD,
+  GUILDFIRECALMFUBENCMD_CALM_FIELD
+}
+GUILDFIRECALMFUBENCMD.is_extendable = false
+GUILDFIRECALMFUBENCMD.extensions = {}
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireNewDefFubenCmd.cmd"
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.number = 1
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.index = 0
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.label = 1
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.type = 14
+GUILDFIRENEWDEFFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireNewDefFubenCmd.param"
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.default_value = 23
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.name = "guildid"
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.full_name = ".Cmd.GuildFireNewDefFubenCmd.guildid"
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.number = 3
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.index = 2
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.label = 1
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.has_default_value = true
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.default_value = 0
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.type = 4
+GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD.cpp_type = 4
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.name = "guildname"
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.full_name = ".Cmd.GuildFireNewDefFubenCmd.guildname"
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.number = 4
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.index = 3
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.label = 1
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.has_default_value = false
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.default_value = ""
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.type = 9
+GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD.cpp_type = 9
+GUILDFIRENEWDEFFUBENCMD.name = "GuildFireNewDefFubenCmd"
+GUILDFIRENEWDEFFUBENCMD.full_name = ".Cmd.GuildFireNewDefFubenCmd"
+GUILDFIRENEWDEFFUBENCMD.nested_types = {}
+GUILDFIRENEWDEFFUBENCMD.enum_types = {}
+GUILDFIRENEWDEFFUBENCMD.fields = {
+  GUILDFIRENEWDEFFUBENCMD_CMD_FIELD,
+  GUILDFIRENEWDEFFUBENCMD_PARAM_FIELD,
+  GUILDFIRENEWDEFFUBENCMD_GUILDID_FIELD,
+  GUILDFIRENEWDEFFUBENCMD_GUILDNAME_FIELD
+}
+GUILDFIRENEWDEFFUBENCMD.is_extendable = false
+GUILDFIRENEWDEFFUBENCMD.extensions = {}
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireRestartFubenCmd.cmd"
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.number = 1
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.index = 0
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.label = 1
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.type = 14
+GUILDFIRERESTARTFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireRestartFubenCmd.param"
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.default_value = 24
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIRERESTARTFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIRERESTARTFUBENCMD.name = "GuildFireRestartFubenCmd"
+GUILDFIRERESTARTFUBENCMD.full_name = ".Cmd.GuildFireRestartFubenCmd"
+GUILDFIRERESTARTFUBENCMD.nested_types = {}
+GUILDFIRERESTARTFUBENCMD.enum_types = {}
+GUILDFIRERESTARTFUBENCMD.fields = {
+  GUILDFIRERESTARTFUBENCMD_CMD_FIELD,
+  GUILDFIRERESTARTFUBENCMD_PARAM_FIELD
+}
+GUILDFIRERESTARTFUBENCMD.is_extendable = false
+GUILDFIRERESTARTFUBENCMD.extensions = {}
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.name = "cmd"
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.full_name = ".Cmd.GuildFireStatusFubenCmd.cmd"
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.number = 1
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.index = 0
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.label = 1
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.has_default_value = true
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.default_value = 11
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.type = 14
+GUILDFIRESTATUSFUBENCMD_CMD_FIELD.cpp_type = 8
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.name = "param"
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GuildFireStatusFubenCmd.param"
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.number = 2
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.index = 1
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.label = 1
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.has_default_value = true
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.default_value = 25
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.type = 14
+GUILDFIRESTATUSFUBENCMD_PARAM_FIELD.cpp_type = 8
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.name = "open"
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.full_name = ".Cmd.GuildFireStatusFubenCmd.open"
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.number = 3
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.index = 2
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.label = 1
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.has_default_value = true
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.default_value = false
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.type = 8
+GUILDFIRESTATUSFUBENCMD_OPEN_FIELD.cpp_type = 7
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.name = "starttime"
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.full_name = ".Cmd.GuildFireStatusFubenCmd.starttime"
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.number = 4
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.index = 3
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.label = 1
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.has_default_value = true
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.default_value = 0
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.type = 13
+GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD.cpp_type = 3
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.name = "cityid"
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.full_name = ".Cmd.GuildFireStatusFubenCmd.cityid"
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.number = 5
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.index = 4
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.label = 2
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.has_default_value = false
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.default_value = 0
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.type = 13
+GUILDFIRESTATUSFUBENCMD_CITYID_FIELD.cpp_type = 3
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.name = "cityopen"
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.full_name = ".Cmd.GuildFireStatusFubenCmd.cityopen"
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.number = 6
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.index = 5
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.label = 1
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.has_default_value = true
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.default_value = false
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.type = 8
+GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD.cpp_type = 7
+GUILDFIRESTATUSFUBENCMD.name = "GuildFireStatusFubenCmd"
+GUILDFIRESTATUSFUBENCMD.full_name = ".Cmd.GuildFireStatusFubenCmd"
+GUILDFIRESTATUSFUBENCMD.nested_types = {}
+GUILDFIRESTATUSFUBENCMD.enum_types = {}
+GUILDFIRESTATUSFUBENCMD.fields = {
+  GUILDFIRESTATUSFUBENCMD_CMD_FIELD,
+  GUILDFIRESTATUSFUBENCMD_PARAM_FIELD,
+  GUILDFIRESTATUSFUBENCMD_OPEN_FIELD,
+  GUILDFIRESTATUSFUBENCMD_STARTTIME_FIELD,
+  GUILDFIRESTATUSFUBENCMD_CITYID_FIELD,
+  GUILDFIRESTATUSFUBENCMD_CITYOPEN_FIELD
+}
+GUILDFIRESTATUSFUBENCMD.is_extendable = false
+GUILDFIRESTATUSFUBENCMD.extensions = {}
+GVGDATA_TYPE_FIELD.name = "type"
+GVGDATA_TYPE_FIELD.full_name = ".Cmd.GvgData.type"
+GVGDATA_TYPE_FIELD.number = 1
+GVGDATA_TYPE_FIELD.index = 0
+GVGDATA_TYPE_FIELD.label = 1
+GVGDATA_TYPE_FIELD.has_default_value = true
+GVGDATA_TYPE_FIELD.default_value = 0
+GVGDATA_TYPE_FIELD.enum_type = EGVGDATATYPE
+GVGDATA_TYPE_FIELD.type = 14
+GVGDATA_TYPE_FIELD.cpp_type = 8
+GVGDATA_VALUE_FIELD.name = "value"
+GVGDATA_VALUE_FIELD.full_name = ".Cmd.GvgData.value"
+GVGDATA_VALUE_FIELD.number = 2
+GVGDATA_VALUE_FIELD.index = 1
+GVGDATA_VALUE_FIELD.label = 1
+GVGDATA_VALUE_FIELD.has_default_value = true
+GVGDATA_VALUE_FIELD.default_value = 0
+GVGDATA_VALUE_FIELD.type = 13
+GVGDATA_VALUE_FIELD.cpp_type = 3
+GVGDATA.name = "GvgData"
+GVGDATA.full_name = ".Cmd.GvgData"
+GVGDATA.nested_types = {}
+GVGDATA.enum_types = {}
+GVGDATA.fields = {
+  GVGDATA_TYPE_FIELD,
+  GVGDATA_VALUE_FIELD
+}
+GVGDATA.is_extendable = false
+GVGDATA.extensions = {}
+GVGDATASYNCCMD_CMD_FIELD.name = "cmd"
+GVGDATASYNCCMD_CMD_FIELD.full_name = ".Cmd.GvgDataSyncCmd.cmd"
+GVGDATASYNCCMD_CMD_FIELD.number = 1
+GVGDATASYNCCMD_CMD_FIELD.index = 0
+GVGDATASYNCCMD_CMD_FIELD.label = 1
+GVGDATASYNCCMD_CMD_FIELD.has_default_value = true
+GVGDATASYNCCMD_CMD_FIELD.default_value = 11
+GVGDATASYNCCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGDATASYNCCMD_CMD_FIELD.type = 14
+GVGDATASYNCCMD_CMD_FIELD.cpp_type = 8
+GVGDATASYNCCMD_PARAM_FIELD.name = "param"
+GVGDATASYNCCMD_PARAM_FIELD.full_name = ".Cmd.GvgDataSyncCmd.param"
+GVGDATASYNCCMD_PARAM_FIELD.number = 2
+GVGDATASYNCCMD_PARAM_FIELD.index = 1
+GVGDATASYNCCMD_PARAM_FIELD.label = 1
+GVGDATASYNCCMD_PARAM_FIELD.has_default_value = true
+GVGDATASYNCCMD_PARAM_FIELD.default_value = 26
+GVGDATASYNCCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGDATASYNCCMD_PARAM_FIELD.type = 14
+GVGDATASYNCCMD_PARAM_FIELD.cpp_type = 8
+GVGDATASYNCCMD_DATAS_FIELD.name = "datas"
+GVGDATASYNCCMD_DATAS_FIELD.full_name = ".Cmd.GvgDataSyncCmd.datas"
+GVGDATASYNCCMD_DATAS_FIELD.number = 3
+GVGDATASYNCCMD_DATAS_FIELD.index = 2
+GVGDATASYNCCMD_DATAS_FIELD.label = 3
+GVGDATASYNCCMD_DATAS_FIELD.has_default_value = false
+GVGDATASYNCCMD_DATAS_FIELD.default_value = {}
+GVGDATASYNCCMD_DATAS_FIELD.message_type = GVGDATA
+GVGDATASYNCCMD_DATAS_FIELD.type = 11
+GVGDATASYNCCMD_DATAS_FIELD.cpp_type = 10
+GVGDATASYNCCMD_CITYTYPE_FIELD.name = "citytype"
+GVGDATASYNCCMD_CITYTYPE_FIELD.full_name = ".Cmd.GvgDataSyncCmd.citytype"
+GVGDATASYNCCMD_CITYTYPE_FIELD.number = 4
+GVGDATASYNCCMD_CITYTYPE_FIELD.index = 3
+GVGDATASYNCCMD_CITYTYPE_FIELD.label = 1
+GVGDATASYNCCMD_CITYTYPE_FIELD.has_default_value = false
+GVGDATASYNCCMD_CITYTYPE_FIELD.default_value = nil
+GVGDATASYNCCMD_CITYTYPE_FIELD.enum_type = EGVGCITYTYPE
+GVGDATASYNCCMD_CITYTYPE_FIELD.type = 14
+GVGDATASYNCCMD_CITYTYPE_FIELD.cpp_type = 8
+GVGDATASYNCCMD.name = "GvgDataSyncCmd"
+GVGDATASYNCCMD.full_name = ".Cmd.GvgDataSyncCmd"
+GVGDATASYNCCMD.nested_types = {}
+GVGDATASYNCCMD.enum_types = {}
+GVGDATASYNCCMD.fields = {
+  GVGDATASYNCCMD_CMD_FIELD,
+  GVGDATASYNCCMD_PARAM_FIELD,
+  GVGDATASYNCCMD_DATAS_FIELD,
+  GVGDATASYNCCMD_CITYTYPE_FIELD
+}
+GVGDATASYNCCMD.is_extendable = false
+GVGDATASYNCCMD.extensions = {}
+GVGDATAUPDATECMD_CMD_FIELD.name = "cmd"
+GVGDATAUPDATECMD_CMD_FIELD.full_name = ".Cmd.GvgDataUpdateCmd.cmd"
+GVGDATAUPDATECMD_CMD_FIELD.number = 1
+GVGDATAUPDATECMD_CMD_FIELD.index = 0
+GVGDATAUPDATECMD_CMD_FIELD.label = 1
+GVGDATAUPDATECMD_CMD_FIELD.has_default_value = true
+GVGDATAUPDATECMD_CMD_FIELD.default_value = 11
+GVGDATAUPDATECMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGDATAUPDATECMD_CMD_FIELD.type = 14
+GVGDATAUPDATECMD_CMD_FIELD.cpp_type = 8
+GVGDATAUPDATECMD_PARAM_FIELD.name = "param"
+GVGDATAUPDATECMD_PARAM_FIELD.full_name = ".Cmd.GvgDataUpdateCmd.param"
+GVGDATAUPDATECMD_PARAM_FIELD.number = 2
+GVGDATAUPDATECMD_PARAM_FIELD.index = 1
+GVGDATAUPDATECMD_PARAM_FIELD.label = 1
+GVGDATAUPDATECMD_PARAM_FIELD.has_default_value = true
+GVGDATAUPDATECMD_PARAM_FIELD.default_value = 27
+GVGDATAUPDATECMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGDATAUPDATECMD_PARAM_FIELD.type = 14
+GVGDATAUPDATECMD_PARAM_FIELD.cpp_type = 8
+GVGDATAUPDATECMD_DATA_FIELD.name = "data"
+GVGDATAUPDATECMD_DATA_FIELD.full_name = ".Cmd.GvgDataUpdateCmd.data"
+GVGDATAUPDATECMD_DATA_FIELD.number = 3
+GVGDATAUPDATECMD_DATA_FIELD.index = 2
+GVGDATAUPDATECMD_DATA_FIELD.label = 1
+GVGDATAUPDATECMD_DATA_FIELD.has_default_value = false
+GVGDATAUPDATECMD_DATA_FIELD.default_value = nil
+GVGDATAUPDATECMD_DATA_FIELD.message_type = GVGDATA
+GVGDATAUPDATECMD_DATA_FIELD.type = 11
+GVGDATAUPDATECMD_DATA_FIELD.cpp_type = 10
+GVGDATAUPDATECMD.name = "GvgDataUpdateCmd"
+GVGDATAUPDATECMD.full_name = ".Cmd.GvgDataUpdateCmd"
+GVGDATAUPDATECMD.nested_types = {}
+GVGDATAUPDATECMD.enum_types = {}
+GVGDATAUPDATECMD.fields = {
+  GVGDATAUPDATECMD_CMD_FIELD,
+  GVGDATAUPDATECMD_PARAM_FIELD,
+  GVGDATAUPDATECMD_DATA_FIELD
+}
+GVGDATAUPDATECMD.is_extendable = false
+GVGDATAUPDATECMD.extensions = {}
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgDefNameChangeFubenCmd.cmd"
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.number = 1
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.index = 0
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.label = 1
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.default_value = 11
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.type = 14
+GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.name = "param"
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgDefNameChangeFubenCmd.param"
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.number = 2
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.index = 1
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.label = 1
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.default_value = 28
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.type = 14
+GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.name = "newname"
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.full_name = ".Cmd.GvgDefNameChangeFubenCmd.newname"
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.number = 3
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.index = 2
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.label = 2
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.has_default_value = false
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.default_value = ""
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.type = 9
+GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD.cpp_type = 9
+GVGDEFNAMECHANGEFUBENCMD.name = "GvgDefNameChangeFubenCmd"
+GVGDEFNAMECHANGEFUBENCMD.full_name = ".Cmd.GvgDefNameChangeFubenCmd"
+GVGDEFNAMECHANGEFUBENCMD.nested_types = {}
+GVGDEFNAMECHANGEFUBENCMD.enum_types = {}
+GVGDEFNAMECHANGEFUBENCMD.fields = {
+  GVGDEFNAMECHANGEFUBENCMD_CMD_FIELD,
+  GVGDEFNAMECHANGEFUBENCMD_PARAM_FIELD,
+  GVGDEFNAMECHANGEFUBENCMD_NEWNAME_FIELD
+}
+GVGDEFNAMECHANGEFUBENCMD.is_extendable = false
+GVGDEFNAMECHANGEFUBENCMD.extensions = {}
+SYNCMVPINFOFUBENCMD_CMD_FIELD.name = "cmd"
+SYNCMVPINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.SyncMvpInfoFubenCmd.cmd"
+SYNCMVPINFOFUBENCMD_CMD_FIELD.number = 1
+SYNCMVPINFOFUBENCMD_CMD_FIELD.index = 0
+SYNCMVPINFOFUBENCMD_CMD_FIELD.label = 1
+SYNCMVPINFOFUBENCMD_CMD_FIELD.has_default_value = true
+SYNCMVPINFOFUBENCMD_CMD_FIELD.default_value = 11
+SYNCMVPINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SYNCMVPINFOFUBENCMD_CMD_FIELD.type = 14
+SYNCMVPINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.name = "param"
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SyncMvpInfoFubenCmd.param"
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.number = 2
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.index = 1
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.label = 1
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.default_value = 29
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.type = 14
+SYNCMVPINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.name = "usernum"
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.full_name = ".Cmd.SyncMvpInfoFubenCmd.usernum"
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.number = 3
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.index = 2
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.label = 1
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.has_default_value = true
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.default_value = 0
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.type = 13
+SYNCMVPINFOFUBENCMD_USERNUM_FIELD.cpp_type = 3
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.name = "liveboss"
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.full_name = ".Cmd.SyncMvpInfoFubenCmd.liveboss"
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.number = 4
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.index = 3
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.label = 3
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.has_default_value = false
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.default_value = {}
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.type = 13
+SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD.cpp_type = 3
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.name = "dieboss"
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.full_name = ".Cmd.SyncMvpInfoFubenCmd.dieboss"
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.number = 5
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.index = 4
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.label = 3
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.has_default_value = false
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.default_value = {}
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.type = 13
+SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD.cpp_type = 3
+SYNCMVPINFOFUBENCMD.name = "SyncMvpInfoFubenCmd"
+SYNCMVPINFOFUBENCMD.full_name = ".Cmd.SyncMvpInfoFubenCmd"
+SYNCMVPINFOFUBENCMD.nested_types = {}
+SYNCMVPINFOFUBENCMD.enum_types = {}
+SYNCMVPINFOFUBENCMD.fields = {
+  SYNCMVPINFOFUBENCMD_CMD_FIELD,
+  SYNCMVPINFOFUBENCMD_PARAM_FIELD,
+  SYNCMVPINFOFUBENCMD_USERNUM_FIELD,
+  SYNCMVPINFOFUBENCMD_LIVEBOSS_FIELD,
+  SYNCMVPINFOFUBENCMD_DIEBOSS_FIELD
+}
+SYNCMVPINFOFUBENCMD.is_extendable = false
+SYNCMVPINFOFUBENCMD.extensions = {}
+BOSSDIEFUBENCMD_CMD_FIELD.name = "cmd"
+BOSSDIEFUBENCMD_CMD_FIELD.full_name = ".Cmd.BossDieFubenCmd.cmd"
+BOSSDIEFUBENCMD_CMD_FIELD.number = 1
+BOSSDIEFUBENCMD_CMD_FIELD.index = 0
+BOSSDIEFUBENCMD_CMD_FIELD.label = 1
+BOSSDIEFUBENCMD_CMD_FIELD.has_default_value = true
+BOSSDIEFUBENCMD_CMD_FIELD.default_value = 11
+BOSSDIEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+BOSSDIEFUBENCMD_CMD_FIELD.type = 14
+BOSSDIEFUBENCMD_CMD_FIELD.cpp_type = 8
+BOSSDIEFUBENCMD_PARAM_FIELD.name = "param"
+BOSSDIEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.BossDieFubenCmd.param"
+BOSSDIEFUBENCMD_PARAM_FIELD.number = 2
+BOSSDIEFUBENCMD_PARAM_FIELD.index = 1
+BOSSDIEFUBENCMD_PARAM_FIELD.label = 1
+BOSSDIEFUBENCMD_PARAM_FIELD.has_default_value = true
+BOSSDIEFUBENCMD_PARAM_FIELD.default_value = 30
+BOSSDIEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+BOSSDIEFUBENCMD_PARAM_FIELD.type = 14
+BOSSDIEFUBENCMD_PARAM_FIELD.cpp_type = 8
+BOSSDIEFUBENCMD_NPCID_FIELD.name = "npcid"
+BOSSDIEFUBENCMD_NPCID_FIELD.full_name = ".Cmd.BossDieFubenCmd.npcid"
+BOSSDIEFUBENCMD_NPCID_FIELD.number = 3
+BOSSDIEFUBENCMD_NPCID_FIELD.index = 2
+BOSSDIEFUBENCMD_NPCID_FIELD.label = 2
+BOSSDIEFUBENCMD_NPCID_FIELD.has_default_value = false
+BOSSDIEFUBENCMD_NPCID_FIELD.default_value = 0
+BOSSDIEFUBENCMD_NPCID_FIELD.type = 13
+BOSSDIEFUBENCMD_NPCID_FIELD.cpp_type = 3
+BOSSDIEFUBENCMD.name = "BossDieFubenCmd"
+BOSSDIEFUBENCMD.full_name = ".Cmd.BossDieFubenCmd"
+BOSSDIEFUBENCMD.nested_types = {}
+BOSSDIEFUBENCMD.enum_types = {}
+BOSSDIEFUBENCMD.fields = {
+  BOSSDIEFUBENCMD_CMD_FIELD,
+  BOSSDIEFUBENCMD_PARAM_FIELD,
+  BOSSDIEFUBENCMD_NPCID_FIELD
+}
+BOSSDIEFUBENCMD.is_extendable = false
+BOSSDIEFUBENCMD.extensions = {}
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.name = "cmd"
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.full_name = ".Cmd.UpdateUserNumFubenCmd.cmd"
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.number = 1
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.index = 0
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.label = 1
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.has_default_value = true
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.default_value = 11
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.type = 14
+UPDATEUSERNUMFUBENCMD_CMD_FIELD.cpp_type = 8
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.name = "param"
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.full_name = ".Cmd.UpdateUserNumFubenCmd.param"
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.number = 2
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.index = 1
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.label = 1
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.has_default_value = true
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.default_value = 31
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.type = 14
+UPDATEUSERNUMFUBENCMD_PARAM_FIELD.cpp_type = 8
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.name = "usernum"
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.full_name = ".Cmd.UpdateUserNumFubenCmd.usernum"
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.number = 3
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.index = 2
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.label = 1
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.has_default_value = true
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.default_value = 0
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.type = 13
+UPDATEUSERNUMFUBENCMD_USERNUM_FIELD.cpp_type = 3
+UPDATEUSERNUMFUBENCMD.name = "UpdateUserNumFubenCmd"
+UPDATEUSERNUMFUBENCMD.full_name = ".Cmd.UpdateUserNumFubenCmd"
+UPDATEUSERNUMFUBENCMD.nested_types = {}
+UPDATEUSERNUMFUBENCMD.enum_types = {}
+UPDATEUSERNUMFUBENCMD.fields = {
+  UPDATEUSERNUMFUBENCMD_CMD_FIELD,
+  UPDATEUSERNUMFUBENCMD_PARAM_FIELD,
+  UPDATEUSERNUMFUBENCMD_USERNUM_FIELD
+}
+UPDATEUSERNUMFUBENCMD.is_extendable = false
+UPDATEUSERNUMFUBENCMD.extensions = {}
+GVGTOWERVALUE_GUILDID_FIELD.name = "guildid"
+GVGTOWERVALUE_GUILDID_FIELD.full_name = ".Cmd.GvgTowerValue.guildid"
+GVGTOWERVALUE_GUILDID_FIELD.number = 1
+GVGTOWERVALUE_GUILDID_FIELD.index = 0
+GVGTOWERVALUE_GUILDID_FIELD.label = 1
+GVGTOWERVALUE_GUILDID_FIELD.has_default_value = false
+GVGTOWERVALUE_GUILDID_FIELD.default_value = 0
+GVGTOWERVALUE_GUILDID_FIELD.type = 4
+GVGTOWERVALUE_GUILDID_FIELD.cpp_type = 4
+GVGTOWERVALUE_VALUE_FIELD.name = "value"
+GVGTOWERVALUE_VALUE_FIELD.full_name = ".Cmd.GvgTowerValue.value"
+GVGTOWERVALUE_VALUE_FIELD.number = 2
+GVGTOWERVALUE_VALUE_FIELD.index = 1
+GVGTOWERVALUE_VALUE_FIELD.label = 1
+GVGTOWERVALUE_VALUE_FIELD.has_default_value = false
+GVGTOWERVALUE_VALUE_FIELD.default_value = 0
+GVGTOWERVALUE_VALUE_FIELD.type = 13
+GVGTOWERVALUE_VALUE_FIELD.cpp_type = 3
+GVGTOWERVALUE.name = "GvgTowerValue"
+GVGTOWERVALUE.full_name = ".Cmd.GvgTowerValue"
+GVGTOWERVALUE.nested_types = {}
+GVGTOWERVALUE.enum_types = {}
+GVGTOWERVALUE.fields = {
+  GVGTOWERVALUE_GUILDID_FIELD,
+  GVGTOWERVALUE_VALUE_FIELD
+}
+GVGTOWERVALUE.is_extendable = false
+GVGTOWERVALUE.extensions = {}
+GVGTOWERDATA_ETYPE_FIELD.name = "etype"
+GVGTOWERDATA_ETYPE_FIELD.full_name = ".Cmd.GvgTowerData.etype"
+GVGTOWERDATA_ETYPE_FIELD.number = 1
+GVGTOWERDATA_ETYPE_FIELD.index = 0
+GVGTOWERDATA_ETYPE_FIELD.label = 1
+GVGTOWERDATA_ETYPE_FIELD.has_default_value = false
+GVGTOWERDATA_ETYPE_FIELD.default_value = nil
+GVGTOWERDATA_ETYPE_FIELD.enum_type = EGVGTOWERTYPE
+GVGTOWERDATA_ETYPE_FIELD.type = 14
+GVGTOWERDATA_ETYPE_FIELD.cpp_type = 8
+GVGTOWERDATA_ESTATE_FIELD.name = "estate"
+GVGTOWERDATA_ESTATE_FIELD.full_name = ".Cmd.GvgTowerData.estate"
+GVGTOWERDATA_ESTATE_FIELD.number = 2
+GVGTOWERDATA_ESTATE_FIELD.index = 1
+GVGTOWERDATA_ESTATE_FIELD.label = 1
+GVGTOWERDATA_ESTATE_FIELD.has_default_value = false
+GVGTOWERDATA_ESTATE_FIELD.default_value = nil
+GVGTOWERDATA_ESTATE_FIELD.enum_type = EGVGTOWERSTATE
+GVGTOWERDATA_ESTATE_FIELD.type = 14
+GVGTOWERDATA_ESTATE_FIELD.cpp_type = 8
+GVGTOWERDATA_OWNER_GUILD_FIELD.name = "owner_guild"
+GVGTOWERDATA_OWNER_GUILD_FIELD.full_name = ".Cmd.GvgTowerData.owner_guild"
+GVGTOWERDATA_OWNER_GUILD_FIELD.number = 3
+GVGTOWERDATA_OWNER_GUILD_FIELD.index = 2
+GVGTOWERDATA_OWNER_GUILD_FIELD.label = 1
+GVGTOWERDATA_OWNER_GUILD_FIELD.has_default_value = false
+GVGTOWERDATA_OWNER_GUILD_FIELD.default_value = 0
+GVGTOWERDATA_OWNER_GUILD_FIELD.type = 4
+GVGTOWERDATA_OWNER_GUILD_FIELD.cpp_type = 4
+GVGTOWERDATA_INFO_FIELD.name = "info"
+GVGTOWERDATA_INFO_FIELD.full_name = ".Cmd.GvgTowerData.info"
+GVGTOWERDATA_INFO_FIELD.number = 4
+GVGTOWERDATA_INFO_FIELD.index = 3
+GVGTOWERDATA_INFO_FIELD.label = 3
+GVGTOWERDATA_INFO_FIELD.has_default_value = false
+GVGTOWERDATA_INFO_FIELD.default_value = {}
+GVGTOWERDATA_INFO_FIELD.message_type = GVGTOWERVALUE
+GVGTOWERDATA_INFO_FIELD.type = 11
+GVGTOWERDATA_INFO_FIELD.cpp_type = 10
+GVGTOWERDATA.name = "GvgTowerData"
+GVGTOWERDATA.full_name = ".Cmd.GvgTowerData"
+GVGTOWERDATA.nested_types = {}
+GVGTOWERDATA.enum_types = {}
+GVGTOWERDATA.fields = {
+  GVGTOWERDATA_ETYPE_FIELD,
+  GVGTOWERDATA_ESTATE_FIELD,
+  GVGTOWERDATA_OWNER_GUILD_FIELD,
+  GVGTOWERDATA_INFO_FIELD
+}
+GVGTOWERDATA.is_extendable = false
+GVGTOWERDATA.extensions = {}
+GVGCRYSTALINFO_RANK_FIELD.name = "rank"
+GVGCRYSTALINFO_RANK_FIELD.full_name = ".Cmd.GvgCrystalInfo.rank"
+GVGCRYSTALINFO_RANK_FIELD.number = 1
+GVGCRYSTALINFO_RANK_FIELD.index = 0
+GVGCRYSTALINFO_RANK_FIELD.label = 1
+GVGCRYSTALINFO_RANK_FIELD.has_default_value = false
+GVGCRYSTALINFO_RANK_FIELD.default_value = 0
+GVGCRYSTALINFO_RANK_FIELD.type = 13
+GVGCRYSTALINFO_RANK_FIELD.cpp_type = 3
+GVGCRYSTALINFO_GUILDID_FIELD.name = "guildid"
+GVGCRYSTALINFO_GUILDID_FIELD.full_name = ".Cmd.GvgCrystalInfo.guildid"
+GVGCRYSTALINFO_GUILDID_FIELD.number = 2
+GVGCRYSTALINFO_GUILDID_FIELD.index = 1
+GVGCRYSTALINFO_GUILDID_FIELD.label = 1
+GVGCRYSTALINFO_GUILDID_FIELD.has_default_value = false
+GVGCRYSTALINFO_GUILDID_FIELD.default_value = 0
+GVGCRYSTALINFO_GUILDID_FIELD.type = 4
+GVGCRYSTALINFO_GUILDID_FIELD.cpp_type = 4
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.name = "crystalnum"
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.full_name = ".Cmd.GvgCrystalInfo.crystalnum"
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.number = 3
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.index = 2
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.label = 1
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.has_default_value = true
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.default_value = 0
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.type = 13
+GVGCRYSTALINFO_CRYSTALNUM_FIELD.cpp_type = 3
+GVGCRYSTALINFO_CHIPNUM_FIELD.name = "chipnum"
+GVGCRYSTALINFO_CHIPNUM_FIELD.full_name = ".Cmd.GvgCrystalInfo.chipnum"
+GVGCRYSTALINFO_CHIPNUM_FIELD.number = 4
+GVGCRYSTALINFO_CHIPNUM_FIELD.index = 3
+GVGCRYSTALINFO_CHIPNUM_FIELD.label = 1
+GVGCRYSTALINFO_CHIPNUM_FIELD.has_default_value = true
+GVGCRYSTALINFO_CHIPNUM_FIELD.default_value = 0
+GVGCRYSTALINFO_CHIPNUM_FIELD.type = 13
+GVGCRYSTALINFO_CHIPNUM_FIELD.cpp_type = 3
+GVGCRYSTALINFO.name = "GvgCrystalInfo"
+GVGCRYSTALINFO.full_name = ".Cmd.GvgCrystalInfo"
+GVGCRYSTALINFO.nested_types = {}
+GVGCRYSTALINFO.enum_types = {}
+GVGCRYSTALINFO.fields = {
+  GVGCRYSTALINFO_RANK_FIELD,
+  GVGCRYSTALINFO_GUILDID_FIELD,
+  GVGCRYSTALINFO_CRYSTALNUM_FIELD,
+  GVGCRYSTALINFO_CHIPNUM_FIELD
+}
+GVGCRYSTALINFO.is_extendable = false
+GVGCRYSTALINFO.extensions = {}
+GVGGUILDINFO_INDEX_FIELD.name = "index"
+GVGGUILDINFO_INDEX_FIELD.full_name = ".Cmd.GvgGuildInfo.index"
+GVGGUILDINFO_INDEX_FIELD.number = 1
+GVGGUILDINFO_INDEX_FIELD.index = 0
+GVGGUILDINFO_INDEX_FIELD.label = 1
+GVGGUILDINFO_INDEX_FIELD.has_default_value = false
+GVGGUILDINFO_INDEX_FIELD.default_value = 0
+GVGGUILDINFO_INDEX_FIELD.type = 13
+GVGGUILDINFO_INDEX_FIELD.cpp_type = 3
+GVGGUILDINFO_GUILDID_FIELD.name = "guildid"
+GVGGUILDINFO_GUILDID_FIELD.full_name = ".Cmd.GvgGuildInfo.guildid"
+GVGGUILDINFO_GUILDID_FIELD.number = 2
+GVGGUILDINFO_GUILDID_FIELD.index = 1
+GVGGUILDINFO_GUILDID_FIELD.label = 1
+GVGGUILDINFO_GUILDID_FIELD.has_default_value = false
+GVGGUILDINFO_GUILDID_FIELD.default_value = 0
+GVGGUILDINFO_GUILDID_FIELD.type = 4
+GVGGUILDINFO_GUILDID_FIELD.cpp_type = 4
+GVGGUILDINFO_GUILDNAME_FIELD.name = "guildname"
+GVGGUILDINFO_GUILDNAME_FIELD.full_name = ".Cmd.GvgGuildInfo.guildname"
+GVGGUILDINFO_GUILDNAME_FIELD.number = 3
+GVGGUILDINFO_GUILDNAME_FIELD.index = 2
+GVGGUILDINFO_GUILDNAME_FIELD.label = 1
+GVGGUILDINFO_GUILDNAME_FIELD.has_default_value = false
+GVGGUILDINFO_GUILDNAME_FIELD.default_value = ""
+GVGGUILDINFO_GUILDNAME_FIELD.type = 9
+GVGGUILDINFO_GUILDNAME_FIELD.cpp_type = 9
+GVGGUILDINFO_ICON_FIELD.name = "icon"
+GVGGUILDINFO_ICON_FIELD.full_name = ".Cmd.GvgGuildInfo.icon"
+GVGGUILDINFO_ICON_FIELD.number = 4
+GVGGUILDINFO_ICON_FIELD.index = 3
+GVGGUILDINFO_ICON_FIELD.label = 1
+GVGGUILDINFO_ICON_FIELD.has_default_value = false
+GVGGUILDINFO_ICON_FIELD.default_value = ""
+GVGGUILDINFO_ICON_FIELD.type = 9
+GVGGUILDINFO_ICON_FIELD.cpp_type = 9
+GVGGUILDINFO_METAL_LIVE_FIELD.name = "metal_live"
+GVGGUILDINFO_METAL_LIVE_FIELD.full_name = ".Cmd.GvgGuildInfo.metal_live"
+GVGGUILDINFO_METAL_LIVE_FIELD.number = 5
+GVGGUILDINFO_METAL_LIVE_FIELD.index = 4
+GVGGUILDINFO_METAL_LIVE_FIELD.label = 1
+GVGGUILDINFO_METAL_LIVE_FIELD.has_default_value = true
+GVGGUILDINFO_METAL_LIVE_FIELD.default_value = false
+GVGGUILDINFO_METAL_LIVE_FIELD.type = 8
+GVGGUILDINFO_METAL_LIVE_FIELD.cpp_type = 7
+GVGGUILDINFO_CRYSTAL_FIELD.name = "crystal"
+GVGGUILDINFO_CRYSTAL_FIELD.full_name = ".Cmd.GvgGuildInfo.crystal"
+GVGGUILDINFO_CRYSTAL_FIELD.number = 6
+GVGGUILDINFO_CRYSTAL_FIELD.index = 5
+GVGGUILDINFO_CRYSTAL_FIELD.label = 1
+GVGGUILDINFO_CRYSTAL_FIELD.has_default_value = false
+GVGGUILDINFO_CRYSTAL_FIELD.default_value = nil
+GVGGUILDINFO_CRYSTAL_FIELD.message_type = GVGCRYSTALINFO
+GVGGUILDINFO_CRYSTAL_FIELD.type = 11
+GVGGUILDINFO_CRYSTAL_FIELD.cpp_type = 10
+GVGGUILDINFO.name = "GvgGuildInfo"
+GVGGUILDINFO.full_name = ".Cmd.GvgGuildInfo"
+GVGGUILDINFO.nested_types = {}
+GVGGUILDINFO.enum_types = {}
+GVGGUILDINFO.fields = {
+  GVGGUILDINFO_INDEX_FIELD,
+  GVGGUILDINFO_GUILDID_FIELD,
+  GVGGUILDINFO_GUILDNAME_FIELD,
+  GVGGUILDINFO_ICON_FIELD,
+  GVGGUILDINFO_METAL_LIVE_FIELD,
+  GVGGUILDINFO_CRYSTAL_FIELD
+}
+GVGGUILDINFO.is_extendable = false
+GVGGUILDINFO.extensions = {}
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.name = "cmd"
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.SuperGvgSyncFubenCmd.cmd"
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.number = 1
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.index = 0
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.label = 1
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.has_default_value = true
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.default_value = 11
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.type = 14
+SUPERGVGSYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.name = "param"
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SuperGvgSyncFubenCmd.param"
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.number = 2
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.index = 1
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.label = 1
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.default_value = 32
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.type = 14
+SUPERGVGSYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.name = "towers"
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.full_name = ".Cmd.SuperGvgSyncFubenCmd.towers"
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.number = 3
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.index = 2
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.label = 3
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.has_default_value = false
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.default_value = {}
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.message_type = GVGTOWERDATA
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.type = 11
+SUPERGVGSYNCFUBENCMD_TOWERS_FIELD.cpp_type = 10
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.name = "guildinfo"
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.full_name = ".Cmd.SuperGvgSyncFubenCmd.guildinfo"
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.number = 4
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.index = 3
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.label = 3
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.has_default_value = false
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.default_value = {}
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.message_type = GVGGUILDINFO
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.type = 11
+SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD.cpp_type = 10
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.name = "firebegintime"
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.full_name = ".Cmd.SuperGvgSyncFubenCmd.firebegintime"
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.number = 5
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.index = 4
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.label = 1
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.has_default_value = true
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.default_value = 0
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.type = 13
+SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD.cpp_type = 3
+SUPERGVGSYNCFUBENCMD.name = "SuperGvgSyncFubenCmd"
+SUPERGVGSYNCFUBENCMD.full_name = ".Cmd.SuperGvgSyncFubenCmd"
+SUPERGVGSYNCFUBENCMD.nested_types = {}
+SUPERGVGSYNCFUBENCMD.enum_types = {}
+SUPERGVGSYNCFUBENCMD.fields = {
+  SUPERGVGSYNCFUBENCMD_CMD_FIELD,
+  SUPERGVGSYNCFUBENCMD_PARAM_FIELD,
+  SUPERGVGSYNCFUBENCMD_TOWERS_FIELD,
+  SUPERGVGSYNCFUBENCMD_GUILDINFO_FIELD,
+  SUPERGVGSYNCFUBENCMD_FIREBEGINTIME_FIELD
+}
+SUPERGVGSYNCFUBENCMD.is_extendable = false
+SUPERGVGSYNCFUBENCMD.extensions = {}
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgTowerUpdateFubenCmd.cmd"
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.number = 1
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.index = 0
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.label = 1
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.default_value = 11
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.type = 14
+GVGTOWERUPDATEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.name = "param"
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgTowerUpdateFubenCmd.param"
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.number = 2
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.index = 1
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.label = 1
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.default_value = 33
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.type = 14
+GVGTOWERUPDATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.name = "towers"
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.full_name = ".Cmd.GvgTowerUpdateFubenCmd.towers"
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.number = 3
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.index = 2
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.label = 3
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.has_default_value = false
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.default_value = {}
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.message_type = GVGTOWERDATA
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.type = 11
+GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD.cpp_type = 10
+GVGTOWERUPDATEFUBENCMD.name = "GvgTowerUpdateFubenCmd"
+GVGTOWERUPDATEFUBENCMD.full_name = ".Cmd.GvgTowerUpdateFubenCmd"
+GVGTOWERUPDATEFUBENCMD.nested_types = {}
+GVGTOWERUPDATEFUBENCMD.enum_types = {}
+GVGTOWERUPDATEFUBENCMD.fields = {
+  GVGTOWERUPDATEFUBENCMD_CMD_FIELD,
+  GVGTOWERUPDATEFUBENCMD_PARAM_FIELD,
+  GVGTOWERUPDATEFUBENCMD_TOWERS_FIELD
+}
+GVGTOWERUPDATEFUBENCMD.is_extendable = false
+GVGTOWERUPDATEFUBENCMD.extensions = {}
+GVGMETALDIEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGMETALDIEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgMetalDieFubenCmd.cmd"
+GVGMETALDIEFUBENCMD_CMD_FIELD.number = 1
+GVGMETALDIEFUBENCMD_CMD_FIELD.index = 0
+GVGMETALDIEFUBENCMD_CMD_FIELD.label = 1
+GVGMETALDIEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGMETALDIEFUBENCMD_CMD_FIELD.default_value = 11
+GVGMETALDIEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGMETALDIEFUBENCMD_CMD_FIELD.type = 14
+GVGMETALDIEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGMETALDIEFUBENCMD_PARAM_FIELD.name = "param"
+GVGMETALDIEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgMetalDieFubenCmd.param"
+GVGMETALDIEFUBENCMD_PARAM_FIELD.number = 2
+GVGMETALDIEFUBENCMD_PARAM_FIELD.index = 1
+GVGMETALDIEFUBENCMD_PARAM_FIELD.label = 1
+GVGMETALDIEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGMETALDIEFUBENCMD_PARAM_FIELD.default_value = 39
+GVGMETALDIEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGMETALDIEFUBENCMD_PARAM_FIELD.type = 14
+GVGMETALDIEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGMETALDIEFUBENCMD_INDEX_FIELD.name = "index"
+GVGMETALDIEFUBENCMD_INDEX_FIELD.full_name = ".Cmd.GvgMetalDieFubenCmd.index"
+GVGMETALDIEFUBENCMD_INDEX_FIELD.number = 3
+GVGMETALDIEFUBENCMD_INDEX_FIELD.index = 2
+GVGMETALDIEFUBENCMD_INDEX_FIELD.label = 1
+GVGMETALDIEFUBENCMD_INDEX_FIELD.has_default_value = true
+GVGMETALDIEFUBENCMD_INDEX_FIELD.default_value = 0
+GVGMETALDIEFUBENCMD_INDEX_FIELD.type = 13
+GVGMETALDIEFUBENCMD_INDEX_FIELD.cpp_type = 3
+GVGMETALDIEFUBENCMD.name = "GvgMetalDieFubenCmd"
+GVGMETALDIEFUBENCMD.full_name = ".Cmd.GvgMetalDieFubenCmd"
+GVGMETALDIEFUBENCMD.nested_types = {}
+GVGMETALDIEFUBENCMD.enum_types = {}
+GVGMETALDIEFUBENCMD.fields = {
+  GVGMETALDIEFUBENCMD_CMD_FIELD,
+  GVGMETALDIEFUBENCMD_PARAM_FIELD,
+  GVGMETALDIEFUBENCMD_INDEX_FIELD
+}
+GVGMETALDIEFUBENCMD.is_extendable = false
+GVGMETALDIEFUBENCMD.extensions = {}
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgCrystalUpdateFubenCmd.cmd"
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.number = 1
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.index = 0
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.label = 1
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.default_value = 11
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.type = 14
+GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.name = "param"
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgCrystalUpdateFubenCmd.param"
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.number = 2
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.index = 1
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.label = 1
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.default_value = 34
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.type = 14
+GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.name = "crystals"
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.full_name = ".Cmd.GvgCrystalUpdateFubenCmd.crystals"
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.number = 3
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.index = 2
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.label = 3
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.has_default_value = false
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.default_value = {}
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.message_type = GVGCRYSTALINFO
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.type = 11
+GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD.cpp_type = 10
+GVGCRYSTALUPDATEFUBENCMD.name = "GvgCrystalUpdateFubenCmd"
+GVGCRYSTALUPDATEFUBENCMD.full_name = ".Cmd.GvgCrystalUpdateFubenCmd"
+GVGCRYSTALUPDATEFUBENCMD.nested_types = {}
+GVGCRYSTALUPDATEFUBENCMD.enum_types = {}
+GVGCRYSTALUPDATEFUBENCMD.fields = {
+  GVGCRYSTALUPDATEFUBENCMD_CMD_FIELD,
+  GVGCRYSTALUPDATEFUBENCMD_PARAM_FIELD,
+  GVGCRYSTALUPDATEFUBENCMD_CRYSTALS_FIELD
+}
+GVGCRYSTALUPDATEFUBENCMD.is_extendable = false
+GVGCRYSTALUPDATEFUBENCMD.extensions = {}
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.name = "cmd"
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.QueryGvgTowerInfoFubenCmd.cmd"
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.number = 1
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.index = 0
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.label = 1
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.has_default_value = true
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.default_value = 11
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.type = 14
+QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.name = "param"
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.QueryGvgTowerInfoFubenCmd.param"
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.number = 2
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.index = 1
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.label = 1
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.default_value = 35
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.type = 14
+QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.name = "etype"
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.full_name = ".Cmd.QueryGvgTowerInfoFubenCmd.etype"
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.number = 3
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.index = 2
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.label = 2
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.has_default_value = false
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.default_value = nil
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.enum_type = EGVGTOWERTYPE
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.type = 14
+QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD.cpp_type = 8
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.name = "open"
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.full_name = ".Cmd.QueryGvgTowerInfoFubenCmd.open"
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.number = 4
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.index = 3
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.label = 1
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.has_default_value = true
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.default_value = false
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.type = 8
+QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD.cpp_type = 7
+QUERYGVGTOWERINFOFUBENCMD.name = "QueryGvgTowerInfoFubenCmd"
+QUERYGVGTOWERINFOFUBENCMD.full_name = ".Cmd.QueryGvgTowerInfoFubenCmd"
+QUERYGVGTOWERINFOFUBENCMD.nested_types = {}
+QUERYGVGTOWERINFOFUBENCMD.enum_types = {}
+QUERYGVGTOWERINFOFUBENCMD.fields = {
+  QUERYGVGTOWERINFOFUBENCMD_CMD_FIELD,
+  QUERYGVGTOWERINFOFUBENCMD_PARAM_FIELD,
+  QUERYGVGTOWERINFOFUBENCMD_ETYPE_FIELD,
+  QUERYGVGTOWERINFOFUBENCMD_OPEN_FIELD
+}
+QUERYGVGTOWERINFOFUBENCMD.is_extendable = false
+QUERYGVGTOWERINFOFUBENCMD.extensions = {}
+REWARDITEMDATA_ITEMID_FIELD.name = "itemid"
+REWARDITEMDATA_ITEMID_FIELD.full_name = ".Cmd.RewardItemData.itemid"
+REWARDITEMDATA_ITEMID_FIELD.number = 1
+REWARDITEMDATA_ITEMID_FIELD.index = 0
+REWARDITEMDATA_ITEMID_FIELD.label = 1
+REWARDITEMDATA_ITEMID_FIELD.has_default_value = false
+REWARDITEMDATA_ITEMID_FIELD.default_value = 0
+REWARDITEMDATA_ITEMID_FIELD.type = 13
+REWARDITEMDATA_ITEMID_FIELD.cpp_type = 3
+REWARDITEMDATA_COUNT_FIELD.name = "count"
+REWARDITEMDATA_COUNT_FIELD.full_name = ".Cmd.RewardItemData.count"
+REWARDITEMDATA_COUNT_FIELD.number = 2
+REWARDITEMDATA_COUNT_FIELD.index = 1
+REWARDITEMDATA_COUNT_FIELD.label = 1
+REWARDITEMDATA_COUNT_FIELD.has_default_value = false
+REWARDITEMDATA_COUNT_FIELD.default_value = 0
+REWARDITEMDATA_COUNT_FIELD.type = 13
+REWARDITEMDATA_COUNT_FIELD.cpp_type = 3
+REWARDITEMDATA.name = "RewardItemData"
+REWARDITEMDATA.full_name = ".Cmd.RewardItemData"
+REWARDITEMDATA.nested_types = {}
+REWARDITEMDATA.enum_types = {}
+REWARDITEMDATA.fields = {
+  REWARDITEMDATA_ITEMID_FIELD,
+  REWARDITEMDATA_COUNT_FIELD
+}
+REWARDITEMDATA.is_extendable = false
+REWARDITEMDATA.extensions = {}
+SUPERGVGREWARDDATA_GUILDID_FIELD.name = "guildid"
+SUPERGVGREWARDDATA_GUILDID_FIELD.full_name = ".Cmd.SuperGvgRewardData.guildid"
+SUPERGVGREWARDDATA_GUILDID_FIELD.number = 1
+SUPERGVGREWARDDATA_GUILDID_FIELD.index = 0
+SUPERGVGREWARDDATA_GUILDID_FIELD.label = 1
+SUPERGVGREWARDDATA_GUILDID_FIELD.has_default_value = false
+SUPERGVGREWARDDATA_GUILDID_FIELD.default_value = 0
+SUPERGVGREWARDDATA_GUILDID_FIELD.type = 4
+SUPERGVGREWARDDATA_GUILDID_FIELD.cpp_type = 4
+SUPERGVGREWARDDATA_RANK_FIELD.name = "rank"
+SUPERGVGREWARDDATA_RANK_FIELD.full_name = ".Cmd.SuperGvgRewardData.rank"
+SUPERGVGREWARDDATA_RANK_FIELD.number = 2
+SUPERGVGREWARDDATA_RANK_FIELD.index = 1
+SUPERGVGREWARDDATA_RANK_FIELD.label = 1
+SUPERGVGREWARDDATA_RANK_FIELD.has_default_value = false
+SUPERGVGREWARDDATA_RANK_FIELD.default_value = 0
+SUPERGVGREWARDDATA_RANK_FIELD.type = 13
+SUPERGVGREWARDDATA_RANK_FIELD.cpp_type = 3
+SUPERGVGREWARDDATA_ITEMS_FIELD.name = "items"
+SUPERGVGREWARDDATA_ITEMS_FIELD.full_name = ".Cmd.SuperGvgRewardData.items"
+SUPERGVGREWARDDATA_ITEMS_FIELD.number = 3
+SUPERGVGREWARDDATA_ITEMS_FIELD.index = 2
+SUPERGVGREWARDDATA_ITEMS_FIELD.label = 3
+SUPERGVGREWARDDATA_ITEMS_FIELD.has_default_value = false
+SUPERGVGREWARDDATA_ITEMS_FIELD.default_value = {}
+SUPERGVGREWARDDATA_ITEMS_FIELD.message_type = REWARDITEMDATA
+SUPERGVGREWARDDATA_ITEMS_FIELD.type = 11
+SUPERGVGREWARDDATA_ITEMS_FIELD.cpp_type = 10
+SUPERGVGREWARDDATA.name = "SuperGvgRewardData"
+SUPERGVGREWARDDATA.full_name = ".Cmd.SuperGvgRewardData"
+SUPERGVGREWARDDATA.nested_types = {}
+SUPERGVGREWARDDATA.enum_types = {}
+SUPERGVGREWARDDATA.fields = {
+  SUPERGVGREWARDDATA_GUILDID_FIELD,
+  SUPERGVGREWARDDATA_RANK_FIELD,
+  SUPERGVGREWARDDATA_ITEMS_FIELD
+}
+SUPERGVGREWARDDATA.is_extendable = false
+SUPERGVGREWARDDATA.extensions = {}
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.name = "cmd"
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.SuperGvgRewardInfoFubenCmd.cmd"
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.number = 1
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.index = 0
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.label = 1
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.has_default_value = true
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.default_value = 11
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.type = 14
+SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.name = "param"
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SuperGvgRewardInfoFubenCmd.param"
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.number = 2
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.index = 1
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.label = 1
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.default_value = 36
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.type = 14
+SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.name = "rewardinfo"
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.full_name = ".Cmd.SuperGvgRewardInfoFubenCmd.rewardinfo"
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.number = 3
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.index = 2
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.label = 3
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.has_default_value = false
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.default_value = {}
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.message_type = SUPERGVGREWARDDATA
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.type = 11
+SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD.cpp_type = 10
+SUPERGVGREWARDINFOFUBENCMD.name = "SuperGvgRewardInfoFubenCmd"
+SUPERGVGREWARDINFOFUBENCMD.full_name = ".Cmd.SuperGvgRewardInfoFubenCmd"
+SUPERGVGREWARDINFOFUBENCMD.nested_types = {}
+SUPERGVGREWARDINFOFUBENCMD.enum_types = {}
+SUPERGVGREWARDINFOFUBENCMD.fields = {
+  SUPERGVGREWARDINFOFUBENCMD_CMD_FIELD,
+  SUPERGVGREWARDINFOFUBENCMD_PARAM_FIELD,
+  SUPERGVGREWARDINFOFUBENCMD_REWARDINFO_FIELD
+}
+SUPERGVGREWARDINFOFUBENCMD.is_extendable = false
+SUPERGVGREWARDINFOFUBENCMD.extensions = {}
+SUPERGVGUSERDATA_USERNAME_FIELD.name = "username"
+SUPERGVGUSERDATA_USERNAME_FIELD.full_name = ".Cmd.SuperGvgUserData.username"
+SUPERGVGUSERDATA_USERNAME_FIELD.number = 1
+SUPERGVGUSERDATA_USERNAME_FIELD.index = 0
+SUPERGVGUSERDATA_USERNAME_FIELD.label = 2
+SUPERGVGUSERDATA_USERNAME_FIELD.has_default_value = false
+SUPERGVGUSERDATA_USERNAME_FIELD.default_value = ""
+SUPERGVGUSERDATA_USERNAME_FIELD.type = 9
+SUPERGVGUSERDATA_USERNAME_FIELD.cpp_type = 9
+SUPERGVGUSERDATA_PROFESSION_FIELD.name = "profession"
+SUPERGVGUSERDATA_PROFESSION_FIELD.full_name = ".Cmd.SuperGvgUserData.profession"
+SUPERGVGUSERDATA_PROFESSION_FIELD.number = 2
+SUPERGVGUSERDATA_PROFESSION_FIELD.index = 1
+SUPERGVGUSERDATA_PROFESSION_FIELD.label = 2
+SUPERGVGUSERDATA_PROFESSION_FIELD.has_default_value = false
+SUPERGVGUSERDATA_PROFESSION_FIELD.default_value = 0
+SUPERGVGUSERDATA_PROFESSION_FIELD.type = 13
+SUPERGVGUSERDATA_PROFESSION_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.name = "killusernum"
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.full_name = ".Cmd.SuperGvgUserData.killusernum"
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.number = 3
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.index = 2
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.label = 1
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.has_default_value = true
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.default_value = 0
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.type = 13
+SUPERGVGUSERDATA_KILLUSERNUM_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_DIENUM_FIELD.name = "dienum"
+SUPERGVGUSERDATA_DIENUM_FIELD.full_name = ".Cmd.SuperGvgUserData.dienum"
+SUPERGVGUSERDATA_DIENUM_FIELD.number = 4
+SUPERGVGUSERDATA_DIENUM_FIELD.index = 3
+SUPERGVGUSERDATA_DIENUM_FIELD.label = 1
+SUPERGVGUSERDATA_DIENUM_FIELD.has_default_value = true
+SUPERGVGUSERDATA_DIENUM_FIELD.default_value = 0
+SUPERGVGUSERDATA_DIENUM_FIELD.type = 13
+SUPERGVGUSERDATA_DIENUM_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_CHIPNUM_FIELD.name = "chipnum"
+SUPERGVGUSERDATA_CHIPNUM_FIELD.full_name = ".Cmd.SuperGvgUserData.chipnum"
+SUPERGVGUSERDATA_CHIPNUM_FIELD.number = 5
+SUPERGVGUSERDATA_CHIPNUM_FIELD.index = 4
+SUPERGVGUSERDATA_CHIPNUM_FIELD.label = 1
+SUPERGVGUSERDATA_CHIPNUM_FIELD.has_default_value = true
+SUPERGVGUSERDATA_CHIPNUM_FIELD.default_value = 0
+SUPERGVGUSERDATA_CHIPNUM_FIELD.type = 13
+SUPERGVGUSERDATA_CHIPNUM_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_TOWERTIME_FIELD.name = "towertime"
+SUPERGVGUSERDATA_TOWERTIME_FIELD.full_name = ".Cmd.SuperGvgUserData.towertime"
+SUPERGVGUSERDATA_TOWERTIME_FIELD.number = 6
+SUPERGVGUSERDATA_TOWERTIME_FIELD.index = 5
+SUPERGVGUSERDATA_TOWERTIME_FIELD.label = 1
+SUPERGVGUSERDATA_TOWERTIME_FIELD.has_default_value = true
+SUPERGVGUSERDATA_TOWERTIME_FIELD.default_value = 0
+SUPERGVGUSERDATA_TOWERTIME_FIELD.type = 13
+SUPERGVGUSERDATA_TOWERTIME_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_HEALHP_FIELD.name = "healhp"
+SUPERGVGUSERDATA_HEALHP_FIELD.full_name = ".Cmd.SuperGvgUserData.healhp"
+SUPERGVGUSERDATA_HEALHP_FIELD.number = 7
+SUPERGVGUSERDATA_HEALHP_FIELD.index = 6
+SUPERGVGUSERDATA_HEALHP_FIELD.label = 1
+SUPERGVGUSERDATA_HEALHP_FIELD.has_default_value = true
+SUPERGVGUSERDATA_HEALHP_FIELD.default_value = 0
+SUPERGVGUSERDATA_HEALHP_FIELD.type = 13
+SUPERGVGUSERDATA_HEALHP_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_RELIVENUM_FIELD.name = "relivenum"
+SUPERGVGUSERDATA_RELIVENUM_FIELD.full_name = ".Cmd.SuperGvgUserData.relivenum"
+SUPERGVGUSERDATA_RELIVENUM_FIELD.number = 8
+SUPERGVGUSERDATA_RELIVENUM_FIELD.index = 7
+SUPERGVGUSERDATA_RELIVENUM_FIELD.label = 1
+SUPERGVGUSERDATA_RELIVENUM_FIELD.has_default_value = true
+SUPERGVGUSERDATA_RELIVENUM_FIELD.default_value = 0
+SUPERGVGUSERDATA_RELIVENUM_FIELD.type = 13
+SUPERGVGUSERDATA_RELIVENUM_FIELD.cpp_type = 3
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.name = "metaldamage"
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.full_name = ".Cmd.SuperGvgUserData.metaldamage"
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.number = 9
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.index = 8
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.label = 1
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.has_default_value = true
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.default_value = 0
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.type = 13
+SUPERGVGUSERDATA_METALDAMAGE_FIELD.cpp_type = 3
+SUPERGVGUSERDATA.name = "SuperGvgUserData"
+SUPERGVGUSERDATA.full_name = ".Cmd.SuperGvgUserData"
+SUPERGVGUSERDATA.nested_types = {}
+SUPERGVGUSERDATA.enum_types = {}
+SUPERGVGUSERDATA.fields = {
+  SUPERGVGUSERDATA_USERNAME_FIELD,
+  SUPERGVGUSERDATA_PROFESSION_FIELD,
+  SUPERGVGUSERDATA_KILLUSERNUM_FIELD,
+  SUPERGVGUSERDATA_DIENUM_FIELD,
+  SUPERGVGUSERDATA_CHIPNUM_FIELD,
+  SUPERGVGUSERDATA_TOWERTIME_FIELD,
+  SUPERGVGUSERDATA_HEALHP_FIELD,
+  SUPERGVGUSERDATA_RELIVENUM_FIELD,
+  SUPERGVGUSERDATA_METALDAMAGE_FIELD
+}
+SUPERGVGUSERDATA.is_extendable = false
+SUPERGVGUSERDATA.extensions = {}
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.name = "guildid"
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.full_name = ".Cmd.SuperGvgGuildUserData.guildid"
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.number = 1
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.index = 0
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.label = 2
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.has_default_value = false
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.default_value = 0
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.type = 4
+SUPERGVGGUILDUSERDATA_GUILDID_FIELD.cpp_type = 4
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.name = "userdatas"
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.full_name = ".Cmd.SuperGvgGuildUserData.userdatas"
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.number = 2
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.index = 1
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.label = 3
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.has_default_value = false
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.default_value = {}
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.message_type = SUPERGVGUSERDATA
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.type = 11
+SUPERGVGGUILDUSERDATA_USERDATAS_FIELD.cpp_type = 10
+SUPERGVGGUILDUSERDATA.name = "SuperGvgGuildUserData"
+SUPERGVGGUILDUSERDATA.full_name = ".Cmd.SuperGvgGuildUserData"
+SUPERGVGGUILDUSERDATA.nested_types = {}
+SUPERGVGGUILDUSERDATA.enum_types = {}
+SUPERGVGGUILDUSERDATA.fields = {
+  SUPERGVGGUILDUSERDATA_GUILDID_FIELD,
+  SUPERGVGGUILDUSERDATA_USERDATAS_FIELD
+}
+SUPERGVGGUILDUSERDATA.is_extendable = false
+SUPERGVGGUILDUSERDATA.extensions = {}
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.name = "cmd"
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.full_name = ".Cmd.SuperGvgQueryUserDataFubenCmd.cmd"
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.number = 1
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.index = 0
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.label = 1
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.has_default_value = true
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.default_value = 11
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.type = 14
+SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD.cpp_type = 8
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.name = "param"
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SuperGvgQueryUserDataFubenCmd.param"
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.number = 2
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.index = 1
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.label = 1
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.has_default_value = true
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.default_value = 37
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.type = 14
+SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD.cpp_type = 8
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.name = "guilduserdata"
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.full_name = ".Cmd.SuperGvgQueryUserDataFubenCmd.guilduserdata"
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.number = 3
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.index = 2
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.label = 3
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.has_default_value = false
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.default_value = {}
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.message_type = SUPERGVGGUILDUSERDATA
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.type = 11
+SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD.cpp_type = 10
+SUPERGVGQUERYUSERDATAFUBENCMD.name = "SuperGvgQueryUserDataFubenCmd"
+SUPERGVGQUERYUSERDATAFUBENCMD.full_name = ".Cmd.SuperGvgQueryUserDataFubenCmd"
+SUPERGVGQUERYUSERDATAFUBENCMD.nested_types = {}
+SUPERGVGQUERYUSERDATAFUBENCMD.enum_types = {}
+SUPERGVGQUERYUSERDATAFUBENCMD.fields = {
+  SUPERGVGQUERYUSERDATAFUBENCMD_CMD_FIELD,
+  SUPERGVGQUERYUSERDATAFUBENCMD_PARAM_FIELD,
+  SUPERGVGQUERYUSERDATAFUBENCMD_GUILDUSERDATA_FIELD
+}
+SUPERGVGQUERYUSERDATAFUBENCMD.is_extendable = false
+SUPERGVGQUERYUSERDATAFUBENCMD.extensions = {}
+MVPBATTLETEAMDATA_TEAMID_FIELD.name = "teamid"
+MVPBATTLETEAMDATA_TEAMID_FIELD.full_name = ".Cmd.MvpBattleTeamData.teamid"
+MVPBATTLETEAMDATA_TEAMID_FIELD.number = 1
+MVPBATTLETEAMDATA_TEAMID_FIELD.index = 0
+MVPBATTLETEAMDATA_TEAMID_FIELD.label = 2
+MVPBATTLETEAMDATA_TEAMID_FIELD.has_default_value = false
+MVPBATTLETEAMDATA_TEAMID_FIELD.default_value = 0
+MVPBATTLETEAMDATA_TEAMID_FIELD.type = 4
+MVPBATTLETEAMDATA_TEAMID_FIELD.cpp_type = 4
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.name = "teamname"
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.full_name = ".Cmd.MvpBattleTeamData.teamname"
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.number = 2
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.index = 1
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.label = 1
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.has_default_value = false
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.default_value = ""
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.type = 9
+MVPBATTLETEAMDATA_TEAMNAME_FIELD.cpp_type = 9
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.name = "killmvps"
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.full_name = ".Cmd.MvpBattleTeamData.killmvps"
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.number = 3
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.index = 2
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.label = 3
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.has_default_value = false
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.default_value = {}
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.type = 13
+MVPBATTLETEAMDATA_KILLMVPS_FIELD.cpp_type = 3
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.name = "killminis"
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.full_name = ".Cmd.MvpBattleTeamData.killminis"
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.number = 4
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.index = 3
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.label = 3
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.has_default_value = false
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.default_value = {}
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.type = 13
+MVPBATTLETEAMDATA_KILLMINIS_FIELD.cpp_type = 3
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.name = "killusernum"
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.full_name = ".Cmd.MvpBattleTeamData.killusernum"
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.number = 5
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.index = 4
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.label = 1
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.has_default_value = true
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.default_value = 0
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.type = 13
+MVPBATTLETEAMDATA_KILLUSERNUM_FIELD.cpp_type = 3
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.name = "deadboss"
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.full_name = ".Cmd.MvpBattleTeamData.deadboss"
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.number = 6
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.index = 5
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.label = 3
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.has_default_value = false
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.default_value = {}
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.type = 13
+MVPBATTLETEAMDATA_DEADBOSS_FIELD.cpp_type = 3
+MVPBATTLETEAMDATA.name = "MvpBattleTeamData"
+MVPBATTLETEAMDATA.full_name = ".Cmd.MvpBattleTeamData"
+MVPBATTLETEAMDATA.nested_types = {}
+MVPBATTLETEAMDATA.enum_types = {}
+MVPBATTLETEAMDATA.fields = {
+  MVPBATTLETEAMDATA_TEAMID_FIELD,
+  MVPBATTLETEAMDATA_TEAMNAME_FIELD,
+  MVPBATTLETEAMDATA_KILLMVPS_FIELD,
+  MVPBATTLETEAMDATA_KILLMINIS_FIELD,
+  MVPBATTLETEAMDATA_KILLUSERNUM_FIELD,
+  MVPBATTLETEAMDATA_DEADBOSS_FIELD
+}
+MVPBATTLETEAMDATA.is_extendable = false
+MVPBATTLETEAMDATA.extensions = {}
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.name = "cmd"
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.full_name = ".Cmd.MvpBattleReportFubenCmd.cmd"
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.number = 1
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.index = 0
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.label = 1
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.has_default_value = true
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.default_value = 11
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.type = 14
+MVPBATTLEREPORTFUBENCMD_CMD_FIELD.cpp_type = 8
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.name = "param"
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.MvpBattleReportFubenCmd.param"
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.number = 2
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.index = 1
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.label = 1
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.has_default_value = true
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.default_value = 38
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.type = 14
+MVPBATTLEREPORTFUBENCMD_PARAM_FIELD.cpp_type = 8
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.name = "datas"
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.full_name = ".Cmd.MvpBattleReportFubenCmd.datas"
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.number = 3
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.index = 2
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.label = 3
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.has_default_value = false
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.default_value = {}
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.message_type = MVPBATTLETEAMDATA
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.type = 11
+MVPBATTLEREPORTFUBENCMD_DATAS_FIELD.cpp_type = 10
+MVPBATTLEREPORTFUBENCMD.name = "MvpBattleReportFubenCmd"
+MVPBATTLEREPORTFUBENCMD.full_name = ".Cmd.MvpBattleReportFubenCmd"
+MVPBATTLEREPORTFUBENCMD.nested_types = {}
+MVPBATTLEREPORTFUBENCMD.enum_types = {}
+MVPBATTLEREPORTFUBENCMD.fields = {
+  MVPBATTLEREPORTFUBENCMD_CMD_FIELD,
+  MVPBATTLEREPORTFUBENCMD_PARAM_FIELD,
+  MVPBATTLEREPORTFUBENCMD_DATAS_FIELD
+}
+MVPBATTLEREPORTFUBENCMD.is_extendable = false
+MVPBATTLEREPORTFUBENCMD.extensions = {}
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.name = "cmd"
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.full_name = ".Cmd.InviteSummonBossFubenCmd.cmd"
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.number = 1
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.index = 0
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.label = 1
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.has_default_value = true
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.default_value = 11
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.type = 14
+INVITESUMMONBOSSFUBENCMD_CMD_FIELD.cpp_type = 8
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.name = "param"
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.full_name = ".Cmd.InviteSummonBossFubenCmd.param"
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.number = 2
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.index = 1
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.label = 1
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.has_default_value = true
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.default_value = 40
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.type = 14
+INVITESUMMONBOSSFUBENCMD_PARAM_FIELD.cpp_type = 8
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.name = "difficulty"
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.full_name = ".Cmd.InviteSummonBossFubenCmd.difficulty"
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.number = 3
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.index = 2
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.label = 1
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.has_default_value = false
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.default_value = nil
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.enum_type = EDEADBOSSDIFFICULTY
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.type = 14
+INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD.cpp_type = 8
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.name = "deadboss_raid_index"
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.full_name = ".Cmd.InviteSummonBossFubenCmd.deadboss_raid_index"
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.number = 4
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.index = 3
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.label = 1
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.has_default_value = false
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.default_value = 0
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.type = 13
+INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD.cpp_type = 3
+INVITESUMMONBOSSFUBENCMD.name = "InviteSummonBossFubenCmd"
+INVITESUMMONBOSSFUBENCMD.full_name = ".Cmd.InviteSummonBossFubenCmd"
+INVITESUMMONBOSSFUBENCMD.nested_types = {}
+INVITESUMMONBOSSFUBENCMD.enum_types = {}
+INVITESUMMONBOSSFUBENCMD.fields = {
+  INVITESUMMONBOSSFUBENCMD_CMD_FIELD,
+  INVITESUMMONBOSSFUBENCMD_PARAM_FIELD,
+  INVITESUMMONBOSSFUBENCMD_DIFFICULTY_FIELD,
+  INVITESUMMONBOSSFUBENCMD_DEADBOSS_RAID_INDEX_FIELD
+}
+INVITESUMMONBOSSFUBENCMD.is_extendable = false
+INVITESUMMONBOSSFUBENCMD.extensions = {}
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.name = "cmd"
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.full_name = ".Cmd.ReplySummonBossFubenCmd.cmd"
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.number = 1
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.index = 0
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.label = 1
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.has_default_value = true
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.default_value = 11
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.type = 14
+REPLYSUMMONBOSSFUBENCMD_CMD_FIELD.cpp_type = 8
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.name = "param"
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ReplySummonBossFubenCmd.param"
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.number = 2
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.index = 1
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.label = 1
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.has_default_value = true
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.default_value = 41
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.type = 14
+REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD.cpp_type = 8
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.name = "isfull"
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.full_name = ".Cmd.ReplySummonBossFubenCmd.isfull"
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.number = 3
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.index = 2
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.label = 1
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.has_default_value = true
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.default_value = false
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.type = 8
+REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD.cpp_type = 7
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.name = "agree"
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.full_name = ".Cmd.ReplySummonBossFubenCmd.agree"
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.number = 4
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.index = 3
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.label = 1
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.has_default_value = true
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.default_value = false
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.type = 8
+REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD.cpp_type = 7
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.name = "charid"
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.full_name = ".Cmd.ReplySummonBossFubenCmd.charid"
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.number = 5
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.index = 4
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.label = 1
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.has_default_value = false
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.default_value = 0
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.type = 4
+REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD.cpp_type = 4
+REPLYSUMMONBOSSFUBENCMD.name = "ReplySummonBossFubenCmd"
+REPLYSUMMONBOSSFUBENCMD.full_name = ".Cmd.ReplySummonBossFubenCmd"
+REPLYSUMMONBOSSFUBENCMD.nested_types = {}
+REPLYSUMMONBOSSFUBENCMD.enum_types = {}
+REPLYSUMMONBOSSFUBENCMD.fields = {
+  REPLYSUMMONBOSSFUBENCMD_CMD_FIELD,
+  REPLYSUMMONBOSSFUBENCMD_PARAM_FIELD,
+  REPLYSUMMONBOSSFUBENCMD_ISFULL_FIELD,
+  REPLYSUMMONBOSSFUBENCMD_AGREE_FIELD,
+  REPLYSUMMONBOSSFUBENCMD_CHARID_FIELD
+}
+REPLYSUMMONBOSSFUBENCMD.is_extendable = false
+REPLYSUMMONBOSSFUBENCMD.extensions = {}
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.name = "charid"
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.charid"
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.number = 1
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.index = 0
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.type = 4
+TEAMPWSRAIDUSERINFO_CHARID_FIELD.cpp_type = 4
+TEAMPWSRAIDUSERINFO_NAME_FIELD.name = "name"
+TEAMPWSRAIDUSERINFO_NAME_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.name"
+TEAMPWSRAIDUSERINFO_NAME_FIELD.number = 2
+TEAMPWSRAIDUSERINFO_NAME_FIELD.index = 1
+TEAMPWSRAIDUSERINFO_NAME_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_NAME_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_NAME_FIELD.default_value = ""
+TEAMPWSRAIDUSERINFO_NAME_FIELD.type = 9
+TEAMPWSRAIDUSERINFO_NAME_FIELD.cpp_type = 9
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.name = "killnum"
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.killnum"
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.number = 3
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.index = 2
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_KILLNUM_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.name = "heal"
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.heal"
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.number = 4
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.index = 3
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_HEAL_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.name = "killscore"
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.killscore"
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.number = 5
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.index = 4
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.name = "ballscore"
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.ballscore"
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.number = 6
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.index = 5
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.name = "buffscore"
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.buffscore"
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.number = 7
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.index = 6
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.name = "dienum"
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.dienum"
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.number = 8
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.index = 7
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_DIENUM_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.name = "profession"
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.profession"
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.number = 9
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.index = 8
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.default_value = nil
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.enum_type = PROTOCOMMON_PB_EPROFESSION
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.type = 14
+TEAMPWSRAIDUSERINFO_PROFESSION_FIELD.cpp_type = 8
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.name = "seasonscore"
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.full_name = ".Cmd.TeamPwsRaidUserInfo.seasonscore"
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.number = 10
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.index = 9
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.label = 1
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.has_default_value = false
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.default_value = 0
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.type = 13
+TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD.cpp_type = 3
+TEAMPWSRAIDUSERINFO.name = "TeamPwsRaidUserInfo"
+TEAMPWSRAIDUSERINFO.full_name = ".Cmd.TeamPwsRaidUserInfo"
+TEAMPWSRAIDUSERINFO.nested_types = {}
+TEAMPWSRAIDUSERINFO.enum_types = {}
+TEAMPWSRAIDUSERINFO.fields = {
+  TEAMPWSRAIDUSERINFO_CHARID_FIELD,
+  TEAMPWSRAIDUSERINFO_NAME_FIELD,
+  TEAMPWSRAIDUSERINFO_KILLNUM_FIELD,
+  TEAMPWSRAIDUSERINFO_HEAL_FIELD,
+  TEAMPWSRAIDUSERINFO_KILLSCORE_FIELD,
+  TEAMPWSRAIDUSERINFO_BALLSCORE_FIELD,
+  TEAMPWSRAIDUSERINFO_BUFFSCORE_FIELD,
+  TEAMPWSRAIDUSERINFO_DIENUM_FIELD,
+  TEAMPWSRAIDUSERINFO_PROFESSION_FIELD,
+  TEAMPWSRAIDUSERINFO_SEASONSCORE_FIELD
+}
+TEAMPWSRAIDUSERINFO.is_extendable = false
+TEAMPWSRAIDUSERINFO.extensions = {}
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.name = "teamid"
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.full_name = ".Cmd.TeamPwsRaidTeamInfo.teamid"
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.number = 1
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.index = 0
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.label = 1
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.has_default_value = false
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.default_value = 0
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.type = 4
+TEAMPWSRAIDTEAMINFO_TEAMID_FIELD.cpp_type = 4
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.name = "color"
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.full_name = ".Cmd.TeamPwsRaidTeamInfo.color"
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.number = 2
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.index = 1
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.label = 1
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.has_default_value = false
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.default_value = nil
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.enum_type = ETEAMPWSCOLOR
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.type = 14
+TEAMPWSRAIDTEAMINFO_COLOR_FIELD.cpp_type = 8
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.name = "userinfos"
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.full_name = ".Cmd.TeamPwsRaidTeamInfo.userinfos"
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.number = 3
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.index = 2
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.label = 3
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.has_default_value = false
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.default_value = {}
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.message_type = TEAMPWSRAIDUSERINFO
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.type = 11
+TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD.cpp_type = 10
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.name = "avescore"
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.full_name = ".Cmd.TeamPwsRaidTeamInfo.avescore"
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.number = 4
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.index = 3
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.label = 1
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.has_default_value = false
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.default_value = 0
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.type = 13
+TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD.cpp_type = 3
+TEAMPWSRAIDTEAMINFO.name = "TeamPwsRaidTeamInfo"
+TEAMPWSRAIDTEAMINFO.full_name = ".Cmd.TeamPwsRaidTeamInfo"
+TEAMPWSRAIDTEAMINFO.nested_types = {}
+TEAMPWSRAIDTEAMINFO.enum_types = {}
+TEAMPWSRAIDTEAMINFO.fields = {
+  TEAMPWSRAIDTEAMINFO_TEAMID_FIELD,
+  TEAMPWSRAIDTEAMINFO_COLOR_FIELD,
+  TEAMPWSRAIDTEAMINFO_USERINFOS_FIELD,
+  TEAMPWSRAIDTEAMINFO_AVESCORE_FIELD
+}
+TEAMPWSRAIDTEAMINFO.is_extendable = false
+TEAMPWSRAIDTEAMINFO.extensions = {}
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.name = "cmd"
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.QueryTeamPwsUserInfoFubenCmd.cmd"
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.number = 1
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.index = 0
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.label = 1
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.has_default_value = true
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.default_value = 11
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.type = 14
+QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.name = "param"
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.QueryTeamPwsUserInfoFubenCmd.param"
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.number = 2
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.index = 1
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.label = 1
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.default_value = 42
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.type = 14
+QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.QueryTeamPwsUserInfoFubenCmd.teaminfo"
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.number = 3
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.index = 2
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.label = 3
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.default_value = {}
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.message_type = TEAMPWSRAIDTEAMINFO
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.type = 11
+QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+QUERYTEAMPWSUSERINFOFUBENCMD.name = "QueryTeamPwsUserInfoFubenCmd"
+QUERYTEAMPWSUSERINFOFUBENCMD.full_name = ".Cmd.QueryTeamPwsUserInfoFubenCmd"
+QUERYTEAMPWSUSERINFOFUBENCMD.nested_types = {}
+QUERYTEAMPWSUSERINFOFUBENCMD.enum_types = {}
+QUERYTEAMPWSUSERINFOFUBENCMD.fields = {
+  QUERYTEAMPWSUSERINFOFUBENCMD_CMD_FIELD,
+  QUERYTEAMPWSUSERINFOFUBENCMD_PARAM_FIELD,
+  QUERYTEAMPWSUSERINFOFUBENCMD_TEAMINFO_FIELD
+}
+QUERYTEAMPWSUSERINFOFUBENCMD.is_extendable = false
+QUERYTEAMPWSUSERINFOFUBENCMD.extensions = {}
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamPwsReportFubenCmd.cmd"
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.number = 1
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.index = 0
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.label = 1
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.default_value = 11
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.type = 14
+TEAMPWSREPORTFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.name = "param"
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamPwsReportFubenCmd.param"
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.number = 2
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.index = 1
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.label = 1
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.default_value = 43
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.type = 14
+TEAMPWSREPORTFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.TeamPwsReportFubenCmd.teaminfo"
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.number = 3
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.index = 2
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.label = 3
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.default_value = {}
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.message_type = TEAMPWSRAIDTEAMINFO
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.type = 11
+TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.name = "mvpuserinfo"
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.full_name = ".Cmd.TeamPwsReportFubenCmd.mvpuserinfo"
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.number = 4
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.index = 3
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.label = 1
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.has_default_value = false
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.default_value = nil
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.message_type = ChatCmd_pb.QUERYUSERINFO
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.type = 11
+TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD.cpp_type = 10
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.name = "winteam"
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.full_name = ".Cmd.TeamPwsReportFubenCmd.winteam"
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.number = 5
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.index = 4
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.label = 2
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.has_default_value = false
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.default_value = nil
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.enum_type = ETEAMPWSCOLOR
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.type = 14
+TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD.cpp_type = 8
+TEAMPWSREPORTFUBENCMD.name = "TeamPwsReportFubenCmd"
+TEAMPWSREPORTFUBENCMD.full_name = ".Cmd.TeamPwsReportFubenCmd"
+TEAMPWSREPORTFUBENCMD.nested_types = {}
+TEAMPWSREPORTFUBENCMD.enum_types = {}
+TEAMPWSREPORTFUBENCMD.fields = {
+  TEAMPWSREPORTFUBENCMD_CMD_FIELD,
+  TEAMPWSREPORTFUBENCMD_PARAM_FIELD,
+  TEAMPWSREPORTFUBENCMD_TEAMINFO_FIELD,
+  TEAMPWSREPORTFUBENCMD_MVPUSERINFO_FIELD,
+  TEAMPWSREPORTFUBENCMD_WINTEAM_FIELD
+}
+TEAMPWSREPORTFUBENCMD.is_extendable = false
+TEAMPWSREPORTFUBENCMD.extensions = {}
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.name = "teamid"
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.teamid"
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.number = 1
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.index = 0
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.label = 1
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.has_default_value = false
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.default_value = 0
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.type = 4
+TEAMPWSINFOSYNCDATA_TEAMID_FIELD.cpp_type = 4
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.name = "teamname"
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.teamname"
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.number = 2
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.index = 1
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.label = 1
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.has_default_value = false
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.default_value = ""
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.type = 9
+TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD.cpp_type = 9
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.name = "color"
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.color"
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.number = 3
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.index = 2
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.label = 1
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.has_default_value = false
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.default_value = nil
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.enum_type = ETEAMPWSCOLOR
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.type = 14
+TEAMPWSINFOSYNCDATA_COLOR_FIELD.cpp_type = 8
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.name = "score"
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.score"
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.number = 4
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.index = 3
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.label = 1
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.has_default_value = true
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.default_value = 0
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.type = 13
+TEAMPWSINFOSYNCDATA_SCORE_FIELD.cpp_type = 3
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.name = "effectcd"
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.effectcd"
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.number = 5
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.index = 4
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.label = 1
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.has_default_value = true
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.default_value = 0
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.type = 13
+TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD.cpp_type = 3
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.name = "magicid"
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.magicid"
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.number = 6
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.index = 5
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.label = 1
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.has_default_value = true
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.default_value = 0
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.type = 13
+TEAMPWSINFOSYNCDATA_MAGICID_FIELD.cpp_type = 3
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.name = "balls"
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.full_name = ".Cmd.TeamPwsInfoSyncData.balls"
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.number = 7
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.index = 6
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.label = 3
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.has_default_value = false
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.default_value = {}
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.enum_type = EMAGICBALLTYPE
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.type = 14
+TEAMPWSINFOSYNCDATA_BALLS_FIELD.cpp_type = 8
+TEAMPWSINFOSYNCDATA.name = "TeamPwsInfoSyncData"
+TEAMPWSINFOSYNCDATA.full_name = ".Cmd.TeamPwsInfoSyncData"
+TEAMPWSINFOSYNCDATA.nested_types = {}
+TEAMPWSINFOSYNCDATA.enum_types = {}
+TEAMPWSINFOSYNCDATA.fields = {
+  TEAMPWSINFOSYNCDATA_TEAMID_FIELD,
+  TEAMPWSINFOSYNCDATA_TEAMNAME_FIELD,
+  TEAMPWSINFOSYNCDATA_COLOR_FIELD,
+  TEAMPWSINFOSYNCDATA_SCORE_FIELD,
+  TEAMPWSINFOSYNCDATA_EFFECTCD_FIELD,
+  TEAMPWSINFOSYNCDATA_MAGICID_FIELD,
+  TEAMPWSINFOSYNCDATA_BALLS_FIELD
+}
+TEAMPWSINFOSYNCDATA.is_extendable = false
+TEAMPWSINFOSYNCDATA.extensions = {}
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamPwsInfoSyncFubenCmd.cmd"
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.number = 1
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.index = 0
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.label = 1
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.default_value = 11
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.type = 14
+TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.name = "param"
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamPwsInfoSyncFubenCmd.param"
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.number = 2
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.index = 1
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.label = 1
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.default_value = 44
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.type = 14
+TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.TeamPwsInfoSyncFubenCmd.teaminfo"
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.number = 3
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.index = 2
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.label = 3
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.default_value = {}
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.message_type = TEAMPWSINFOSYNCDATA
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.type = 11
+TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.name = "endtime"
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.full_name = ".Cmd.TeamPwsInfoSyncFubenCmd.endtime"
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.number = 4
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.index = 3
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.label = 1
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.has_default_value = false
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.default_value = 0
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.type = 13
+TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD.cpp_type = 3
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.name = "fullfire"
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.full_name = ".Cmd.TeamPwsInfoSyncFubenCmd.fullfire"
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.number = 5
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.index = 4
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.label = 1
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.has_default_value = false
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.default_value = false
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.type = 8
+TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD.cpp_type = 7
+TEAMPWSINFOSYNCFUBENCMD.name = "TeamPwsInfoSyncFubenCmd"
+TEAMPWSINFOSYNCFUBENCMD.full_name = ".Cmd.TeamPwsInfoSyncFubenCmd"
+TEAMPWSINFOSYNCFUBENCMD.nested_types = {}
+TEAMPWSINFOSYNCFUBENCMD.enum_types = {}
+TEAMPWSINFOSYNCFUBENCMD.fields = {
+  TEAMPWSINFOSYNCFUBENCMD_CMD_FIELD,
+  TEAMPWSINFOSYNCFUBENCMD_PARAM_FIELD,
+  TEAMPWSINFOSYNCFUBENCMD_TEAMINFO_FIELD,
+  TEAMPWSINFOSYNCFUBENCMD_ENDTIME_FIELD,
+  TEAMPWSINFOSYNCFUBENCMD_FULLFIRE_FIELD
+}
+TEAMPWSINFOSYNCFUBENCMD.is_extendable = false
+TEAMPWSINFOSYNCFUBENCMD.extensions = {}
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.name = "cmd"
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.UpdateTeamPwsInfoFubenCmd.cmd"
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.number = 1
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.index = 0
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.label = 1
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.has_default_value = true
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.default_value = 11
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.type = 14
+UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.name = "param"
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.UpdateTeamPwsInfoFubenCmd.param"
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.number = 2
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.index = 1
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.label = 1
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.default_value = 47
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.type = 14
+UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.UpdateTeamPwsInfoFubenCmd.teaminfo"
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.number = 3
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.index = 2
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.label = 3
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.default_value = {}
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.message_type = TEAMPWSINFOSYNCDATA
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.type = 11
+UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+UPDATETEAMPWSINFOFUBENCMD.name = "UpdateTeamPwsInfoFubenCmd"
+UPDATETEAMPWSINFOFUBENCMD.full_name = ".Cmd.UpdateTeamPwsInfoFubenCmd"
+UPDATETEAMPWSINFOFUBENCMD.nested_types = {}
+UPDATETEAMPWSINFOFUBENCMD.enum_types = {}
+UPDATETEAMPWSINFOFUBENCMD.fields = {
+  UPDATETEAMPWSINFOFUBENCMD_CMD_FIELD,
+  UPDATETEAMPWSINFOFUBENCMD_PARAM_FIELD,
+  UPDATETEAMPWSINFOFUBENCMD_TEAMINFO_FIELD
+}
+UPDATETEAMPWSINFOFUBENCMD.is_extendable = false
+UPDATETEAMPWSINFOFUBENCMD.extensions = {}
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.name = "cmd"
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.full_name = ".Cmd.SelectTeamPwsMagicFubenCmd.cmd"
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.number = 1
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.index = 0
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.label = 1
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.has_default_value = true
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.default_value = 11
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.type = 14
+SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD.cpp_type = 8
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.name = "param"
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SelectTeamPwsMagicFubenCmd.param"
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.number = 2
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.index = 1
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.label = 1
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.has_default_value = true
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.default_value = 45
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.type = 14
+SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD.cpp_type = 8
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.name = "magicid"
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.full_name = ".Cmd.SelectTeamPwsMagicFubenCmd.magicid"
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.number = 3
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.index = 2
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.label = 2
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.has_default_value = false
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.default_value = 0
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.type = 13
+SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD.cpp_type = 3
+SELECTTEAMPWSMAGICFUBENCMD.name = "SelectTeamPwsMagicFubenCmd"
+SELECTTEAMPWSMAGICFUBENCMD.full_name = ".Cmd.SelectTeamPwsMagicFubenCmd"
+SELECTTEAMPWSMAGICFUBENCMD.nested_types = {}
+SELECTTEAMPWSMAGICFUBENCMD.enum_types = {}
+SELECTTEAMPWSMAGICFUBENCMD.fields = {
+  SELECTTEAMPWSMAGICFUBENCMD_CMD_FIELD,
+  SELECTTEAMPWSMAGICFUBENCMD_PARAM_FIELD,
+  SELECTTEAMPWSMAGICFUBENCMD_MAGICID_FIELD
+}
+SELECTTEAMPWSMAGICFUBENCMD.is_extendable = false
+SELECTTEAMPWSMAGICFUBENCMD.extensions = {}
+EXITMAPFUBENCMD_CMD_FIELD.name = "cmd"
+EXITMAPFUBENCMD_CMD_FIELD.full_name = ".Cmd.ExitMapFubenCmd.cmd"
+EXITMAPFUBENCMD_CMD_FIELD.number = 1
+EXITMAPFUBENCMD_CMD_FIELD.index = 0
+EXITMAPFUBENCMD_CMD_FIELD.label = 1
+EXITMAPFUBENCMD_CMD_FIELD.has_default_value = true
+EXITMAPFUBENCMD_CMD_FIELD.default_value = 11
+EXITMAPFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+EXITMAPFUBENCMD_CMD_FIELD.type = 14
+EXITMAPFUBENCMD_CMD_FIELD.cpp_type = 8
+EXITMAPFUBENCMD_PARAM_FIELD.name = "param"
+EXITMAPFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ExitMapFubenCmd.param"
+EXITMAPFUBENCMD_PARAM_FIELD.number = 2
+EXITMAPFUBENCMD_PARAM_FIELD.index = 1
+EXITMAPFUBENCMD_PARAM_FIELD.label = 1
+EXITMAPFUBENCMD_PARAM_FIELD.has_default_value = true
+EXITMAPFUBENCMD_PARAM_FIELD.default_value = 48
+EXITMAPFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+EXITMAPFUBENCMD_PARAM_FIELD.type = 14
+EXITMAPFUBENCMD_PARAM_FIELD.cpp_type = 8
+EXITMAPFUBENCMD.name = "ExitMapFubenCmd"
+EXITMAPFUBENCMD.full_name = ".Cmd.ExitMapFubenCmd"
+EXITMAPFUBENCMD.nested_types = {}
+EXITMAPFUBENCMD.enum_types = {}
+EXITMAPFUBENCMD.fields = {
+  EXITMAPFUBENCMD_CMD_FIELD,
+  EXITMAPFUBENCMD_PARAM_FIELD
+}
+EXITMAPFUBENCMD.is_extendable = false
+EXITMAPFUBENCMD.extensions = {}
+BEGINFIREFUBENCMD_CMD_FIELD.name = "cmd"
+BEGINFIREFUBENCMD_CMD_FIELD.full_name = ".Cmd.BeginFireFubenCmd.cmd"
+BEGINFIREFUBENCMD_CMD_FIELD.number = 1
+BEGINFIREFUBENCMD_CMD_FIELD.index = 0
+BEGINFIREFUBENCMD_CMD_FIELD.label = 1
+BEGINFIREFUBENCMD_CMD_FIELD.has_default_value = true
+BEGINFIREFUBENCMD_CMD_FIELD.default_value = 11
+BEGINFIREFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+BEGINFIREFUBENCMD_CMD_FIELD.type = 14
+BEGINFIREFUBENCMD_CMD_FIELD.cpp_type = 8
+BEGINFIREFUBENCMD_PARAM_FIELD.name = "param"
+BEGINFIREFUBENCMD_PARAM_FIELD.full_name = ".Cmd.BeginFireFubenCmd.param"
+BEGINFIREFUBENCMD_PARAM_FIELD.number = 2
+BEGINFIREFUBENCMD_PARAM_FIELD.index = 1
+BEGINFIREFUBENCMD_PARAM_FIELD.label = 1
+BEGINFIREFUBENCMD_PARAM_FIELD.has_default_value = true
+BEGINFIREFUBENCMD_PARAM_FIELD.default_value = 49
+BEGINFIREFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+BEGINFIREFUBENCMD_PARAM_FIELD.type = 14
+BEGINFIREFUBENCMD_PARAM_FIELD.cpp_type = 8
+BEGINFIREFUBENCMD.name = "BeginFireFubenCmd"
+BEGINFIREFUBENCMD.full_name = ".Cmd.BeginFireFubenCmd"
+BEGINFIREFUBENCMD.nested_types = {}
+BEGINFIREFUBENCMD.enum_types = {}
+BEGINFIREFUBENCMD.fields = {
+  BEGINFIREFUBENCMD_CMD_FIELD,
+  BEGINFIREFUBENCMD_PARAM_FIELD
+}
+BEGINFIREFUBENCMD.is_extendable = false
+BEGINFIREFUBENCMD.extensions = {}
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamExpReportFubenCmd.cmd"
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.number = 1
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.index = 0
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.label = 1
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.default_value = 11
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.type = 14
+TEAMEXPREPORTFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.name = "param"
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamExpReportFubenCmd.param"
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.number = 2
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.index = 1
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.label = 1
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.default_value = 50
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.type = 14
+TEAMEXPREPORTFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.name = "baseexp"
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.full_name = ".Cmd.TeamExpReportFubenCmd.baseexp"
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.number = 3
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.index = 2
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.label = 1
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.has_default_value = false
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.default_value = 0
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.type = 13
+TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD.cpp_type = 3
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.name = "jobexp"
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.full_name = ".Cmd.TeamExpReportFubenCmd.jobexp"
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.number = 4
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.index = 3
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.label = 1
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.has_default_value = false
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.default_value = 0
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.type = 13
+TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD.cpp_type = 3
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.name = "items"
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.full_name = ".Cmd.TeamExpReportFubenCmd.items"
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.number = 5
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.index = 4
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.label = 3
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.has_default_value = false
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.default_value = {}
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.message_type = SceneItem_pb.ITEMINFO
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.type = 11
+TEAMEXPREPORTFUBENCMD_ITEMS_FIELD.cpp_type = 10
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.name = "closetime"
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.full_name = ".Cmd.TeamExpReportFubenCmd.closetime"
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.number = 6
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.index = 5
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.label = 1
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.has_default_value = false
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.default_value = 0
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.type = 13
+TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD.cpp_type = 3
+TEAMEXPREPORTFUBENCMD.name = "TeamExpReportFubenCmd"
+TEAMEXPREPORTFUBENCMD.full_name = ".Cmd.TeamExpReportFubenCmd"
+TEAMEXPREPORTFUBENCMD.nested_types = {}
+TEAMEXPREPORTFUBENCMD.enum_types = {}
+TEAMEXPREPORTFUBENCMD.fields = {
+  TEAMEXPREPORTFUBENCMD_CMD_FIELD,
+  TEAMEXPREPORTFUBENCMD_PARAM_FIELD,
+  TEAMEXPREPORTFUBENCMD_BASEEXP_FIELD,
+  TEAMEXPREPORTFUBENCMD_JOBEXP_FIELD,
+  TEAMEXPREPORTFUBENCMD_ITEMS_FIELD,
+  TEAMEXPREPORTFUBENCMD_CLOSETIME_FIELD
+}
+TEAMEXPREPORTFUBENCMD.is_extendable = false
+TEAMEXPREPORTFUBENCMD.extensions = {}
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.name = "cmd"
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.full_name = ".Cmd.BuyExpRaidItemFubenCmd.cmd"
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.number = 1
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.index = 0
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.label = 1
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.has_default_value = true
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.default_value = 11
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.type = 14
+BUYEXPRAIDITEMFUBENCMD_CMD_FIELD.cpp_type = 8
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.name = "param"
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.full_name = ".Cmd.BuyExpRaidItemFubenCmd.param"
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.number = 2
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.index = 1
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.label = 1
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.has_default_value = true
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.default_value = 51
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.type = 14
+BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD.cpp_type = 8
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.name = "itemid"
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.full_name = ".Cmd.BuyExpRaidItemFubenCmd.itemid"
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.number = 3
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.index = 2
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.label = 1
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.has_default_value = false
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.default_value = 0
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.type = 13
+BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD.cpp_type = 3
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.name = "num"
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.full_name = ".Cmd.BuyExpRaidItemFubenCmd.num"
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.number = 4
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.index = 3
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.label = 1
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.has_default_value = false
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.default_value = 0
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.type = 13
+BUYEXPRAIDITEMFUBENCMD_NUM_FIELD.cpp_type = 3
+BUYEXPRAIDITEMFUBENCMD.name = "BuyExpRaidItemFubenCmd"
+BUYEXPRAIDITEMFUBENCMD.full_name = ".Cmd.BuyExpRaidItemFubenCmd"
+BUYEXPRAIDITEMFUBENCMD.nested_types = {}
+BUYEXPRAIDITEMFUBENCMD.enum_types = {}
+BUYEXPRAIDITEMFUBENCMD.fields = {
+  BUYEXPRAIDITEMFUBENCMD_CMD_FIELD,
+  BUYEXPRAIDITEMFUBENCMD_PARAM_FIELD,
+  BUYEXPRAIDITEMFUBENCMD_ITEMID_FIELD,
+  BUYEXPRAIDITEMFUBENCMD_NUM_FIELD
+}
+BUYEXPRAIDITEMFUBENCMD.is_extendable = false
+BUYEXPRAIDITEMFUBENCMD.extensions = {}
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamExpSyncFubenCmd.cmd"
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.number = 1
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.index = 0
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.label = 1
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.default_value = 11
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.type = 14
+TEAMEXPSYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.name = "param"
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamExpSyncFubenCmd.param"
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.number = 2
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.index = 1
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.label = 1
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.default_value = 52
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.type = 14
+TEAMEXPSYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.name = "endtime"
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.full_name = ".Cmd.TeamExpSyncFubenCmd.endtime"
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.number = 3
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.index = 2
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.label = 1
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.has_default_value = true
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.default_value = 0
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.type = 13
+TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD.cpp_type = 3
+TEAMEXPSYNCFUBENCMD.name = "TeamExpSyncFubenCmd"
+TEAMEXPSYNCFUBENCMD.full_name = ".Cmd.TeamExpSyncFubenCmd"
+TEAMEXPSYNCFUBENCMD.nested_types = {}
+TEAMEXPSYNCFUBENCMD.enum_types = {}
+TEAMEXPSYNCFUBENCMD.fields = {
+  TEAMEXPSYNCFUBENCMD_CMD_FIELD,
+  TEAMEXPSYNCFUBENCMD_PARAM_FIELD,
+  TEAMEXPSYNCFUBENCMD_ENDTIME_FIELD
+}
+TEAMEXPSYNCFUBENCMD.is_extendable = false
+TEAMEXPSYNCFUBENCMD.extensions = {}
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamReliveCountFubenCmd.cmd"
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.number = 1
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.index = 0
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.label = 1
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.default_value = 11
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.type = 14
+TEAMRELIVECOUNTFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.name = "param"
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamReliveCountFubenCmd.param"
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.number = 2
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.index = 1
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.label = 1
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.default_value = 53
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.type = 14
+TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.name = "count"
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.full_name = ".Cmd.TeamReliveCountFubenCmd.count"
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.number = 3
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.index = 2
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.label = 1
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.has_default_value = true
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.default_value = 0
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.type = 13
+TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD.cpp_type = 3
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.name = "maxcount"
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.full_name = ".Cmd.TeamReliveCountFubenCmd.maxcount"
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.number = 4
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.index = 3
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.label = 1
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.has_default_value = false
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.default_value = 0
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.type = 13
+TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD.cpp_type = 3
+TEAMRELIVECOUNTFUBENCMD.name = "TeamReliveCountFubenCmd"
+TEAMRELIVECOUNTFUBENCMD.full_name = ".Cmd.TeamReliveCountFubenCmd"
+TEAMRELIVECOUNTFUBENCMD.nested_types = {}
+TEAMRELIVECOUNTFUBENCMD.enum_types = {}
+TEAMRELIVECOUNTFUBENCMD.fields = {
+  TEAMRELIVECOUNTFUBENCMD_CMD_FIELD,
+  TEAMRELIVECOUNTFUBENCMD_PARAM_FIELD,
+  TEAMRELIVECOUNTFUBENCMD_COUNT_FIELD,
+  TEAMRELIVECOUNTFUBENCMD_MAXCOUNT_FIELD
+}
+TEAMRELIVECOUNTFUBENCMD.is_extendable = false
+TEAMRELIVECOUNTFUBENCMD.extensions = {}
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.name = "cmd"
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.full_name = ".Cmd.TeamGroupRaidUpdateChipNum.cmd"
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.number = 1
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.index = 0
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.label = 1
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.has_default_value = true
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.default_value = 11
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.type = 14
+TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD.cpp_type = 8
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.name = "param"
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.full_name = ".Cmd.TeamGroupRaidUpdateChipNum.param"
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.number = 2
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.index = 1
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.label = 1
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.has_default_value = true
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.default_value = 54
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.type = 14
+TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD.cpp_type = 8
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.name = "chipnum"
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.full_name = ".Cmd.TeamGroupRaidUpdateChipNum.chipnum"
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.number = 3
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.index = 2
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.label = 1
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.has_default_value = true
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.default_value = 0
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.type = 13
+TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD.cpp_type = 3
+TEAMGROUPRAIDUPDATECHIPNUM.name = "TeamGroupRaidUpdateChipNum"
+TEAMGROUPRAIDUPDATECHIPNUM.full_name = ".Cmd.TeamGroupRaidUpdateChipNum"
+TEAMGROUPRAIDUPDATECHIPNUM.nested_types = {}
+TEAMGROUPRAIDUPDATECHIPNUM.enum_types = {}
+TEAMGROUPRAIDUPDATECHIPNUM.fields = {
+  TEAMGROUPRAIDUPDATECHIPNUM_CMD_FIELD,
+  TEAMGROUPRAIDUPDATECHIPNUM_PARAM_FIELD,
+  TEAMGROUPRAIDUPDATECHIPNUM_CHIPNUM_FIELD
+}
+TEAMGROUPRAIDUPDATECHIPNUM.is_extendable = false
+TEAMGROUPRAIDUPDATECHIPNUM.extensions = {}
+GROUPRAIDSHOWDATA_CHARID_FIELD.name = "charid"
+GROUPRAIDSHOWDATA_CHARID_FIELD.full_name = ".Cmd.GroupRaidShowData.charid"
+GROUPRAIDSHOWDATA_CHARID_FIELD.number = 1
+GROUPRAIDSHOWDATA_CHARID_FIELD.index = 0
+GROUPRAIDSHOWDATA_CHARID_FIELD.label = 1
+GROUPRAIDSHOWDATA_CHARID_FIELD.has_default_value = false
+GROUPRAIDSHOWDATA_CHARID_FIELD.default_value = 0
+GROUPRAIDSHOWDATA_CHARID_FIELD.type = 4
+GROUPRAIDSHOWDATA_CHARID_FIELD.cpp_type = 4
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.name = "profession"
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.full_name = ".Cmd.GroupRaidShowData.profession"
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.number = 2
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.index = 1
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.label = 1
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.has_default_value = false
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.default_value = 0
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.type = 13
+GROUPRAIDSHOWDATA_PROFESSION_FIELD.cpp_type = 3
+GROUPRAIDSHOWDATA_NAME_FIELD.name = "name"
+GROUPRAIDSHOWDATA_NAME_FIELD.full_name = ".Cmd.GroupRaidShowData.name"
+GROUPRAIDSHOWDATA_NAME_FIELD.number = 3
+GROUPRAIDSHOWDATA_NAME_FIELD.index = 2
+GROUPRAIDSHOWDATA_NAME_FIELD.label = 1
+GROUPRAIDSHOWDATA_NAME_FIELD.has_default_value = false
+GROUPRAIDSHOWDATA_NAME_FIELD.default_value = ""
+GROUPRAIDSHOWDATA_NAME_FIELD.type = 9
+GROUPRAIDSHOWDATA_NAME_FIELD.cpp_type = 9
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.name = "damage"
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.full_name = ".Cmd.GroupRaidShowData.damage"
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.number = 4
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.index = 3
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.label = 1
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.has_default_value = true
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.default_value = 0
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.type = 13
+GROUPRAIDSHOWDATA_DAMAGE_FIELD.cpp_type = 3
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.name = "bedamage"
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.full_name = ".Cmd.GroupRaidShowData.bedamage"
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.number = 5
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.index = 4
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.label = 1
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.has_default_value = true
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.default_value = 0
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.type = 13
+GROUPRAIDSHOWDATA_BEDAMAGE_FIELD.cpp_type = 3
+GROUPRAIDSHOWDATA_HEAL_FIELD.name = "heal"
+GROUPRAIDSHOWDATA_HEAL_FIELD.full_name = ".Cmd.GroupRaidShowData.heal"
+GROUPRAIDSHOWDATA_HEAL_FIELD.number = 6
+GROUPRAIDSHOWDATA_HEAL_FIELD.index = 5
+GROUPRAIDSHOWDATA_HEAL_FIELD.label = 1
+GROUPRAIDSHOWDATA_HEAL_FIELD.has_default_value = true
+GROUPRAIDSHOWDATA_HEAL_FIELD.default_value = 0
+GROUPRAIDSHOWDATA_HEAL_FIELD.type = 13
+GROUPRAIDSHOWDATA_HEAL_FIELD.cpp_type = 3
+GROUPRAIDSHOWDATA_DIENUM_FIELD.name = "dienum"
+GROUPRAIDSHOWDATA_DIENUM_FIELD.full_name = ".Cmd.GroupRaidShowData.dienum"
+GROUPRAIDSHOWDATA_DIENUM_FIELD.number = 7
+GROUPRAIDSHOWDATA_DIENUM_FIELD.index = 6
+GROUPRAIDSHOWDATA_DIENUM_FIELD.label = 1
+GROUPRAIDSHOWDATA_DIENUM_FIELD.has_default_value = true
+GROUPRAIDSHOWDATA_DIENUM_FIELD.default_value = 0
+GROUPRAIDSHOWDATA_DIENUM_FIELD.type = 13
+GROUPRAIDSHOWDATA_DIENUM_FIELD.cpp_type = 3
+GROUPRAIDSHOWDATA.name = "GroupRaidShowData"
+GROUPRAIDSHOWDATA.full_name = ".Cmd.GroupRaidShowData"
+GROUPRAIDSHOWDATA.nested_types = {}
+GROUPRAIDSHOWDATA.enum_types = {}
+GROUPRAIDSHOWDATA.fields = {
+  GROUPRAIDSHOWDATA_CHARID_FIELD,
+  GROUPRAIDSHOWDATA_PROFESSION_FIELD,
+  GROUPRAIDSHOWDATA_NAME_FIELD,
+  GROUPRAIDSHOWDATA_DAMAGE_FIELD,
+  GROUPRAIDSHOWDATA_BEDAMAGE_FIELD,
+  GROUPRAIDSHOWDATA_HEAL_FIELD,
+  GROUPRAIDSHOWDATA_DIENUM_FIELD
+}
+GROUPRAIDSHOWDATA.is_extendable = false
+GROUPRAIDSHOWDATA.extensions = {}
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.name = "raidid"
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.full_name = ".Cmd.GroupRaidTeamShowData.raidid"
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.number = 1
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.index = 0
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.label = 1
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.has_default_value = true
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.default_value = 0
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.type = 13
+GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD.cpp_type = 3
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.name = "datas"
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.full_name = ".Cmd.GroupRaidTeamShowData.datas"
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.number = 2
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.index = 1
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.label = 3
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.has_default_value = false
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.default_value = {}
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.message_type = GROUPRAIDSHOWDATA
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.type = 11
+GROUPRAIDTEAMSHOWDATA_DATAS_FIELD.cpp_type = 10
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.name = "boss_index"
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.full_name = ".Cmd.GroupRaidTeamShowData.boss_index"
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.number = 3
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.index = 2
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.label = 1
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.has_default_value = false
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.default_value = 0
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.type = 13
+GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD.cpp_type = 3
+GROUPRAIDTEAMSHOWDATA.name = "GroupRaidTeamShowData"
+GROUPRAIDTEAMSHOWDATA.full_name = ".Cmd.GroupRaidTeamShowData"
+GROUPRAIDTEAMSHOWDATA.nested_types = {}
+GROUPRAIDTEAMSHOWDATA.enum_types = {}
+GROUPRAIDTEAMSHOWDATA.fields = {
+  GROUPRAIDTEAMSHOWDATA_RAIDID_FIELD,
+  GROUPRAIDTEAMSHOWDATA_DATAS_FIELD,
+  GROUPRAIDTEAMSHOWDATA_BOSS_INDEX_FIELD
+}
+GROUPRAIDTEAMSHOWDATA.is_extendable = false
+GROUPRAIDTEAMSHOWDATA.extensions = {}
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.name = "cmd"
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.full_name = ".Cmd.QueryTeamGroupRaidUserInfo.cmd"
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.number = 1
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.index = 0
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.label = 1
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.has_default_value = true
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.default_value = 11
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.type = 14
+QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD.cpp_type = 8
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.name = "param"
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.full_name = ".Cmd.QueryTeamGroupRaidUserInfo.param"
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.number = 2
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.index = 1
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.label = 1
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.has_default_value = true
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.default_value = 55
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.type = 14
+QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD.cpp_type = 8
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.name = "current"
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.full_name = ".Cmd.QueryTeamGroupRaidUserInfo.current"
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.number = 3
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.index = 2
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.label = 1
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.has_default_value = false
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.default_value = nil
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.type = 11
+QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD.cpp_type = 10
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.name = "history"
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.full_name = ".Cmd.QueryTeamGroupRaidUserInfo.history"
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.number = 4
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.index = 3
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.label = 3
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.has_default_value = false
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.default_value = {}
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.type = 11
+QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD.cpp_type = 10
+QUERYTEAMGROUPRAIDUSERINFO.name = "QueryTeamGroupRaidUserInfo"
+QUERYTEAMGROUPRAIDUSERINFO.full_name = ".Cmd.QueryTeamGroupRaidUserInfo"
+QUERYTEAMGROUPRAIDUSERINFO.nested_types = {}
+QUERYTEAMGROUPRAIDUSERINFO.enum_types = {}
+QUERYTEAMGROUPRAIDUSERINFO.fields = {
+  QUERYTEAMGROUPRAIDUSERINFO_CMD_FIELD,
+  QUERYTEAMGROUPRAIDUSERINFO_PARAM_FIELD,
+  QUERYTEAMGROUPRAIDUSERINFO_CURRENT_FIELD,
+  QUERYTEAMGROUPRAIDUSERINFO_HISTORY_FIELD
+}
+QUERYTEAMGROUPRAIDUSERINFO.is_extendable = false
+QUERYTEAMGROUPRAIDUSERINFO.extensions = {}
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.name = "cmd"
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.GroupRaidStateSyncFuBenCmd.cmd"
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.number = 1
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.index = 0
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.label = 1
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.has_default_value = true
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.default_value = 11
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.type = 14
+GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.name = "param"
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GroupRaidStateSyncFuBenCmd.param"
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.number = 2
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.index = 1
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.label = 1
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.default_value = 57
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.type = 14
+GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.name = "state"
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.full_name = ".Cmd.GroupRaidStateSyncFuBenCmd.state"
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.number = 3
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.index = 2
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.label = 1
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.has_default_value = true
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.default_value = 0
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.enum_type = EGROUPRAIDSCENESTATE
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.type = 14
+GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD.cpp_type = 8
+GROUPRAIDSTATESYNCFUBENCMD.name = "GroupRaidStateSyncFuBenCmd"
+GROUPRAIDSTATESYNCFUBENCMD.full_name = ".Cmd.GroupRaidStateSyncFuBenCmd"
+GROUPRAIDSTATESYNCFUBENCMD.nested_types = {}
+GROUPRAIDSTATESYNCFUBENCMD.enum_types = {}
+GROUPRAIDSTATESYNCFUBENCMD.fields = {
+  GROUPRAIDSTATESYNCFUBENCMD_CMD_FIELD,
+  GROUPRAIDSTATESYNCFUBENCMD_PARAM_FIELD,
+  GROUPRAIDSTATESYNCFUBENCMD_STATE_FIELD
+}
+GROUPRAIDSTATESYNCFUBENCMD.is_extendable = false
+GROUPRAIDSTATESYNCFUBENCMD.extensions = {}
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamExpQueryInfoFubenCmd.cmd"
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.number = 1
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.index = 0
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.label = 1
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.default_value = 11
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.type = 14
+TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.name = "param"
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamExpQueryInfoFubenCmd.param"
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.number = 2
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.index = 1
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.label = 1
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.default_value = 56
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.type = 14
+TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.name = "rewardtimes"
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.full_name = ".Cmd.TeamExpQueryInfoFubenCmd.rewardtimes"
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.number = 3
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.index = 2
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.label = 1
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.has_default_value = true
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.default_value = 0
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.type = 13
+TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD.cpp_type = 3
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.name = "totaltimes"
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.full_name = ".Cmd.TeamExpQueryInfoFubenCmd.totaltimes"
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.number = 4
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.index = 3
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.label = 1
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.has_default_value = true
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.default_value = 0
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.type = 13
+TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD.cpp_type = 3
+TEAMEXPQUERYINFOFUBENCMD.name = "TeamExpQueryInfoFubenCmd"
+TEAMEXPQUERYINFOFUBENCMD.full_name = ".Cmd.TeamExpQueryInfoFubenCmd"
+TEAMEXPQUERYINFOFUBENCMD.nested_types = {}
+TEAMEXPQUERYINFOFUBENCMD.enum_types = {}
+TEAMEXPQUERYINFOFUBENCMD.fields = {
+  TEAMEXPQUERYINFOFUBENCMD_CMD_FIELD,
+  TEAMEXPQUERYINFOFUBENCMD_PARAM_FIELD,
+  TEAMEXPQUERYINFOFUBENCMD_REWARDTIMES_FIELD,
+  TEAMEXPQUERYINFOFUBENCMD_TOTALTIMES_FIELD
+}
+TEAMEXPQUERYINFOFUBENCMD.is_extendable = false
+TEAMEXPQUERYINFOFUBENCMD.extensions = {}
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.name = "charid"
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.full_name = ".Cmd.GroupRaidFourthShowData.charid"
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.number = 1
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.index = 0
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.label = 1
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.has_default_value = false
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.default_value = 0
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.type = 4
+GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD.cpp_type = 4
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.name = "layer"
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.full_name = ".Cmd.GroupRaidFourthShowData.layer"
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.number = 2
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.index = 1
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.label = 1
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.has_default_value = false
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.default_value = 0
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.type = 13
+GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD.cpp_type = 3
+GROUPRAIDFOURTHSHOWDATA.name = "GroupRaidFourthShowData"
+GROUPRAIDFOURTHSHOWDATA.full_name = ".Cmd.GroupRaidFourthShowData"
+GROUPRAIDFOURTHSHOWDATA.nested_types = {}
+GROUPRAIDFOURTHSHOWDATA.enum_types = {}
+GROUPRAIDFOURTHSHOWDATA.fields = {
+  GROUPRAIDFOURTHSHOWDATA_CHARID_FIELD,
+  GROUPRAIDFOURTHSHOWDATA_LAYER_FIELD
+}
+GROUPRAIDFOURTHSHOWDATA.is_extendable = false
+GROUPRAIDFOURTHSHOWDATA.extensions = {}
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.name = "cmd"
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.full_name = ".Cmd.UpdateGroupRaidFourthShowData.cmd"
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.number = 1
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.index = 0
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.label = 1
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.has_default_value = true
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.default_value = 11
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.type = 14
+UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.cpp_type = 8
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.name = "param"
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.full_name = ".Cmd.UpdateGroupRaidFourthShowData.param"
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.number = 2
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.index = 1
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.label = 1
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.has_default_value = true
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.default_value = 60
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.enum_type = FUBENPARAM
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.type = 14
+UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.cpp_type = 8
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.name = "inner"
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.full_name = ".Cmd.UpdateGroupRaidFourthShowData.inner"
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.number = 3
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.index = 2
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.label = 3
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.has_default_value = false
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.default_value = {}
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.message_type = GROUPRAIDFOURTHSHOWDATA
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.type = 11
+UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD.cpp_type = 10
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.name = "outer"
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.full_name = ".Cmd.UpdateGroupRaidFourthShowData.outer"
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.number = 4
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.index = 3
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.label = 3
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.has_default_value = false
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.default_value = {}
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.message_type = GROUPRAIDFOURTHSHOWDATA
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.type = 11
+UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD.cpp_type = 10
+UPDATEGROUPRAIDFOURTHSHOWDATA.name = "UpdateGroupRaidFourthShowData"
+UPDATEGROUPRAIDFOURTHSHOWDATA.full_name = ".Cmd.UpdateGroupRaidFourthShowData"
+UPDATEGROUPRAIDFOURTHSHOWDATA.nested_types = {}
+UPDATEGROUPRAIDFOURTHSHOWDATA.enum_types = {}
+UPDATEGROUPRAIDFOURTHSHOWDATA.fields = {
+  UPDATEGROUPRAIDFOURTHSHOWDATA_CMD_FIELD,
+  UPDATEGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD,
+  UPDATEGROUPRAIDFOURTHSHOWDATA_INNER_FIELD,
+  UPDATEGROUPRAIDFOURTHSHOWDATA_OUTER_FIELD
+}
+UPDATEGROUPRAIDFOURTHSHOWDATA.is_extendable = false
+UPDATEGROUPRAIDFOURTHSHOWDATA.extensions = {}
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.name = "cmd"
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.full_name = ".Cmd.QueryGroupRaidFourthShowData.cmd"
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.number = 1
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.index = 0
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.label = 1
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.has_default_value = true
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.default_value = 11
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.type = 14
+QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD.cpp_type = 8
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.name = "param"
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.full_name = ".Cmd.QueryGroupRaidFourthShowData.param"
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.number = 2
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.index = 1
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.label = 1
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.has_default_value = true
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.default_value = 59
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.type = 14
+QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD.cpp_type = 8
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.name = "open"
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.full_name = ".Cmd.QueryGroupRaidFourthShowData.open"
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.number = 3
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.index = 2
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.label = 1
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.has_default_value = true
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.default_value = false
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.type = 8
+QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD.cpp_type = 7
+QUERYGROUPRAIDFOURTHSHOWDATA.name = "QueryGroupRaidFourthShowData"
+QUERYGROUPRAIDFOURTHSHOWDATA.full_name = ".Cmd.QueryGroupRaidFourthShowData"
+QUERYGROUPRAIDFOURTHSHOWDATA.nested_types = {}
+QUERYGROUPRAIDFOURTHSHOWDATA.enum_types = {}
+QUERYGROUPRAIDFOURTHSHOWDATA.fields = {
+  QUERYGROUPRAIDFOURTHSHOWDATA_CMD_FIELD,
+  QUERYGROUPRAIDFOURTHSHOWDATA_PARAM_FIELD,
+  QUERYGROUPRAIDFOURTHSHOWDATA_OPEN_FIELD
+}
+QUERYGROUPRAIDFOURTHSHOWDATA.is_extendable = false
+QUERYGROUPRAIDFOURTHSHOWDATA.extensions = {}
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.name = "cmd"
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.full_name = ".Cmd.GroupRaidFourthGoOuterCmd.cmd"
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.number = 1
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.index = 0
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.label = 1
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.has_default_value = true
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.default_value = 11
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.type = 14
+GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD.cpp_type = 8
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.name = "param"
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.full_name = ".Cmd.GroupRaidFourthGoOuterCmd.param"
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.number = 2
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.index = 1
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.label = 1
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.has_default_value = true
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.default_value = 61
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.type = 14
+GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD.cpp_type = 8
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.name = "npcguid"
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.full_name = ".Cmd.GroupRaidFourthGoOuterCmd.npcguid"
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.number = 3
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.index = 2
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.label = 2
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.has_default_value = false
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.default_value = 0
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.type = 4
+GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD.cpp_type = 4
+GROUPRAIDFOURTHGOOUTERCMD.name = "GroupRaidFourthGoOuterCmd"
+GROUPRAIDFOURTHGOOUTERCMD.full_name = ".Cmd.GroupRaidFourthGoOuterCmd"
+GROUPRAIDFOURTHGOOUTERCMD.nested_types = {}
+GROUPRAIDFOURTHGOOUTERCMD.enum_types = {}
+GROUPRAIDFOURTHGOOUTERCMD.fields = {
+  GROUPRAIDFOURTHGOOUTERCMD_CMD_FIELD,
+  GROUPRAIDFOURTHGOOUTERCMD_PARAM_FIELD,
+  GROUPRAIDFOURTHGOOUTERCMD_NPCGUID_FIELD
+}
+GROUPRAIDFOURTHGOOUTERCMD.is_extendable = false
+GROUPRAIDFOURTHGOOUTERCMD.extensions = {}
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.name = "cmd"
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.RaidStageSyncFubenCmd.cmd"
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.number = 1
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.index = 0
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.label = 1
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.has_default_value = true
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.default_value = 11
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.type = 14
+RAIDSTAGESYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.name = "param"
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.RaidStageSyncFubenCmd.param"
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.number = 2
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.index = 1
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.label = 1
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.default_value = 62
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.type = 14
+RAIDSTAGESYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.name = "stage"
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.full_name = ".Cmd.RaidStageSyncFubenCmd.stage"
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.number = 3
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.index = 2
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.label = 1
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.has_default_value = true
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.default_value = 0
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.type = 13
+RAIDSTAGESYNCFUBENCMD_STAGE_FIELD.cpp_type = 3
+RAIDSTAGESYNCFUBENCMD.name = "RaidStageSyncFubenCmd"
+RAIDSTAGESYNCFUBENCMD.full_name = ".Cmd.RaidStageSyncFubenCmd"
+RAIDSTAGESYNCFUBENCMD.nested_types = {}
+RAIDSTAGESYNCFUBENCMD.enum_types = {}
+RAIDSTAGESYNCFUBENCMD.fields = {
+  RAIDSTAGESYNCFUBENCMD_CMD_FIELD,
+  RAIDSTAGESYNCFUBENCMD_PARAM_FIELD,
+  RAIDSTAGESYNCFUBENCMD_STAGE_FIELD
+}
+RAIDSTAGESYNCFUBENCMD.is_extendable = false
+RAIDSTAGESYNCFUBENCMD.extensions = {}
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.name = "cmd"
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.full_name = ".Cmd.ThanksGivingMonsterFuBenCmd.cmd"
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.number = 1
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.index = 0
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.label = 1
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.has_default_value = true
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.default_value = 11
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.type = 14
+THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD.cpp_type = 8
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.name = "param"
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ThanksGivingMonsterFuBenCmd.param"
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.number = 2
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.index = 1
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.label = 1
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.has_default_value = true
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.default_value = 63
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.type = 14
+THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD.cpp_type = 8
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.name = "elitenum"
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.full_name = ".Cmd.ThanksGivingMonsterFuBenCmd.elitenum"
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.number = 3
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.index = 2
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.label = 1
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.has_default_value = true
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.default_value = 0
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.type = 5
+THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD.cpp_type = 1
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.name = "mininum"
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.full_name = ".Cmd.ThanksGivingMonsterFuBenCmd.mininum"
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.number = 4
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.index = 3
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.label = 1
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.has_default_value = true
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.default_value = -1
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.type = 5
+THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD.cpp_type = 1
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.name = "mvpnum"
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.full_name = ".Cmd.ThanksGivingMonsterFuBenCmd.mvpnum"
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.number = 5
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.index = 4
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.label = 1
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.has_default_value = true
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.default_value = -1
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.type = 5
+THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD.cpp_type = 1
+THANKSGIVINGMONSTERFUBENCMD.name = "ThanksGivingMonsterFuBenCmd"
+THANKSGIVINGMONSTERFUBENCMD.full_name = ".Cmd.ThanksGivingMonsterFuBenCmd"
+THANKSGIVINGMONSTERFUBENCMD.nested_types = {}
+THANKSGIVINGMONSTERFUBENCMD.enum_types = {}
+THANKSGIVINGMONSTERFUBENCMD.fields = {
+  THANKSGIVINGMONSTERFUBENCMD_CMD_FIELD,
+  THANKSGIVINGMONSTERFUBENCMD_PARAM_FIELD,
+  THANKSGIVINGMONSTERFUBENCMD_ELITENUM_FIELD,
+  THANKSGIVINGMONSTERFUBENCMD_MININUM_FIELD,
+  THANKSGIVINGMONSTERFUBENCMD_MVPNUM_FIELD
+}
+THANKSGIVINGMONSTERFUBENCMD.is_extendable = false
+THANKSGIVINGMONSTERFUBENCMD.extensions = {}
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.name = "cmd"
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.full_name = ".Cmd.KumamotoOperFubenCmd.cmd"
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.number = 1
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.index = 0
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.label = 1
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.has_default_value = true
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.default_value = 11
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.type = 14
+KUMAMOTOOPERFUBENCMD_CMD_FIELD.cpp_type = 8
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.name = "param"
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.full_name = ".Cmd.KumamotoOperFubenCmd.param"
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.number = 2
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.index = 1
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.label = 1
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.has_default_value = true
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.default_value = 58
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.type = 14
+KUMAMOTOOPERFUBENCMD_PARAM_FIELD.cpp_type = 8
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.name = "type"
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.full_name = ".Cmd.KumamotoOperFubenCmd.type"
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.number = 3
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.index = 2
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.label = 1
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.has_default_value = true
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.default_value = EKUMAMOTOOPER_CREATE
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.enum_type = EKUMAMOTOOPER
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.type = 14
+KUMAMOTOOPERFUBENCMD_TYPE_FIELD.cpp_type = 8
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.name = "value"
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.full_name = ".Cmd.KumamotoOperFubenCmd.value"
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.number = 4
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.index = 3
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.label = 1
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.has_default_value = true
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.default_value = 0
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.type = 13
+KUMAMOTOOPERFUBENCMD_VALUE_FIELD.cpp_type = 3
+KUMAMOTOOPERFUBENCMD.name = "KumamotoOperFubenCmd"
+KUMAMOTOOPERFUBENCMD.full_name = ".Cmd.KumamotoOperFubenCmd"
+KUMAMOTOOPERFUBENCMD.nested_types = {}
+KUMAMOTOOPERFUBENCMD.enum_types = {}
+KUMAMOTOOPERFUBENCMD.fields = {
+  KUMAMOTOOPERFUBENCMD_CMD_FIELD,
+  KUMAMOTOOPERFUBENCMD_PARAM_FIELD,
+  KUMAMOTOOPERFUBENCMD_TYPE_FIELD,
+  KUMAMOTOOPERFUBENCMD_VALUE_FIELD
+}
+KUMAMOTOOPERFUBENCMD.is_extendable = false
+KUMAMOTOOPERFUBENCMD.extensions = {}
+OTHELLOOCCUPYITEM_POINTID_FIELD.name = "pointid"
+OTHELLOOCCUPYITEM_POINTID_FIELD.full_name = ".Cmd.OthelloOccupyItem.pointid"
+OTHELLOOCCUPYITEM_POINTID_FIELD.number = 1
+OTHELLOOCCUPYITEM_POINTID_FIELD.index = 0
+OTHELLOOCCUPYITEM_POINTID_FIELD.label = 1
+OTHELLOOCCUPYITEM_POINTID_FIELD.has_default_value = true
+OTHELLOOCCUPYITEM_POINTID_FIELD.default_value = 0
+OTHELLOOCCUPYITEM_POINTID_FIELD.type = 13
+OTHELLOOCCUPYITEM_POINTID_FIELD.cpp_type = 3
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.name = "occupycolor"
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.full_name = ".Cmd.OthelloOccupyItem.occupycolor"
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.number = 2
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.index = 1
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.label = 1
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.has_default_value = true
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.default_value = 0
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.type = 13
+OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD.cpp_type = 3
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.name = "redprogress"
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.full_name = ".Cmd.OthelloOccupyItem.redprogress"
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.number = 3
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.index = 2
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.label = 1
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.has_default_value = true
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.default_value = 0
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.type = 13
+OTHELLOOCCUPYITEM_REDPROGRESS_FIELD.cpp_type = 3
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.name = "blueprogress"
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.full_name = ".Cmd.OthelloOccupyItem.blueprogress"
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.number = 4
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.index = 3
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.label = 1
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.has_default_value = true
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.default_value = 0
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.type = 13
+OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD.cpp_type = 3
+OTHELLOOCCUPYITEM.name = "OthelloOccupyItem"
+OTHELLOOCCUPYITEM.full_name = ".Cmd.OthelloOccupyItem"
+OTHELLOOCCUPYITEM.nested_types = {}
+OTHELLOOCCUPYITEM.enum_types = {}
+OTHELLOOCCUPYITEM.fields = {
+  OTHELLOOCCUPYITEM_POINTID_FIELD,
+  OTHELLOOCCUPYITEM_OCCUPYCOLOR_FIELD,
+  OTHELLOOCCUPYITEM_REDPROGRESS_FIELD,
+  OTHELLOOCCUPYITEM_BLUEPROGRESS_FIELD
+}
+OTHELLOOCCUPYITEM.is_extendable = false
+OTHELLOOCCUPYITEM.extensions = {}
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.name = "cmd"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.full_name = ".Cmd.OthelloPointOccupyPowerFubenCmd.cmd"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.number = 1
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.index = 0
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.label = 1
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.has_default_value = true
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.default_value = 11
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.type = 14
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD.cpp_type = 8
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.name = "param"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.full_name = ".Cmd.OthelloPointOccupyPowerFubenCmd.param"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.number = 2
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.index = 1
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.label = 1
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.has_default_value = true
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.default_value = 64
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.type = 14
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD.cpp_type = 8
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.name = "occupy"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.full_name = ".Cmd.OthelloPointOccupyPowerFubenCmd.occupy"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.number = 3
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.index = 2
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.label = 3
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.has_default_value = false
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.default_value = {}
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.message_type = OTHELLOOCCUPYITEM
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.type = 11
+OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD.cpp_type = 10
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.name = "OthelloPointOccupyPowerFubenCmd"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.full_name = ".Cmd.OthelloPointOccupyPowerFubenCmd"
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.nested_types = {}
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.enum_types = {}
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.fields = {
+  OTHELLOPOINTOCCUPYPOWERFUBENCMD_CMD_FIELD,
+  OTHELLOPOINTOCCUPYPOWERFUBENCMD_PARAM_FIELD,
+  OTHELLOPOINTOCCUPYPOWERFUBENCMD_OCCUPY_FIELD
+}
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.is_extendable = false
+OTHELLOPOINTOCCUPYPOWERFUBENCMD.extensions = {}
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.name = "teamid"
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.full_name = ".Cmd.OthelloInfoSyncData.teamid"
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.number = 1
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.index = 0
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.label = 1
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.has_default_value = false
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.default_value = 0
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.type = 4
+OTHELLOINFOSYNCDATA_TEAMID_FIELD.cpp_type = 4
+OTHELLOINFOSYNCDATA_COLOR_FIELD.name = "color"
+OTHELLOINFOSYNCDATA_COLOR_FIELD.full_name = ".Cmd.OthelloInfoSyncData.color"
+OTHELLOINFOSYNCDATA_COLOR_FIELD.number = 2
+OTHELLOINFOSYNCDATA_COLOR_FIELD.index = 1
+OTHELLOINFOSYNCDATA_COLOR_FIELD.label = 1
+OTHELLOINFOSYNCDATA_COLOR_FIELD.has_default_value = false
+OTHELLOINFOSYNCDATA_COLOR_FIELD.default_value = 0
+OTHELLOINFOSYNCDATA_COLOR_FIELD.type = 13
+OTHELLOINFOSYNCDATA_COLOR_FIELD.cpp_type = 3
+OTHELLOINFOSYNCDATA_SCORE_FIELD.name = "score"
+OTHELLOINFOSYNCDATA_SCORE_FIELD.full_name = ".Cmd.OthelloInfoSyncData.score"
+OTHELLOINFOSYNCDATA_SCORE_FIELD.number = 3
+OTHELLOINFOSYNCDATA_SCORE_FIELD.index = 2
+OTHELLOINFOSYNCDATA_SCORE_FIELD.label = 1
+OTHELLOINFOSYNCDATA_SCORE_FIELD.has_default_value = true
+OTHELLOINFOSYNCDATA_SCORE_FIELD.default_value = 0
+OTHELLOINFOSYNCDATA_SCORE_FIELD.type = 13
+OTHELLOINFOSYNCDATA_SCORE_FIELD.cpp_type = 3
+OTHELLOINFOSYNCDATA.name = "OthelloInfoSyncData"
+OTHELLOINFOSYNCDATA.full_name = ".Cmd.OthelloInfoSyncData"
+OTHELLOINFOSYNCDATA.nested_types = {}
+OTHELLOINFOSYNCDATA.enum_types = {}
+OTHELLOINFOSYNCDATA.fields = {
+  OTHELLOINFOSYNCDATA_TEAMID_FIELD,
+  OTHELLOINFOSYNCDATA_COLOR_FIELD,
+  OTHELLOINFOSYNCDATA_SCORE_FIELD
+}
+OTHELLOINFOSYNCDATA.is_extendable = false
+OTHELLOINFOSYNCDATA.extensions = {}
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.name = "cmd"
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.OthelloInfoSyncFubenCmd.cmd"
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.number = 1
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.index = 0
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.label = 1
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.has_default_value = true
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.default_value = 11
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.type = 14
+OTHELLOINFOSYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.name = "param"
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.OthelloInfoSyncFubenCmd.param"
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.number = 2
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.index = 1
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.label = 1
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.default_value = 65
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.type = 14
+OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.OthelloInfoSyncFubenCmd.teaminfo"
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.number = 3
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.index = 2
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.label = 3
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.default_value = {}
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.message_type = OTHELLOINFOSYNCDATA
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.type = 11
+OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.name = "endtime"
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.full_name = ".Cmd.OthelloInfoSyncFubenCmd.endtime"
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.number = 4
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.index = 3
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.label = 1
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.has_default_value = false
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.default_value = 0
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.type = 13
+OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD.cpp_type = 3
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.name = "fullfire"
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.full_name = ".Cmd.OthelloInfoSyncFubenCmd.fullfire"
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.number = 5
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.index = 4
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.label = 1
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.has_default_value = false
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.default_value = false
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.type = 8
+OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD.cpp_type = 7
+OTHELLOINFOSYNCFUBENCMD.name = "OthelloInfoSyncFubenCmd"
+OTHELLOINFOSYNCFUBENCMD.full_name = ".Cmd.OthelloInfoSyncFubenCmd"
+OTHELLOINFOSYNCFUBENCMD.nested_types = {}
+OTHELLOINFOSYNCFUBENCMD.enum_types = {}
+OTHELLOINFOSYNCFUBENCMD.fields = {
+  OTHELLOINFOSYNCFUBENCMD_CMD_FIELD,
+  OTHELLOINFOSYNCFUBENCMD_PARAM_FIELD,
+  OTHELLOINFOSYNCFUBENCMD_TEAMINFO_FIELD,
+  OTHELLOINFOSYNCFUBENCMD_ENDTIME_FIELD,
+  OTHELLOINFOSYNCFUBENCMD_FULLFIRE_FIELD
+}
+OTHELLOINFOSYNCFUBENCMD.is_extendable = false
+OTHELLOINFOSYNCFUBENCMD.extensions = {}
+OTHELLORAIDUSERINFO_CHARID_FIELD.name = "charid"
+OTHELLORAIDUSERINFO_CHARID_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.charid"
+OTHELLORAIDUSERINFO_CHARID_FIELD.number = 1
+OTHELLORAIDUSERINFO_CHARID_FIELD.index = 0
+OTHELLORAIDUSERINFO_CHARID_FIELD.label = 1
+OTHELLORAIDUSERINFO_CHARID_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_CHARID_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_CHARID_FIELD.type = 4
+OTHELLORAIDUSERINFO_CHARID_FIELD.cpp_type = 4
+OTHELLORAIDUSERINFO_NAME_FIELD.name = "name"
+OTHELLORAIDUSERINFO_NAME_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.name"
+OTHELLORAIDUSERINFO_NAME_FIELD.number = 2
+OTHELLORAIDUSERINFO_NAME_FIELD.index = 1
+OTHELLORAIDUSERINFO_NAME_FIELD.label = 1
+OTHELLORAIDUSERINFO_NAME_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_NAME_FIELD.default_value = ""
+OTHELLORAIDUSERINFO_NAME_FIELD.type = 9
+OTHELLORAIDUSERINFO_NAME_FIELD.cpp_type = 9
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.name = "profession"
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.profession"
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.number = 3
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.index = 2
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.label = 1
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.default_value = nil
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.enum_type = PROTOCOMMON_PB_EPROFESSION
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.type = 14
+OTHELLORAIDUSERINFO_PROFESSION_FIELD.cpp_type = 8
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.name = "killnum"
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.killnum"
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.number = 4
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.index = 3
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.label = 1
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.type = 13
+OTHELLORAIDUSERINFO_KILLNUM_FIELD.cpp_type = 3
+OTHELLORAIDUSERINFO_DIENUM_FIELD.name = "dienum"
+OTHELLORAIDUSERINFO_DIENUM_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.dienum"
+OTHELLORAIDUSERINFO_DIENUM_FIELD.number = 5
+OTHELLORAIDUSERINFO_DIENUM_FIELD.index = 4
+OTHELLORAIDUSERINFO_DIENUM_FIELD.label = 1
+OTHELLORAIDUSERINFO_DIENUM_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_DIENUM_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_DIENUM_FIELD.type = 13
+OTHELLORAIDUSERINFO_DIENUM_FIELD.cpp_type = 3
+OTHELLORAIDUSERINFO_HEAL_FIELD.name = "heal"
+OTHELLORAIDUSERINFO_HEAL_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.heal"
+OTHELLORAIDUSERINFO_HEAL_FIELD.number = 6
+OTHELLORAIDUSERINFO_HEAL_FIELD.index = 5
+OTHELLORAIDUSERINFO_HEAL_FIELD.label = 1
+OTHELLORAIDUSERINFO_HEAL_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_HEAL_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_HEAL_FIELD.type = 13
+OTHELLORAIDUSERINFO_HEAL_FIELD.cpp_type = 3
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.name = "killscore"
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.killscore"
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.number = 7
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.index = 6
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.label = 1
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.type = 13
+OTHELLORAIDUSERINFO_KILLSCORE_FIELD.cpp_type = 3
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.name = "occupyscore"
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.occupyscore"
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.number = 8
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.index = 7
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.label = 1
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.type = 13
+OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD.cpp_type = 3
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.name = "seasonscore"
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.full_name = ".Cmd.OthelloRaidUserInfo.seasonscore"
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.number = 9
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.index = 8
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.label = 1
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.has_default_value = false
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.default_value = 0
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.type = 13
+OTHELLORAIDUSERINFO_SEASONSCORE_FIELD.cpp_type = 3
+OTHELLORAIDUSERINFO.name = "OthelloRaidUserInfo"
+OTHELLORAIDUSERINFO.full_name = ".Cmd.OthelloRaidUserInfo"
+OTHELLORAIDUSERINFO.nested_types = {}
+OTHELLORAIDUSERINFO.enum_types = {}
+OTHELLORAIDUSERINFO.fields = {
+  OTHELLORAIDUSERINFO_CHARID_FIELD,
+  OTHELLORAIDUSERINFO_NAME_FIELD,
+  OTHELLORAIDUSERINFO_PROFESSION_FIELD,
+  OTHELLORAIDUSERINFO_KILLNUM_FIELD,
+  OTHELLORAIDUSERINFO_DIENUM_FIELD,
+  OTHELLORAIDUSERINFO_HEAL_FIELD,
+  OTHELLORAIDUSERINFO_KILLSCORE_FIELD,
+  OTHELLORAIDUSERINFO_OCCUPYSCORE_FIELD,
+  OTHELLORAIDUSERINFO_SEASONSCORE_FIELD
+}
+OTHELLORAIDUSERINFO.is_extendable = false
+OTHELLORAIDUSERINFO.extensions = {}
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.name = "teamid"
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.full_name = ".Cmd.OthelloRaidTeamInfo.teamid"
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.number = 1
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.index = 0
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.label = 1
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.has_default_value = false
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.default_value = 0
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.type = 4
+OTHELLORAIDTEAMINFO_TEAMID_FIELD.cpp_type = 4
+OTHELLORAIDTEAMINFO_COLOR_FIELD.name = "color"
+OTHELLORAIDTEAMINFO_COLOR_FIELD.full_name = ".Cmd.OthelloRaidTeamInfo.color"
+OTHELLORAIDTEAMINFO_COLOR_FIELD.number = 2
+OTHELLORAIDTEAMINFO_COLOR_FIELD.index = 1
+OTHELLORAIDTEAMINFO_COLOR_FIELD.label = 1
+OTHELLORAIDTEAMINFO_COLOR_FIELD.has_default_value = false
+OTHELLORAIDTEAMINFO_COLOR_FIELD.default_value = 0
+OTHELLORAIDTEAMINFO_COLOR_FIELD.type = 13
+OTHELLORAIDTEAMINFO_COLOR_FIELD.cpp_type = 3
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.name = "avescore"
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.full_name = ".Cmd.OthelloRaidTeamInfo.avescore"
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.number = 3
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.index = 2
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.label = 1
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.has_default_value = false
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.default_value = 0
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.type = 13
+OTHELLORAIDTEAMINFO_AVESCORE_FIELD.cpp_type = 3
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.name = "userinfos"
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.full_name = ".Cmd.OthelloRaidTeamInfo.userinfos"
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.number = 4
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.index = 3
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.label = 3
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.has_default_value = false
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.default_value = {}
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.message_type = OTHELLORAIDUSERINFO
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.type = 11
+OTHELLORAIDTEAMINFO_USERINFOS_FIELD.cpp_type = 10
+OTHELLORAIDTEAMINFO.name = "OthelloRaidTeamInfo"
+OTHELLORAIDTEAMINFO.full_name = ".Cmd.OthelloRaidTeamInfo"
+OTHELLORAIDTEAMINFO.nested_types = {}
+OTHELLORAIDTEAMINFO.enum_types = {}
+OTHELLORAIDTEAMINFO.fields = {
+  OTHELLORAIDTEAMINFO_TEAMID_FIELD,
+  OTHELLORAIDTEAMINFO_COLOR_FIELD,
+  OTHELLORAIDTEAMINFO_AVESCORE_FIELD,
+  OTHELLORAIDTEAMINFO_USERINFOS_FIELD
+}
+OTHELLORAIDTEAMINFO.is_extendable = false
+OTHELLORAIDTEAMINFO.extensions = {}
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.name = "cmd"
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.QueryOthelloUserInfoFubenCmd.cmd"
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.number = 1
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.index = 0
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.label = 1
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.has_default_value = true
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.default_value = 11
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.type = 14
+QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.name = "param"
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.QueryOthelloUserInfoFubenCmd.param"
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.number = 2
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.index = 1
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.label = 1
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.default_value = 66
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.type = 14
+QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.QueryOthelloUserInfoFubenCmd.teaminfo"
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.number = 3
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.index = 2
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.label = 3
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.default_value = {}
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.message_type = OTHELLORAIDTEAMINFO
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.type = 11
+QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+QUERYOTHELLOUSERINFOFUBENCMD.name = "QueryOthelloUserInfoFubenCmd"
+QUERYOTHELLOUSERINFOFUBENCMD.full_name = ".Cmd.QueryOthelloUserInfoFubenCmd"
+QUERYOTHELLOUSERINFOFUBENCMD.nested_types = {}
+QUERYOTHELLOUSERINFOFUBENCMD.enum_types = {}
+QUERYOTHELLOUSERINFOFUBENCMD.fields = {
+  QUERYOTHELLOUSERINFOFUBENCMD_CMD_FIELD,
+  QUERYOTHELLOUSERINFOFUBENCMD_PARAM_FIELD,
+  QUERYOTHELLOUSERINFOFUBENCMD_TEAMINFO_FIELD
+}
+QUERYOTHELLOUSERINFOFUBENCMD.is_extendable = false
+QUERYOTHELLOUSERINFOFUBENCMD.extensions = {}
+OTHELLOREPORTFUBENCMD_CMD_FIELD.name = "cmd"
+OTHELLOREPORTFUBENCMD_CMD_FIELD.full_name = ".Cmd.OthelloReportFubenCmd.cmd"
+OTHELLOREPORTFUBENCMD_CMD_FIELD.number = 1
+OTHELLOREPORTFUBENCMD_CMD_FIELD.index = 0
+OTHELLOREPORTFUBENCMD_CMD_FIELD.label = 1
+OTHELLOREPORTFUBENCMD_CMD_FIELD.has_default_value = true
+OTHELLOREPORTFUBENCMD_CMD_FIELD.default_value = 11
+OTHELLOREPORTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OTHELLOREPORTFUBENCMD_CMD_FIELD.type = 14
+OTHELLOREPORTFUBENCMD_CMD_FIELD.cpp_type = 8
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.name = "param"
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.OthelloReportFubenCmd.param"
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.number = 2
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.index = 1
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.label = 1
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.has_default_value = true
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.default_value = 67
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.type = 14
+OTHELLOREPORTFUBENCMD_PARAM_FIELD.cpp_type = 8
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.name = "winteam"
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.full_name = ".Cmd.OthelloReportFubenCmd.winteam"
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.number = 3
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.index = 2
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.label = 2
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.has_default_value = true
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.default_value = 0
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.type = 13
+OTHELLOREPORTFUBENCMD_WINTEAM_FIELD.cpp_type = 3
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.name = "teaminfo"
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.full_name = ".Cmd.OthelloReportFubenCmd.teaminfo"
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.number = 4
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.index = 3
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.label = 3
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.has_default_value = false
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.default_value = {}
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.message_type = OTHELLORAIDTEAMINFO
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.type = 11
+OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD.cpp_type = 10
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.name = "mvpuserinfo"
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.full_name = ".Cmd.OthelloReportFubenCmd.mvpuserinfo"
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.number = 5
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.index = 4
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.label = 1
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.has_default_value = false
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.default_value = nil
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.message_type = ChatCmd_pb.QUERYUSERINFO
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.type = 11
+OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD.cpp_type = 10
+OTHELLOREPORTFUBENCMD.name = "OthelloReportFubenCmd"
+OTHELLOREPORTFUBENCMD.full_name = ".Cmd.OthelloReportFubenCmd"
+OTHELLOREPORTFUBENCMD.nested_types = {}
+OTHELLOREPORTFUBENCMD.enum_types = {}
+OTHELLOREPORTFUBENCMD.fields = {
+  OTHELLOREPORTFUBENCMD_CMD_FIELD,
+  OTHELLOREPORTFUBENCMD_PARAM_FIELD,
+  OTHELLOREPORTFUBENCMD_WINTEAM_FIELD,
+  OTHELLOREPORTFUBENCMD_TEAMINFO_FIELD,
+  OTHELLOREPORTFUBENCMD_MVPUSERINFO_FIELD
+}
+OTHELLOREPORTFUBENCMD.is_extendable = false
+OTHELLOREPORTFUBENCMD.extensions = {}
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.name = "cmd"
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.full_name = ".Cmd.RoguelikeUnlockSceneSync.cmd"
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.number = 1
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.index = 0
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.label = 1
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.has_default_value = true
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.default_value = 11
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.type = 14
+ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD.cpp_type = 8
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.name = "param"
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.full_name = ".Cmd.RoguelikeUnlockSceneSync.param"
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.number = 2
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.index = 1
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.label = 1
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.has_default_value = true
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.default_value = 68
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.enum_type = FUBENPARAM
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.type = 14
+ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD.cpp_type = 8
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.name = "unlockids"
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.full_name = ".Cmd.RoguelikeUnlockSceneSync.unlockids"
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.number = 3
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.index = 2
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.label = 3
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.has_default_value = false
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.default_value = {}
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.type = 13
+ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD.cpp_type = 3
+ROGUELIKEUNLOCKSCENESYNC.name = "RoguelikeUnlockSceneSync"
+ROGUELIKEUNLOCKSCENESYNC.full_name = ".Cmd.RoguelikeUnlockSceneSync"
+ROGUELIKEUNLOCKSCENESYNC.nested_types = {}
+ROGUELIKEUNLOCKSCENESYNC.enum_types = {}
+ROGUELIKEUNLOCKSCENESYNC.fields = {
+  ROGUELIKEUNLOCKSCENESYNC_CMD_FIELD,
+  ROGUELIKEUNLOCKSCENESYNC_PARAM_FIELD,
+  ROGUELIKEUNLOCKSCENESYNC_UNLOCKIDS_FIELD
+}
+ROGUELIKEUNLOCKSCENESYNC.is_extendable = false
+ROGUELIKEUNLOCKSCENESYNC.extensions = {}
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.name = "cmd"
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.full_name = ".Cmd.TransferFightChooseFubenCmd.cmd"
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.number = 1
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.index = 0
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.label = 1
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.has_default_value = true
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.default_value = 11
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.type = 14
+TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD.cpp_type = 8
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.name = "param"
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TransferFightChooseFubenCmd.param"
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.number = 2
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.index = 1
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.label = 1
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.has_default_value = true
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.default_value = 69
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.type = 14
+TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD.cpp_type = 8
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.name = "coldtime"
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.full_name = ".Cmd.TransferFightChooseFubenCmd.coldtime"
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.number = 3
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.index = 2
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.label = 1
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.has_default_value = false
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.default_value = 0
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.type = 13
+TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD.cpp_type = 3
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.name = "index"
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.full_name = ".Cmd.TransferFightChooseFubenCmd.index"
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.number = 4
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.index = 3
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.label = 1
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.has_default_value = false
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.default_value = 0
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.type = 13
+TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD.cpp_type = 3
+TRANSFERFIGHTCHOOSEFUBENCMD.name = "TransferFightChooseFubenCmd"
+TRANSFERFIGHTCHOOSEFUBENCMD.full_name = ".Cmd.TransferFightChooseFubenCmd"
+TRANSFERFIGHTCHOOSEFUBENCMD.nested_types = {}
+TRANSFERFIGHTCHOOSEFUBENCMD.enum_types = {}
+TRANSFERFIGHTCHOOSEFUBENCMD.fields = {
+  TRANSFERFIGHTCHOOSEFUBENCMD_CMD_FIELD,
+  TRANSFERFIGHTCHOOSEFUBENCMD_PARAM_FIELD,
+  TRANSFERFIGHTCHOOSEFUBENCMD_COLDTIME_FIELD,
+  TRANSFERFIGHTCHOOSEFUBENCMD_INDEX_FIELD
+}
+TRANSFERFIGHTCHOOSEFUBENCMD.is_extendable = false
+TRANSFERFIGHTCHOOSEFUBENCMD.extensions = {}
+RANKSCORE_RANK_FIELD.name = "rank"
+RANKSCORE_RANK_FIELD.full_name = ".Cmd.RankScore.rank"
+RANKSCORE_RANK_FIELD.number = 1
+RANKSCORE_RANK_FIELD.index = 0
+RANKSCORE_RANK_FIELD.label = 1
+RANKSCORE_RANK_FIELD.has_default_value = false
+RANKSCORE_RANK_FIELD.default_value = 0
+RANKSCORE_RANK_FIELD.type = 13
+RANKSCORE_RANK_FIELD.cpp_type = 3
+RANKSCORE_SCORE_FIELD.name = "score"
+RANKSCORE_SCORE_FIELD.full_name = ".Cmd.RankScore.score"
+RANKSCORE_SCORE_FIELD.number = 2
+RANKSCORE_SCORE_FIELD.index = 1
+RANKSCORE_SCORE_FIELD.label = 1
+RANKSCORE_SCORE_FIELD.has_default_value = false
+RANKSCORE_SCORE_FIELD.default_value = 0
+RANKSCORE_SCORE_FIELD.type = 13
+RANKSCORE_SCORE_FIELD.cpp_type = 3
+RANKSCORE_NAME_FIELD.name = "name"
+RANKSCORE_NAME_FIELD.full_name = ".Cmd.RankScore.name"
+RANKSCORE_NAME_FIELD.number = 3
+RANKSCORE_NAME_FIELD.index = 2
+RANKSCORE_NAME_FIELD.label = 1
+RANKSCORE_NAME_FIELD.has_default_value = false
+RANKSCORE_NAME_FIELD.default_value = ""
+RANKSCORE_NAME_FIELD.type = 9
+RANKSCORE_NAME_FIELD.cpp_type = 9
+RANKSCORE.name = "RankScore"
+RANKSCORE.full_name = ".Cmd.RankScore"
+RANKSCORE.nested_types = {}
+RANKSCORE.enum_types = {}
+RANKSCORE.fields = {
+  RANKSCORE_RANK_FIELD,
+  RANKSCORE_SCORE_FIELD,
+  RANKSCORE_NAME_FIELD
+}
+RANKSCORE.is_extendable = false
+RANKSCORE.extensions = {}
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.name = "cmd"
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.full_name = ".Cmd.TransferFightRankFubenCmd.cmd"
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.number = 1
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.index = 0
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.label = 1
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.has_default_value = true
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.default_value = 11
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.type = 14
+TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD.cpp_type = 8
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.name = "param"
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TransferFightRankFubenCmd.param"
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.number = 2
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.index = 1
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.label = 1
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.has_default_value = true
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.default_value = 70
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.type = 14
+TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD.cpp_type = 8
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.name = "coldtime"
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.full_name = ".Cmd.TransferFightRankFubenCmd.coldtime"
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.number = 3
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.index = 2
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.label = 1
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.has_default_value = false
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.default_value = 0
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.type = 13
+TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD.cpp_type = 3
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.name = "myscore"
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.full_name = ".Cmd.TransferFightRankFubenCmd.myscore"
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.number = 4
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.index = 3
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.label = 1
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.has_default_value = false
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.default_value = 0
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.type = 13
+TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD.cpp_type = 3
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.name = "rank"
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.full_name = ".Cmd.TransferFightRankFubenCmd.rank"
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.number = 5
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.index = 4
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.label = 3
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.has_default_value = false
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.default_value = {}
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.message_type = RANKSCORE
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.type = 11
+TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD.cpp_type = 10
+TRANSFERFIGHTRANKFUBENCMD.name = "TransferFightRankFubenCmd"
+TRANSFERFIGHTRANKFUBENCMD.full_name = ".Cmd.TransferFightRankFubenCmd"
+TRANSFERFIGHTRANKFUBENCMD.nested_types = {}
+TRANSFERFIGHTRANKFUBENCMD.enum_types = {}
+TRANSFERFIGHTRANKFUBENCMD.fields = {
+  TRANSFERFIGHTRANKFUBENCMD_CMD_FIELD,
+  TRANSFERFIGHTRANKFUBENCMD_PARAM_FIELD,
+  TRANSFERFIGHTRANKFUBENCMD_COLDTIME_FIELD,
+  TRANSFERFIGHTRANKFUBENCMD_MYSCORE_FIELD,
+  TRANSFERFIGHTRANKFUBENCMD_RANK_FIELD
+}
+TRANSFERFIGHTRANKFUBENCMD.is_extendable = false
+TRANSFERFIGHTRANKFUBENCMD.extensions = {}
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.name = "cmd"
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.full_name = ".Cmd.TransferFightEndFubenCmd.cmd"
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.number = 1
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.index = 0
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.label = 1
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.has_default_value = true
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.default_value = 11
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.type = 14
+TRANSFERFIGHTENDFUBENCMD_CMD_FIELD.cpp_type = 8
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.name = "param"
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TransferFightEndFubenCmd.param"
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.number = 2
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.index = 1
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.label = 1
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.has_default_value = true
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.default_value = 71
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.type = 14
+TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD.cpp_type = 8
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.name = "rank"
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.full_name = ".Cmd.TransferFightEndFubenCmd.rank"
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.number = 3
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.index = 2
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.label = 3
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.has_default_value = false
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.default_value = {}
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.message_type = RANKSCORE
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.type = 11
+TRANSFERFIGHTENDFUBENCMD_RANK_FIELD.cpp_type = 10
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.name = "myrank"
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.full_name = ".Cmd.TransferFightEndFubenCmd.myrank"
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.number = 4
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.index = 3
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.label = 1
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.has_default_value = false
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.default_value = nil
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.message_type = RANKSCORE
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.type = 11
+TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD.cpp_type = 10
+TRANSFERFIGHTENDFUBENCMD.name = "TransferFightEndFubenCmd"
+TRANSFERFIGHTENDFUBENCMD.full_name = ".Cmd.TransferFightEndFubenCmd"
+TRANSFERFIGHTENDFUBENCMD.nested_types = {}
+TRANSFERFIGHTENDFUBENCMD.enum_types = {}
+TRANSFERFIGHTENDFUBENCMD.fields = {
+  TRANSFERFIGHTENDFUBENCMD_CMD_FIELD,
+  TRANSFERFIGHTENDFUBENCMD_PARAM_FIELD,
+  TRANSFERFIGHTENDFUBENCMD_RANK_FIELD,
+  TRANSFERFIGHTENDFUBENCMD_MYRANK_FIELD
+}
+TRANSFERFIGHTENDFUBENCMD.is_extendable = false
+TRANSFERFIGHTENDFUBENCMD.extensions = {}
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.name = "cmd"
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.full_name = ".Cmd.InviteRollRewardFubenCmd.cmd"
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.number = 1
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.index = 0
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.label = 1
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.has_default_value = true
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.default_value = 11
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.type = 14
+INVITEROLLREWARDFUBENCMD_CMD_FIELD.cpp_type = 8
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.name = "param"
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.InviteRollRewardFubenCmd.param"
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.number = 2
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.index = 1
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.label = 1
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.has_default_value = true
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.default_value = 82
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.type = 14
+INVITEROLLREWARDFUBENCMD_PARAM_FIELD.cpp_type = 8
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.name = "etype"
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.full_name = ".Cmd.InviteRollRewardFubenCmd.etype"
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.number = 3
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.index = 2
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.label = 1
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.has_default_value = true
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.default_value = 0
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.enum_type = EROLLRAIDREWARDTYPE
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.type = 14
+INVITEROLLREWARDFUBENCMD_ETYPE_FIELD.cpp_type = 8
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.name = "param1"
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.full_name = ".Cmd.InviteRollRewardFubenCmd.param1"
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.number = 4
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.index = 3
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.label = 1
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.has_default_value = false
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.default_value = 0
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.type = 13
+INVITEROLLREWARDFUBENCMD_PARAM1_FIELD.cpp_type = 3
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.name = "costcoin"
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.full_name = ".Cmd.InviteRollRewardFubenCmd.costcoin"
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.number = 5
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.index = 4
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.label = 1
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.has_default_value = false
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.default_value = 0
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.type = 13
+INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD.cpp_type = 3
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.name = "count"
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.full_name = ".Cmd.InviteRollRewardFubenCmd.count"
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.number = 6
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.index = 5
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.label = 1
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.has_default_value = false
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.default_value = 0
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.type = 13
+INVITEROLLREWARDFUBENCMD_COUNT_FIELD.cpp_type = 3
+INVITEROLLREWARDFUBENCMD.name = "InviteRollRewardFubenCmd"
+INVITEROLLREWARDFUBENCMD.full_name = ".Cmd.InviteRollRewardFubenCmd"
+INVITEROLLREWARDFUBENCMD.nested_types = {}
+INVITEROLLREWARDFUBENCMD.enum_types = {}
+INVITEROLLREWARDFUBENCMD.fields = {
+  INVITEROLLREWARDFUBENCMD_CMD_FIELD,
+  INVITEROLLREWARDFUBENCMD_PARAM_FIELD,
+  INVITEROLLREWARDFUBENCMD_ETYPE_FIELD,
+  INVITEROLLREWARDFUBENCMD_PARAM1_FIELD,
+  INVITEROLLREWARDFUBENCMD_COSTCOIN_FIELD,
+  INVITEROLLREWARDFUBENCMD_COUNT_FIELD
+}
+INVITEROLLREWARDFUBENCMD.is_extendable = false
+INVITEROLLREWARDFUBENCMD.extensions = {}
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.name = "cmd"
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.full_name = ".Cmd.ReplyRollRewardFubenCmd.cmd"
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.number = 1
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.index = 0
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.label = 1
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.has_default_value = true
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.default_value = 11
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.type = 14
+REPLYROLLREWARDFUBENCMD_CMD_FIELD.cpp_type = 8
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.name = "param"
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ReplyRollRewardFubenCmd.param"
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.number = 2
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.index = 1
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.label = 1
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.has_default_value = true
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.default_value = 83
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.type = 14
+REPLYROLLREWARDFUBENCMD_PARAM_FIELD.cpp_type = 8
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.name = "agree"
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.full_name = ".Cmd.ReplyRollRewardFubenCmd.agree"
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.number = 3
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.index = 2
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.label = 1
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.has_default_value = false
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.default_value = false
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.type = 8
+REPLYROLLREWARDFUBENCMD_AGREE_FIELD.cpp_type = 7
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.name = "etype"
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.full_name = ".Cmd.ReplyRollRewardFubenCmd.etype"
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.number = 4
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.index = 3
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.label = 1
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.has_default_value = false
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.default_value = nil
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.enum_type = EROLLRAIDREWARDTYPE
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.type = 14
+REPLYROLLREWARDFUBENCMD_ETYPE_FIELD.cpp_type = 8
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.name = "param1"
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.full_name = ".Cmd.ReplyRollRewardFubenCmd.param1"
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.number = 5
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.index = 4
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.label = 1
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.has_default_value = false
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.default_value = 0
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.type = 13
+REPLYROLLREWARDFUBENCMD_PARAM1_FIELD.cpp_type = 3
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.name = "gold_buy_price"
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.full_name = ".Cmd.ReplyRollRewardFubenCmd.gold_buy_price"
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.number = 6
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.index = 5
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.label = 1
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.has_default_value = false
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.default_value = 0
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.type = 13
+REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD.cpp_type = 3
+REPLYROLLREWARDFUBENCMD.name = "ReplyRollRewardFubenCmd"
+REPLYROLLREWARDFUBENCMD.full_name = ".Cmd.ReplyRollRewardFubenCmd"
+REPLYROLLREWARDFUBENCMD.nested_types = {}
+REPLYROLLREWARDFUBENCMD.enum_types = {}
+REPLYROLLREWARDFUBENCMD.fields = {
+  REPLYROLLREWARDFUBENCMD_CMD_FIELD,
+  REPLYROLLREWARDFUBENCMD_PARAM_FIELD,
+  REPLYROLLREWARDFUBENCMD_AGREE_FIELD,
+  REPLYROLLREWARDFUBENCMD_ETYPE_FIELD,
+  REPLYROLLREWARDFUBENCMD_PARAM1_FIELD,
+  REPLYROLLREWARDFUBENCMD_GOLD_BUY_PRICE_FIELD
+}
+REPLYROLLREWARDFUBENCMD.is_extendable = false
+REPLYROLLREWARDFUBENCMD.extensions = {}
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamRollStatusFuBenCmd.cmd"
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.number = 1
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.index = 0
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.label = 1
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.default_value = 11
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.type = 14
+TEAMROLLSTATUSFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.name = "param"
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamRollStatusFuBenCmd.param"
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.number = 2
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.index = 1
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.label = 1
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.default_value = 84
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.type = 14
+TEAMROLLSTATUSFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.name = "addids"
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.full_name = ".Cmd.TeamRollStatusFuBenCmd.addids"
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.number = 3
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.index = 2
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.label = 3
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.has_default_value = false
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.default_value = {}
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.type = 13
+TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD.cpp_type = 3
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.name = "delid"
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.full_name = ".Cmd.TeamRollStatusFuBenCmd.delid"
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.number = 4
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.index = 3
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.label = 1
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.has_default_value = false
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.default_value = 0
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.type = 13
+TEAMROLLSTATUSFUBENCMD_DELID_FIELD.cpp_type = 3
+TEAMROLLSTATUSFUBENCMD.name = "TeamRollStatusFuBenCmd"
+TEAMROLLSTATUSFUBENCMD.full_name = ".Cmd.TeamRollStatusFuBenCmd"
+TEAMROLLSTATUSFUBENCMD.nested_types = {}
+TEAMROLLSTATUSFUBENCMD.enum_types = {}
+TEAMROLLSTATUSFUBENCMD.fields = {
+  TEAMROLLSTATUSFUBENCMD_CMD_FIELD,
+  TEAMROLLSTATUSFUBENCMD_PARAM_FIELD,
+  TEAMROLLSTATUSFUBENCMD_ADDIDS_FIELD,
+  TEAMROLLSTATUSFUBENCMD_DELID_FIELD
+}
+TEAMROLLSTATUSFUBENCMD.is_extendable = false
+TEAMROLLSTATUSFUBENCMD.extensions = {}
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.name = "cmd"
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.full_name = ".Cmd.PreReplyRollRewardFubenCmd.cmd"
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.number = 1
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.index = 0
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.label = 1
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.has_default_value = true
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.default_value = 11
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.type = 14
+PREREPLYROLLREWARDFUBENCMD_CMD_FIELD.cpp_type = 8
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.name = "param"
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.PreReplyRollRewardFubenCmd.param"
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.number = 2
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.index = 1
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.label = 1
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.has_default_value = true
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.default_value = 85
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.type = 14
+PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD.cpp_type = 8
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.name = "charid"
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.full_name = ".Cmd.PreReplyRollRewardFubenCmd.charid"
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.number = 3
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.index = 2
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.label = 1
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.has_default_value = false
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.default_value = 0
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.type = 4
+PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD.cpp_type = 4
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.name = "etype"
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.full_name = ".Cmd.PreReplyRollRewardFubenCmd.etype"
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.number = 4
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.index = 3
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.label = 1
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.has_default_value = false
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.default_value = nil
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.enum_type = EROLLRAIDREWARDTYPE
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.type = 14
+PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD.cpp_type = 8
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.name = "param1"
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.full_name = ".Cmd.PreReplyRollRewardFubenCmd.param1"
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.number = 5
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.index = 4
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.label = 1
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.has_default_value = false
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.default_value = 0
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.type = 13
+PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD.cpp_type = 3
+PREREPLYROLLREWARDFUBENCMD.name = "PreReplyRollRewardFubenCmd"
+PREREPLYROLLREWARDFUBENCMD.full_name = ".Cmd.PreReplyRollRewardFubenCmd"
+PREREPLYROLLREWARDFUBENCMD.nested_types = {}
+PREREPLYROLLREWARDFUBENCMD.enum_types = {}
+PREREPLYROLLREWARDFUBENCMD.fields = {
+  PREREPLYROLLREWARDFUBENCMD_CMD_FIELD,
+  PREREPLYROLLREWARDFUBENCMD_PARAM_FIELD,
+  PREREPLYROLLREWARDFUBENCMD_CHARID_FIELD,
+  PREREPLYROLLREWARDFUBENCMD_ETYPE_FIELD,
+  PREREPLYROLLREWARDFUBENCMD_PARAM1_FIELD
+}
+PREREPLYROLLREWARDFUBENCMD.is_extendable = false
+PREREPLYROLLREWARDFUBENCMD.extensions = {}
+TWELVEPVPDATA_TYPE_FIELD.name = "type"
+TWELVEPVPDATA_TYPE_FIELD.full_name = ".Cmd.TwelvePvpData.type"
+TWELVEPVPDATA_TYPE_FIELD.number = 1
+TWELVEPVPDATA_TYPE_FIELD.index = 0
+TWELVEPVPDATA_TYPE_FIELD.label = 1
+TWELVEPVPDATA_TYPE_FIELD.has_default_value = false
+TWELVEPVPDATA_TYPE_FIELD.default_value = nil
+TWELVEPVPDATA_TYPE_FIELD.enum_type = ETWELVEPVPDATATYPE
+TWELVEPVPDATA_TYPE_FIELD.type = 14
+TWELVEPVPDATA_TYPE_FIELD.cpp_type = 8
+TWELVEPVPDATA_VALUE_FIELD.name = "value"
+TWELVEPVPDATA_VALUE_FIELD.full_name = ".Cmd.TwelvePvpData.value"
+TWELVEPVPDATA_VALUE_FIELD.number = 2
+TWELVEPVPDATA_VALUE_FIELD.index = 1
+TWELVEPVPDATA_VALUE_FIELD.label = 1
+TWELVEPVPDATA_VALUE_FIELD.has_default_value = false
+TWELVEPVPDATA_VALUE_FIELD.default_value = 0
+TWELVEPVPDATA_VALUE_FIELD.type = 5
+TWELVEPVPDATA_VALUE_FIELD.cpp_type = 1
+TWELVEPVPDATA.name = "TwelvePvpData"
+TWELVEPVPDATA.full_name = ".Cmd.TwelvePvpData"
+TWELVEPVPDATA.nested_types = {}
+TWELVEPVPDATA.enum_types = {}
+TWELVEPVPDATA.fields = {
+  TWELVEPVPDATA_TYPE_FIELD,
+  TWELVEPVPDATA_VALUE_FIELD
+}
+TWELVEPVPDATA.is_extendable = false
+TWELVEPVPDATA.extensions = {}
+TWELVEPVPSYNCCMD_CMD_FIELD.name = "cmd"
+TWELVEPVPSYNCCMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpSyncCmd.cmd"
+TWELVEPVPSYNCCMD_CMD_FIELD.number = 1
+TWELVEPVPSYNCCMD_CMD_FIELD.index = 0
+TWELVEPVPSYNCCMD_CMD_FIELD.label = 1
+TWELVEPVPSYNCCMD_CMD_FIELD.has_default_value = true
+TWELVEPVPSYNCCMD_CMD_FIELD.default_value = 11
+TWELVEPVPSYNCCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPSYNCCMD_CMD_FIELD.type = 14
+TWELVEPVPSYNCCMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPSYNCCMD_PARAM_FIELD.name = "param"
+TWELVEPVPSYNCCMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpSyncCmd.param"
+TWELVEPVPSYNCCMD_PARAM_FIELD.number = 2
+TWELVEPVPSYNCCMD_PARAM_FIELD.index = 1
+TWELVEPVPSYNCCMD_PARAM_FIELD.label = 1
+TWELVEPVPSYNCCMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPSYNCCMD_PARAM_FIELD.default_value = 72
+TWELVEPVPSYNCCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPSYNCCMD_PARAM_FIELD.type = 14
+TWELVEPVPSYNCCMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPSYNCCMD_DATAS_FIELD.name = "datas"
+TWELVEPVPSYNCCMD_DATAS_FIELD.full_name = ".Cmd.TwelvePvpSyncCmd.datas"
+TWELVEPVPSYNCCMD_DATAS_FIELD.number = 3
+TWELVEPVPSYNCCMD_DATAS_FIELD.index = 2
+TWELVEPVPSYNCCMD_DATAS_FIELD.label = 3
+TWELVEPVPSYNCCMD_DATAS_FIELD.has_default_value = false
+TWELVEPVPSYNCCMD_DATAS_FIELD.default_value = {}
+TWELVEPVPSYNCCMD_DATAS_FIELD.message_type = TWELVEPVPDATA
+TWELVEPVPSYNCCMD_DATAS_FIELD.type = 11
+TWELVEPVPSYNCCMD_DATAS_FIELD.cpp_type = 10
+TWELVEPVPSYNCCMD_CAMP_FIELD.name = "camp"
+TWELVEPVPSYNCCMD_CAMP_FIELD.full_name = ".Cmd.TwelvePvpSyncCmd.camp"
+TWELVEPVPSYNCCMD_CAMP_FIELD.number = 4
+TWELVEPVPSYNCCMD_CAMP_FIELD.index = 3
+TWELVEPVPSYNCCMD_CAMP_FIELD.label = 1
+TWELVEPVPSYNCCMD_CAMP_FIELD.has_default_value = false
+TWELVEPVPSYNCCMD_CAMP_FIELD.default_value = nil
+TWELVEPVPSYNCCMD_CAMP_FIELD.enum_type = EGROUPCAMP
+TWELVEPVPSYNCCMD_CAMP_FIELD.type = 14
+TWELVEPVPSYNCCMD_CAMP_FIELD.cpp_type = 8
+TWELVEPVPSYNCCMD_CHARID_FIELD.name = "charid"
+TWELVEPVPSYNCCMD_CHARID_FIELD.full_name = ".Cmd.TwelvePvpSyncCmd.charid"
+TWELVEPVPSYNCCMD_CHARID_FIELD.number = 5
+TWELVEPVPSYNCCMD_CHARID_FIELD.index = 4
+TWELVEPVPSYNCCMD_CHARID_FIELD.label = 1
+TWELVEPVPSYNCCMD_CHARID_FIELD.has_default_value = false
+TWELVEPVPSYNCCMD_CHARID_FIELD.default_value = 0
+TWELVEPVPSYNCCMD_CHARID_FIELD.type = 4
+TWELVEPVPSYNCCMD_CHARID_FIELD.cpp_type = 4
+TWELVEPVPSYNCCMD.name = "TwelvePvpSyncCmd"
+TWELVEPVPSYNCCMD.full_name = ".Cmd.TwelvePvpSyncCmd"
+TWELVEPVPSYNCCMD.nested_types = {}
+TWELVEPVPSYNCCMD.enum_types = {}
+TWELVEPVPSYNCCMD.fields = {
+  TWELVEPVPSYNCCMD_CMD_FIELD,
+  TWELVEPVPSYNCCMD_PARAM_FIELD,
+  TWELVEPVPSYNCCMD_DATAS_FIELD,
+  TWELVEPVPSYNCCMD_CAMP_FIELD,
+  TWELVEPVPSYNCCMD_CHARID_FIELD
+}
+TWELVEPVPSYNCCMD.is_extendable = false
+TWELVEPVPSYNCCMD.extensions = {}
+TWEITEMINFO_ITEMID_FIELD.name = "itemid"
+TWEITEMINFO_ITEMID_FIELD.full_name = ".Cmd.TweItemInfo.itemid"
+TWEITEMINFO_ITEMID_FIELD.number = 1
+TWEITEMINFO_ITEMID_FIELD.index = 0
+TWEITEMINFO_ITEMID_FIELD.label = 1
+TWEITEMINFO_ITEMID_FIELD.has_default_value = false
+TWEITEMINFO_ITEMID_FIELD.default_value = 0
+TWEITEMINFO_ITEMID_FIELD.type = 13
+TWEITEMINFO_ITEMID_FIELD.cpp_type = 3
+TWEITEMINFO_COUNT_FIELD.name = "count"
+TWEITEMINFO_COUNT_FIELD.full_name = ".Cmd.TweItemInfo.count"
+TWEITEMINFO_COUNT_FIELD.number = 2
+TWEITEMINFO_COUNT_FIELD.index = 1
+TWEITEMINFO_COUNT_FIELD.label = 1
+TWEITEMINFO_COUNT_FIELD.has_default_value = false
+TWEITEMINFO_COUNT_FIELD.default_value = 0
+TWEITEMINFO_COUNT_FIELD.type = 13
+TWEITEMINFO_COUNT_FIELD.cpp_type = 3
+TWEITEMINFO.name = "TweItemInfo"
+TWEITEMINFO.full_name = ".Cmd.TweItemInfo"
+TWEITEMINFO.nested_types = {}
+TWEITEMINFO.enum_types = {}
+TWEITEMINFO.fields = {
+  TWEITEMINFO_ITEMID_FIELD,
+  TWEITEMINFO_COUNT_FIELD
+}
+TWEITEMINFO.is_extendable = false
+TWEITEMINFO.extensions = {}
+RAIDITEMSYNCCMD_CMD_FIELD.name = "cmd"
+RAIDITEMSYNCCMD_CMD_FIELD.full_name = ".Cmd.RaidItemSyncCmd.cmd"
+RAIDITEMSYNCCMD_CMD_FIELD.number = 1
+RAIDITEMSYNCCMD_CMD_FIELD.index = 0
+RAIDITEMSYNCCMD_CMD_FIELD.label = 1
+RAIDITEMSYNCCMD_CMD_FIELD.has_default_value = true
+RAIDITEMSYNCCMD_CMD_FIELD.default_value = 11
+RAIDITEMSYNCCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RAIDITEMSYNCCMD_CMD_FIELD.type = 14
+RAIDITEMSYNCCMD_CMD_FIELD.cpp_type = 8
+RAIDITEMSYNCCMD_PARAM_FIELD.name = "param"
+RAIDITEMSYNCCMD_PARAM_FIELD.full_name = ".Cmd.RaidItemSyncCmd.param"
+RAIDITEMSYNCCMD_PARAM_FIELD.number = 2
+RAIDITEMSYNCCMD_PARAM_FIELD.index = 1
+RAIDITEMSYNCCMD_PARAM_FIELD.label = 1
+RAIDITEMSYNCCMD_PARAM_FIELD.has_default_value = true
+RAIDITEMSYNCCMD_PARAM_FIELD.default_value = 73
+RAIDITEMSYNCCMD_PARAM_FIELD.enum_type = FUBENPARAM
+RAIDITEMSYNCCMD_PARAM_FIELD.type = 14
+RAIDITEMSYNCCMD_PARAM_FIELD.cpp_type = 8
+RAIDITEMSYNCCMD_ITEMS_FIELD.name = "items"
+RAIDITEMSYNCCMD_ITEMS_FIELD.full_name = ".Cmd.RaidItemSyncCmd.items"
+RAIDITEMSYNCCMD_ITEMS_FIELD.number = 3
+RAIDITEMSYNCCMD_ITEMS_FIELD.index = 2
+RAIDITEMSYNCCMD_ITEMS_FIELD.label = 3
+RAIDITEMSYNCCMD_ITEMS_FIELD.has_default_value = false
+RAIDITEMSYNCCMD_ITEMS_FIELD.default_value = {}
+RAIDITEMSYNCCMD_ITEMS_FIELD.message_type = TWEITEMINFO
+RAIDITEMSYNCCMD_ITEMS_FIELD.type = 11
+RAIDITEMSYNCCMD_ITEMS_FIELD.cpp_type = 10
+RAIDITEMSYNCCMD_CHARID_FIELD.name = "charid"
+RAIDITEMSYNCCMD_CHARID_FIELD.full_name = ".Cmd.RaidItemSyncCmd.charid"
+RAIDITEMSYNCCMD_CHARID_FIELD.number = 5
+RAIDITEMSYNCCMD_CHARID_FIELD.index = 3
+RAIDITEMSYNCCMD_CHARID_FIELD.label = 1
+RAIDITEMSYNCCMD_CHARID_FIELD.has_default_value = false
+RAIDITEMSYNCCMD_CHARID_FIELD.default_value = 0
+RAIDITEMSYNCCMD_CHARID_FIELD.type = 4
+RAIDITEMSYNCCMD_CHARID_FIELD.cpp_type = 4
+RAIDITEMSYNCCMD.name = "RaidItemSyncCmd"
+RAIDITEMSYNCCMD.full_name = ".Cmd.RaidItemSyncCmd"
+RAIDITEMSYNCCMD.nested_types = {}
+RAIDITEMSYNCCMD.enum_types = {}
+RAIDITEMSYNCCMD.fields = {
+  RAIDITEMSYNCCMD_CMD_FIELD,
+  RAIDITEMSYNCCMD_PARAM_FIELD,
+  RAIDITEMSYNCCMD_ITEMS_FIELD,
+  RAIDITEMSYNCCMD_CHARID_FIELD
+}
+RAIDITEMSYNCCMD.is_extendable = false
+RAIDITEMSYNCCMD.extensions = {}
+RAIDITEMUPDATECMD_CMD_FIELD.name = "cmd"
+RAIDITEMUPDATECMD_CMD_FIELD.full_name = ".Cmd.RaidItemUpdateCmd.cmd"
+RAIDITEMUPDATECMD_CMD_FIELD.number = 1
+RAIDITEMUPDATECMD_CMD_FIELD.index = 0
+RAIDITEMUPDATECMD_CMD_FIELD.label = 1
+RAIDITEMUPDATECMD_CMD_FIELD.has_default_value = true
+RAIDITEMUPDATECMD_CMD_FIELD.default_value = 11
+RAIDITEMUPDATECMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RAIDITEMUPDATECMD_CMD_FIELD.type = 14
+RAIDITEMUPDATECMD_CMD_FIELD.cpp_type = 8
+RAIDITEMUPDATECMD_PARAM_FIELD.name = "param"
+RAIDITEMUPDATECMD_PARAM_FIELD.full_name = ".Cmd.RaidItemUpdateCmd.param"
+RAIDITEMUPDATECMD_PARAM_FIELD.number = 2
+RAIDITEMUPDATECMD_PARAM_FIELD.index = 1
+RAIDITEMUPDATECMD_PARAM_FIELD.label = 1
+RAIDITEMUPDATECMD_PARAM_FIELD.has_default_value = true
+RAIDITEMUPDATECMD_PARAM_FIELD.default_value = 74
+RAIDITEMUPDATECMD_PARAM_FIELD.enum_type = FUBENPARAM
+RAIDITEMUPDATECMD_PARAM_FIELD.type = 14
+RAIDITEMUPDATECMD_PARAM_FIELD.cpp_type = 8
+RAIDITEMUPDATECMD_ITEMID_FIELD.name = "itemid"
+RAIDITEMUPDATECMD_ITEMID_FIELD.full_name = ".Cmd.RaidItemUpdateCmd.itemid"
+RAIDITEMUPDATECMD_ITEMID_FIELD.number = 3
+RAIDITEMUPDATECMD_ITEMID_FIELD.index = 2
+RAIDITEMUPDATECMD_ITEMID_FIELD.label = 1
+RAIDITEMUPDATECMD_ITEMID_FIELD.has_default_value = false
+RAIDITEMUPDATECMD_ITEMID_FIELD.default_value = 0
+RAIDITEMUPDATECMD_ITEMID_FIELD.type = 13
+RAIDITEMUPDATECMD_ITEMID_FIELD.cpp_type = 3
+RAIDITEMUPDATECMD_COUNT_FIELD.name = "count"
+RAIDITEMUPDATECMD_COUNT_FIELD.full_name = ".Cmd.RaidItemUpdateCmd.count"
+RAIDITEMUPDATECMD_COUNT_FIELD.number = 4
+RAIDITEMUPDATECMD_COUNT_FIELD.index = 3
+RAIDITEMUPDATECMD_COUNT_FIELD.label = 1
+RAIDITEMUPDATECMD_COUNT_FIELD.has_default_value = false
+RAIDITEMUPDATECMD_COUNT_FIELD.default_value = 0
+RAIDITEMUPDATECMD_COUNT_FIELD.type = 13
+RAIDITEMUPDATECMD_COUNT_FIELD.cpp_type = 3
+RAIDITEMUPDATECMD_CHARID_FIELD.name = "charid"
+RAIDITEMUPDATECMD_CHARID_FIELD.full_name = ".Cmd.RaidItemUpdateCmd.charid"
+RAIDITEMUPDATECMD_CHARID_FIELD.number = 5
+RAIDITEMUPDATECMD_CHARID_FIELD.index = 4
+RAIDITEMUPDATECMD_CHARID_FIELD.label = 1
+RAIDITEMUPDATECMD_CHARID_FIELD.has_default_value = false
+RAIDITEMUPDATECMD_CHARID_FIELD.default_value = 0
+RAIDITEMUPDATECMD_CHARID_FIELD.type = 4
+RAIDITEMUPDATECMD_CHARID_FIELD.cpp_type = 4
+RAIDITEMUPDATECMD.name = "RaidItemUpdateCmd"
+RAIDITEMUPDATECMD.full_name = ".Cmd.RaidItemUpdateCmd"
+RAIDITEMUPDATECMD.nested_types = {}
+RAIDITEMUPDATECMD.enum_types = {}
+RAIDITEMUPDATECMD.fields = {
+  RAIDITEMUPDATECMD_CMD_FIELD,
+  RAIDITEMUPDATECMD_PARAM_FIELD,
+  RAIDITEMUPDATECMD_ITEMID_FIELD,
+  RAIDITEMUPDATECMD_COUNT_FIELD,
+  RAIDITEMUPDATECMD_CHARID_FIELD
+}
+RAIDITEMUPDATECMD.is_extendable = false
+RAIDITEMUPDATECMD.extensions = {}
+TWELVEPVPUSEITEMCMD_CMD_FIELD.name = "cmd"
+TWELVEPVPUSEITEMCMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpUseItemCmd.cmd"
+TWELVEPVPUSEITEMCMD_CMD_FIELD.number = 1
+TWELVEPVPUSEITEMCMD_CMD_FIELD.index = 0
+TWELVEPVPUSEITEMCMD_CMD_FIELD.label = 1
+TWELVEPVPUSEITEMCMD_CMD_FIELD.has_default_value = true
+TWELVEPVPUSEITEMCMD_CMD_FIELD.default_value = 11
+TWELVEPVPUSEITEMCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPUSEITEMCMD_CMD_FIELD.type = 14
+TWELVEPVPUSEITEMCMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.name = "param"
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpUseItemCmd.param"
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.number = 2
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.index = 1
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.label = 1
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.default_value = 81
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.type = 14
+TWELVEPVPUSEITEMCMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.name = "itemid"
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.full_name = ".Cmd.TwelvePvpUseItemCmd.itemid"
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.number = 3
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.index = 2
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.label = 1
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.has_default_value = true
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.default_value = 0
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.type = 13
+TWELVEPVPUSEITEMCMD_ITEMID_FIELD.cpp_type = 3
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.name = "count"
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.full_name = ".Cmd.TwelvePvpUseItemCmd.count"
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.number = 4
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.index = 3
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.label = 1
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.has_default_value = true
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.default_value = 0
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.type = 13
+TWELVEPVPUSEITEMCMD_COUNT_FIELD.cpp_type = 3
+TWELVEPVPUSEITEMCMD.name = "TwelvePvpUseItemCmd"
+TWELVEPVPUSEITEMCMD.full_name = ".Cmd.TwelvePvpUseItemCmd"
+TWELVEPVPUSEITEMCMD.nested_types = {}
+TWELVEPVPUSEITEMCMD.enum_types = {}
+TWELVEPVPUSEITEMCMD.fields = {
+  TWELVEPVPUSEITEMCMD_CMD_FIELD,
+  TWELVEPVPUSEITEMCMD_PARAM_FIELD,
+  TWELVEPVPUSEITEMCMD_ITEMID_FIELD,
+  TWELVEPVPUSEITEMCMD_COUNT_FIELD
+}
+TWELVEPVPUSEITEMCMD.is_extendable = false
+TWELVEPVPUSEITEMCMD.extensions = {}
+RAIDSHOPUPDATECMD_CMD_FIELD.name = "cmd"
+RAIDSHOPUPDATECMD_CMD_FIELD.full_name = ".Cmd.RaidShopUpdateCmd.cmd"
+RAIDSHOPUPDATECMD_CMD_FIELD.number = 1
+RAIDSHOPUPDATECMD_CMD_FIELD.index = 0
+RAIDSHOPUPDATECMD_CMD_FIELD.label = 1
+RAIDSHOPUPDATECMD_CMD_FIELD.has_default_value = true
+RAIDSHOPUPDATECMD_CMD_FIELD.default_value = 11
+RAIDSHOPUPDATECMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RAIDSHOPUPDATECMD_CMD_FIELD.type = 14
+RAIDSHOPUPDATECMD_CMD_FIELD.cpp_type = 8
+RAIDSHOPUPDATECMD_PARAM_FIELD.name = "param"
+RAIDSHOPUPDATECMD_PARAM_FIELD.full_name = ".Cmd.RaidShopUpdateCmd.param"
+RAIDSHOPUPDATECMD_PARAM_FIELD.number = 2
+RAIDSHOPUPDATECMD_PARAM_FIELD.index = 1
+RAIDSHOPUPDATECMD_PARAM_FIELD.label = 1
+RAIDSHOPUPDATECMD_PARAM_FIELD.has_default_value = true
+RAIDSHOPUPDATECMD_PARAM_FIELD.default_value = 75
+RAIDSHOPUPDATECMD_PARAM_FIELD.enum_type = FUBENPARAM
+RAIDSHOPUPDATECMD_PARAM_FIELD.type = 14
+RAIDSHOPUPDATECMD_PARAM_FIELD.cpp_type = 8
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.name = "shopitem_id"
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.full_name = ".Cmd.RaidShopUpdateCmd.shopitem_id"
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.number = 3
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.index = 2
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.label = 1
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.has_default_value = false
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.default_value = 0
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.type = 13
+RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD.cpp_type = 3
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.name = "next_available_time"
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.full_name = ".Cmd.RaidShopUpdateCmd.next_available_time"
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.number = 4
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.index = 3
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.label = 1
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.has_default_value = false
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.default_value = 0
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.type = 13
+RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD.cpp_type = 3
+RAIDSHOPUPDATECMD.name = "RaidShopUpdateCmd"
+RAIDSHOPUPDATECMD.full_name = ".Cmd.RaidShopUpdateCmd"
+RAIDSHOPUPDATECMD.nested_types = {}
+RAIDSHOPUPDATECMD.enum_types = {}
+RAIDSHOPUPDATECMD.fields = {
+  RAIDSHOPUPDATECMD_CMD_FIELD,
+  RAIDSHOPUPDATECMD_PARAM_FIELD,
+  RAIDSHOPUPDATECMD_SHOPITEM_ID_FIELD,
+  RAIDSHOPUPDATECMD_NEXT_AVAILABLE_TIME_FIELD
+}
+RAIDSHOPUPDATECMD.is_extendable = false
+RAIDSHOPUPDATECMD.extensions = {}
+TWELVEPVPQUESTDATA_QUESTID_FIELD.name = "questid"
+TWELVEPVPQUESTDATA_QUESTID_FIELD.full_name = ".Cmd.TwelvePvpQuestData.questid"
+TWELVEPVPQUESTDATA_QUESTID_FIELD.number = 1
+TWELVEPVPQUESTDATA_QUESTID_FIELD.index = 0
+TWELVEPVPQUESTDATA_QUESTID_FIELD.label = 1
+TWELVEPVPQUESTDATA_QUESTID_FIELD.has_default_value = false
+TWELVEPVPQUESTDATA_QUESTID_FIELD.default_value = 0
+TWELVEPVPQUESTDATA_QUESTID_FIELD.type = 13
+TWELVEPVPQUESTDATA_QUESTID_FIELD.cpp_type = 3
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.name = "progress"
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.full_name = ".Cmd.TwelvePvpQuestData.progress"
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.number = 2
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.index = 1
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.label = 1
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.has_default_value = false
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.default_value = 0
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.type = 13
+TWELVEPVPQUESTDATA_PROGRESS_FIELD.cpp_type = 3
+TWELVEPVPQUESTDATA_FINISHED_FIELD.name = "finished"
+TWELVEPVPQUESTDATA_FINISHED_FIELD.full_name = ".Cmd.TwelvePvpQuestData.finished"
+TWELVEPVPQUESTDATA_FINISHED_FIELD.number = 3
+TWELVEPVPQUESTDATA_FINISHED_FIELD.index = 2
+TWELVEPVPQUESTDATA_FINISHED_FIELD.label = 1
+TWELVEPVPQUESTDATA_FINISHED_FIELD.has_default_value = false
+TWELVEPVPQUESTDATA_FINISHED_FIELD.default_value = false
+TWELVEPVPQUESTDATA_FINISHED_FIELD.type = 8
+TWELVEPVPQUESTDATA_FINISHED_FIELD.cpp_type = 7
+TWELVEPVPQUESTDATA.name = "TwelvePvpQuestData"
+TWELVEPVPQUESTDATA.full_name = ".Cmd.TwelvePvpQuestData"
+TWELVEPVPQUESTDATA.nested_types = {}
+TWELVEPVPQUESTDATA.enum_types = {}
+TWELVEPVPQUESTDATA.fields = {
+  TWELVEPVPQUESTDATA_QUESTID_FIELD,
+  TWELVEPVPQUESTDATA_PROGRESS_FIELD,
+  TWELVEPVPQUESTDATA_FINISHED_FIELD
+}
+TWELVEPVPQUESTDATA.is_extendable = false
+TWELVEPVPQUESTDATA.extensions = {}
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.name = "cmd"
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpQuestQueryCmd.cmd"
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.number = 1
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.index = 0
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.label = 1
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.has_default_value = true
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.default_value = 11
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.type = 14
+TWELVEPVPQUESTQUERYCMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.name = "param"
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpQuestQueryCmd.param"
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.number = 2
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.index = 1
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.label = 1
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.default_value = 76
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.type = 14
+TWELVEPVPQUESTQUERYCMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.name = "datas"
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.full_name = ".Cmd.TwelvePvpQuestQueryCmd.datas"
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.number = 3
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.index = 2
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.label = 3
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.has_default_value = false
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.default_value = {}
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.message_type = TWELVEPVPQUESTDATA
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.type = 11
+TWELVEPVPQUESTQUERYCMD_DATAS_FIELD.cpp_type = 10
+TWELVEPVPQUESTQUERYCMD.name = "TwelvePvpQuestQueryCmd"
+TWELVEPVPQUESTQUERYCMD.full_name = ".Cmd.TwelvePvpQuestQueryCmd"
+TWELVEPVPQUESTQUERYCMD.nested_types = {}
+TWELVEPVPQUESTQUERYCMD.enum_types = {}
+TWELVEPVPQUESTQUERYCMD.fields = {
+  TWELVEPVPQUESTQUERYCMD_CMD_FIELD,
+  TWELVEPVPQUESTQUERYCMD_PARAM_FIELD,
+  TWELVEPVPQUESTQUERYCMD_DATAS_FIELD
+}
+TWELVEPVPQUESTQUERYCMD.is_extendable = false
+TWELVEPVPQUESTQUERYCMD.extensions = {}
+TWELVEPVPUSERINFO_CHARID_FIELD.name = "charid"
+TWELVEPVPUSERINFO_CHARID_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.charid"
+TWELVEPVPUSERINFO_CHARID_FIELD.number = 1
+TWELVEPVPUSERINFO_CHARID_FIELD.index = 0
+TWELVEPVPUSERINFO_CHARID_FIELD.label = 1
+TWELVEPVPUSERINFO_CHARID_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_CHARID_FIELD.default_value = 0
+TWELVEPVPUSERINFO_CHARID_FIELD.type = 4
+TWELVEPVPUSERINFO_CHARID_FIELD.cpp_type = 4
+TWELVEPVPUSERINFO_NAME_FIELD.name = "name"
+TWELVEPVPUSERINFO_NAME_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.name"
+TWELVEPVPUSERINFO_NAME_FIELD.number = 2
+TWELVEPVPUSERINFO_NAME_FIELD.index = 1
+TWELVEPVPUSERINFO_NAME_FIELD.label = 1
+TWELVEPVPUSERINFO_NAME_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_NAME_FIELD.default_value = ""
+TWELVEPVPUSERINFO_NAME_FIELD.type = 9
+TWELVEPVPUSERINFO_NAME_FIELD.cpp_type = 9
+TWELVEPVPUSERINFO_KILLNUM_FIELD.name = "killnum"
+TWELVEPVPUSERINFO_KILLNUM_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.killnum"
+TWELVEPVPUSERINFO_KILLNUM_FIELD.number = 3
+TWELVEPVPUSERINFO_KILLNUM_FIELD.index = 2
+TWELVEPVPUSERINFO_KILLNUM_FIELD.label = 1
+TWELVEPVPUSERINFO_KILLNUM_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_KILLNUM_FIELD.default_value = 0
+TWELVEPVPUSERINFO_KILLNUM_FIELD.type = 13
+TWELVEPVPUSERINFO_KILLNUM_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_DIENUM_FIELD.name = "dienum"
+TWELVEPVPUSERINFO_DIENUM_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.dienum"
+TWELVEPVPUSERINFO_DIENUM_FIELD.number = 4
+TWELVEPVPUSERINFO_DIENUM_FIELD.index = 3
+TWELVEPVPUSERINFO_DIENUM_FIELD.label = 1
+TWELVEPVPUSERINFO_DIENUM_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_DIENUM_FIELD.default_value = 0
+TWELVEPVPUSERINFO_DIENUM_FIELD.type = 13
+TWELVEPVPUSERINFO_DIENUM_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_HEAL_FIELD.name = "heal"
+TWELVEPVPUSERINFO_HEAL_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.heal"
+TWELVEPVPUSERINFO_HEAL_FIELD.number = 5
+TWELVEPVPUSERINFO_HEAL_FIELD.index = 4
+TWELVEPVPUSERINFO_HEAL_FIELD.label = 1
+TWELVEPVPUSERINFO_HEAL_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_HEAL_FIELD.default_value = 0
+TWELVEPVPUSERINFO_HEAL_FIELD.type = 13
+TWELVEPVPUSERINFO_HEAL_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_GOLD_FIELD.name = "gold"
+TWELVEPVPUSERINFO_GOLD_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.gold"
+TWELVEPVPUSERINFO_GOLD_FIELD.number = 6
+TWELVEPVPUSERINFO_GOLD_FIELD.index = 5
+TWELVEPVPUSERINFO_GOLD_FIELD.label = 1
+TWELVEPVPUSERINFO_GOLD_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_GOLD_FIELD.default_value = 0
+TWELVEPVPUSERINFO_GOLD_FIELD.type = 13
+TWELVEPVPUSERINFO_GOLD_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.name = "crystal_exp"
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.crystal_exp"
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.number = 7
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.index = 6
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.label = 1
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.default_value = 0
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.type = 13
+TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.name = "push_time"
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.push_time"
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.number = 8
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.index = 7
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.label = 1
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.default_value = 0
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.type = 13
+TWELVEPVPUSERINFO_PUSH_TIME_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.name = "kill_mvp"
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.kill_mvp"
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.number = 9
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.index = 8
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.label = 1
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.default_value = 0
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.type = 13
+TWELVEPVPUSERINFO_KILL_MVP_FIELD.cpp_type = 3
+TWELVEPVPUSERINFO_PROFESSION_FIELD.name = "profession"
+TWELVEPVPUSERINFO_PROFESSION_FIELD.full_name = ".Cmd.TwelvePvpUserInfo.profession"
+TWELVEPVPUSERINFO_PROFESSION_FIELD.number = 10
+TWELVEPVPUSERINFO_PROFESSION_FIELD.index = 9
+TWELVEPVPUSERINFO_PROFESSION_FIELD.label = 1
+TWELVEPVPUSERINFO_PROFESSION_FIELD.has_default_value = false
+TWELVEPVPUSERINFO_PROFESSION_FIELD.default_value = nil
+TWELVEPVPUSERINFO_PROFESSION_FIELD.enum_type = PROTOCOMMON_PB_EPROFESSION
+TWELVEPVPUSERINFO_PROFESSION_FIELD.type = 14
+TWELVEPVPUSERINFO_PROFESSION_FIELD.cpp_type = 8
+TWELVEPVPUSERINFO.name = "TwelvePvpUserInfo"
+TWELVEPVPUSERINFO.full_name = ".Cmd.TwelvePvpUserInfo"
+TWELVEPVPUSERINFO.nested_types = {}
+TWELVEPVPUSERINFO.enum_types = {}
+TWELVEPVPUSERINFO.fields = {
+  TWELVEPVPUSERINFO_CHARID_FIELD,
+  TWELVEPVPUSERINFO_NAME_FIELD,
+  TWELVEPVPUSERINFO_KILLNUM_FIELD,
+  TWELVEPVPUSERINFO_DIENUM_FIELD,
+  TWELVEPVPUSERINFO_HEAL_FIELD,
+  TWELVEPVPUSERINFO_GOLD_FIELD,
+  TWELVEPVPUSERINFO_CRYSTAL_EXP_FIELD,
+  TWELVEPVPUSERINFO_PUSH_TIME_FIELD,
+  TWELVEPVPUSERINFO_KILL_MVP_FIELD,
+  TWELVEPVPUSERINFO_PROFESSION_FIELD
+}
+TWELVEPVPUSERINFO.is_extendable = false
+TWELVEPVPUSERINFO.extensions = {}
+TWELVEPVPGROUPINFO_COLOR_FIELD.name = "color"
+TWELVEPVPGROUPINFO_COLOR_FIELD.full_name = ".Cmd.TwelvePvpGroupInfo.color"
+TWELVEPVPGROUPINFO_COLOR_FIELD.number = 1
+TWELVEPVPGROUPINFO_COLOR_FIELD.index = 0
+TWELVEPVPGROUPINFO_COLOR_FIELD.label = 1
+TWELVEPVPGROUPINFO_COLOR_FIELD.has_default_value = false
+TWELVEPVPGROUPINFO_COLOR_FIELD.default_value = nil
+TWELVEPVPGROUPINFO_COLOR_FIELD.enum_type = EGROUPCAMP
+TWELVEPVPGROUPINFO_COLOR_FIELD.type = 14
+TWELVEPVPGROUPINFO_COLOR_FIELD.cpp_type = 8
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.name = "userinfos"
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.full_name = ".Cmd.TwelvePvpGroupInfo.userinfos"
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.number = 2
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.index = 1
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.label = 3
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.has_default_value = false
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.default_value = {}
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.message_type = TWELVEPVPUSERINFO
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.type = 11
+TWELVEPVPGROUPINFO_USERINFOS_FIELD.cpp_type = 10
+TWELVEPVPGROUPINFO.name = "TwelvePvpGroupInfo"
+TWELVEPVPGROUPINFO.full_name = ".Cmd.TwelvePvpGroupInfo"
+TWELVEPVPGROUPINFO.nested_types = {}
+TWELVEPVPGROUPINFO.enum_types = {}
+TWELVEPVPGROUPINFO.fields = {
+  TWELVEPVPGROUPINFO_COLOR_FIELD,
+  TWELVEPVPGROUPINFO_USERINFOS_FIELD
+}
+TWELVEPVPGROUPINFO.is_extendable = false
+TWELVEPVPGROUPINFO.extensions = {}
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.name = "cmd"
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpQueryGroupInfoCmd.cmd"
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.number = 1
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.index = 0
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.label = 1
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.has_default_value = true
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.default_value = 11
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.type = 14
+TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.name = "param"
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpQueryGroupInfoCmd.param"
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.number = 2
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.index = 1
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.label = 1
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.default_value = 77
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.type = 14
+TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.name = "groupinfo"
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.full_name = ".Cmd.TwelvePvpQueryGroupInfoCmd.groupinfo"
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.number = 3
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.index = 2
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.label = 3
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.has_default_value = false
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.default_value = {}
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.message_type = TWELVEPVPGROUPINFO
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.type = 11
+TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD.cpp_type = 10
+TWELVEPVPQUERYGROUPINFOCMD.name = "TwelvePvpQueryGroupInfoCmd"
+TWELVEPVPQUERYGROUPINFOCMD.full_name = ".Cmd.TwelvePvpQueryGroupInfoCmd"
+TWELVEPVPQUERYGROUPINFOCMD.nested_types = {}
+TWELVEPVPQUERYGROUPINFOCMD.enum_types = {}
+TWELVEPVPQUERYGROUPINFOCMD.fields = {
+  TWELVEPVPQUERYGROUPINFOCMD_CMD_FIELD,
+  TWELVEPVPQUERYGROUPINFOCMD_PARAM_FIELD,
+  TWELVEPVPQUERYGROUPINFOCMD_GROUPINFO_FIELD
+}
+TWELVEPVPQUERYGROUPINFOCMD.is_extendable = false
+TWELVEPVPQUERYGROUPINFOCMD.extensions = {}
+CAMPRESULTDATA_CAMP_FIELD.name = "camp"
+CAMPRESULTDATA_CAMP_FIELD.full_name = ".Cmd.CampResultData.camp"
+CAMPRESULTDATA_CAMP_FIELD.number = 1
+CAMPRESULTDATA_CAMP_FIELD.index = 0
+CAMPRESULTDATA_CAMP_FIELD.label = 1
+CAMPRESULTDATA_CAMP_FIELD.has_default_value = false
+CAMPRESULTDATA_CAMP_FIELD.default_value = nil
+CAMPRESULTDATA_CAMP_FIELD.enum_type = EGROUPCAMP
+CAMPRESULTDATA_CAMP_FIELD.type = 14
+CAMPRESULTDATA_CAMP_FIELD.cpp_type = 8
+CAMPRESULTDATA_KILL_NUM_FIELD.name = "kill_num"
+CAMPRESULTDATA_KILL_NUM_FIELD.full_name = ".Cmd.CampResultData.kill_num"
+CAMPRESULTDATA_KILL_NUM_FIELD.number = 2
+CAMPRESULTDATA_KILL_NUM_FIELD.index = 1
+CAMPRESULTDATA_KILL_NUM_FIELD.label = 1
+CAMPRESULTDATA_KILL_NUM_FIELD.has_default_value = false
+CAMPRESULTDATA_KILL_NUM_FIELD.default_value = 0
+CAMPRESULTDATA_KILL_NUM_FIELD.type = 13
+CAMPRESULTDATA_KILL_NUM_FIELD.cpp_type = 3
+CAMPRESULTDATA_EXP_FIELD.name = "exp"
+CAMPRESULTDATA_EXP_FIELD.full_name = ".Cmd.CampResultData.exp"
+CAMPRESULTDATA_EXP_FIELD.number = 3
+CAMPRESULTDATA_EXP_FIELD.index = 2
+CAMPRESULTDATA_EXP_FIELD.label = 1
+CAMPRESULTDATA_EXP_FIELD.has_default_value = false
+CAMPRESULTDATA_EXP_FIELD.default_value = 0
+CAMPRESULTDATA_EXP_FIELD.type = 13
+CAMPRESULTDATA_EXP_FIELD.cpp_type = 3
+CAMPRESULTDATA_KILL_MVP_FIELD.name = "kill_mvp"
+CAMPRESULTDATA_KILL_MVP_FIELD.full_name = ".Cmd.CampResultData.kill_mvp"
+CAMPRESULTDATA_KILL_MVP_FIELD.number = 4
+CAMPRESULTDATA_KILL_MVP_FIELD.index = 3
+CAMPRESULTDATA_KILL_MVP_FIELD.label = 1
+CAMPRESULTDATA_KILL_MVP_FIELD.has_default_value = false
+CAMPRESULTDATA_KILL_MVP_FIELD.default_value = 0
+CAMPRESULTDATA_KILL_MVP_FIELD.type = 13
+CAMPRESULTDATA_KILL_MVP_FIELD.cpp_type = 3
+CAMPRESULTDATA.name = "CampResultData"
+CAMPRESULTDATA.full_name = ".Cmd.CampResultData"
+CAMPRESULTDATA.nested_types = {}
+CAMPRESULTDATA.enum_types = {}
+CAMPRESULTDATA.fields = {
+  CAMPRESULTDATA_CAMP_FIELD,
+  CAMPRESULTDATA_KILL_NUM_FIELD,
+  CAMPRESULTDATA_EXP_FIELD,
+  CAMPRESULTDATA_KILL_MVP_FIELD
+}
+CAMPRESULTDATA.is_extendable = false
+CAMPRESULTDATA.extensions = {}
+TWELVEPVPRESULTCMD_CMD_FIELD.name = "cmd"
+TWELVEPVPRESULTCMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpResultCmd.cmd"
+TWELVEPVPRESULTCMD_CMD_FIELD.number = 1
+TWELVEPVPRESULTCMD_CMD_FIELD.index = 0
+TWELVEPVPRESULTCMD_CMD_FIELD.label = 1
+TWELVEPVPRESULTCMD_CMD_FIELD.has_default_value = true
+TWELVEPVPRESULTCMD_CMD_FIELD.default_value = 11
+TWELVEPVPRESULTCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPRESULTCMD_CMD_FIELD.type = 14
+TWELVEPVPRESULTCMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPRESULTCMD_PARAM_FIELD.name = "param"
+TWELVEPVPRESULTCMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpResultCmd.param"
+TWELVEPVPRESULTCMD_PARAM_FIELD.number = 2
+TWELVEPVPRESULTCMD_PARAM_FIELD.index = 1
+TWELVEPVPRESULTCMD_PARAM_FIELD.label = 1
+TWELVEPVPRESULTCMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPRESULTCMD_PARAM_FIELD.default_value = 78
+TWELVEPVPRESULTCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPRESULTCMD_PARAM_FIELD.type = 14
+TWELVEPVPRESULTCMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.name = "groupinfo_cmd"
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.full_name = ".Cmd.TwelvePvpResultCmd.groupinfo_cmd"
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.number = 3
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.index = 2
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.label = 1
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.has_default_value = false
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.default_value = nil
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.message_type = TWELVEPVPQUERYGROUPINFOCMD
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.type = 11
+TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD.cpp_type = 10
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.name = "winteam"
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.full_name = ".Cmd.TwelvePvpResultCmd.winteam"
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.number = 4
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.index = 3
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.label = 1
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.has_default_value = false
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.default_value = nil
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.enum_type = EGROUPCAMP
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.type = 14
+TWELVEPVPRESULTCMD_WINTEAM_FIELD.cpp_type = 8
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.name = "camp_result_data"
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.full_name = ".Cmd.TwelvePvpResultCmd.camp_result_data"
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.number = 5
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.index = 4
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.label = 3
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.has_default_value = false
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.default_value = {}
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.message_type = CAMPRESULTDATA
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.type = 11
+TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD.cpp_type = 10
+TWELVEPVPRESULTCMD.name = "TwelvePvpResultCmd"
+TWELVEPVPRESULTCMD.full_name = ".Cmd.TwelvePvpResultCmd"
+TWELVEPVPRESULTCMD.nested_types = {}
+TWELVEPVPRESULTCMD.enum_types = {}
+TWELVEPVPRESULTCMD.fields = {
+  TWELVEPVPRESULTCMD_CMD_FIELD,
+  TWELVEPVPRESULTCMD_PARAM_FIELD,
+  TWELVEPVPRESULTCMD_GROUPINFO_CMD_FIELD,
+  TWELVEPVPRESULTCMD_WINTEAM_FIELD,
+  TWELVEPVPRESULTCMD_CAMP_RESULT_DATA_FIELD
+}
+TWELVEPVPRESULTCMD.is_extendable = false
+TWELVEPVPRESULTCMD.extensions = {}
+BUILDINGHP_BUILDING_ID_FIELD.name = "building_id"
+BUILDINGHP_BUILDING_ID_FIELD.full_name = ".Cmd.BuildingHp.building_id"
+BUILDINGHP_BUILDING_ID_FIELD.number = 1
+BUILDINGHP_BUILDING_ID_FIELD.index = 0
+BUILDINGHP_BUILDING_ID_FIELD.label = 1
+BUILDINGHP_BUILDING_ID_FIELD.has_default_value = false
+BUILDINGHP_BUILDING_ID_FIELD.default_value = 0
+BUILDINGHP_BUILDING_ID_FIELD.type = 13
+BUILDINGHP_BUILDING_ID_FIELD.cpp_type = 3
+BUILDINGHP_HP_PER_FIELD.name = "hp_per"
+BUILDINGHP_HP_PER_FIELD.full_name = ".Cmd.BuildingHp.hp_per"
+BUILDINGHP_HP_PER_FIELD.number = 2
+BUILDINGHP_HP_PER_FIELD.index = 1
+BUILDINGHP_HP_PER_FIELD.label = 1
+BUILDINGHP_HP_PER_FIELD.has_default_value = false
+BUILDINGHP_HP_PER_FIELD.default_value = 0
+BUILDINGHP_HP_PER_FIELD.type = 13
+BUILDINGHP_HP_PER_FIELD.cpp_type = 3
+BUILDINGHP.name = "BuildingHp"
+BUILDINGHP.full_name = ".Cmd.BuildingHp"
+BUILDINGHP.nested_types = {}
+BUILDINGHP.enum_types = {}
+BUILDINGHP.fields = {
+  BUILDINGHP_BUILDING_ID_FIELD,
+  BUILDINGHP_HP_PER_FIELD
+}
+BUILDINGHP.is_extendable = false
+BUILDINGHP.extensions = {}
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.name = "cmd"
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpBuildingHpUpdateCmd.cmd"
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.number = 1
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.index = 0
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.label = 1
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.has_default_value = true
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.default_value = 11
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.type = 14
+TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.name = "param"
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpBuildingHpUpdateCmd.param"
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.number = 2
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.index = 1
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.label = 1
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.default_value = 79
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.type = 14
+TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.name = "data"
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.full_name = ".Cmd.TwelvePvpBuildingHpUpdateCmd.data"
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.number = 3
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.index = 2
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.label = 3
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.has_default_value = false
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.default_value = {}
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.message_type = BUILDINGHP
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.type = 11
+TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD.cpp_type = 10
+TWELVEPVPBUILDINGHPUPDATECMD.name = "TwelvePvpBuildingHpUpdateCmd"
+TWELVEPVPBUILDINGHPUPDATECMD.full_name = ".Cmd.TwelvePvpBuildingHpUpdateCmd"
+TWELVEPVPBUILDINGHPUPDATECMD.nested_types = {}
+TWELVEPVPBUILDINGHPUPDATECMD.enum_types = {}
+TWELVEPVPBUILDINGHPUPDATECMD.fields = {
+  TWELVEPVPBUILDINGHPUPDATECMD_CMD_FIELD,
+  TWELVEPVPBUILDINGHPUPDATECMD_PARAM_FIELD,
+  TWELVEPVPBUILDINGHPUPDATECMD_DATA_FIELD
+}
+TWELVEPVPBUILDINGHPUPDATECMD.is_extendable = false
+TWELVEPVPBUILDINGHPUPDATECMD.extensions = {}
+TWELVEPVPUIOPERCMD_CMD_FIELD.name = "cmd"
+TWELVEPVPUIOPERCMD_CMD_FIELD.full_name = ".Cmd.TwelvePvpUIOperCmd.cmd"
+TWELVEPVPUIOPERCMD_CMD_FIELD.number = 1
+TWELVEPVPUIOPERCMD_CMD_FIELD.index = 0
+TWELVEPVPUIOPERCMD_CMD_FIELD.label = 1
+TWELVEPVPUIOPERCMD_CMD_FIELD.has_default_value = true
+TWELVEPVPUIOPERCMD_CMD_FIELD.default_value = 11
+TWELVEPVPUIOPERCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TWELVEPVPUIOPERCMD_CMD_FIELD.type = 14
+TWELVEPVPUIOPERCMD_CMD_FIELD.cpp_type = 8
+TWELVEPVPUIOPERCMD_PARAM_FIELD.name = "param"
+TWELVEPVPUIOPERCMD_PARAM_FIELD.full_name = ".Cmd.TwelvePvpUIOperCmd.param"
+TWELVEPVPUIOPERCMD_PARAM_FIELD.number = 2
+TWELVEPVPUIOPERCMD_PARAM_FIELD.index = 1
+TWELVEPVPUIOPERCMD_PARAM_FIELD.label = 1
+TWELVEPVPUIOPERCMD_PARAM_FIELD.has_default_value = true
+TWELVEPVPUIOPERCMD_PARAM_FIELD.default_value = 80
+TWELVEPVPUIOPERCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TWELVEPVPUIOPERCMD_PARAM_FIELD.type = 14
+TWELVEPVPUIOPERCMD_PARAM_FIELD.cpp_type = 8
+TWELVEPVPUIOPERCMD_UI_FIELD.name = "ui"
+TWELVEPVPUIOPERCMD_UI_FIELD.full_name = ".Cmd.TwelvePvpUIOperCmd.ui"
+TWELVEPVPUIOPERCMD_UI_FIELD.number = 3
+TWELVEPVPUIOPERCMD_UI_FIELD.index = 2
+TWELVEPVPUIOPERCMD_UI_FIELD.label = 1
+TWELVEPVPUIOPERCMD_UI_FIELD.has_default_value = false
+TWELVEPVPUIOPERCMD_UI_FIELD.default_value = nil
+TWELVEPVPUIOPERCMD_UI_FIELD.enum_type = ETWELVEPVPUI
+TWELVEPVPUIOPERCMD_UI_FIELD.type = 14
+TWELVEPVPUIOPERCMD_UI_FIELD.cpp_type = 8
+TWELVEPVPUIOPERCMD_OPEN_FIELD.name = "open"
+TWELVEPVPUIOPERCMD_OPEN_FIELD.full_name = ".Cmd.TwelvePvpUIOperCmd.open"
+TWELVEPVPUIOPERCMD_OPEN_FIELD.number = 4
+TWELVEPVPUIOPERCMD_OPEN_FIELD.index = 3
+TWELVEPVPUIOPERCMD_OPEN_FIELD.label = 1
+TWELVEPVPUIOPERCMD_OPEN_FIELD.has_default_value = false
+TWELVEPVPUIOPERCMD_OPEN_FIELD.default_value = false
+TWELVEPVPUIOPERCMD_OPEN_FIELD.type = 8
+TWELVEPVPUIOPERCMD_OPEN_FIELD.cpp_type = 7
+TWELVEPVPUIOPERCMD.name = "TwelvePvpUIOperCmd"
+TWELVEPVPUIOPERCMD.full_name = ".Cmd.TwelvePvpUIOperCmd"
+TWELVEPVPUIOPERCMD.nested_types = {}
+TWELVEPVPUIOPERCMD.enum_types = {}
+TWELVEPVPUIOPERCMD.fields = {
+  TWELVEPVPUIOPERCMD_CMD_FIELD,
+  TWELVEPVPUIOPERCMD_PARAM_FIELD,
+  TWELVEPVPUIOPERCMD_UI_FIELD,
+  TWELVEPVPUIOPERCMD_OPEN_FIELD
+}
+TWELVEPVPUIOPERCMD.is_extendable = false
+TWELVEPVPUIOPERCMD.extensions = {}
+RELIVECDFUBENCMD_CMD_FIELD.name = "cmd"
+RELIVECDFUBENCMD_CMD_FIELD.full_name = ".Cmd.ReliveCdFubenCmd.cmd"
+RELIVECDFUBENCMD_CMD_FIELD.number = 1
+RELIVECDFUBENCMD_CMD_FIELD.index = 0
+RELIVECDFUBENCMD_CMD_FIELD.label = 1
+RELIVECDFUBENCMD_CMD_FIELD.has_default_value = true
+RELIVECDFUBENCMD_CMD_FIELD.default_value = 11
+RELIVECDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RELIVECDFUBENCMD_CMD_FIELD.type = 14
+RELIVECDFUBENCMD_CMD_FIELD.cpp_type = 8
+RELIVECDFUBENCMD_PARAM_FIELD.name = "param"
+RELIVECDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ReliveCdFubenCmd.param"
+RELIVECDFUBENCMD_PARAM_FIELD.number = 2
+RELIVECDFUBENCMD_PARAM_FIELD.index = 1
+RELIVECDFUBENCMD_PARAM_FIELD.label = 1
+RELIVECDFUBENCMD_PARAM_FIELD.has_default_value = true
+RELIVECDFUBENCMD_PARAM_FIELD.default_value = 86
+RELIVECDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+RELIVECDFUBENCMD_PARAM_FIELD.type = 14
+RELIVECDFUBENCMD_PARAM_FIELD.cpp_type = 8
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.name = "next_relive_time"
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.full_name = ".Cmd.ReliveCdFubenCmd.next_relive_time"
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.number = 3
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.index = 2
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.label = 1
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.has_default_value = false
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.default_value = 0
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.type = 13
+RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD.cpp_type = 3
+RELIVECDFUBENCMD.name = "ReliveCdFubenCmd"
+RELIVECDFUBENCMD.full_name = ".Cmd.ReliveCdFubenCmd"
+RELIVECDFUBENCMD.nested_types = {}
+RELIVECDFUBENCMD.enum_types = {}
+RELIVECDFUBENCMD.fields = {
+  RELIVECDFUBENCMD_CMD_FIELD,
+  RELIVECDFUBENCMD_PARAM_FIELD,
+  RELIVECDFUBENCMD_NEXT_RELIVE_TIME_FIELD
+}
+RELIVECDFUBENCMD.is_extendable = false
+RELIVECDFUBENCMD.extensions = {}
+POSDATA_ID_FIELD.name = "id"
+POSDATA_ID_FIELD.full_name = ".Cmd.PosData.id"
+POSDATA_ID_FIELD.number = 3
+POSDATA_ID_FIELD.index = 0
+POSDATA_ID_FIELD.label = 1
+POSDATA_ID_FIELD.has_default_value = false
+POSDATA_ID_FIELD.default_value = 0
+POSDATA_ID_FIELD.type = 4
+POSDATA_ID_FIELD.cpp_type = 4
+POSDATA_POS_FIELD.name = "pos"
+POSDATA_POS_FIELD.full_name = ".Cmd.PosData.pos"
+POSDATA_POS_FIELD.number = 4
+POSDATA_POS_FIELD.index = 1
+POSDATA_POS_FIELD.label = 1
+POSDATA_POS_FIELD.has_default_value = false
+POSDATA_POS_FIELD.default_value = nil
+POSDATA_POS_FIELD.message_type = ProtoCommon_pb.SCENEPOS
+POSDATA_POS_FIELD.type = 11
+POSDATA_POS_FIELD.cpp_type = 10
+POSDATA_NPCID_FIELD.name = "npcid"
+POSDATA_NPCID_FIELD.full_name = ".Cmd.PosData.npcid"
+POSDATA_NPCID_FIELD.number = 5
+POSDATA_NPCID_FIELD.index = 2
+POSDATA_NPCID_FIELD.label = 1
+POSDATA_NPCID_FIELD.has_default_value = false
+POSDATA_NPCID_FIELD.default_value = 0
+POSDATA_NPCID_FIELD.type = 13
+POSDATA_NPCID_FIELD.cpp_type = 3
+POSDATA.name = "PosData"
+POSDATA.full_name = ".Cmd.PosData"
+POSDATA.nested_types = {}
+POSDATA.enum_types = {}
+POSDATA.fields = {
+  POSDATA_ID_FIELD,
+  POSDATA_POS_FIELD,
+  POSDATA_NPCID_FIELD
+}
+POSDATA.is_extendable = false
+POSDATA.extensions = {}
+POSSYNCFUBENCMD_CMD_FIELD.name = "cmd"
+POSSYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.PosSyncFubenCmd.cmd"
+POSSYNCFUBENCMD_CMD_FIELD.number = 1
+POSSYNCFUBENCMD_CMD_FIELD.index = 0
+POSSYNCFUBENCMD_CMD_FIELD.label = 1
+POSSYNCFUBENCMD_CMD_FIELD.has_default_value = true
+POSSYNCFUBENCMD_CMD_FIELD.default_value = 11
+POSSYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+POSSYNCFUBENCMD_CMD_FIELD.type = 14
+POSSYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+POSSYNCFUBENCMD_PARAM_FIELD.name = "param"
+POSSYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.PosSyncFubenCmd.param"
+POSSYNCFUBENCMD_PARAM_FIELD.number = 2
+POSSYNCFUBENCMD_PARAM_FIELD.index = 1
+POSSYNCFUBENCMD_PARAM_FIELD.label = 1
+POSSYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+POSSYNCFUBENCMD_PARAM_FIELD.default_value = 87
+POSSYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+POSSYNCFUBENCMD_PARAM_FIELD.type = 14
+POSSYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+POSSYNCFUBENCMD_DATAS_FIELD.name = "datas"
+POSSYNCFUBENCMD_DATAS_FIELD.full_name = ".Cmd.PosSyncFubenCmd.datas"
+POSSYNCFUBENCMD_DATAS_FIELD.number = 3
+POSSYNCFUBENCMD_DATAS_FIELD.index = 2
+POSSYNCFUBENCMD_DATAS_FIELD.label = 3
+POSSYNCFUBENCMD_DATAS_FIELD.has_default_value = false
+POSSYNCFUBENCMD_DATAS_FIELD.default_value = {}
+POSSYNCFUBENCMD_DATAS_FIELD.message_type = POSDATA
+POSSYNCFUBENCMD_DATAS_FIELD.type = 11
+POSSYNCFUBENCMD_DATAS_FIELD.cpp_type = 10
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.name = "out_scope_ids"
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.full_name = ".Cmd.PosSyncFubenCmd.out_scope_ids"
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.number = 4
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.index = 3
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.label = 3
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.has_default_value = false
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.default_value = {}
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.type = 4
+POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD.cpp_type = 4
+POSSYNCFUBENCMD.name = "PosSyncFubenCmd"
+POSSYNCFUBENCMD.full_name = ".Cmd.PosSyncFubenCmd"
+POSSYNCFUBENCMD.nested_types = {}
+POSSYNCFUBENCMD.enum_types = {}
+POSSYNCFUBENCMD.fields = {
+  POSSYNCFUBENCMD_CMD_FIELD,
+  POSSYNCFUBENCMD_PARAM_FIELD,
+  POSSYNCFUBENCMD_DATAS_FIELD,
+  POSSYNCFUBENCMD_OUT_SCOPE_IDS_FIELD
+}
+POSSYNCFUBENCMD.is_extendable = false
+POSSYNCFUBENCMD.extensions = {}
+REQENTERTOWERPRIVATE_CMD_FIELD.name = "cmd"
+REQENTERTOWERPRIVATE_CMD_FIELD.full_name = ".Cmd.ReqEnterTowerPrivate.cmd"
+REQENTERTOWERPRIVATE_CMD_FIELD.number = 1
+REQENTERTOWERPRIVATE_CMD_FIELD.index = 0
+REQENTERTOWERPRIVATE_CMD_FIELD.label = 1
+REQENTERTOWERPRIVATE_CMD_FIELD.has_default_value = true
+REQENTERTOWERPRIVATE_CMD_FIELD.default_value = 11
+REQENTERTOWERPRIVATE_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+REQENTERTOWERPRIVATE_CMD_FIELD.type = 14
+REQENTERTOWERPRIVATE_CMD_FIELD.cpp_type = 8
+REQENTERTOWERPRIVATE_PARAM_FIELD.name = "param"
+REQENTERTOWERPRIVATE_PARAM_FIELD.full_name = ".Cmd.ReqEnterTowerPrivate.param"
+REQENTERTOWERPRIVATE_PARAM_FIELD.number = 2
+REQENTERTOWERPRIVATE_PARAM_FIELD.index = 1
+REQENTERTOWERPRIVATE_PARAM_FIELD.label = 1
+REQENTERTOWERPRIVATE_PARAM_FIELD.has_default_value = true
+REQENTERTOWERPRIVATE_PARAM_FIELD.default_value = 88
+REQENTERTOWERPRIVATE_PARAM_FIELD.enum_type = FUBENPARAM
+REQENTERTOWERPRIVATE_PARAM_FIELD.type = 14
+REQENTERTOWERPRIVATE_PARAM_FIELD.cpp_type = 8
+REQENTERTOWERPRIVATE_RAIDID_FIELD.name = "raidid"
+REQENTERTOWERPRIVATE_RAIDID_FIELD.full_name = ".Cmd.ReqEnterTowerPrivate.raidid"
+REQENTERTOWERPRIVATE_RAIDID_FIELD.number = 3
+REQENTERTOWERPRIVATE_RAIDID_FIELD.index = 2
+REQENTERTOWERPRIVATE_RAIDID_FIELD.label = 1
+REQENTERTOWERPRIVATE_RAIDID_FIELD.has_default_value = false
+REQENTERTOWERPRIVATE_RAIDID_FIELD.default_value = 0
+REQENTERTOWERPRIVATE_RAIDID_FIELD.type = 13
+REQENTERTOWERPRIVATE_RAIDID_FIELD.cpp_type = 3
+REQENTERTOWERPRIVATE.name = "ReqEnterTowerPrivate"
+REQENTERTOWERPRIVATE.full_name = ".Cmd.ReqEnterTowerPrivate"
+REQENTERTOWERPRIVATE.nested_types = {}
+REQENTERTOWERPRIVATE.enum_types = {}
+REQENTERTOWERPRIVATE.fields = {
+  REQENTERTOWERPRIVATE_CMD_FIELD,
+  REQENTERTOWERPRIVATE_PARAM_FIELD,
+  REQENTERTOWERPRIVATE_RAIDID_FIELD
+}
+REQENTERTOWERPRIVATE.is_extendable = false
+REQENTERTOWERPRIVATE.extensions = {}
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.name = "id"
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.full_name = ".Cmd.LayerMonsterTowerPrivate.id"
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.number = 1
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.index = 0
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.label = 1
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.has_default_value = false
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.default_value = 0
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.type = 13
+LAYERMONSTERTOWERPRIVATE_ID_FIELD.cpp_type = 3
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.name = "type"
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.full_name = ".Cmd.LayerMonsterTowerPrivate.type"
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.number = 2
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.index = 1
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.label = 1
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.has_default_value = false
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.default_value = nil
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.enum_type = EENDLESSPRIVATEMONSTERTYPE
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.type = 14
+LAYERMONSTERTOWERPRIVATE_TYPE_FIELD.cpp_type = 8
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.name = "count"
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.full_name = ".Cmd.LayerMonsterTowerPrivate.count"
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.number = 3
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.index = 2
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.label = 1
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.has_default_value = false
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.default_value = 0
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.type = 13
+LAYERMONSTERTOWERPRIVATE_COUNT_FIELD.cpp_type = 3
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.name = "icon"
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.full_name = ".Cmd.LayerMonsterTowerPrivate.icon"
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.number = 4
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.index = 3
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.label = 1
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.has_default_value = false
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.default_value = 0
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.type = 13
+LAYERMONSTERTOWERPRIVATE_ICON_FIELD.cpp_type = 3
+LAYERMONSTERTOWERPRIVATE.name = "LayerMonsterTowerPrivate"
+LAYERMONSTERTOWERPRIVATE.full_name = ".Cmd.LayerMonsterTowerPrivate"
+LAYERMONSTERTOWERPRIVATE.nested_types = {}
+LAYERMONSTERTOWERPRIVATE.enum_types = {}
+LAYERMONSTERTOWERPRIVATE.fields = {
+  LAYERMONSTERTOWERPRIVATE_ID_FIELD,
+  LAYERMONSTERTOWERPRIVATE_TYPE_FIELD,
+  LAYERMONSTERTOWERPRIVATE_COUNT_FIELD,
+  LAYERMONSTERTOWERPRIVATE_ICON_FIELD
+}
+LAYERMONSTERTOWERPRIVATE.is_extendable = false
+LAYERMONSTERTOWERPRIVATE.extensions = {}
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.name = "itemid"
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.full_name = ".Cmd.LayerRewardTowerPrivate.itemid"
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.number = 1
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.index = 0
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.label = 1
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.has_default_value = false
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.default_value = 0
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.type = 13
+LAYERREWARDTOWERPRIVATE_ITEMID_FIELD.cpp_type = 3
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.name = "count"
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.full_name = ".Cmd.LayerRewardTowerPrivate.count"
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.number = 2
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.index = 1
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.label = 1
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.has_default_value = false
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.default_value = 0
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.type = 13
+LAYERREWARDTOWERPRIVATE_COUNT_FIELD.cpp_type = 3
+LAYERREWARDTOWERPRIVATE.name = "LayerRewardTowerPrivate"
+LAYERREWARDTOWERPRIVATE.full_name = ".Cmd.LayerRewardTowerPrivate"
+LAYERREWARDTOWERPRIVATE.nested_types = {}
+LAYERREWARDTOWERPRIVATE.enum_types = {}
+LAYERREWARDTOWERPRIVATE.fields = {
+  LAYERREWARDTOWERPRIVATE_ITEMID_FIELD,
+  LAYERREWARDTOWERPRIVATE_COUNT_FIELD
+}
+LAYERREWARDTOWERPRIVATE.is_extendable = false
+LAYERREWARDTOWERPRIVATE.extensions = {}
+TOWERPRIVATELAYERINFO_CMD_FIELD.name = "cmd"
+TOWERPRIVATELAYERINFO_CMD_FIELD.full_name = ".Cmd.TowerPrivateLayerInfo.cmd"
+TOWERPRIVATELAYERINFO_CMD_FIELD.number = 1
+TOWERPRIVATELAYERINFO_CMD_FIELD.index = 0
+TOWERPRIVATELAYERINFO_CMD_FIELD.label = 1
+TOWERPRIVATELAYERINFO_CMD_FIELD.has_default_value = true
+TOWERPRIVATELAYERINFO_CMD_FIELD.default_value = 11
+TOWERPRIVATELAYERINFO_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TOWERPRIVATELAYERINFO_CMD_FIELD.type = 14
+TOWERPRIVATELAYERINFO_CMD_FIELD.cpp_type = 8
+TOWERPRIVATELAYERINFO_PARAM_FIELD.name = "param"
+TOWERPRIVATELAYERINFO_PARAM_FIELD.full_name = ".Cmd.TowerPrivateLayerInfo.param"
+TOWERPRIVATELAYERINFO_PARAM_FIELD.number = 2
+TOWERPRIVATELAYERINFO_PARAM_FIELD.index = 1
+TOWERPRIVATELAYERINFO_PARAM_FIELD.label = 1
+TOWERPRIVATELAYERINFO_PARAM_FIELD.has_default_value = true
+TOWERPRIVATELAYERINFO_PARAM_FIELD.default_value = 89
+TOWERPRIVATELAYERINFO_PARAM_FIELD.enum_type = FUBENPARAM
+TOWERPRIVATELAYERINFO_PARAM_FIELD.type = 14
+TOWERPRIVATELAYERINFO_PARAM_FIELD.cpp_type = 8
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.name = "raidid"
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.full_name = ".Cmd.TowerPrivateLayerInfo.raidid"
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.number = 3
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.index = 2
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.label = 1
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.has_default_value = false
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.default_value = 0
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.type = 13
+TOWERPRIVATELAYERINFO_RAIDID_FIELD.cpp_type = 3
+TOWERPRIVATELAYERINFO_LAYER_FIELD.name = "layer"
+TOWERPRIVATELAYERINFO_LAYER_FIELD.full_name = ".Cmd.TowerPrivateLayerInfo.layer"
+TOWERPRIVATELAYERINFO_LAYER_FIELD.number = 4
+TOWERPRIVATELAYERINFO_LAYER_FIELD.index = 3
+TOWERPRIVATELAYERINFO_LAYER_FIELD.label = 1
+TOWERPRIVATELAYERINFO_LAYER_FIELD.has_default_value = false
+TOWERPRIVATELAYERINFO_LAYER_FIELD.default_value = 0
+TOWERPRIVATELAYERINFO_LAYER_FIELD.type = 13
+TOWERPRIVATELAYERINFO_LAYER_FIELD.cpp_type = 3
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.name = "monsters"
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.full_name = ".Cmd.TowerPrivateLayerInfo.monsters"
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.number = 5
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.index = 4
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.label = 3
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.has_default_value = false
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.default_value = {}
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.message_type = LAYERMONSTERTOWERPRIVATE
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.type = 11
+TOWERPRIVATELAYERINFO_MONSTERS_FIELD.cpp_type = 10
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.name = "rewards"
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.full_name = ".Cmd.TowerPrivateLayerInfo.rewards"
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.number = 6
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.index = 5
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.label = 3
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.has_default_value = false
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.default_value = {}
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.message_type = LAYERREWARDTOWERPRIVATE
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.type = 11
+TOWERPRIVATELAYERINFO_REWARDS_FIELD.cpp_type = 10
+TOWERPRIVATELAYERINFO.name = "TowerPrivateLayerInfo"
+TOWERPRIVATELAYERINFO.full_name = ".Cmd.TowerPrivateLayerInfo"
+TOWERPRIVATELAYERINFO.nested_types = {}
+TOWERPRIVATELAYERINFO.enum_types = {}
+TOWERPRIVATELAYERINFO.fields = {
+  TOWERPRIVATELAYERINFO_CMD_FIELD,
+  TOWERPRIVATELAYERINFO_PARAM_FIELD,
+  TOWERPRIVATELAYERINFO_RAIDID_FIELD,
+  TOWERPRIVATELAYERINFO_LAYER_FIELD,
+  TOWERPRIVATELAYERINFO_MONSTERS_FIELD,
+  TOWERPRIVATELAYERINFO_REWARDS_FIELD
+}
+TOWERPRIVATELAYERINFO.is_extendable = false
+TOWERPRIVATELAYERINFO.extensions = {}
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.name = "cmd"
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.full_name = ".Cmd.TowerPrivateLayerCountdownNtf.cmd"
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.number = 1
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.index = 0
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.label = 1
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.has_default_value = true
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.default_value = 11
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.type = 14
+TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD.cpp_type = 8
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.name = "param"
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.full_name = ".Cmd.TowerPrivateLayerCountdownNtf.param"
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.number = 2
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.index = 1
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.label = 1
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.has_default_value = true
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.default_value = 90
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.enum_type = FUBENPARAM
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.type = 14
+TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD.cpp_type = 8
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.name = "overat"
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.full_name = ".Cmd.TowerPrivateLayerCountdownNtf.overat"
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.number = 3
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.index = 2
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.label = 1
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.has_default_value = false
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.default_value = 0
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.type = 13
+TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD.cpp_type = 3
+TOWERPRIVATELAYERCOUNTDOWNNTF.name = "TowerPrivateLayerCountdownNtf"
+TOWERPRIVATELAYERCOUNTDOWNNTF.full_name = ".Cmd.TowerPrivateLayerCountdownNtf"
+TOWERPRIVATELAYERCOUNTDOWNNTF.nested_types = {}
+TOWERPRIVATELAYERCOUNTDOWNNTF.enum_types = {}
+TOWERPRIVATELAYERCOUNTDOWNNTF.fields = {
+  TOWERPRIVATELAYERCOUNTDOWNNTF_CMD_FIELD,
+  TOWERPRIVATELAYERCOUNTDOWNNTF_PARAM_FIELD,
+  TOWERPRIVATELAYERCOUNTDOWNNTF_OVERAT_FIELD
+}
+TOWERPRIVATELAYERCOUNTDOWNNTF.is_extendable = false
+TOWERPRIVATELAYERCOUNTDOWNNTF.extensions = {}
+FUBENRESULTNTF_CMD_FIELD.name = "cmd"
+FUBENRESULTNTF_CMD_FIELD.full_name = ".Cmd.FubenResultNtf.cmd"
+FUBENRESULTNTF_CMD_FIELD.number = 1
+FUBENRESULTNTF_CMD_FIELD.index = 0
+FUBENRESULTNTF_CMD_FIELD.label = 1
+FUBENRESULTNTF_CMD_FIELD.has_default_value = true
+FUBENRESULTNTF_CMD_FIELD.default_value = 11
+FUBENRESULTNTF_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+FUBENRESULTNTF_CMD_FIELD.type = 14
+FUBENRESULTNTF_CMD_FIELD.cpp_type = 8
+FUBENRESULTNTF_PARAM_FIELD.name = "param"
+FUBENRESULTNTF_PARAM_FIELD.full_name = ".Cmd.FubenResultNtf.param"
+FUBENRESULTNTF_PARAM_FIELD.number = 2
+FUBENRESULTNTF_PARAM_FIELD.index = 1
+FUBENRESULTNTF_PARAM_FIELD.label = 1
+FUBENRESULTNTF_PARAM_FIELD.has_default_value = true
+FUBENRESULTNTF_PARAM_FIELD.default_value = 91
+FUBENRESULTNTF_PARAM_FIELD.enum_type = FUBENPARAM
+FUBENRESULTNTF_PARAM_FIELD.type = 14
+FUBENRESULTNTF_PARAM_FIELD.cpp_type = 8
+FUBENRESULTNTF_RAIDTYPE_FIELD.name = "raidtype"
+FUBENRESULTNTF_RAIDTYPE_FIELD.full_name = ".Cmd.FubenResultNtf.raidtype"
+FUBENRESULTNTF_RAIDTYPE_FIELD.number = 3
+FUBENRESULTNTF_RAIDTYPE_FIELD.index = 2
+FUBENRESULTNTF_RAIDTYPE_FIELD.label = 1
+FUBENRESULTNTF_RAIDTYPE_FIELD.has_default_value = true
+FUBENRESULTNTF_RAIDTYPE_FIELD.default_value = 0
+FUBENRESULTNTF_RAIDTYPE_FIELD.enum_type = ERAIDTYPE
+FUBENRESULTNTF_RAIDTYPE_FIELD.type = 14
+FUBENRESULTNTF_RAIDTYPE_FIELD.cpp_type = 8
+FUBENRESULTNTF_ISWIN_FIELD.name = "iswin"
+FUBENRESULTNTF_ISWIN_FIELD.full_name = ".Cmd.FubenResultNtf.iswin"
+FUBENRESULTNTF_ISWIN_FIELD.number = 4
+FUBENRESULTNTF_ISWIN_FIELD.index = 3
+FUBENRESULTNTF_ISWIN_FIELD.label = 1
+FUBENRESULTNTF_ISWIN_FIELD.has_default_value = false
+FUBENRESULTNTF_ISWIN_FIELD.default_value = false
+FUBENRESULTNTF_ISWIN_FIELD.type = 8
+FUBENRESULTNTF_ISWIN_FIELD.cpp_type = 7
+FUBENRESULTNTF.name = "FubenResultNtf"
+FUBENRESULTNTF.full_name = ".Cmd.FubenResultNtf"
+FUBENRESULTNTF.nested_types = {}
+FUBENRESULTNTF.enum_types = {}
+FUBENRESULTNTF.fields = {
+  FUBENRESULTNTF_CMD_FIELD,
+  FUBENRESULTNTF_PARAM_FIELD,
+  FUBENRESULTNTF_RAIDTYPE_FIELD,
+  FUBENRESULTNTF_ISWIN_FIELD
+}
+FUBENRESULTNTF.is_extendable = false
+FUBENRESULTNTF.extensions = {}
+ENDTIMESYNCFUBENCMD_CMD_FIELD.name = "cmd"
+ENDTIMESYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.EndTimeSyncFubenCmd.cmd"
+ENDTIMESYNCFUBENCMD_CMD_FIELD.number = 1
+ENDTIMESYNCFUBENCMD_CMD_FIELD.index = 0
+ENDTIMESYNCFUBENCMD_CMD_FIELD.label = 1
+ENDTIMESYNCFUBENCMD_CMD_FIELD.has_default_value = true
+ENDTIMESYNCFUBENCMD_CMD_FIELD.default_value = 11
+ENDTIMESYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+ENDTIMESYNCFUBENCMD_CMD_FIELD.type = 14
+ENDTIMESYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.name = "param"
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.EndTimeSyncFubenCmd.param"
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.number = 2
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.index = 1
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.label = 1
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.default_value = 92
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.type = 14
+ENDTIMESYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.name = "endtime"
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.full_name = ".Cmd.EndTimeSyncFubenCmd.endtime"
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.number = 3
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.index = 2
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.label = 1
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.has_default_value = true
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.default_value = 0
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.type = 13
+ENDTIMESYNCFUBENCMD_ENDTIME_FIELD.cpp_type = 3
+ENDTIMESYNCFUBENCMD.name = "EndTimeSyncFubenCmd"
+ENDTIMESYNCFUBENCMD.full_name = ".Cmd.EndTimeSyncFubenCmd"
+ENDTIMESYNCFUBENCMD.nested_types = {}
+ENDTIMESYNCFUBENCMD.enum_types = {}
+ENDTIMESYNCFUBENCMD.fields = {
+  ENDTIMESYNCFUBENCMD_CMD_FIELD,
+  ENDTIMESYNCFUBENCMD_PARAM_FIELD,
+  ENDTIMESYNCFUBENCMD_ENDTIME_FIELD
+}
+ENDTIMESYNCFUBENCMD.is_extendable = false
+ENDTIMESYNCFUBENCMD.extensions = {}
+RESULTSYNCFUBENCMD_CMD_FIELD.name = "cmd"
+RESULTSYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.ResultSyncFubenCmd.cmd"
+RESULTSYNCFUBENCMD_CMD_FIELD.number = 1
+RESULTSYNCFUBENCMD_CMD_FIELD.index = 0
+RESULTSYNCFUBENCMD_CMD_FIELD.label = 1
+RESULTSYNCFUBENCMD_CMD_FIELD.has_default_value = true
+RESULTSYNCFUBENCMD_CMD_FIELD.default_value = 11
+RESULTSYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RESULTSYNCFUBENCMD_CMD_FIELD.type = 14
+RESULTSYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+RESULTSYNCFUBENCMD_PARAM_FIELD.name = "param"
+RESULTSYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ResultSyncFubenCmd.param"
+RESULTSYNCFUBENCMD_PARAM_FIELD.number = 2
+RESULTSYNCFUBENCMD_PARAM_FIELD.index = 1
+RESULTSYNCFUBENCMD_PARAM_FIELD.label = 1
+RESULTSYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+RESULTSYNCFUBENCMD_PARAM_FIELD.default_value = 93
+RESULTSYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+RESULTSYNCFUBENCMD_PARAM_FIELD.type = 14
+RESULTSYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+RESULTSYNCFUBENCMD_SCORE_FIELD.name = "score"
+RESULTSYNCFUBENCMD_SCORE_FIELD.full_name = ".Cmd.ResultSyncFubenCmd.score"
+RESULTSYNCFUBENCMD_SCORE_FIELD.number = 3
+RESULTSYNCFUBENCMD_SCORE_FIELD.index = 2
+RESULTSYNCFUBENCMD_SCORE_FIELD.label = 1
+RESULTSYNCFUBENCMD_SCORE_FIELD.has_default_value = true
+RESULTSYNCFUBENCMD_SCORE_FIELD.default_value = 0
+RESULTSYNCFUBENCMD_SCORE_FIELD.type = 13
+RESULTSYNCFUBENCMD_SCORE_FIELD.cpp_type = 3
+RESULTSYNCFUBENCMD.name = "ResultSyncFubenCmd"
+RESULTSYNCFUBENCMD.full_name = ".Cmd.ResultSyncFubenCmd"
+RESULTSYNCFUBENCMD.nested_types = {}
+RESULTSYNCFUBENCMD.enum_types = {}
+RESULTSYNCFUBENCMD.fields = {
+  RESULTSYNCFUBENCMD_CMD_FIELD,
+  RESULTSYNCFUBENCMD_PARAM_FIELD,
+  RESULTSYNCFUBENCMD_SCORE_FIELD
+}
+RESULTSYNCFUBENCMD.is_extendable = false
+RESULTSYNCFUBENCMD.extensions = {}
+COMODOPHASEFUBENCMD_CMD_FIELD.name = "cmd"
+COMODOPHASEFUBENCMD_CMD_FIELD.full_name = ".Cmd.ComodoPhaseFubenCmd.cmd"
+COMODOPHASEFUBENCMD_CMD_FIELD.number = 1
+COMODOPHASEFUBENCMD_CMD_FIELD.index = 0
+COMODOPHASEFUBENCMD_CMD_FIELD.label = 1
+COMODOPHASEFUBENCMD_CMD_FIELD.has_default_value = true
+COMODOPHASEFUBENCMD_CMD_FIELD.default_value = 11
+COMODOPHASEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+COMODOPHASEFUBENCMD_CMD_FIELD.type = 14
+COMODOPHASEFUBENCMD_CMD_FIELD.cpp_type = 8
+COMODOPHASEFUBENCMD_PARAM_FIELD.name = "param"
+COMODOPHASEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ComodoPhaseFubenCmd.param"
+COMODOPHASEFUBENCMD_PARAM_FIELD.number = 2
+COMODOPHASEFUBENCMD_PARAM_FIELD.index = 1
+COMODOPHASEFUBENCMD_PARAM_FIELD.label = 1
+COMODOPHASEFUBENCMD_PARAM_FIELD.has_default_value = true
+COMODOPHASEFUBENCMD_PARAM_FIELD.default_value = 97
+COMODOPHASEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+COMODOPHASEFUBENCMD_PARAM_FIELD.type = 14
+COMODOPHASEFUBENCMD_PARAM_FIELD.cpp_type = 8
+COMODOPHASEFUBENCMD_PHASE_FIELD.name = "phase"
+COMODOPHASEFUBENCMD_PHASE_FIELD.full_name = ".Cmd.ComodoPhaseFubenCmd.phase"
+COMODOPHASEFUBENCMD_PHASE_FIELD.number = 3
+COMODOPHASEFUBENCMD_PHASE_FIELD.index = 2
+COMODOPHASEFUBENCMD_PHASE_FIELD.label = 1
+COMODOPHASEFUBENCMD_PHASE_FIELD.has_default_value = false
+COMODOPHASEFUBENCMD_PHASE_FIELD.default_value = nil
+COMODOPHASEFUBENCMD_PHASE_FIELD.enum_type = ECOMODOTEAMRAIDPHASE
+COMODOPHASEFUBENCMD_PHASE_FIELD.type = 14
+COMODOPHASEFUBENCMD_PHASE_FIELD.cpp_type = 8
+COMODOPHASEFUBENCMD.name = "ComodoPhaseFubenCmd"
+COMODOPHASEFUBENCMD.full_name = ".Cmd.ComodoPhaseFubenCmd"
+COMODOPHASEFUBENCMD.nested_types = {}
+COMODOPHASEFUBENCMD.enum_types = {}
+COMODOPHASEFUBENCMD.fields = {
+  COMODOPHASEFUBENCMD_CMD_FIELD,
+  COMODOPHASEFUBENCMD_PARAM_FIELD,
+  COMODOPHASEFUBENCMD_PHASE_FIELD
+}
+COMODOPHASEFUBENCMD.is_extendable = false
+COMODOPHASEFUBENCMD.extensions = {}
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.name = "boss"
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.full_name = ".Cmd.ComodoTeamRaidStatData.boss"
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.number = 1
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.index = 0
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.label = 1
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.has_default_value = false
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.default_value = nil
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.enum_type = ECOMODOTEAMRAIDBOSS
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.type = 14
+COMODOTEAMRAIDSTATDATA_BOSS_FIELD.cpp_type = 8
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.name = "datas"
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.full_name = ".Cmd.ComodoTeamRaidStatData.datas"
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.number = 2
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.index = 1
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.label = 3
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.has_default_value = false
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.default_value = {}
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.message_type = GROUPRAIDSHOWDATA
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.type = 11
+COMODOTEAMRAIDSTATDATA_DATAS_FIELD.cpp_type = 10
+COMODOTEAMRAIDSTATDATA.name = "ComodoTeamRaidStatData"
+COMODOTEAMRAIDSTATDATA.full_name = ".Cmd.ComodoTeamRaidStatData"
+COMODOTEAMRAIDSTATDATA.nested_types = {}
+COMODOTEAMRAIDSTATDATA.enum_types = {}
+COMODOTEAMRAIDSTATDATA.fields = {
+  COMODOTEAMRAIDSTATDATA_BOSS_FIELD,
+  COMODOTEAMRAIDSTATDATA_DATAS_FIELD
+}
+COMODOTEAMRAIDSTATDATA.is_extendable = false
+COMODOTEAMRAIDSTATDATA.extensions = {}
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.name = "cmd"
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.full_name = ".Cmd.QueryComodoTeamRaidStat.cmd"
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.number = 1
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.index = 0
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.label = 1
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.has_default_value = true
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.default_value = 11
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.type = 14
+QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD.cpp_type = 8
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.name = "param"
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.full_name = ".Cmd.QueryComodoTeamRaidStat.param"
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.number = 2
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.index = 1
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.label = 1
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.has_default_value = true
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.default_value = 98
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.type = 14
+QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD.cpp_type = 8
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.name = "current"
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.full_name = ".Cmd.QueryComodoTeamRaidStat.current"
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.number = 3
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.index = 2
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.label = 1
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.has_default_value = false
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.default_value = nil
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.type = 11
+QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD.cpp_type = 10
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.name = "total"
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.full_name = ".Cmd.QueryComodoTeamRaidStat.total"
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.number = 4
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.index = 3
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.label = 1
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.has_default_value = false
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.default_value = nil
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.type = 11
+QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD.cpp_type = 10
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.name = "history"
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.full_name = ".Cmd.QueryComodoTeamRaidStat.history"
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.number = 5
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.index = 4
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.label = 3
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.has_default_value = false
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.default_value = {}
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.type = 11
+QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD.cpp_type = 10
+QUERYCOMODOTEAMRAIDSTAT.name = "QueryComodoTeamRaidStat"
+QUERYCOMODOTEAMRAIDSTAT.full_name = ".Cmd.QueryComodoTeamRaidStat"
+QUERYCOMODOTEAMRAIDSTAT.nested_types = {}
+QUERYCOMODOTEAMRAIDSTAT.enum_types = {}
+QUERYCOMODOTEAMRAIDSTAT.fields = {
+  QUERYCOMODOTEAMRAIDSTAT_CMD_FIELD,
+  QUERYCOMODOTEAMRAIDSTAT_PARAM_FIELD,
+  QUERYCOMODOTEAMRAIDSTAT_CURRENT_FIELD,
+  QUERYCOMODOTEAMRAIDSTAT_TOTAL_FIELD,
+  QUERYCOMODOTEAMRAIDSTAT_HISTORY_FIELD
+}
+QUERYCOMODOTEAMRAIDSTAT.is_extendable = false
+QUERYCOMODOTEAMRAIDSTAT.extensions = {}
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.name = "cmd"
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.full_name = ".Cmd.TeamPwsStateSyncFubenCmd.cmd"
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.number = 1
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.index = 0
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.label = 1
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.has_default_value = true
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.default_value = 11
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.type = 14
+TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD.cpp_type = 8
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.name = "param"
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.full_name = ".Cmd.TeamPwsStateSyncFubenCmd.param"
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.number = 2
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.index = 1
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.label = 1
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.has_default_value = true
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.default_value = 99
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.type = 14
+TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD.cpp_type = 8
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.name = "fire"
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.full_name = ".Cmd.TeamPwsStateSyncFubenCmd.fire"
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.number = 3
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.index = 2
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.label = 1
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.has_default_value = false
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.default_value = false
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.type = 8
+TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD.cpp_type = 7
+TEAMPWSSTATESYNCFUBENCMD.name = "TeamPwsStateSyncFubenCmd"
+TEAMPWSSTATESYNCFUBENCMD.full_name = ".Cmd.TeamPwsStateSyncFubenCmd"
+TEAMPWSSTATESYNCFUBENCMD.nested_types = {}
+TEAMPWSSTATESYNCFUBENCMD.enum_types = {}
+TEAMPWSSTATESYNCFUBENCMD.fields = {
+  TEAMPWSSTATESYNCFUBENCMD_CMD_FIELD,
+  TEAMPWSSTATESYNCFUBENCMD_PARAM_FIELD,
+  TEAMPWSSTATESYNCFUBENCMD_FIRE_FIELD
+}
+TEAMPWSSTATESYNCFUBENCMD.is_extendable = false
+TEAMPWSSTATESYNCFUBENCMD.extensions = {}
+OBSERVERFLASHFUBENCMD_CMD_FIELD.name = "cmd"
+OBSERVERFLASHFUBENCMD_CMD_FIELD.full_name = ".Cmd.ObserverFlashFubenCmd.cmd"
+OBSERVERFLASHFUBENCMD_CMD_FIELD.number = 1
+OBSERVERFLASHFUBENCMD_CMD_FIELD.index = 0
+OBSERVERFLASHFUBENCMD_CMD_FIELD.label = 1
+OBSERVERFLASHFUBENCMD_CMD_FIELD.has_default_value = true
+OBSERVERFLASHFUBENCMD_CMD_FIELD.default_value = 11
+OBSERVERFLASHFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBSERVERFLASHFUBENCMD_CMD_FIELD.type = 14
+OBSERVERFLASHFUBENCMD_CMD_FIELD.cpp_type = 8
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.name = "param"
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ObserverFlashFubenCmd.param"
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.number = 2
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.index = 1
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.label = 1
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.has_default_value = true
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.default_value = 100
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.type = 14
+OBSERVERFLASHFUBENCMD_PARAM_FIELD.cpp_type = 8
+OBSERVERFLASHFUBENCMD_X_FIELD.name = "x"
+OBSERVERFLASHFUBENCMD_X_FIELD.full_name = ".Cmd.ObserverFlashFubenCmd.x"
+OBSERVERFLASHFUBENCMD_X_FIELD.number = 3
+OBSERVERFLASHFUBENCMD_X_FIELD.index = 2
+OBSERVERFLASHFUBENCMD_X_FIELD.label = 1
+OBSERVERFLASHFUBENCMD_X_FIELD.has_default_value = false
+OBSERVERFLASHFUBENCMD_X_FIELD.default_value = 0.0
+OBSERVERFLASHFUBENCMD_X_FIELD.type = 2
+OBSERVERFLASHFUBENCMD_X_FIELD.cpp_type = 6
+OBSERVERFLASHFUBENCMD_Y_FIELD.name = "y"
+OBSERVERFLASHFUBENCMD_Y_FIELD.full_name = ".Cmd.ObserverFlashFubenCmd.y"
+OBSERVERFLASHFUBENCMD_Y_FIELD.number = 4
+OBSERVERFLASHFUBENCMD_Y_FIELD.index = 3
+OBSERVERFLASHFUBENCMD_Y_FIELD.label = 1
+OBSERVERFLASHFUBENCMD_Y_FIELD.has_default_value = false
+OBSERVERFLASHFUBENCMD_Y_FIELD.default_value = 0.0
+OBSERVERFLASHFUBENCMD_Y_FIELD.type = 2
+OBSERVERFLASHFUBENCMD_Y_FIELD.cpp_type = 6
+OBSERVERFLASHFUBENCMD_Z_FIELD.name = "z"
+OBSERVERFLASHFUBENCMD_Z_FIELD.full_name = ".Cmd.ObserverFlashFubenCmd.z"
+OBSERVERFLASHFUBENCMD_Z_FIELD.number = 5
+OBSERVERFLASHFUBENCMD_Z_FIELD.index = 4
+OBSERVERFLASHFUBENCMD_Z_FIELD.label = 1
+OBSERVERFLASHFUBENCMD_Z_FIELD.has_default_value = false
+OBSERVERFLASHFUBENCMD_Z_FIELD.default_value = 0.0
+OBSERVERFLASHFUBENCMD_Z_FIELD.type = 2
+OBSERVERFLASHFUBENCMD_Z_FIELD.cpp_type = 6
+OBSERVERFLASHFUBENCMD.name = "ObserverFlashFubenCmd"
+OBSERVERFLASHFUBENCMD.full_name = ".Cmd.ObserverFlashFubenCmd"
+OBSERVERFLASHFUBENCMD.nested_types = {}
+OBSERVERFLASHFUBENCMD.enum_types = {}
+OBSERVERFLASHFUBENCMD.fields = {
+  OBSERVERFLASHFUBENCMD_CMD_FIELD,
+  OBSERVERFLASHFUBENCMD_PARAM_FIELD,
+  OBSERVERFLASHFUBENCMD_X_FIELD,
+  OBSERVERFLASHFUBENCMD_Y_FIELD,
+  OBSERVERFLASHFUBENCMD_Z_FIELD
+}
+OBSERVERFLASHFUBENCMD.is_extendable = false
+OBSERVERFLASHFUBENCMD.extensions = {}
+OBSERVERATTACHFUBENCMD_CMD_FIELD.name = "cmd"
+OBSERVERATTACHFUBENCMD_CMD_FIELD.full_name = ".Cmd.ObserverAttachFubenCmd.cmd"
+OBSERVERATTACHFUBENCMD_CMD_FIELD.number = 1
+OBSERVERATTACHFUBENCMD_CMD_FIELD.index = 0
+OBSERVERATTACHFUBENCMD_CMD_FIELD.label = 1
+OBSERVERATTACHFUBENCMD_CMD_FIELD.has_default_value = true
+OBSERVERATTACHFUBENCMD_CMD_FIELD.default_value = 11
+OBSERVERATTACHFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBSERVERATTACHFUBENCMD_CMD_FIELD.type = 14
+OBSERVERATTACHFUBENCMD_CMD_FIELD.cpp_type = 8
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.name = "param"
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ObserverAttachFubenCmd.param"
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.number = 2
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.index = 1
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.label = 1
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.has_default_value = true
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.default_value = 101
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.type = 14
+OBSERVERATTACHFUBENCMD_PARAM_FIELD.cpp_type = 8
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.name = "attach_player"
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.full_name = ".Cmd.ObserverAttachFubenCmd.attach_player"
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.number = 3
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.index = 2
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.label = 1
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.has_default_value = false
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.default_value = 0
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.type = 4
+OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD.cpp_type = 4
+OBSERVERATTACHFUBENCMD.name = "ObserverAttachFubenCmd"
+OBSERVERATTACHFUBENCMD.full_name = ".Cmd.ObserverAttachFubenCmd"
+OBSERVERATTACHFUBENCMD.nested_types = {}
+OBSERVERATTACHFUBENCMD.enum_types = {}
+OBSERVERATTACHFUBENCMD.fields = {
+  OBSERVERATTACHFUBENCMD_CMD_FIELD,
+  OBSERVERATTACHFUBENCMD_PARAM_FIELD,
+  OBSERVERATTACHFUBENCMD_ATTACH_PLAYER_FIELD
+}
+OBSERVERATTACHFUBENCMD.is_extendable = false
+OBSERVERATTACHFUBENCMD.extensions = {}
+OBSERVERSELECTFUBENCMD_CMD_FIELD.name = "cmd"
+OBSERVERSELECTFUBENCMD_CMD_FIELD.full_name = ".Cmd.ObserverSelectFubenCmd.cmd"
+OBSERVERSELECTFUBENCMD_CMD_FIELD.number = 1
+OBSERVERSELECTFUBENCMD_CMD_FIELD.index = 0
+OBSERVERSELECTFUBENCMD_CMD_FIELD.label = 1
+OBSERVERSELECTFUBENCMD_CMD_FIELD.has_default_value = true
+OBSERVERSELECTFUBENCMD_CMD_FIELD.default_value = 11
+OBSERVERSELECTFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBSERVERSELECTFUBENCMD_CMD_FIELD.type = 14
+OBSERVERSELECTFUBENCMD_CMD_FIELD.cpp_type = 8
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.name = "param"
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ObserverSelectFubenCmd.param"
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.number = 2
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.index = 1
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.label = 1
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.has_default_value = true
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.default_value = 102
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.type = 14
+OBSERVERSELECTFUBENCMD_PARAM_FIELD.cpp_type = 8
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.name = "select_player"
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.full_name = ".Cmd.ObserverSelectFubenCmd.select_player"
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.number = 3
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.index = 2
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.label = 1
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.has_default_value = false
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.default_value = 0
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.type = 4
+OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD.cpp_type = 4
+OBSERVERSELECTFUBENCMD.name = "ObserverSelectFubenCmd"
+OBSERVERSELECTFUBENCMD.full_name = ".Cmd.ObserverSelectFubenCmd"
+OBSERVERSELECTFUBENCMD.nested_types = {}
+OBSERVERSELECTFUBENCMD.enum_types = {}
+OBSERVERSELECTFUBENCMD.fields = {
+  OBSERVERSELECTFUBENCMD_CMD_FIELD,
+  OBSERVERSELECTFUBENCMD_PARAM_FIELD,
+  OBSERVERSELECTFUBENCMD_SELECT_PLAYER_FIELD
+}
+OBSERVERSELECTFUBENCMD.is_extendable = false
+OBSERVERSELECTFUBENCMD.extensions = {}
+PLAYERHPSPUPDATE_CHARID_FIELD.name = "charid"
+PLAYERHPSPUPDATE_CHARID_FIELD.full_name = ".Cmd.PlayerHpSpUpdate.charid"
+PLAYERHPSPUPDATE_CHARID_FIELD.number = 1
+PLAYERHPSPUPDATE_CHARID_FIELD.index = 0
+PLAYERHPSPUPDATE_CHARID_FIELD.label = 1
+PLAYERHPSPUPDATE_CHARID_FIELD.has_default_value = false
+PLAYERHPSPUPDATE_CHARID_FIELD.default_value = 0
+PLAYERHPSPUPDATE_CHARID_FIELD.type = 4
+PLAYERHPSPUPDATE_CHARID_FIELD.cpp_type = 4
+PLAYERHPSPUPDATE_HPPER_FIELD.name = "hpper"
+PLAYERHPSPUPDATE_HPPER_FIELD.full_name = ".Cmd.PlayerHpSpUpdate.hpper"
+PLAYERHPSPUPDATE_HPPER_FIELD.number = 2
+PLAYERHPSPUPDATE_HPPER_FIELD.index = 1
+PLAYERHPSPUPDATE_HPPER_FIELD.label = 1
+PLAYERHPSPUPDATE_HPPER_FIELD.has_default_value = false
+PLAYERHPSPUPDATE_HPPER_FIELD.default_value = 0
+PLAYERHPSPUPDATE_HPPER_FIELD.type = 13
+PLAYERHPSPUPDATE_HPPER_FIELD.cpp_type = 3
+PLAYERHPSPUPDATE_SPPER_FIELD.name = "spper"
+PLAYERHPSPUPDATE_SPPER_FIELD.full_name = ".Cmd.PlayerHpSpUpdate.spper"
+PLAYERHPSPUPDATE_SPPER_FIELD.number = 3
+PLAYERHPSPUPDATE_SPPER_FIELD.index = 2
+PLAYERHPSPUPDATE_SPPER_FIELD.label = 1
+PLAYERHPSPUPDATE_SPPER_FIELD.has_default_value = false
+PLAYERHPSPUPDATE_SPPER_FIELD.default_value = 0
+PLAYERHPSPUPDATE_SPPER_FIELD.type = 13
+PLAYERHPSPUPDATE_SPPER_FIELD.cpp_type = 3
+PLAYERHPSPUPDATE.name = "PlayerHpSpUpdate"
+PLAYERHPSPUPDATE.full_name = ".Cmd.PlayerHpSpUpdate"
+PLAYERHPSPUPDATE.nested_types = {}
+PLAYERHPSPUPDATE.enum_types = {}
+PLAYERHPSPUPDATE.fields = {
+  PLAYERHPSPUPDATE_CHARID_FIELD,
+  PLAYERHPSPUPDATE_HPPER_FIELD,
+  PLAYERHPSPUPDATE_SPPER_FIELD
+}
+PLAYERHPSPUPDATE.is_extendable = false
+PLAYERHPSPUPDATE.extensions = {}
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.name = "cmd"
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.ObHpspUpdateFubenCmd.cmd"
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.number = 1
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.index = 0
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.label = 1
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.has_default_value = true
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.default_value = 11
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.type = 14
+OBHPSPUPDATEFUBENCMD_CMD_FIELD.cpp_type = 8
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.name = "param"
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ObHpspUpdateFubenCmd.param"
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.number = 2
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.index = 1
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.label = 1
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.has_default_value = true
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.default_value = 104
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.type = 14
+OBHPSPUPDATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.name = "updates"
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.full_name = ".Cmd.ObHpspUpdateFubenCmd.updates"
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.number = 3
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.index = 2
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.label = 3
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.has_default_value = false
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.default_value = {}
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.message_type = PLAYERHPSPUPDATE
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.type = 11
+OBHPSPUPDATEFUBENCMD_UPDATES_FIELD.cpp_type = 10
+OBHPSPUPDATEFUBENCMD.name = "ObHpspUpdateFubenCmd"
+OBHPSPUPDATEFUBENCMD.full_name = ".Cmd.ObHpspUpdateFubenCmd"
+OBHPSPUPDATEFUBENCMD.nested_types = {}
+OBHPSPUPDATEFUBENCMD.enum_types = {}
+OBHPSPUPDATEFUBENCMD.fields = {
+  OBHPSPUPDATEFUBENCMD_CMD_FIELD,
+  OBHPSPUPDATEFUBENCMD_PARAM_FIELD,
+  OBHPSPUPDATEFUBENCMD_UPDATES_FIELD
+}
+OBHPSPUPDATEFUBENCMD.is_extendable = false
+OBHPSPUPDATEFUBENCMD.extensions = {}
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.name = "cmd"
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.full_name = ".Cmd.ObPlayerOfflineFubenCmd.cmd"
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.number = 1
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.index = 0
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.label = 1
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.has_default_value = true
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.default_value = 11
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.type = 14
+OBPLAYEROFFLINEFUBENCMD_CMD_FIELD.cpp_type = 8
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.name = "param"
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.ObPlayerOfflineFubenCmd.param"
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.number = 2
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.index = 1
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.label = 1
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.has_default_value = true
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.default_value = 105
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.type = 14
+OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD.cpp_type = 8
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.name = "offline_char"
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.full_name = ".Cmd.ObPlayerOfflineFubenCmd.offline_char"
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.number = 3
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.index = 2
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.label = 1
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.has_default_value = false
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.default_value = 0
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.type = 4
+OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD.cpp_type = 4
+OBPLAYEROFFLINEFUBENCMD.name = "ObPlayerOfflineFubenCmd"
+OBPLAYEROFFLINEFUBENCMD.full_name = ".Cmd.ObPlayerOfflineFubenCmd"
+OBPLAYEROFFLINEFUBENCMD.nested_types = {}
+OBPLAYEROFFLINEFUBENCMD.enum_types = {}
+OBPLAYEROFFLINEFUBENCMD.fields = {
+  OBPLAYEROFFLINEFUBENCMD_CMD_FIELD,
+  OBPLAYEROFFLINEFUBENCMD_PARAM_FIELD,
+  OBPLAYEROFFLINEFUBENCMD_OFFLINE_CHAR_FIELD
+}
+OBPLAYEROFFLINEFUBENCMD.is_extendable = false
+OBPLAYEROFFLINEFUBENCMD.extensions = {}
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.name = "cmd"
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.full_name = ".Cmd.MultiBossPhaseFubenCmd.cmd"
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.number = 1
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.index = 0
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.label = 1
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.has_default_value = true
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.default_value = 11
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.type = 14
+MULTIBOSSPHASEFUBENCMD_CMD_FIELD.cpp_type = 8
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.name = "param"
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.MultiBossPhaseFubenCmd.param"
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.number = 2
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.index = 1
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.label = 1
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.has_default_value = true
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.default_value = 106
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.type = 14
+MULTIBOSSPHASEFUBENCMD_PARAM_FIELD.cpp_type = 8
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.name = "boss_index"
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.full_name = ".Cmd.MultiBossPhaseFubenCmd.boss_index"
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.number = 3
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.index = 2
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.label = 1
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.has_default_value = false
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.default_value = 0
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.type = 13
+MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD.cpp_type = 3
+MULTIBOSSPHASEFUBENCMD.name = "MultiBossPhaseFubenCmd"
+MULTIBOSSPHASEFUBENCMD.full_name = ".Cmd.MultiBossPhaseFubenCmd"
+MULTIBOSSPHASEFUBENCMD.nested_types = {}
+MULTIBOSSPHASEFUBENCMD.enum_types = {}
+MULTIBOSSPHASEFUBENCMD.fields = {
+  MULTIBOSSPHASEFUBENCMD_CMD_FIELD,
+  MULTIBOSSPHASEFUBENCMD_PARAM_FIELD,
+  MULTIBOSSPHASEFUBENCMD_BOSS_INDEX_FIELD
+}
+MULTIBOSSPHASEFUBENCMD.is_extendable = false
+MULTIBOSSPHASEFUBENCMD.extensions = {}
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.name = "boss_index"
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.full_name = ".Cmd.MultiBossRaidStatData.boss_index"
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.number = 1
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.index = 0
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.label = 1
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.has_default_value = false
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.default_value = 0
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.type = 13
+MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD.cpp_type = 3
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.name = "datas"
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.full_name = ".Cmd.MultiBossRaidStatData.datas"
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.number = 2
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.index = 1
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.label = 3
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.has_default_value = false
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.default_value = {}
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.message_type = GROUPRAIDSHOWDATA
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.type = 11
+MULTIBOSSRAIDSTATDATA_DATAS_FIELD.cpp_type = 10
+MULTIBOSSRAIDSTATDATA.name = "MultiBossRaidStatData"
+MULTIBOSSRAIDSTATDATA.full_name = ".Cmd.MultiBossRaidStatData"
+MULTIBOSSRAIDSTATDATA.nested_types = {}
+MULTIBOSSRAIDSTATDATA.enum_types = {}
+MULTIBOSSRAIDSTATDATA.fields = {
+  MULTIBOSSRAIDSTATDATA_BOSS_INDEX_FIELD,
+  MULTIBOSSRAIDSTATDATA_DATAS_FIELD
+}
+MULTIBOSSRAIDSTATDATA.is_extendable = false
+MULTIBOSSRAIDSTATDATA.extensions = {}
+ACHIEVEREWARD_ACHIEVEID_FIELD.name = "achieveid"
+ACHIEVEREWARD_ACHIEVEID_FIELD.full_name = ".Cmd.AchieveReward.achieveid"
+ACHIEVEREWARD_ACHIEVEID_FIELD.number = 1
+ACHIEVEREWARD_ACHIEVEID_FIELD.index = 0
+ACHIEVEREWARD_ACHIEVEID_FIELD.label = 1
+ACHIEVEREWARD_ACHIEVEID_FIELD.has_default_value = false
+ACHIEVEREWARD_ACHIEVEID_FIELD.default_value = 0
+ACHIEVEREWARD_ACHIEVEID_FIELD.type = 13
+ACHIEVEREWARD_ACHIEVEID_FIELD.cpp_type = 3
+ACHIEVEREWARD_PICK_FIELD.name = "pick"
+ACHIEVEREWARD_PICK_FIELD.full_name = ".Cmd.AchieveReward.pick"
+ACHIEVEREWARD_PICK_FIELD.number = 2
+ACHIEVEREWARD_PICK_FIELD.index = 1
+ACHIEVEREWARD_PICK_FIELD.label = 1
+ACHIEVEREWARD_PICK_FIELD.has_default_value = false
+ACHIEVEREWARD_PICK_FIELD.default_value = false
+ACHIEVEREWARD_PICK_FIELD.type = 8
+ACHIEVEREWARD_PICK_FIELD.cpp_type = 7
+ACHIEVEREWARD.name = "AchieveReward"
+ACHIEVEREWARD.full_name = ".Cmd.AchieveReward"
+ACHIEVEREWARD.nested_types = {}
+ACHIEVEREWARD.enum_types = {}
+ACHIEVEREWARD.fields = {
+  ACHIEVEREWARD_ACHIEVEID_FIELD,
+  ACHIEVEREWARD_PICK_FIELD
+}
+ACHIEVEREWARD.is_extendable = false
+ACHIEVEREWARD.extensions = {}
+PVERAIDACHIEVE_GROUPID_FIELD.name = "groupid"
+PVERAIDACHIEVE_GROUPID_FIELD.full_name = ".Cmd.PveRaidAchieve.groupid"
+PVERAIDACHIEVE_GROUPID_FIELD.number = 1
+PVERAIDACHIEVE_GROUPID_FIELD.index = 0
+PVERAIDACHIEVE_GROUPID_FIELD.label = 1
+PVERAIDACHIEVE_GROUPID_FIELD.has_default_value = false
+PVERAIDACHIEVE_GROUPID_FIELD.default_value = 0
+PVERAIDACHIEVE_GROUPID_FIELD.type = 13
+PVERAIDACHIEVE_GROUPID_FIELD.cpp_type = 3
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.name = "achieveids"
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.full_name = ".Cmd.PveRaidAchieve.achieveids"
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.number = 2
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.index = 1
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.label = 3
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.has_default_value = false
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.default_value = {}
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.message_type = ACHIEVEREWARD
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.type = 11
+PVERAIDACHIEVE_ACHIEVEIDS_FIELD.cpp_type = 10
+PVERAIDACHIEVE.name = "PveRaidAchieve"
+PVERAIDACHIEVE.full_name = ".Cmd.PveRaidAchieve"
+PVERAIDACHIEVE.nested_types = {}
+PVERAIDACHIEVE.enum_types = {}
+PVERAIDACHIEVE.fields = {
+  PVERAIDACHIEVE_GROUPID_FIELD,
+  PVERAIDACHIEVE_ACHIEVEIDS_FIELD
+}
+PVERAIDACHIEVE.is_extendable = false
+PVERAIDACHIEVE.extensions = {}
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.name = "cmd"
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.full_name = ".Cmd.QueryMultiBossRaidStat.cmd"
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.number = 1
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.index = 0
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.label = 1
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.has_default_value = true
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.default_value = 11
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.type = 14
+QUERYMULTIBOSSRAIDSTAT_CMD_FIELD.cpp_type = 8
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.name = "param"
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.full_name = ".Cmd.QueryMultiBossRaidStat.param"
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.number = 2
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.index = 1
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.label = 1
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.has_default_value = true
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.default_value = 107
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.enum_type = FUBENPARAM
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.type = 14
+QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD.cpp_type = 8
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.name = "current"
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.full_name = ".Cmd.QueryMultiBossRaidStat.current"
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.number = 4
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.index = 2
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.label = 1
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.has_default_value = false
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.default_value = nil
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.type = 11
+QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD.cpp_type = 10
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.name = "total"
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.full_name = ".Cmd.QueryMultiBossRaidStat.total"
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.number = 5
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.index = 3
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.label = 1
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.has_default_value = false
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.default_value = nil
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.type = 11
+QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD.cpp_type = 10
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.name = "history"
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.full_name = ".Cmd.QueryMultiBossRaidStat.history"
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.number = 6
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.index = 4
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.label = 3
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.has_default_value = false
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.default_value = {}
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.message_type = GROUPRAIDTEAMSHOWDATA
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.type = 11
+QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD.cpp_type = 10
+QUERYMULTIBOSSRAIDSTAT.name = "QueryMultiBossRaidStat"
+QUERYMULTIBOSSRAIDSTAT.full_name = ".Cmd.QueryMultiBossRaidStat"
+QUERYMULTIBOSSRAIDSTAT.nested_types = {}
+QUERYMULTIBOSSRAIDSTAT.enum_types = {}
+QUERYMULTIBOSSRAIDSTAT.fields = {
+  QUERYMULTIBOSSRAIDSTAT_CMD_FIELD,
+  QUERYMULTIBOSSRAIDSTAT_PARAM_FIELD,
+  QUERYMULTIBOSSRAIDSTAT_CURRENT_FIELD,
+  QUERYMULTIBOSSRAIDSTAT_TOTAL_FIELD,
+  QUERYMULTIBOSSRAIDSTAT_HISTORY_FIELD
+}
+QUERYMULTIBOSSRAIDSTAT.is_extendable = false
+QUERYMULTIBOSSRAIDSTAT.extensions = {}
+PVEPASSINFO_ID_FIELD.name = "id"
+PVEPASSINFO_ID_FIELD.full_name = ".Cmd.PvePassInfo.id"
+PVEPASSINFO_ID_FIELD.number = 1
+PVEPASSINFO_ID_FIELD.index = 0
+PVEPASSINFO_ID_FIELD.label = 1
+PVEPASSINFO_ID_FIELD.has_default_value = false
+PVEPASSINFO_ID_FIELD.default_value = 0
+PVEPASSINFO_ID_FIELD.type = 13
+PVEPASSINFO_ID_FIELD.cpp_type = 3
+PVEPASSINFO_FIRSTPASS_FIELD.name = "firstpass"
+PVEPASSINFO_FIRSTPASS_FIELD.full_name = ".Cmd.PvePassInfo.firstpass"
+PVEPASSINFO_FIRSTPASS_FIELD.number = 2
+PVEPASSINFO_FIRSTPASS_FIELD.index = 1
+PVEPASSINFO_FIRSTPASS_FIELD.label = 1
+PVEPASSINFO_FIRSTPASS_FIELD.has_default_value = false
+PVEPASSINFO_FIRSTPASS_FIELD.default_value = false
+PVEPASSINFO_FIRSTPASS_FIELD.type = 8
+PVEPASSINFO_FIRSTPASS_FIELD.cpp_type = 7
+PVEPASSINFO_PASSTIME_FIELD.name = "passtime"
+PVEPASSINFO_PASSTIME_FIELD.full_name = ".Cmd.PvePassInfo.passtime"
+PVEPASSINFO_PASSTIME_FIELD.number = 3
+PVEPASSINFO_PASSTIME_FIELD.index = 2
+PVEPASSINFO_PASSTIME_FIELD.label = 1
+PVEPASSINFO_PASSTIME_FIELD.has_default_value = false
+PVEPASSINFO_PASSTIME_FIELD.default_value = 0
+PVEPASSINFO_PASSTIME_FIELD.type = 5
+PVEPASSINFO_PASSTIME_FIELD.cpp_type = 1
+PVEPASSINFO_OPEN_FIELD.name = "open"
+PVEPASSINFO_OPEN_FIELD.full_name = ".Cmd.PvePassInfo.open"
+PVEPASSINFO_OPEN_FIELD.number = 4
+PVEPASSINFO_OPEN_FIELD.index = 3
+PVEPASSINFO_OPEN_FIELD.label = 1
+PVEPASSINFO_OPEN_FIELD.has_default_value = false
+PVEPASSINFO_OPEN_FIELD.default_value = false
+PVEPASSINFO_OPEN_FIELD.type = 8
+PVEPASSINFO_OPEN_FIELD.cpp_type = 7
+PVEPASSINFO_ROUNDREWARDID_FIELD.name = "roundrewardid"
+PVEPASSINFO_ROUNDREWARDID_FIELD.full_name = ".Cmd.PvePassInfo.roundrewardid"
+PVEPASSINFO_ROUNDREWARDID_FIELD.number = 5
+PVEPASSINFO_ROUNDREWARDID_FIELD.index = 4
+PVEPASSINFO_ROUNDREWARDID_FIELD.label = 1
+PVEPASSINFO_ROUNDREWARDID_FIELD.has_default_value = false
+PVEPASSINFO_ROUNDREWARDID_FIELD.default_value = 0
+PVEPASSINFO_ROUNDREWARDID_FIELD.type = 13
+PVEPASSINFO_ROUNDREWARDID_FIELD.cpp_type = 3
+PVEPASSINFO_QUICK_FIELD.name = "quick"
+PVEPASSINFO_QUICK_FIELD.full_name = ".Cmd.PvePassInfo.quick"
+PVEPASSINFO_QUICK_FIELD.number = 6
+PVEPASSINFO_QUICK_FIELD.index = 5
+PVEPASSINFO_QUICK_FIELD.label = 1
+PVEPASSINFO_QUICK_FIELD.has_default_value = false
+PVEPASSINFO_QUICK_FIELD.default_value = false
+PVEPASSINFO_QUICK_FIELD.type = 8
+PVEPASSINFO_QUICK_FIELD.cpp_type = 7
+PVEPASSINFO_PICKUP_FIELD.name = "pickup"
+PVEPASSINFO_PICKUP_FIELD.full_name = ".Cmd.PvePassInfo.pickup"
+PVEPASSINFO_PICKUP_FIELD.number = 7
+PVEPASSINFO_PICKUP_FIELD.index = 6
+PVEPASSINFO_PICKUP_FIELD.label = 1
+PVEPASSINFO_PICKUP_FIELD.has_default_value = false
+PVEPASSINFO_PICKUP_FIELD.default_value = false
+PVEPASSINFO_PICKUP_FIELD.type = 8
+PVEPASSINFO_PICKUP_FIELD.cpp_type = 7
+PVEPASSINFO_NORLENFIRST_FIELD.name = "norlenfirst"
+PVEPASSINFO_NORLENFIRST_FIELD.full_name = ".Cmd.PvePassInfo.norlenfirst"
+PVEPASSINFO_NORLENFIRST_FIELD.number = 8
+PVEPASSINFO_NORLENFIRST_FIELD.index = 7
+PVEPASSINFO_NORLENFIRST_FIELD.label = 1
+PVEPASSINFO_NORLENFIRST_FIELD.has_default_value = false
+PVEPASSINFO_NORLENFIRST_FIELD.default_value = false
+PVEPASSINFO_NORLENFIRST_FIELD.type = 8
+PVEPASSINFO_NORLENFIRST_FIELD.cpp_type = 7
+PVEPASSINFO_SPARETIME_FIELD.name = "sparetime"
+PVEPASSINFO_SPARETIME_FIELD.full_name = ".Cmd.PvePassInfo.sparetime"
+PVEPASSINFO_SPARETIME_FIELD.number = 9
+PVEPASSINFO_SPARETIME_FIELD.index = 8
+PVEPASSINFO_SPARETIME_FIELD.label = 1
+PVEPASSINFO_SPARETIME_FIELD.has_default_value = false
+PVEPASSINFO_SPARETIME_FIELD.default_value = 0
+PVEPASSINFO_SPARETIME_FIELD.type = 5
+PVEPASSINFO_SPARETIME_FIELD.cpp_type = 1
+PVEPASSINFO_PASS_FIELD.name = "pass"
+PVEPASSINFO_PASS_FIELD.full_name = ".Cmd.PvePassInfo.pass"
+PVEPASSINFO_PASS_FIELD.number = 10
+PVEPASSINFO_PASS_FIELD.index = 9
+PVEPASSINFO_PASS_FIELD.label = 1
+PVEPASSINFO_PASS_FIELD.has_default_value = false
+PVEPASSINFO_PASS_FIELD.default_value = false
+PVEPASSINFO_PASS_FIELD.type = 8
+PVEPASSINFO_PASS_FIELD.cpp_type = 7
+PVEPASSINFO.name = "PvePassInfo"
+PVEPASSINFO.full_name = ".Cmd.PvePassInfo"
+PVEPASSINFO.nested_types = {}
+PVEPASSINFO.enum_types = {}
+PVEPASSINFO.fields = {
+  PVEPASSINFO_ID_FIELD,
+  PVEPASSINFO_FIRSTPASS_FIELD,
+  PVEPASSINFO_PASSTIME_FIELD,
+  PVEPASSINFO_OPEN_FIELD,
+  PVEPASSINFO_ROUNDREWARDID_FIELD,
+  PVEPASSINFO_QUICK_FIELD,
+  PVEPASSINFO_PICKUP_FIELD,
+  PVEPASSINFO_NORLENFIRST_FIELD,
+  PVEPASSINFO_SPARETIME_FIELD,
+  PVEPASSINFO_PASS_FIELD
+}
+PVEPASSINFO.is_extendable = false
+PVEPASSINFO.extensions = {}
+OBMOVECAMERAPREPARECMD_CMD_FIELD.name = "cmd"
+OBMOVECAMERAPREPARECMD_CMD_FIELD.full_name = ".Cmd.ObMoveCameraPrepareCmd.cmd"
+OBMOVECAMERAPREPARECMD_CMD_FIELD.number = 1
+OBMOVECAMERAPREPARECMD_CMD_FIELD.index = 0
+OBMOVECAMERAPREPARECMD_CMD_FIELD.label = 1
+OBMOVECAMERAPREPARECMD_CMD_FIELD.has_default_value = true
+OBMOVECAMERAPREPARECMD_CMD_FIELD.default_value = 11
+OBMOVECAMERAPREPARECMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBMOVECAMERAPREPARECMD_CMD_FIELD.type = 14
+OBMOVECAMERAPREPARECMD_CMD_FIELD.cpp_type = 8
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.name = "param"
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.full_name = ".Cmd.ObMoveCameraPrepareCmd.param"
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.number = 2
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.index = 1
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.label = 1
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.has_default_value = true
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.default_value = 108
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.type = 14
+OBMOVECAMERAPREPARECMD_PARAM_FIELD.cpp_type = 8
+OBMOVECAMERAPREPARECMD.name = "ObMoveCameraPrepareCmd"
+OBMOVECAMERAPREPARECMD.full_name = ".Cmd.ObMoveCameraPrepareCmd"
+OBMOVECAMERAPREPARECMD.nested_types = {}
+OBMOVECAMERAPREPARECMD.enum_types = {}
+OBMOVECAMERAPREPARECMD.fields = {
+  OBMOVECAMERAPREPARECMD_CMD_FIELD,
+  OBMOVECAMERAPREPARECMD_PARAM_FIELD
+}
+OBMOVECAMERAPREPARECMD.is_extendable = false
+OBMOVECAMERAPREPARECMD.extensions = {}
+OBCAMERAMOVEENDCMD_CMD_FIELD.name = "cmd"
+OBCAMERAMOVEENDCMD_CMD_FIELD.full_name = ".Cmd.ObCameraMoveEndCmd.cmd"
+OBCAMERAMOVEENDCMD_CMD_FIELD.number = 1
+OBCAMERAMOVEENDCMD_CMD_FIELD.index = 0
+OBCAMERAMOVEENDCMD_CMD_FIELD.label = 1
+OBCAMERAMOVEENDCMD_CMD_FIELD.has_default_value = true
+OBCAMERAMOVEENDCMD_CMD_FIELD.default_value = 11
+OBCAMERAMOVEENDCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+OBCAMERAMOVEENDCMD_CMD_FIELD.type = 14
+OBCAMERAMOVEENDCMD_CMD_FIELD.cpp_type = 8
+OBCAMERAMOVEENDCMD_PARAM_FIELD.name = "param"
+OBCAMERAMOVEENDCMD_PARAM_FIELD.full_name = ".Cmd.ObCameraMoveEndCmd.param"
+OBCAMERAMOVEENDCMD_PARAM_FIELD.number = 2
+OBCAMERAMOVEENDCMD_PARAM_FIELD.index = 1
+OBCAMERAMOVEENDCMD_PARAM_FIELD.label = 1
+OBCAMERAMOVEENDCMD_PARAM_FIELD.has_default_value = true
+OBCAMERAMOVEENDCMD_PARAM_FIELD.default_value = 109
+OBCAMERAMOVEENDCMD_PARAM_FIELD.enum_type = FUBENPARAM
+OBCAMERAMOVEENDCMD_PARAM_FIELD.type = 14
+OBCAMERAMOVEENDCMD_PARAM_FIELD.cpp_type = 8
+OBCAMERAMOVEENDCMD.name = "ObCameraMoveEndCmd"
+OBCAMERAMOVEENDCMD.full_name = ".Cmd.ObCameraMoveEndCmd"
+OBCAMERAMOVEENDCMD.nested_types = {}
+OBCAMERAMOVEENDCMD.enum_types = {}
+OBCAMERAMOVEENDCMD.fields = {
+  OBCAMERAMOVEENDCMD_CMD_FIELD,
+  OBCAMERAMOVEENDCMD_PARAM_FIELD
+}
+OBCAMERAMOVEENDCMD.is_extendable = false
+OBCAMERAMOVEENDCMD.extensions = {}
+KILLNUM_CAMP_FIELD.name = "camp"
+KILLNUM_CAMP_FIELD.full_name = ".Cmd.KillNum.camp"
+KILLNUM_CAMP_FIELD.number = 1
+KILLNUM_CAMP_FIELD.index = 0
+KILLNUM_CAMP_FIELD.label = 1
+KILLNUM_CAMP_FIELD.has_default_value = false
+KILLNUM_CAMP_FIELD.default_value = 0
+KILLNUM_CAMP_FIELD.type = 13
+KILLNUM_CAMP_FIELD.cpp_type = 3
+KILLNUM_KILL_NUM_FIELD.name = "kill_num"
+KILLNUM_KILL_NUM_FIELD.full_name = ".Cmd.KillNum.kill_num"
+KILLNUM_KILL_NUM_FIELD.number = 2
+KILLNUM_KILL_NUM_FIELD.index = 1
+KILLNUM_KILL_NUM_FIELD.label = 1
+KILLNUM_KILL_NUM_FIELD.has_default_value = false
+KILLNUM_KILL_NUM_FIELD.default_value = 0
+KILLNUM_KILL_NUM_FIELD.type = 13
+KILLNUM_KILL_NUM_FIELD.cpp_type = 3
+KILLNUM.name = "KillNum"
+KILLNUM.full_name = ".Cmd.KillNum"
+KILLNUM.nested_types = {}
+KILLNUM.enum_types = {}
+KILLNUM.fields = {
+  KILLNUM_CAMP_FIELD,
+  KILLNUM_KILL_NUM_FIELD
+}
+KILLNUM.is_extendable = false
+KILLNUM.extensions = {}
+RAIDKILLNUMSYNCCMD_CMD_FIELD.name = "cmd"
+RAIDKILLNUMSYNCCMD_CMD_FIELD.full_name = ".Cmd.RaidKillNumSyncCmd.cmd"
+RAIDKILLNUMSYNCCMD_CMD_FIELD.number = 1
+RAIDKILLNUMSYNCCMD_CMD_FIELD.index = 0
+RAIDKILLNUMSYNCCMD_CMD_FIELD.label = 1
+RAIDKILLNUMSYNCCMD_CMD_FIELD.has_default_value = true
+RAIDKILLNUMSYNCCMD_CMD_FIELD.default_value = 11
+RAIDKILLNUMSYNCCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+RAIDKILLNUMSYNCCMD_CMD_FIELD.type = 14
+RAIDKILLNUMSYNCCMD_CMD_FIELD.cpp_type = 8
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.name = "param"
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.full_name = ".Cmd.RaidKillNumSyncCmd.param"
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.number = 2
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.index = 1
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.label = 1
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.has_default_value = true
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.default_value = 110
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.enum_type = FUBENPARAM
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.type = 14
+RAIDKILLNUMSYNCCMD_PARAM_FIELD.cpp_type = 8
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.name = "kill_nums"
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.full_name = ".Cmd.RaidKillNumSyncCmd.kill_nums"
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.number = 3
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.index = 2
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.label = 3
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.has_default_value = false
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.default_value = {}
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.message_type = KILLNUM
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.type = 11
+RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD.cpp_type = 10
+RAIDKILLNUMSYNCCMD.name = "RaidKillNumSyncCmd"
+RAIDKILLNUMSYNCCMD.full_name = ".Cmd.RaidKillNumSyncCmd"
+RAIDKILLNUMSYNCCMD.nested_types = {}
+RAIDKILLNUMSYNCCMD.enum_types = {}
+RAIDKILLNUMSYNCCMD.fields = {
+  RAIDKILLNUMSYNCCMD_CMD_FIELD,
+  RAIDKILLNUMSYNCCMD_PARAM_FIELD,
+  RAIDKILLNUMSYNCCMD_KILL_NUMS_FIELD
+}
+RAIDKILLNUMSYNCCMD.is_extendable = false
+RAIDKILLNUMSYNCCMD.extensions = {}
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.name = "cmd"
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.cmd"
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.number = 1
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.index = 0
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.label = 1
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.has_default_value = true
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.default_value = 11
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.type = 14
+SYNCPVEPASSINFOFUBENCMD_CMD_FIELD.cpp_type = 8
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.name = "param"
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.param"
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.number = 2
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.index = 1
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.label = 1
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.has_default_value = true
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.default_value = 118
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.type = 14
+SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD.cpp_type = 8
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.name = "passinfos"
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.passinfos"
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.number = 3
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.index = 2
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.label = 3
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.has_default_value = false
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.default_value = {}
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.message_type = PVEPASSINFO
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.type = 11
+SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD.cpp_type = 10
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.name = "battletime"
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.battletime"
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.number = 4
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.index = 3
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.label = 1
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.has_default_value = false
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.default_value = 0
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.type = 13
+SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD.cpp_type = 3
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.name = "totalbattletime"
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.totalbattletime"
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.number = 5
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.index = 4
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.label = 1
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.has_default_value = false
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.default_value = 0
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.type = 13
+SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD.cpp_type = 3
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.name = "playtime"
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.playtime"
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.number = 6
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.index = 5
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.label = 1
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.has_default_value = false
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.default_value = 0
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.type = 13
+SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD.cpp_type = 3
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.name = "totalplaytime"
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.full_name = ".Cmd.SyncPvePassInfoFubenCmd.totalplaytime"
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.number = 7
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.index = 6
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.label = 1
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.has_default_value = false
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.default_value = 0
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.type = 13
+SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD.cpp_type = 3
+SYNCPVEPASSINFOFUBENCMD.name = "SyncPvePassInfoFubenCmd"
+SYNCPVEPASSINFOFUBENCMD.full_name = ".Cmd.SyncPvePassInfoFubenCmd"
+SYNCPVEPASSINFOFUBENCMD.nested_types = {}
+SYNCPVEPASSINFOFUBENCMD.enum_types = {}
+SYNCPVEPASSINFOFUBENCMD.fields = {
+  SYNCPVEPASSINFOFUBENCMD_CMD_FIELD,
+  SYNCPVEPASSINFOFUBENCMD_PARAM_FIELD,
+  SYNCPVEPASSINFOFUBENCMD_PASSINFOS_FIELD,
+  SYNCPVEPASSINFOFUBENCMD_BATTLETIME_FIELD,
+  SYNCPVEPASSINFOFUBENCMD_TOTALBATTLETIME_FIELD,
+  SYNCPVEPASSINFOFUBENCMD_PLAYTIME_FIELD,
+  SYNCPVEPASSINFOFUBENCMD_TOTALPLAYTIME_FIELD
+}
+SYNCPVEPASSINFOFUBENCMD.is_extendable = false
+SYNCPVEPASSINFOFUBENCMD.extensions = {}
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.name = "cmd"
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.full_name = ".Cmd.SyncPveRaidAchieveFubenCmd.cmd"
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.number = 1
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.index = 0
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.label = 1
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.has_default_value = true
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.default_value = 11
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.type = 14
+SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD.cpp_type = 8
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.name = "param"
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SyncPveRaidAchieveFubenCmd.param"
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.number = 2
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.index = 1
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.label = 1
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.has_default_value = true
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.default_value = 126
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.type = 14
+SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.cpp_type = 8
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.name = "achieveinfos"
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.full_name = ".Cmd.SyncPveRaidAchieveFubenCmd.achieveinfos"
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.number = 3
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.index = 2
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.label = 3
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.has_default_value = false
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.default_value = {}
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.message_type = PVERAIDACHIEVE
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.type = 11
+SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD.cpp_type = 10
+SYNCPVERAIDACHIEVEFUBENCMD.name = "SyncPveRaidAchieveFubenCmd"
+SYNCPVERAIDACHIEVEFUBENCMD.full_name = ".Cmd.SyncPveRaidAchieveFubenCmd"
+SYNCPVERAIDACHIEVEFUBENCMD.nested_types = {}
+SYNCPVERAIDACHIEVEFUBENCMD.enum_types = {}
+SYNCPVERAIDACHIEVEFUBENCMD.fields = {
+  SYNCPVERAIDACHIEVEFUBENCMD_CMD_FIELD,
+  SYNCPVERAIDACHIEVEFUBENCMD_PARAM_FIELD,
+  SYNCPVERAIDACHIEVEFUBENCMD_ACHIEVEINFOS_FIELD
+}
+SYNCPVERAIDACHIEVEFUBENCMD.is_extendable = false
+SYNCPVERAIDACHIEVEFUBENCMD.extensions = {}
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.name = "cmd"
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.full_name = ".Cmd.QuickFinishCrackRaidFubenCmd.cmd"
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.number = 1
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.index = 0
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.label = 1
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.has_default_value = true
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.default_value = 11
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.type = 14
+QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD.cpp_type = 8
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.name = "param"
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.QuickFinishCrackRaidFubenCmd.param"
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.number = 2
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.index = 1
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.label = 1
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.has_default_value = true
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.default_value = 127
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.type = 14
+QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD.cpp_type = 8
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.name = "raidid"
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.full_name = ".Cmd.QuickFinishCrackRaidFubenCmd.raidid"
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.number = 3
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.index = 2
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.label = 1
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.has_default_value = false
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.default_value = 0
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.type = 13
+QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD.cpp_type = 3
+QUICKFINISHCRACKRAIDFUBENCMD.name = "QuickFinishCrackRaidFubenCmd"
+QUICKFINISHCRACKRAIDFUBENCMD.full_name = ".Cmd.QuickFinishCrackRaidFubenCmd"
+QUICKFINISHCRACKRAIDFUBENCMD.nested_types = {}
+QUICKFINISHCRACKRAIDFUBENCMD.enum_types = {}
+QUICKFINISHCRACKRAIDFUBENCMD.fields = {
+  QUICKFINISHCRACKRAIDFUBENCMD_CMD_FIELD,
+  QUICKFINISHCRACKRAIDFUBENCMD_PARAM_FIELD,
+  QUICKFINISHCRACKRAIDFUBENCMD_RAIDID_FIELD
+}
+QUICKFINISHCRACKRAIDFUBENCMD.is_extendable = false
+QUICKFINISHCRACKRAIDFUBENCMD.extensions = {}
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.name = "cmd"
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.full_name = ".Cmd.PickupPveRaidAchieveFubenCmd.cmd"
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.number = 1
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.index = 0
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.label = 1
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.has_default_value = true
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.default_value = 11
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.type = 14
+PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD.cpp_type = 8
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.name = "param"
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.PickupPveRaidAchieveFubenCmd.param"
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.number = 2
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.index = 1
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.label = 1
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.has_default_value = true
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.default_value = 128
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.type = 14
+PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD.cpp_type = 8
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.name = "groupid"
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.full_name = ".Cmd.PickupPveRaidAchieveFubenCmd.groupid"
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.number = 3
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.index = 2
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.label = 1
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.has_default_value = false
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.default_value = 0
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.type = 13
+PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD.cpp_type = 3
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.name = "achieveid"
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.full_name = ".Cmd.PickupPveRaidAchieveFubenCmd.achieveid"
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.number = 4
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.index = 3
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.label = 1
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.has_default_value = false
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.default_value = 0
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.type = 13
+PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD.cpp_type = 3
+PICKUPPVERAIDACHIEVEFUBENCMD.name = "PickupPveRaidAchieveFubenCmd"
+PICKUPPVERAIDACHIEVEFUBENCMD.full_name = ".Cmd.PickupPveRaidAchieveFubenCmd"
+PICKUPPVERAIDACHIEVEFUBENCMD.nested_types = {}
+PICKUPPVERAIDACHIEVEFUBENCMD.enum_types = {}
+PICKUPPVERAIDACHIEVEFUBENCMD.fields = {
+  PICKUPPVERAIDACHIEVEFUBENCMD_CMD_FIELD,
+  PICKUPPVERAIDACHIEVEFUBENCMD_PARAM_FIELD,
+  PICKUPPVERAIDACHIEVEFUBENCMD_GROUPID_FIELD,
+  PICKUPPVERAIDACHIEVEFUBENCMD_ACHIEVEID_FIELD
+}
+PICKUPPVERAIDACHIEVEFUBENCMD.is_extendable = false
+PICKUPPVERAIDACHIEVEFUBENCMD.extensions = {}
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgPointUpdateFubenCmd.cmd"
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.number = 1
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.index = 0
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.label = 1
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.default_value = 11
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.type = 14
+GVGPOINTUPDATEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.name = "param"
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgPointUpdateFubenCmd.param"
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.number = 2
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.index = 1
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.label = 1
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.default_value = 119
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.type = 14
+GVGPOINTUPDATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.name = "info"
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.full_name = ".Cmd.GvgPointUpdateFubenCmd.info"
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.number = 3
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.index = 2
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.label = 3
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.has_default_value = false
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.default_value = {}
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.message_type = GVGPOINTINFO
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.type = 11
+GVGPOINTUPDATEFUBENCMD_INFO_FIELD.cpp_type = 10
+GVGPOINTUPDATEFUBENCMD.name = "GvgPointUpdateFubenCmd"
+GVGPOINTUPDATEFUBENCMD.full_name = ".Cmd.GvgPointUpdateFubenCmd"
+GVGPOINTUPDATEFUBENCMD.nested_types = {}
+GVGPOINTUPDATEFUBENCMD.enum_types = {}
+GVGPOINTUPDATEFUBENCMD.fields = {
+  GVGPOINTUPDATEFUBENCMD_CMD_FIELD,
+  GVGPOINTUPDATEFUBENCMD_PARAM_FIELD,
+  GVGPOINTUPDATEFUBENCMD_INFO_FIELD
+}
+GVGPOINTUPDATEFUBENCMD.is_extendable = false
+GVGPOINTUPDATEFUBENCMD.extensions = {}
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgRaidStateUpdateFubenCmd.cmd"
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.number = 1
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.index = 0
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.label = 1
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.default_value = 11
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.type = 14
+GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.name = "param"
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgRaidStateUpdateFubenCmd.param"
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.number = 2
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.index = 1
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.label = 1
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.default_value = 122
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.type = 14
+GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.name = "raidstate"
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.full_name = ".Cmd.GvgRaidStateUpdateFubenCmd.raidstate"
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.number = 3
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.index = 2
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.label = 1
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.has_default_value = false
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.default_value = nil
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.enum_type = EGVGRAIDSTATE
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.type = 14
+GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD.cpp_type = 8
+GVGRAIDSTATEUPDATEFUBENCMD.name = "GvgRaidStateUpdateFubenCmd"
+GVGRAIDSTATEUPDATEFUBENCMD.full_name = ".Cmd.GvgRaidStateUpdateFubenCmd"
+GVGRAIDSTATEUPDATEFUBENCMD.nested_types = {}
+GVGRAIDSTATEUPDATEFUBENCMD.enum_types = {}
+GVGRAIDSTATEUPDATEFUBENCMD.fields = {
+  GVGRAIDSTATEUPDATEFUBENCMD_CMD_FIELD,
+  GVGRAIDSTATEUPDATEFUBENCMD_PARAM_FIELD,
+  GVGRAIDSTATEUPDATEFUBENCMD_RAIDSTATE_FIELD
+}
+GVGRAIDSTATEUPDATEFUBENCMD.is_extendable = false
+GVGRAIDSTATEUPDATEFUBENCMD.extensions = {}
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.name = "cmd"
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.full_name = ".Cmd.AddPveCardTimesFubenCmd.cmd"
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.number = 1
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.index = 0
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.label = 1
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.has_default_value = true
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.default_value = 11
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.type = 14
+ADDPVECARDTIMESFUBENCMD_CMD_FIELD.cpp_type = 8
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.name = "param"
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.full_name = ".Cmd.AddPveCardTimesFubenCmd.param"
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.number = 2
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.index = 1
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.label = 1
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.has_default_value = true
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.default_value = 129
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.type = 14
+ADDPVECARDTIMESFUBENCMD_PARAM_FIELD.cpp_type = 8
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.name = "addtimes"
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.full_name = ".Cmd.AddPveCardTimesFubenCmd.addtimes"
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.number = 3
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.index = 2
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.label = 1
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.has_default_value = false
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.default_value = 0
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.type = 13
+ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD.cpp_type = 3
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.name = "battletime"
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.full_name = ".Cmd.AddPveCardTimesFubenCmd.battletime"
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.number = 4
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.index = 3
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.label = 1
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.has_default_value = false
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.default_value = 0
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.type = 13
+ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD.cpp_type = 3
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.name = "totalbattletime"
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.full_name = ".Cmd.AddPveCardTimesFubenCmd.totalbattletime"
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.number = 5
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.index = 4
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.label = 1
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.has_default_value = false
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.default_value = 0
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.type = 13
+ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD.cpp_type = 3
+ADDPVECARDTIMESFUBENCMD.name = "AddPveCardTimesFubenCmd"
+ADDPVECARDTIMESFUBENCMD.full_name = ".Cmd.AddPveCardTimesFubenCmd"
+ADDPVECARDTIMESFUBENCMD.nested_types = {}
+ADDPVECARDTIMESFUBENCMD.enum_types = {}
+ADDPVECARDTIMESFUBENCMD.fields = {
+  ADDPVECARDTIMESFUBENCMD_CMD_FIELD,
+  ADDPVECARDTIMESFUBENCMD_PARAM_FIELD,
+  ADDPVECARDTIMESFUBENCMD_ADDTIMES_FIELD,
+  ADDPVECARDTIMESFUBENCMD_BATTLETIME_FIELD,
+  ADDPVECARDTIMESFUBENCMD_TOTALBATTLETIME_FIELD
+}
+ADDPVECARDTIMESFUBENCMD.is_extendable = false
+ADDPVECARDTIMESFUBENCMD.extensions = {}
+PVECARDPASSINFO_ID_FIELD.name = "id"
+PVECARDPASSINFO_ID_FIELD.full_name = ".Cmd.PveCardPassInfo.id"
+PVECARDPASSINFO_ID_FIELD.number = 1
+PVECARDPASSINFO_ID_FIELD.index = 0
+PVECARDPASSINFO_ID_FIELD.label = 1
+PVECARDPASSINFO_ID_FIELD.has_default_value = false
+PVECARDPASSINFO_ID_FIELD.default_value = 0
+PVECARDPASSINFO_ID_FIELD.type = 13
+PVECARDPASSINFO_ID_FIELD.cpp_type = 3
+PVECARDPASSINFO_OPEN_FIELD.name = "open"
+PVECARDPASSINFO_OPEN_FIELD.full_name = ".Cmd.PveCardPassInfo.open"
+PVECARDPASSINFO_OPEN_FIELD.number = 2
+PVECARDPASSINFO_OPEN_FIELD.index = 1
+PVECARDPASSINFO_OPEN_FIELD.label = 1
+PVECARDPASSINFO_OPEN_FIELD.has_default_value = false
+PVECARDPASSINFO_OPEN_FIELD.default_value = false
+PVECARDPASSINFO_OPEN_FIELD.type = 8
+PVECARDPASSINFO_OPEN_FIELD.cpp_type = 7
+PVECARDPASSINFO.name = "PveCardPassInfo"
+PVECARDPASSINFO.full_name = ".Cmd.PveCardPassInfo"
+PVECARDPASSINFO.nested_types = {}
+PVECARDPASSINFO.enum_types = {}
+PVECARDPASSINFO.fields = {
+  PVECARDPASSINFO_ID_FIELD,
+  PVECARDPASSINFO_OPEN_FIELD
+}
+PVECARDPASSINFO.is_extendable = false
+PVECARDPASSINFO.extensions = {}
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.name = "cmd"
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.SyncPveCardOpenStateFubenCmd.cmd"
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.number = 1
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.index = 0
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.label = 1
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.has_default_value = true
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.default_value = 11
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.type = 14
+SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD.cpp_type = 8
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.name = "param"
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SyncPveCardOpenStateFubenCmd.param"
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.number = 2
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.index = 1
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.label = 1
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.has_default_value = true
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.default_value = 130
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.type = 14
+SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.name = "passinfos"
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.full_name = ".Cmd.SyncPveCardOpenStateFubenCmd.passinfos"
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.number = 3
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.index = 2
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.label = 3
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.has_default_value = false
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.default_value = {}
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.message_type = PVECARDPASSINFO
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.type = 11
+SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD.cpp_type = 10
+SYNCPVECARDOPENSTATEFUBENCMD.name = "SyncPveCardOpenStateFubenCmd"
+SYNCPVECARDOPENSTATEFUBENCMD.full_name = ".Cmd.SyncPveCardOpenStateFubenCmd"
+SYNCPVECARDOPENSTATEFUBENCMD.nested_types = {}
+SYNCPVECARDOPENSTATEFUBENCMD.enum_types = {}
+SYNCPVECARDOPENSTATEFUBENCMD.fields = {
+  SYNCPVECARDOPENSTATEFUBENCMD_CMD_FIELD,
+  SYNCPVECARDOPENSTATEFUBENCMD_PARAM_FIELD,
+  SYNCPVECARDOPENSTATEFUBENCMD_PASSINFOS_FIELD
+}
+SYNCPVECARDOPENSTATEFUBENCMD.is_extendable = false
+SYNCPVECARDOPENSTATEFUBENCMD.extensions = {}
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.name = "cmd"
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.full_name = ".Cmd.QuickFinishPveRaidFubenCmd.cmd"
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.number = 1
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.index = 0
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.label = 1
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.has_default_value = true
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.default_value = 11
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.type = 14
+QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD.cpp_type = 8
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.name = "param"
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.full_name = ".Cmd.QuickFinishPveRaidFubenCmd.param"
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.number = 2
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.index = 1
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.label = 1
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.has_default_value = true
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.default_value = 131
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.type = 14
+QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD.cpp_type = 8
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.name = "raidid"
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.full_name = ".Cmd.QuickFinishPveRaidFubenCmd.raidid"
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.number = 3
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.index = 2
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.label = 1
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.has_default_value = false
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.default_value = 0
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.type = 13
+QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD.cpp_type = 3
+QUICKFINISHPVERAIDFUBENCMD.name = "QuickFinishPveRaidFubenCmd"
+QUICKFINISHPVERAIDFUBENCMD.full_name = ".Cmd.QuickFinishPveRaidFubenCmd"
+QUICKFINISHPVERAIDFUBENCMD.nested_types = {}
+QUICKFINISHPVERAIDFUBENCMD.enum_types = {}
+QUICKFINISHPVERAIDFUBENCMD.fields = {
+  QUICKFINISHPVERAIDFUBENCMD_CMD_FIELD,
+  QUICKFINISHPVERAIDFUBENCMD_PARAM_FIELD,
+  QUICKFINISHPVERAIDFUBENCMD_RAIDID_FIELD
+}
+QUICKFINISHPVERAIDFUBENCMD.is_extendable = false
+QUICKFINISHPVERAIDFUBENCMD.extensions = {}
+PVECARDREWARDTIMESITEM_DIFF_FIELD.name = "diff"
+PVECARDREWARDTIMESITEM_DIFF_FIELD.full_name = ".Cmd.PveCardRewardTimesItem.diff"
+PVECARDREWARDTIMESITEM_DIFF_FIELD.number = 1
+PVECARDREWARDTIMESITEM_DIFF_FIELD.index = 0
+PVECARDREWARDTIMESITEM_DIFF_FIELD.label = 1
+PVECARDREWARDTIMESITEM_DIFF_FIELD.has_default_value = false
+PVECARDREWARDTIMESITEM_DIFF_FIELD.default_value = 0
+PVECARDREWARDTIMESITEM_DIFF_FIELD.type = 13
+PVECARDREWARDTIMESITEM_DIFF_FIELD.cpp_type = 3
+PVECARDREWARDTIMESITEM_TIMES_FIELD.name = "times"
+PVECARDREWARDTIMESITEM_TIMES_FIELD.full_name = ".Cmd.PveCardRewardTimesItem.times"
+PVECARDREWARDTIMESITEM_TIMES_FIELD.number = 2
+PVECARDREWARDTIMESITEM_TIMES_FIELD.index = 1
+PVECARDREWARDTIMESITEM_TIMES_FIELD.label = 1
+PVECARDREWARDTIMESITEM_TIMES_FIELD.has_default_value = false
+PVECARDREWARDTIMESITEM_TIMES_FIELD.default_value = 0
+PVECARDREWARDTIMESITEM_TIMES_FIELD.type = 13
+PVECARDREWARDTIMESITEM_TIMES_FIELD.cpp_type = 3
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.name = "firstpass"
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.full_name = ".Cmd.PveCardRewardTimesItem.firstpass"
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.number = 3
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.index = 2
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.label = 1
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.has_default_value = false
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.default_value = false
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.type = 8
+PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD.cpp_type = 7
+PVECARDREWARDTIMESITEM.name = "PveCardRewardTimesItem"
+PVECARDREWARDTIMESITEM.full_name = ".Cmd.PveCardRewardTimesItem"
+PVECARDREWARDTIMESITEM.nested_types = {}
+PVECARDREWARDTIMESITEM.enum_types = {}
+PVECARDREWARDTIMESITEM.fields = {
+  PVECARDREWARDTIMESITEM_DIFF_FIELD,
+  PVECARDREWARDTIMESITEM_TIMES_FIELD,
+  PVECARDREWARDTIMESITEM_FIRSTPASS_FIELD
+}
+PVECARDREWARDTIMESITEM.is_extendable = false
+PVECARDREWARDTIMESITEM.extensions = {}
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.name = "cmd"
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.full_name = ".Cmd.SyncPveCardRewardTimesFubenCmd.cmd"
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.number = 1
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.index = 0
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.label = 1
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.has_default_value = true
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.default_value = 11
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.type = 14
+SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD.cpp_type = 8
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.name = "param"
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.full_name = ".Cmd.SyncPveCardRewardTimesFubenCmd.param"
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.number = 2
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.index = 1
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.label = 1
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.has_default_value = true
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.default_value = 132
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.type = 14
+SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD.cpp_type = 8
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.name = "items"
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.full_name = ".Cmd.SyncPveCardRewardTimesFubenCmd.items"
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.number = 3
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.index = 2
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.label = 3
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.has_default_value = false
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.default_value = {}
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.message_type = PVECARDREWARDTIMESITEM
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.type = 11
+SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD.cpp_type = 10
+SYNCPVECARDREWARDTIMESFUBENCMD.name = "SyncPveCardRewardTimesFubenCmd"
+SYNCPVECARDREWARDTIMESFUBENCMD.full_name = ".Cmd.SyncPveCardRewardTimesFubenCmd"
+SYNCPVECARDREWARDTIMESFUBENCMD.nested_types = {}
+SYNCPVECARDREWARDTIMESFUBENCMD.enum_types = {}
+SYNCPVECARDREWARDTIMESFUBENCMD.fields = {
+  SYNCPVECARDREWARDTIMESFUBENCMD_CMD_FIELD,
+  SYNCPVECARDREWARDTIMESFUBENCMD_PARAM_FIELD,
+  SYNCPVECARDREWARDTIMESFUBENCMD_ITEMS_FIELD
+}
+SYNCPVECARDREWARDTIMESFUBENCMD.is_extendable = false
+SYNCPVECARDREWARDTIMESFUBENCMD.extensions = {}
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.name = "cmd"
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.full_name = ".Cmd.GvgPerfectStateUpdateFubenCmd.cmd"
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.number = 1
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.index = 0
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.label = 1
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.has_default_value = true
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.default_value = 11
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.enum_type = XCMD_PB_COMMAND
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.type = 14
+GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD.cpp_type = 8
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.name = "param"
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.full_name = ".Cmd.GvgPerfectStateUpdateFubenCmd.param"
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.number = 2
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.index = 1
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.label = 1
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.has_default_value = true
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.default_value = 133
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.enum_type = FUBENPARAM
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.type = 14
+GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD.cpp_type = 8
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.name = "perfect_time"
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.full_name = ".Cmd.GvgPerfectStateUpdateFubenCmd.perfect_time"
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.number = 3
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.index = 2
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.label = 1
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.has_default_value = false
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.default_value = nil
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.message_type = ProtoCommon_pb.GVGPERFECTTIMEINFO
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.type = 11
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD.cpp_type = 10
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.name = "perfect"
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.full_name = ".Cmd.GvgPerfectStateUpdateFubenCmd.perfect"
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.number = 4
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.index = 3
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.label = 1
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.has_default_value = false
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.default_value = false
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.type = 8
+GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD.cpp_type = 7
+GVGPERFECTSTATEUPDATEFUBENCMD.name = "GvgPerfectStateUpdateFubenCmd"
+GVGPERFECTSTATEUPDATEFUBENCMD.full_name = ".Cmd.GvgPerfectStateUpdateFubenCmd"
+GVGPERFECTSTATEUPDATEFUBENCMD.nested_types = {}
+GVGPERFECTSTATEUPDATEFUBENCMD.enum_types = {}
+GVGPERFECTSTATEUPDATEFUBENCMD.fields = {
+  GVGPERFECTSTATEUPDATEFUBENCMD_CMD_FIELD,
+  GVGPERFECTSTATEUPDATEFUBENCMD_PARAM_FIELD,
+  GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_TIME_FIELD,
+  GVGPERFECTSTATEUPDATEFUBENCMD_PERFECT_FIELD
+}
+GVGPERFECTSTATEUPDATEFUBENCMD.is_extendable = false
+GVGPERFECTSTATEUPDATEFUBENCMD.extensions = {}
+ADD_PVECARD_TIMES = 129
+AchieveReward = protobuf.Message(ACHIEVEREWARD)
+AddPveCardTimesFubenCmd = protobuf.Message(ADDPVECARDTIMESFUBENCMD)
+BEGIN_FIRE_FUBENCMD = 49
+BeginFireFubenCmd = protobuf.Message(BEGINFIREFUBENCMD)
+BossDieFubenCmd = protobuf.Message(BOSSDIEFUBENCMD)
+BuildingHp = protobuf.Message(BUILDINGHP)
+BuyExpRaidItemFubenCmd = protobuf.Message(BUYEXPRAIDITEMFUBENCMD)
+COMODO_PHASE = 97
+COMODO_STAT = 98
+CampResultData = protobuf.Message(CAMPRESULTDATA)
+ComodoPhaseFubenCmd = protobuf.Message(COMODOPHASEFUBENCMD)
+ComodoTeamRaidStatData = protobuf.Message(COMODOTEAMRAIDSTATDATA)
+ECOMODO_BOSS_CHESS = 2
+ECOMODO_BOSS_DRAGON = 1
+ECOMODO_BOSS_HERO = 3
+ECOMODO_BOSS_MAX = 4
+ECOMODO_BOSS_MIN = 0
+ECOMODO_PHASE_CHESS = 2
+ECOMODO_PHASE_DRAGON = 1
+ECOMODO_PHASE_HERO = 3
+ECOMODO_PHASE_MIN = 0
+ECOMODO_PHASE_SAVE_NPC = 4
+EDEADBOSSDIFF_HARD = 3
+EDEADBOSSDIFF_MIN = 0
+EDEADBOSSDIFF_NORMAL = 2
+EDEADBOSSDIFF_SUPER = 4
+EEENDLESSPRIVATE_MONSTER_ADVANCE = 1
+EEENDLESSPRIVATE_MONSTER_NORMAL = 0
+EGROUPCAMP_BLUE = 2
+EGROUPCAMP_MIN = 0
+EGROUPCAMP_OBSERVER = 3
+EGROUPCAMP_RED = 1
+EGROUPRAIDSCENE_FIRE = 1
+EGROUPRAIDSCENE_MIN = 0
+EGROUPRAIDSCENE_OVER = 2
+EGUILDFIRERESULT_ATTACK = 3
+EGUILDFIRERESULT_DEF = 1
+EGUILDFIRERESULT_DEFSPEC = 2
+EGUILDGATEOPT_ENTER = 3
+EGUILDGATEOPT_OPEN = 2
+EGUILDGATEOPT_OPEN_ENTER = 4
+EGUILDGATEOPT_UNLOCK = 1
+EGUILDGATESTATE_CLOSE = 2
+EGUILDGATESTATE_LOCK = 1
+EGUILDGATESTATE_MIN = 0
+EGUILDGATESTATE_OPEN = 3
+EGVGCITYTYPE_LARGE = 3
+EGVGCITYTYPE_MAX = 4
+EGVGCITYTYPE_MIDDLE = 2
+EGVGCITYTYPE_MIN = 0
+EGVGCITYTYPE_SMALL = 1
+EGVGDATA_COIN = 10
+EGVGDATA_DAMMETAL = 5
+EGVGDATA_DEF_POINT_TIME = 11
+EGVGDATA_EXPEL = 4
+EGVGDATA_HONOR = 8
+EGVGDATA_KILLMETAL = 6
+EGVGDATA_KILLMON = 2
+EGVGDATA_KILLUSER = 7
+EGVGDATA_MIN = 0
+EGVGDATA_OCCUPY_POINT = 9
+EGVGDATA_PARTINTIME = 1
+EGVGDATA_PARTIN_KILLMETAL = 12
+EGVGDATA_RELIVE = 3
+EGVGPOINT_STATE_MIN = 0
+EGVGPOINT_STATE_OCCUPIED = 1
+EGVGRAIDSTATE_CALM = 3
+EGVGRAIDSTATE_FIRE = 2
+EGVGRAIDSTATE_MIN = 0
+EGVGRAIDSTATE_PEACE = 1
+EGVGRAIDSTATE_PERFECT = 4
+EGVGTOWERSTATE_FREE = 3
+EGVGTOWERSTATE_INITFREE = 1
+EGVGTOWERSTATE_OCCUPY = 2
+EGVGTOWERTYPE_CORE = 1
+EGVGTOWERTYPE_EAST = 3
+EGVGTOWERTYPE_MIN = 0
+EGVGTOWERTYPE_WEST = 2
+EKUMAMOTOOPER_CREATE = 1
+EKUMAMOTOOPER_REWARD = 2
+EKUMAMOTOOPER_SCORE = 3
+EMAGICBALL_EARTH = 2
+EMAGICBALL_FIRE = 4
+EMAGICBALL_MIN = 0
+EMAGICBALL_WATER = 3
+EMAGICBALL_WIND = 1
+ENDTIME_SYNC = 92
+EPVEGROUPTYPE_CARD = 4
+EPVEGROUPTYPE_COMODO = 1
+EPVEGROUPTYPE_CRACK_EIGHT = 16
+EPVEGROUPTYPE_CRACK_FIVE = 13
+EPVEGROUPTYPE_CRACK_FOUR = 12
+EPVEGROUPTYPE_CRACK_NINE = 17
+EPVEGROUPTYPE_CRACK_ONE = 9
+EPVEGROUPTYPE_CRACK_SEVEN = 15
+EPVEGROUPTYPE_CRACK_SIX = 14
+EPVEGROUPTYPE_CRACK_TEN = 18
+EPVEGROUPTYPE_CRACK_THREE = 11
+EPVEGROUPTYPE_CRACK_TWO = 10
+EPVEGROUPTYPE_DEADBOSS = 6
+EPVEGROUPTYPE_ENDLESS = 5
+EPVEGROUPTYPE_GUILD_RAID = 19
+EPVEGROUPTYPE_HEADWEAR = 3
+EPVEGROUPTYPE_MAX = 20
+EPVEGROUPTYPE_MIN = 0
+EPVEGROUPTYPE_MULTIBOSS = 2
+EPVEGROUPTYPE_ROGUELIKE = 8
+EPVEGROUPTYPE_THANATOS = 7
+ERAIDTYPE_ALTMAN = 31
+ERAIDTYPE_COMODO_TEAM_RAID = 59
+ERAIDTYPE_CRACK = 65
+ERAIDTYPE_DATELAND = 24
+ERAIDTYPE_DEADBOSS = 51
+ERAIDTYPE_DISNEY_MUSIC = 61
+ERAIDTYPE_DIVORCE_ROLLER_COASTER = 27
+ERAIDTYPE_DOJO = 9
+ERAIDTYPE_EINHERJAR = 52
+ERAIDTYPE_ENDLESSTOWER_PRIVATE = 55
+ERAIDTYPE_EXCHANGE = 3
+ERAIDTYPE_EXCHANGEGALLERY = 6
+ERAIDTYPE_FERRISWHEEL = 1
+ERAIDTYPE_GARDEN = 41
+ERAIDTYPE_GUILD = 10
+ERAIDTYPE_GUILDFIRE = 14
+ERAIDTYPE_GUILDRAID = 13
+ERAIDTYPE_GVG_LOBBY = 66
+ERAIDTYPE_HEADWEAR = 43
+ERAIDTYPE_HEADWEARACTIVITY = 64
+ERAIDTYPE_HEART_LOCK = 63
+ERAIDTYPE_HOUSE = 37
+ERAIDTYPE_ITEMIMAGE = 12
+ERAIDTYPE_JANUARY = 56
+ERAIDTYPE_KUMAMOTO = 39
+ERAIDTYPE_LABORATORY = 5
+ERAIDTYPE_MANOR = 60
+ERAIDTYPE_MAX = 68
+ERAIDTYPE_MAY = 57
+ERAIDTYPE_MIN = 0
+ERAIDTYPE_MONSTER_ANSWER = 47
+ERAIDTYPE_MONSTER_PHOTO = 48
+ERAIDTYPE_MVPBATTLE = 29
+ERAIDTYPE_NORMAL = 2
+ERAIDTYPE_OTHELLO = 44
+ERAIDTYPE_PROFESSION_TRIAL = 67
+ERAIDTYPE_PVECARD = 28
+ERAIDTYPE_PVP_HLJS = 23
+ERAIDTYPE_PVP_LLH = 21
+ERAIDTYPE_PVP_POLLY = 25
+ERAIDTYPE_PVP_SMZL = 22
+ERAIDTYPE_QTE_CHASING = 53
+ERAIDTYPE_RAIDTEMP2 = 8
+ERAIDTYPE_RAIDTEMP4 = 11
+ERAIDTYPE_ROGUELIKE = 46
+ERAIDTYPE_SEAL = 7
+ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID = 62
+ERAIDTYPE_SLAYERS = 54
+ERAIDTYPE_SPRING = 45
+ERAIDTYPE_SUPERGVG = 30
+ERAIDTYPE_TEAMEXP = 34
+ERAIDTYPE_TEAMPWS = 32
+ERAIDTYPE_THANATOS = 35
+ERAIDTYPE_THANATOS_FOURTH = 40
+ERAIDTYPE_THANATOS_MID = 36
+ERAIDTYPE_THANATOS_SCENE3 = 38
+ERAIDTYPE_THANKSGIVING = 42
+ERAIDTYPE_TOWER = 4
+ERAIDTYPE_TRANSFERFIGHT = 49
+ERAIDTYPE_TWELVE_PVP = 50
+ERAIDTYPE_WEDDING = 26
+EROLLRAIDREWARD_COMODO_TEAM_RAID = 6
+EROLLRAIDREWARD_DEADBOSS = 4
+EROLLRAIDREWARD_GROUPRAID = 2
+EROLLRAIDREWARD_GUILD = 5
+EROLLRAIDREWARD_MIN = 0
+EROLLRAIDREWARD_PVERAID = 1
+EROLLRAIDREWARD_SEVEN_ROYAL_TEAM_RAID = 7
+EROLLRAIDREWARD_WORLDBOSS = 3
+ETEAMPWS_BLUE = 2
+ETEAMPWS_MIN = 0
+ETEAMPWS_RED = 1
+ETWELVEPVP_DATA_BARRACK_HP = 10
+ETWELVEPVP_DATA_CAMP = 9
+ETWELVEPVP_DATA_CAR_POINT = 5
+ETWELVEPVP_DATA_CRYSTAL_EXP = 3
+ETWELVEPVP_DATA_CRYSTAL_HP = 11
+ETWELVEPVP_DATA_CRYSTAL_LEVEL = 13
+ETWELVEPVP_DATA_END_TIME = 7
+ETWELVEPVP_DATA_GOLD = 4
+ETWELVEPVP_DATA_KILL_NUM = 14
+ETWELVEPVP_DATA_MAX = 15
+ETWELVEPVP_DATA_MIN = 0
+ETWELVEPVP_DATA_PUSH_PLAYER_NUM = 6
+ETWELVEPVP_DATA_PVP_TYPE = 12
+ETWELVEPVP_DATA_SHOP_CD = 8
+ETWELVEPVP_OBSERVER_UI_ITEM = 1001
+ETWELVEPVP_OBSERVER_UI_MIN = 1000
+ETWELVEPVP_UI_CRYSTAL = 1
+ETWELVEPVP_UI_MIN = 0
+ETWELVEPVP_UI_SHOP = 2
+EXIT_RAID_CMD = 48
+EndTimeSyncFubenCmd = protobuf.Message(ENDTIMESYNCFUBENCMD)
+ExitMapFubenCmd = protobuf.Message(EXITMAPFUBENCMD)
+FAIL_FUBEN_USER_CMD = 2
+FUBEN_CLEAR_SYNC = 15
+FUBEN_GOAL_SYNC = 13
+FUBEN_RESULT_NTF = 91
+FUBEN_STEP_SYNC = 12
+FUBEN_USERNUM_COUNT = 31
+FailFuBenUserCmd = protobuf.Message(FAILFUBENUSERCMD)
+FuBenClearInfoCmd = protobuf.Message(FUBENCLEARINFOCMD)
+FuBenProgressSyncCmd = protobuf.Message(FUBENPROGRESSSYNCCMD)
+FubenResultNtf = protobuf.Message(FUBENRESULTNTF)
+FubenStepSyncCmd = protobuf.Message(FUBENSTEPSYNCCMD)
+GET_REWARD_STAGE_USER_CMD = 8
+GUILD_FIRE_CALM = 22
+GUILD_FIRE_CHANGE_GUILD = 23
+GUILD_FIRE_CHANGE_GUILD_NAME = 28
+GUILD_FIRE_DANGER = 20
+GUILD_FIRE_INFO = 18
+GUILD_FIRE_METALHP = 21
+GUILD_FIRE_RESTART = 24
+GUILD_FIRE_STATUS = 25
+GUILD_FIRE_STOP = 19
+GUILD_RAID_GATE_OPT = 17
+GUILD_RAID_USER_INFO = 16
+GVG_CANCEL_BUILDING = 122
+GVG_CONSTRUCT_BUILDING = 120
+GVG_DATA_SYNC_CMD = 26
+GVG_DATA_UPDATE_CMD = 27
+GVG_LEVELUP_BUILDING = 121
+GVG_MORALE_UPDATE = 125
+GVG_PERFECT_STATE_UPDATE = 133
+GVG_POINT_STATE_UPDATE = 119
+GVG_STATE_UPDATE = 123
+GVG_USE_BUILDING = 124
+GetRewardStageUserCmd = protobuf.Message(GETREWARDSTAGEUSERCMD)
+GroupRaidFourthGoOuterCmd = protobuf.Message(GROUPRAIDFOURTHGOOUTERCMD)
+GroupRaidFourthShowData = protobuf.Message(GROUPRAIDFOURTHSHOWDATA)
+GroupRaidShowData = protobuf.Message(GROUPRAIDSHOWDATA)
+GroupRaidStateSyncFuBenCmd = protobuf.Message(GROUPRAIDSTATESYNCFUBENCMD)
+GroupRaidTeamShowData = protobuf.Message(GROUPRAIDTEAMSHOWDATA)
+GuildFireCalmFubenCmd = protobuf.Message(GUILDFIRECALMFUBENCMD)
+GuildFireDangerFubenCmd = protobuf.Message(GUILDFIREDANGERFUBENCMD)
+GuildFireInfoFubenCmd = protobuf.Message(GUILDFIREINFOFUBENCMD)
+GuildFireMetalHpFubenCmd = protobuf.Message(GUILDFIREMETALHPFUBENCMD)
+GuildFireNewDefFubenCmd = protobuf.Message(GUILDFIRENEWDEFFUBENCMD)
+GuildFireRestartFubenCmd = protobuf.Message(GUILDFIRERESTARTFUBENCMD)
+GuildFireStatusFubenCmd = protobuf.Message(GUILDFIRESTATUSFUBENCMD)
+GuildFireStopFubenCmd = protobuf.Message(GUILDFIRESTOPFUBENCMD)
+GuildGateData = protobuf.Message(GUILDGATEDATA)
+GuildGateOptCmd = protobuf.Message(GUILDGATEOPTCMD)
+GvgCrystalInfo = protobuf.Message(GVGCRYSTALINFO)
+GvgCrystalUpdateFubenCmd = protobuf.Message(GVGCRYSTALUPDATEFUBENCMD)
+GvgData = protobuf.Message(GVGDATA)
+GvgDataSyncCmd = protobuf.Message(GVGDATASYNCCMD)
+GvgDataUpdateCmd = protobuf.Message(GVGDATAUPDATECMD)
+GvgDefNameChangeFubenCmd = protobuf.Message(GVGDEFNAMECHANGEFUBENCMD)
+GvgGuildInfo = protobuf.Message(GVGGUILDINFO)
+GvgMetalDieFubenCmd = protobuf.Message(GVGMETALDIEFUBENCMD)
+GvgPerfectStateUpdateFubenCmd = protobuf.Message(GVGPERFECTSTATEUPDATEFUBENCMD)
+GvgPointInfo = protobuf.Message(GVGPOINTINFO)
+GvgPointUpdateFubenCmd = protobuf.Message(GVGPOINTUPDATEFUBENCMD)
+GvgRaidStateUpdateFubenCmd = protobuf.Message(GVGRAIDSTATEUPDATEFUBENCMD)
+GvgTowerData = protobuf.Message(GVGTOWERDATA)
+GvgTowerUpdateFubenCmd = protobuf.Message(GVGTOWERUPDATEFUBENCMD)
+GvgTowerValue = protobuf.Message(GVGTOWERVALUE)
+INVITE_ROLL_RAID_REWARD = 82
+INVITE_SUMMON_DEADBOSS = 40
+InviteRollRewardFubenCmd = protobuf.Message(INVITEROLLREWARDFUBENCMD)
+InviteSummonBossFubenCmd = protobuf.Message(INVITESUMMONBOSSFUBENCMD)
+JOIN_FUBEN_USER_CMD = 10
+KUMAMOTO_OPER_CMD = 58
+KillNum = protobuf.Message(KILLNUM)
+KumamotoOperFubenCmd = protobuf.Message(KUMAMOTOOPERFUBENCMD)
+LEAVE_FUBEN_USER_CMD = 3
+LayerMonsterTowerPrivate = protobuf.Message(LAYERMONSTERTOWERPRIVATE)
+LayerRewardTowerPrivate = protobuf.Message(LAYERREWARDTOWERPRIVATE)
+LeaveFuBenUserCmd = protobuf.Message(LEAVEFUBENUSERCMD)
+MONSTER_COUNT_USER_CMD = 11
+MULTI_BOSS_PHASE = 106
+MULTI_BOSS_STAT = 107
+MVPBATTLE_BOSS_DIE = 30
+MVPBATTLE_END_REPORT = 38
+MVPBATTLE_SYNC_MVPINFO = 29
+MonsterCountUserCmd = protobuf.Message(MONSTERCOUNTUSERCMD)
+MultiBossPhaseFubenCmd = protobuf.Message(MULTIBOSSPHASEFUBENCMD)
+MultiBossRaidStatData = protobuf.Message(MULTIBOSSRAIDSTATDATA)
+MvpBattleReportFubenCmd = protobuf.Message(MVPBATTLEREPORTFUBENCMD)
+MvpBattleTeamData = protobuf.Message(MVPBATTLETEAMDATA)
+OBSERVER_ATTACH = 101
+OBSERVER_FLASH = 100
+OBSERVER_SELECT = 102
+OB_CAMERA_MOVE_END = 109
+OB_CAMERA_MOVE_PREPARE = 108
+OB_HPSP_UPDATE = 104
+OB_PLAYER_OFFLINE = 105
+OTHELLO_END_REPORT = 67
+OTHELLO_POINT_OCCUPY_POWER = 64
+OTHELLO_SYNC_INFO = 65
+ObCameraMoveEndCmd = protobuf.Message(OBCAMERAMOVEENDCMD)
+ObHpspUpdateFubenCmd = protobuf.Message(OBHPSPUPDATEFUBENCMD)
+ObMoveCameraPrepareCmd = protobuf.Message(OBMOVECAMERAPREPARECMD)
+ObPlayerOfflineFubenCmd = protobuf.Message(OBPLAYEROFFLINEFUBENCMD)
+ObserverAttachFubenCmd = protobuf.Message(OBSERVERATTACHFUBENCMD)
+ObserverFlashFubenCmd = protobuf.Message(OBSERVERFLASHFUBENCMD)
+ObserverSelectFubenCmd = protobuf.Message(OBSERVERSELECTFUBENCMD)
+OthelloInfoSyncData = protobuf.Message(OTHELLOINFOSYNCDATA)
+OthelloInfoSyncFubenCmd = protobuf.Message(OTHELLOINFOSYNCFUBENCMD)
+OthelloOccupyItem = protobuf.Message(OTHELLOOCCUPYITEM)
+OthelloPointOccupyPowerFubenCmd = protobuf.Message(OTHELLOPOINTOCCUPYPOWERFUBENCMD)
+OthelloRaidTeamInfo = protobuf.Message(OTHELLORAIDTEAMINFO)
+OthelloRaidUserInfo = protobuf.Message(OTHELLORAIDUSERINFO)
+OthelloReportFubenCmd = protobuf.Message(OTHELLOREPORTFUBENCMD)
+PICKUP_PVE_RAID_ACHIEVE = 128
+POS_SYNC = 87
+PRE_REPLY_ROLL_RAID_REARD = 85
+PVE_PASS_INFO = 118
+PVE_RAID_ACHIEVE = 126
+PickupPveRaidAchieveFubenCmd = protobuf.Message(PICKUPPVERAIDACHIEVEFUBENCMD)
+PlayerHpSpUpdate = protobuf.Message(PLAYERHPSPUPDATE)
+PosData = protobuf.Message(POSDATA)
+PosSyncFubenCmd = protobuf.Message(POSSYNCFUBENCMD)
+PreReplyRollRewardFubenCmd = protobuf.Message(PREREPLYROLLREWARDFUBENCMD)
+PveCardPassInfo = protobuf.Message(PVECARDPASSINFO)
+PveCardRewardTimesItem = protobuf.Message(PVECARDREWARDTIMESITEM)
+PvePassInfo = protobuf.Message(PVEPASSINFO)
+PveRaidAchieve = protobuf.Message(PVERAIDACHIEVE)
+QUERY_RAID_OTHELLO_USERINFO = 66
+QUERY_RAID_TEAMPWS_USERINFO = 42
+QUICK_FINISH_CRACK = 127
+QUICK_FINISH_PVERAID = 131
+QueryComodoTeamRaidStat = protobuf.Message(QUERYCOMODOTEAMRAIDSTAT)
+QueryGroupRaidFourthShowData = protobuf.Message(QUERYGROUPRAIDFOURTHSHOWDATA)
+QueryGvgTowerInfoFubenCmd = protobuf.Message(QUERYGVGTOWERINFOFUBENCMD)
+QueryMultiBossRaidStat = protobuf.Message(QUERYMULTIBOSSRAIDSTAT)
+QueryOthelloUserInfoFubenCmd = protobuf.Message(QUERYOTHELLOUSERINFOFUBENCMD)
+QueryTeamGroupRaidUserInfo = protobuf.Message(QUERYTEAMGROUPRAIDUSERINFO)
+QueryTeamPwsUserInfoFubenCmd = protobuf.Message(QUERYTEAMPWSUSERINFOFUBENCMD)
+QuickFinishCrackRaidFubenCmd = protobuf.Message(QUICKFINISHCRACKRAIDFUBENCMD)
+QuickFinishPveRaidFubenCmd = protobuf.Message(QUICKFINISHPVERAIDFUBENCMD)
+RAID_KILL_NUM_SYNC = 110
+RAID_STAGE_SYNC = 62
+RELIVE_CD = 86
+REPLY_ROLL_RAID_REARD = 83
+REPLY_SUMMON_DEADBOSS = 41
+REQ_ENTER_TOWERPRIVATE = 88
+RESULT_SYNC = 93
+ROGUELIKE_SYNC_UNLOCKSCENES = 68
+RaidItemSyncCmd = protobuf.Message(RAIDITEMSYNCCMD)
+RaidItemUpdateCmd = protobuf.Message(RAIDITEMUPDATECMD)
+RaidKillNumSyncCmd = protobuf.Message(RAIDKILLNUMSYNCCMD)
+RaidPConfig = protobuf.Message(RAIDPCONFIG)
+RaidShopUpdateCmd = protobuf.Message(RAIDSHOPUPDATECMD)
+RaidStageSyncFubenCmd = protobuf.Message(RAIDSTAGESYNCFUBENCMD)
+RankScore = protobuf.Message(RANKSCORE)
+ReliveCdFubenCmd = protobuf.Message(RELIVECDFUBENCMD)
+ReplyRollRewardFubenCmd = protobuf.Message(REPLYROLLREWARDFUBENCMD)
+ReplySummonBossFubenCmd = protobuf.Message(REPLYSUMMONBOSSFUBENCMD)
+ReqEnterTowerPrivate = protobuf.Message(REQENTERTOWERPRIVATE)
+ResultSyncFubenCmd = protobuf.Message(RESULTSYNCFUBENCMD)
+RewardItemData = protobuf.Message(REWARDITEMDATA)
+RoguelikeUnlockSceneSync = protobuf.Message(ROGUELIKEUNLOCKSCENESYNC)
+STAGE_STEP_STAR_USER_CMD = 9
+START_STAGE_USER_CMD = 7
+SUB_STAGE_USER_CMD = 6
+SUCCESS_FUBEN_USER_CMD = 4
+SUPERGVG_INFO_SYNC = 32
+SUPERGVG_METALINFO_UPDATE = 34
+SUPERGVG_METAL_DIE = 39
+SUPERGVG_QUERY_TOWERINFO = 35
+SUPERGVG_QUERY_USER_DATA = 37
+SUPERGVG_REWARD_INFO = 36
+SUPERGVG_TOWERINFO_UPDATE = 33
+SYNC_PVECARD_DIFFTIMES = 132
+SYNC_PVECARD_OPENSTATE = 130
+SelectTeamPwsMagicFubenCmd = protobuf.Message(SELECTTEAMPWSMAGICFUBENCMD)
+StageHardStepItem = protobuf.Message(STAGEHARDSTEPITEM)
+StageNormalStepItem = protobuf.Message(STAGENORMALSTEPITEM)
+StageStepItem = protobuf.Message(STAGESTEPITEM)
+StageStepStarUserCmd = protobuf.Message(STAGESTEPSTARUSERCMD)
+StageStepUserCmd = protobuf.Message(STAGESTEPUSERCMD)
+StartStageUserCmd = protobuf.Message(STARTSTAGEUSERCMD)
+SuccessFuBenUserCmd = protobuf.Message(SUCCESSFUBENUSERCMD)
+SuperGvgGuildUserData = protobuf.Message(SUPERGVGGUILDUSERDATA)
+SuperGvgQueryUserDataFubenCmd = protobuf.Message(SUPERGVGQUERYUSERDATAFUBENCMD)
+SuperGvgRewardData = protobuf.Message(SUPERGVGREWARDDATA)
+SuperGvgRewardInfoFubenCmd = protobuf.Message(SUPERGVGREWARDINFOFUBENCMD)
+SuperGvgSyncFubenCmd = protobuf.Message(SUPERGVGSYNCFUBENCMD)
+SuperGvgUserData = protobuf.Message(SUPERGVGUSERDATA)
+SyncMvpInfoFubenCmd = protobuf.Message(SYNCMVPINFOFUBENCMD)
+SyncPveCardOpenStateFubenCmd = protobuf.Message(SYNCPVECARDOPENSTATEFUBENCMD)
+SyncPveCardRewardTimesFubenCmd = protobuf.Message(SYNCPVECARDREWARDTIMESFUBENCMD)
+SyncPvePassInfoFubenCmd = protobuf.Message(SYNCPVEPASSINFOFUBENCMD)
+SyncPveRaidAchieveFubenCmd = protobuf.Message(SYNCPVERAIDACHIEVEFUBENCMD)
+TEAMEXP_BUY_ITEM = 51
+TEAMEXP_QUERY_INFO = 56
+TEAMEXP_RAID_REPORT = 50
+TEAMEXP_SYNC_CMD = 52
+TEAMMEMBER_ROLL_PROCESS = 84
+TEAMPWS_END_REPORT = 43
+TEAMPWS_SELECT_MAGIC = 45
+TEAMPWS_STATE_SYNC = 99
+TEAMPWS_SYNC_INFO = 44
+TEAMPWS_UPDATE_INFO = 47
+TEAMPWS_UPDATE_MAGIC = 46
+TEAM_GROUP_FOURTH_GOOUTER = 61
+TEAM_GROUP_FOURTH_QUERY = 59
+TEAM_GROUP_FOURTH_UPDATE = 60
+TEAM_GROUP_RAID_CHIP = 54
+TEAM_GROUP_RAID_QUERY_INFO = 55
+TEAM_GROUP_RAID_STATE = 57
+TEAM_RELIVE_COUNT = 53
+THANKSGIVING_MONSTER_NUM = 63
+TOWERPRIVATE_LAYER_COUNTDOWN_NTF = 90
+TOWERPRIVATE_LAYINFO = 89
+TRACK_FUBEN_USER_CMD = 1
+TRANSFERFIGHT_CHOOSE = 69
+TRANSFERFIGHT_END = 71
+TRANSFERFIGHT_RANK = 70
+TWELVEPVP_BUILDING_HP_UPDATE = 79
+TWELVEPVP_DATA_SYNC = 72
+TWELVEPVP_GROUP_INFO_QUERY = 77
+TWELVEPVP_ITEM_SYNC = 73
+TWELVEPVP_ITEM_UPDATE = 74
+TWELVEPVP_QUERY_UI_OPER = 80
+TWELVEPVP_QUEST_QUERY = 76
+TWELVEPVP_RESULT = 78
+TWELVEPVP_SHOP_UPDATE = 75
+TWELVEPVP_USE_ITEM = 81
+TeamExpQueryInfoFubenCmd = protobuf.Message(TEAMEXPQUERYINFOFUBENCMD)
+TeamExpReportFubenCmd = protobuf.Message(TEAMEXPREPORTFUBENCMD)
+TeamExpSyncFubenCmd = protobuf.Message(TEAMEXPSYNCFUBENCMD)
+TeamGroupRaidUpdateChipNum = protobuf.Message(TEAMGROUPRAIDUPDATECHIPNUM)
+TeamPwsInfoSyncData = protobuf.Message(TEAMPWSINFOSYNCDATA)
+TeamPwsInfoSyncFubenCmd = protobuf.Message(TEAMPWSINFOSYNCFUBENCMD)
+TeamPwsRaidTeamInfo = protobuf.Message(TEAMPWSRAIDTEAMINFO)
+TeamPwsRaidUserInfo = protobuf.Message(TEAMPWSRAIDUSERINFO)
+TeamPwsReportFubenCmd = protobuf.Message(TEAMPWSREPORTFUBENCMD)
+TeamPwsStateSyncFubenCmd = protobuf.Message(TEAMPWSSTATESYNCFUBENCMD)
+TeamReliveCountFubenCmd = protobuf.Message(TEAMRELIVECOUNTFUBENCMD)
+TeamRollStatusFuBenCmd = protobuf.Message(TEAMROLLSTATUSFUBENCMD)
+ThanksGivingMonsterFuBenCmd = protobuf.Message(THANKSGIVINGMONSTERFUBENCMD)
+TowerPrivateLayerCountdownNtf = protobuf.Message(TOWERPRIVATELAYERCOUNTDOWNNTF)
+TowerPrivateLayerInfo = protobuf.Message(TOWERPRIVATELAYERINFO)
+TrackData = protobuf.Message(TRACKDATA)
+TrackFuBenUserCmd = protobuf.Message(TRACKFUBENUSERCMD)
+TransferFightChooseFubenCmd = protobuf.Message(TRANSFERFIGHTCHOOSEFUBENCMD)
+TransferFightEndFubenCmd = protobuf.Message(TRANSFERFIGHTENDFUBENCMD)
+TransferFightRankFubenCmd = protobuf.Message(TRANSFERFIGHTRANKFUBENCMD)
+TweItemInfo = protobuf.Message(TWEITEMINFO)
+TwelvePvpBuildingHpUpdateCmd = protobuf.Message(TWELVEPVPBUILDINGHPUPDATECMD)
+TwelvePvpData = protobuf.Message(TWELVEPVPDATA)
+TwelvePvpGroupInfo = protobuf.Message(TWELVEPVPGROUPINFO)
+TwelvePvpQueryGroupInfoCmd = protobuf.Message(TWELVEPVPQUERYGROUPINFOCMD)
+TwelvePvpQuestData = protobuf.Message(TWELVEPVPQUESTDATA)
+TwelvePvpQuestQueryCmd = protobuf.Message(TWELVEPVPQUESTQUERYCMD)
+TwelvePvpResultCmd = protobuf.Message(TWELVEPVPRESULTCMD)
+TwelvePvpSyncCmd = protobuf.Message(TWELVEPVPSYNCCMD)
+TwelvePvpUIOperCmd = protobuf.Message(TWELVEPVPUIOPERCMD)
+TwelvePvpUseItemCmd = protobuf.Message(TWELVEPVPUSEITEMCMD)
+TwelvePvpUserInfo = protobuf.Message(TWELVEPVPUSERINFO)
+UpdateGroupRaidFourthShowData = protobuf.Message(UPDATEGROUPRAIDFOURTHSHOWDATA)
+UpdateTeamPwsInfoFubenCmd = protobuf.Message(UPDATETEAMPWSINFOFUBENCMD)
+UpdateUserNumFubenCmd = protobuf.Message(UPDATEUSERNUMFUBENCMD)
+UserGuildRaidFubenCmd = protobuf.Message(USERGUILDRAIDFUBENCMD)
+WORLD_STAGE_USER_CMD = 5
+WorldStageItem = protobuf.Message(WORLDSTAGEITEM)
+WorldStageUserCmd = protobuf.Message(WORLDSTAGEUSERCMD)

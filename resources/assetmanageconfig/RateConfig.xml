@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RORateConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <GpuClauses>
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G[8-9]\d" cmp_type="match" rate="5" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G7[8-9]" cmp_type="match" rate="5" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G77" cmp_type="match" rate="5" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G76" cmp_type="match" rate="4" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G72" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G71" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G5[7-9]" cmp_type="match" rate="3" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G5[1-6]" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-G[1-4]\d" cmp_type="match" rate="1" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-T[8-9]{2}\d" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Mali-T[1-7]\d{2}" cmp_type="match" rate="1" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*66\d" cmp_type="match" rate="3" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*[6-9][5-9]\d" cmp_type="match" rate="5" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*64\d" cmp_type="match" rate="4" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*63\d" cmp_type="match" rate="3" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*62\d" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*61\d" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*5[5-9]\d" cmp_type="match" rate="3" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*54\d" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*53\d" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*5[0-2]\d" cmp_type="match" rate="2" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^Adreno\s+(\(TM\)|TM)?\s*[1-4]\d{2}" cmp_type="match" rate="1" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^PowerVR\s+Rogue" cmp_type="match" rate="3" />
+        <RORateConfigClause id="1" src_type="gpu" src_value="^PowerVR" cmp_type="match" rate="2" />
+    </GpuClauses>
+</RORateConfig>

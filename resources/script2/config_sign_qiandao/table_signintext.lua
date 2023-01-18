@@ -1,0 +1,311 @@
+Table_SigninText = {
+  [1] = {
+    id = 1,
+    Tips = "##152957",
+    Explain = "##280888",
+    Joke = "##152922",
+    ShopID = "sign_pic_1",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [2] = {
+    id = 2,
+    Tips = "##280889",
+    Explain = "##280887",
+    Joke = "##152973",
+    ShopID = "sign_pic_3",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [3] = {
+    id = 3,
+    Tips = "##152896",
+    Explain = "##152906",
+    Joke = "##152881",
+    ShopID = "sign_pic_4",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [4] = {
+    id = 4,
+    Tips = "##152905",
+    Explain = "##152913",
+    Joke = "##152961",
+    ShopID = "sign_pic_5",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [5] = {
+    id = 5,
+    Tips = "##152879",
+    Explain = "##152917",
+    Joke = "##152949",
+    ShopID = "sign_pic_6",
+    Question = "##152939",
+    Choice1 = "##152915",
+    Choice2 = "##152875",
+    Answer = "1"
+  },
+  [6] = {
+    id = 6,
+    Tips = "##152956",
+    Explain = "##152914",
+    Joke = "##152974",
+    ShopID = "sign_pic_7",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [7] = {
+    id = 7,
+    Tips = "##152965",
+    Explain = "##152927",
+    Joke = "##152955",
+    ShopID = "sign_pic_8",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [8] = {
+    id = 8,
+    Tips = "##152892",
+    Explain = "##152890",
+    Joke = "##152884",
+    ShopID = "sign_pic_9",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [9] = {
+    id = 9,
+    Tips = "##152928",
+    Explain = "##152943",
+    Joke = "##152921",
+    ShopID = "sign_pic_10",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [10] = {
+    id = 10,
+    Tips = "##152950",
+    Explain = "##152945",
+    Joke = "##152910",
+    ShopID = "sign_pic_11",
+    Question = "##152897",
+    Choice1 = "##118425",
+    Choice2 = "##118267",
+    Answer = "1"
+  },
+  [11] = {
+    id = 11,
+    Tips = "##152894",
+    Explain = "##152902",
+    Joke = "##152959",
+    ShopID = "sign_pic_12",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [12] = {
+    id = 12,
+    Tips = "##152885",
+    Explain = "##280886",
+    Joke = "##152908",
+    ShopID = "sign_pic_13",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [13] = {
+    id = 13,
+    Tips = "##152958",
+    Explain = "##152876",
+    Joke = "##152944",
+    ShopID = "sign_pic_15",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [14] = {
+    id = 14,
+    Tips = "##152877",
+    Explain = "##152895",
+    Joke = "##152966",
+    ShopID = "sign_pic_16",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [15] = {
+    id = 15,
+    Tips = "##152920",
+    Explain = "##152916",
+    Joke = "##152936",
+    ShopID = "sign_pic_17",
+    Question = "##152901",
+    Choice1 = "##152947",
+    Choice2 = "##152952",
+    Answer = "2"
+  },
+  [16] = {
+    id = 16,
+    Tips = "##152883",
+    Explain = "##152971",
+    Joke = "##152899",
+    ShopID = "sign_pic_18",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [17] = {
+    id = 17,
+    Tips = "##152931",
+    Explain = "##152967",
+    Joke = "##152903",
+    ShopID = "sign_pic_19",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [18] = {
+    id = 18,
+    Tips = "##152968",
+    Explain = "##152909",
+    Joke = "##152907",
+    ShopID = "sign_pic_20",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [19] = {
+    id = 19,
+    Tips = "##152919",
+    Explain = "##152954",
+    Joke = "##152880",
+    ShopID = "sign_pic_21",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [20] = {
+    id = 20,
+    Tips = "##152930",
+    Explain = "##152963",
+    Joke = "##152948",
+    ShopID = "sign_pic_22",
+    Question = "##152938",
+    Choice1 = "##152889",
+    Choice2 = "##116537",
+    Answer = "1"
+  },
+  [21] = {
+    id = 21,
+    Tips = "##280884",
+    Explain = "##280885",
+    Joke = "##152923",
+    ShopID = "sign_pic_23",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [22] = {
+    id = 22,
+    Tips = "##152942",
+    Explain = "##152937",
+    Joke = "##152886",
+    ShopID = "sign_pic_24",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [23] = {
+    id = 23,
+    Tips = "##152976",
+    Explain = "##152900",
+    Joke = "##152932",
+    ShopID = "sign_pic_25",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [24] = {
+    id = 24,
+    Tips = "##152911",
+    Explain = "##152926",
+    Joke = "##152940",
+    ShopID = "sign_pic_26",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [25] = {
+    id = 25,
+    Tips = "##152918",
+    Explain = "##152888",
+    Joke = "##152946",
+    ShopID = "sign_pic_27",
+    Question = "##152975",
+    Choice1 = "##152893",
+    Choice2 = "##152929",
+    Answer = "1"
+  },
+  [26] = {
+    id = 26,
+    Tips = "##152953",
+    Explain = "##152935",
+    Joke = "##152941",
+    ShopID = "sign_pic_28",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  },
+  [27] = {
+    id = 27,
+    Tips = "##152964",
+    Explain = "##152924",
+    Joke = "##152887",
+    ShopID = "sign_pic_30",
+    Question = "",
+    Choice1 = "",
+    Choice2 = "",
+    Answer = ""
+  }
+}
+Table_SigninText_fields = {
+  "id",
+  "Tips",
+  "Explain",
+  "Joke",
+  "ShopID",
+  "Question",
+  "Choice1",
+  "Choice2",
+  "Answer"
+}
+return Table_SigninText
