@@ -1864,6 +1864,31 @@ Table_EquipGender = {
     male = 3006759,
     female = 3006759
   },
+  [449] = {
+    id = 449,
+    male = 3007000,
+    female = 3007010
+  },
+  [450] = {
+    id = 450,
+    male = 3007001,
+    female = 3007011
+  },
+  [451] = {
+    id = 451,
+    male = 3007002,
+    female = 3007012
+  },
+  [452] = {
+    id = 452,
+    male = 3007003,
+    female = 3007013
+  },
+  [453] = {
+    id = 453,
+    male = 3007020,
+    female = 3007021
+  },
   [294] = {
     id = 294,
     male = 3004882,
@@ -1878,6 +1903,16 @@ Table_EquipGender = {
     id = 296,
     male = 3004900,
     female = 3004901
+  },
+  [10002] = {
+    id = 10002,
+    male = 3006360,
+    female = 3006361
+  },
+  [10003] = {
+    id = 10003,
+    male = 3006363,
+    female = 3006364
   }
 }
 Table_EquipGender_fields = {

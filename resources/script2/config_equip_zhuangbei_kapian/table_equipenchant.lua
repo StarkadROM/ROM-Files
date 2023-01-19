@@ -34,7 +34,12 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [2] = {
     id = 2,
@@ -83,7 +88,12 @@ Table_EquipEnchant = {
       MouthRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [7] = {
     id = 7,
@@ -183,7 +193,12 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [14] = {
     id = 14,
@@ -233,7 +248,12 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [15] = {
     id = 15,
@@ -264,7 +284,12 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [17] = {
     id = 17,
@@ -327,7 +352,12 @@ Table_EquipEnchant = {
       MouthRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [19] = {
     id = 19,
@@ -482,7 +512,12 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [20] = {
     id = 20,
@@ -533,7 +568,12 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [22] = {
     id = 22,
@@ -586,7 +626,12 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [29] = {
     id = 29,
@@ -638,6 +683,27 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [30] = {
@@ -688,6 +754,27 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [31] = {
@@ -719,6 +806,27 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [33] = {
@@ -782,6 +890,27 @@ Table_EquipEnchant = {
       MouthRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [35] = {
@@ -790,6 +919,27 @@ Table_EquipEnchant = {
     AttrType = "MaxHp",
     AttrBound = {
       {40, 400}
+    },
+    Liftvalue = 10,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [37] = {
@@ -798,6 +948,27 @@ Table_EquipEnchant = {
     AttrType = "MaxSp",
     AttrBound = {
       {10, 80}
+    },
+    Liftvalue = 2,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [39] = {
@@ -819,6 +990,26 @@ Table_EquipEnchant = {
       EikonRate = 1,
       OrbRate = 1,
       ShieldRate = 1
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [40] = {
@@ -849,6 +1040,26 @@ Table_EquipEnchant = {
       KnifeRate = 1,
       SpearRate = 1,
       SwordRate = 1
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [41] = {
@@ -857,6 +1068,26 @@ Table_EquipEnchant = {
     AttrType = "Def",
     AttrBound = {
       {4, 20}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [42] = {
@@ -865,6 +1096,26 @@ Table_EquipEnchant = {
     AttrType = "MDef",
     AttrBound = {
       {6, 20}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [43] = {
@@ -895,6 +1146,26 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [44] = {
@@ -903,6 +1174,26 @@ Table_EquipEnchant = {
     AttrType = "Flee",
     AttrBound = {
       {3, 20}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [47] = {
@@ -919,6 +1210,27 @@ Table_EquipEnchant = {
     AttrType = "CriDamPer",
     AttrBound = {
       {0.01, 0.1}
+    },
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [49] = {
@@ -927,6 +1239,27 @@ Table_EquipEnchant = {
     AttrType = "CriDefPer",
     AttrBound = {
       {0.01, 0.1}
+    },
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [52] = {
@@ -935,6 +1268,27 @@ Table_EquipEnchant = {
     AttrType = "DamIncrease",
     AttrBound = {
       {0.01, 0.04}
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [53] = {
@@ -943,6 +1297,27 @@ Table_EquipEnchant = {
     AttrType = "DamReduc",
     AttrBound = {
       {0.01, 0.04}
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [34] = {
@@ -980,6 +1355,27 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [36] = {
@@ -1031,6 +1427,27 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [51] = {
@@ -1092,6 +1509,27 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [45] = {
@@ -1132,6 +1570,27 @@ Table_EquipEnchant = {
       ShieldRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [46] = {
@@ -1164,6 +1623,27 @@ Table_EquipEnchant = {
       ShoeRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [50] = {
@@ -1200,6 +1680,27 @@ Table_EquipEnchant = {
       ShieldRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [54] = {
@@ -1255,6 +1756,27 @@ Table_EquipEnchant = {
       ShieldRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [55] = {
@@ -1369,7 +1891,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [64] = {
     id = 64,
@@ -1420,7 +1947,12 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [65] = {
     id = 65,
@@ -1471,7 +2003,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [66] = {
     id = 66,
@@ -1520,7 +2057,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [69] = {
     id = 69,
@@ -1619,7 +2161,12 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [68] = {
     id = 68,
@@ -1670,7 +2217,12 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [75] = {
     id = 75,
@@ -1720,7 +2272,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [76] = {
     id = 76,
@@ -1771,7 +2328,12 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [77] = {
     id = 77,
@@ -1826,7 +2388,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [84] = {
     id = 84,
@@ -1889,7 +2456,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [81] = {
     id = 81,
@@ -2011,7 +2583,12 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       WingRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [80] = {
     id = 80,
@@ -2062,7 +2639,12 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [82] = {
     id = 82,
@@ -2114,7 +2696,12 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
-    }
+    },
+    Stageconsumption1 = _EmptyTable,
+    Stageconsumption2 = _EmptyTable,
+    Stageconsumption3 = _EmptyTable,
+    Stageconsumption4 = _EmptyTable,
+    Stageconsumption5 = _EmptyTable
   },
   [91] = {
     id = 91,
@@ -2164,6 +2751,27 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [92] = {
@@ -2215,6 +2823,27 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [93] = {
@@ -2270,6 +2899,27 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [100] = {
@@ -2284,7 +2934,28 @@ Table_EquipEnchant = {
     AttrBound = {
       {0.01, 0.05}
     },
-    NoShowEquip = {TailRate = 1}
+    NoShowEquip = {TailRate = 1},
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
+    }
   },
   [94] = {
     id = 94,
@@ -2333,6 +3004,27 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [97] = {
@@ -2341,6 +3033,27 @@ Table_EquipEnchant = {
     AttrType = "MaxHp",
     AttrBound = {
       {60, 600}
+    },
+    Liftvalue = 10,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [99] = {
@@ -2349,6 +3062,27 @@ Table_EquipEnchant = {
     AttrType = "MaxSp",
     AttrBound = {
       {12, 120}
+    },
+    Liftvalue = 2,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [101] = {
@@ -2357,6 +3091,26 @@ Table_EquipEnchant = {
     AttrType = "Atk",
     AttrBound = {
       {12, 60}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [102] = {
@@ -2372,7 +3126,27 @@ Table_EquipEnchant = {
     AttrBound = {
       {12, 60}
     },
-    NoShowEquip = {FaceRate = 1, WingRate = 1}
+    NoShowEquip = {FaceRate = 1, WingRate = 1},
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
+    }
   },
   [103] = {
     id = 103,
@@ -2380,6 +3154,26 @@ Table_EquipEnchant = {
     AttrType = "Def",
     AttrBound = {
       {6, 30}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [104] = {
@@ -2388,6 +3182,26 @@ Table_EquipEnchant = {
     AttrType = "MDef",
     AttrBound = {
       {6, 30}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [105] = {
@@ -2396,6 +3210,26 @@ Table_EquipEnchant = {
     AttrType = "Hit",
     AttrBound = {
       {5, 30}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [106] = {
@@ -2404,6 +3238,26 @@ Table_EquipEnchant = {
     AttrType = "Flee",
     AttrBound = {
       {5, 30}
+    },
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [109] = {
@@ -2427,7 +3281,28 @@ Table_EquipEnchant = {
     AttrBound = {
       {0.01, 0.1}
     },
-    NoShowEquip = {TailRate = 1, WingRate = 1}
+    NoShowEquip = {TailRate = 1, WingRate = 1},
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
+    }
   },
   [112] = {
     id = 112,
@@ -2435,6 +3310,27 @@ Table_EquipEnchant = {
     AttrType = "HealEncPer",
     AttrBound = {
       {0.01, 0.05}
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [113] = {
@@ -2443,6 +3339,27 @@ Table_EquipEnchant = {
     AttrType = "BeHealEncPer",
     AttrBound = {
       {0.01, 0.05}
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [95] = {
@@ -2494,6 +3411,27 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [107] = {
@@ -2507,7 +3445,28 @@ Table_EquipEnchant = {
     AttrBound = {
       {0.01, 0.04}
     },
-    NoShowEquip = _EmptyTable
+    NoShowEquip = _EmptyTable,
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
+    }
   },
   [96] = {
     id = 96,
@@ -2558,6 +3517,27 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [98] = {
@@ -2610,6 +3590,27 @@ Table_EquipEnchant = {
       SpearRate = 1,
       StaffRate = 1,
       SwordRate = 1
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [108] = {
@@ -2662,6 +3663,27 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       TailRate = 1
+    },
+    Liftvalue = 1,
+    Stageconsumption1 = {
+      {7300, 10},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 120},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 240},
+      {100, 10000}
     }
   },
   [110] = {
@@ -2713,6 +3735,27 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.002,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [114] = {
@@ -2765,6 +3808,27 @@ Table_EquipEnchant = {
       StaffRate = 1,
       SwordRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   },
   [115] = {
@@ -2817,6 +3881,27 @@ Table_EquipEnchant = {
       SwordRate = 1,
       TailRate = 1,
       WingRate = 1
+    },
+    Liftvalue = 0.001,
+    Stageconsumption1 = {
+      {7300, 5},
+      {100, 10000}
+    },
+    Stageconsumption2 = {
+      {7300, 15},
+      {100, 10000}
+    },
+    Stageconsumption3 = {
+      {7300, 30},
+      {100, 10000}
+    },
+    Stageconsumption4 = {
+      {7300, 60},
+      {100, 10000}
+    },
+    Stageconsumption5 = {
+      {7300, 120},
+      {100, 10000}
     }
   }
 }

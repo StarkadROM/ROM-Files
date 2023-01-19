@@ -9266,6 +9266,18 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [17795] = {
+    id = 17795,
+    ROB = 51000,
+    BeCostItem = {
+      {id = 17795, num = 1},
+      {id = 52104, num = 1154},
+      {id = 12109, num = 10},
+      {id = 52153, num = 768}
+    },
+    Product = {id = 48795},
+    Category = 10
+  },
   [18005] = {
     id = 18005,
     ROB = 102000,
@@ -28586,6 +28598,20 @@ Table_Compose = {
     },
     Type = 1
   },
+  [4000103] = {
+    id = 4000103,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3007344, num = 1}
+    },
+    RandomProduct = {
+      {id = 3007320, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 3007321, weight = 100}
+    },
+    Type = 1
+  },
   [4000104] = {
     id = 4000104,
     ROB = 0,
@@ -28603,6 +28629,50 @@ Table_Compose = {
       {id = 3006752, weight = 100},
       {id = 3006753, weight = 100},
       {id = 3006754, weight = 100}
+    },
+    Type = 1
+  },
+  [4000105] = {
+    id = 4000105,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3007720, num = 5}
+    },
+    RandomProduct = {
+      {id = 3006360, weight = 100},
+      {id = 3006363, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 3006361, weight = 100},
+      {id = 3006364, weight = 100}
+    },
+    Type = 1
+  },
+  [4000106] = {
+    id = 4000106,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3003133, num = 1}
+    },
+    RandomProduct = {
+      {id = 3003130, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 3003131, weight = 100}
+    },
+    Type = 1
+  },
+  [4000107] = {
+    id = 4000107,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3007022, num = 1}
+    },
+    RandomProduct = {
+      {id = 3007020, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 3007021, weight = 100}
     },
     Type = 1
   },

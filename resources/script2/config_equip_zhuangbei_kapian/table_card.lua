@@ -6801,25 +6801,6 @@ Table_Card = {
     LotteryDate = _EmptyTable,
     ServerID = _EmptyTable
   },
-  [23191] = {
-    id = 23191,
-    Name = "##1183699",
-    Quality = 3,
-    Position = 1,
-    CardType = 1,
-    Anchor = _EmptyTable,
-    Picture = "card_23191",
-    monsterID = {31202},
-    BuffEffect = {
-      buff = {55590}
-    },
-    NoShow = 1,
-    TFComposeDate = _EmptyTable,
-    TFLotteryDate = _EmptyTable,
-    ComposeDate = _EmptyTable,
-    LotteryDate = _EmptyTable,
-    ServerID = _EmptyTable
-  },
   [23190] = {
     id = 23190,
     Name = "##1159999",
@@ -6831,6 +6812,25 @@ Table_Card = {
     monsterID = {31186},
     BuffEffect = {
       buff = {55330}
+    },
+    NoShow = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable
+  },
+  [23191] = {
+    id = 23191,
+    Name = "##1183699",
+    Quality = 3,
+    Position = 1,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23191",
+    monsterID = {31202},
+    BuffEffect = {
+      buff = {55590}
     },
     NoShow = 1,
     TFComposeDate = _EmptyTable,
@@ -7123,6 +7123,25 @@ Table_Card = {
     LotteryDate = _EmptyTable,
     ServerID = _EmptyTable
   },
+  [23208] = {
+    id = 23208,
+    Name = "##1268813",
+    Quality = 4,
+    Position = 7,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23208",
+    monsterID = {31219},
+    BuffEffect = {
+      buff = {55750}
+    },
+    NoShow = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable
+  },
   [23209] = {
     id = 23209,
     Name = "##1267961",
@@ -7134,6 +7153,25 @@ Table_Card = {
     monsterID = {31220},
     BuffEffect = {
       buff = {55760}
+    },
+    NoShow = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable
+  },
+  [23212] = {
+    id = 23212,
+    Name = "##1268814",
+    Quality = 4,
+    Position = 2,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23212",
+    monsterID = {31223},
+    BuffEffect = {
+      buff = {55790}
     },
     NoShow = 1,
     TFComposeDate = _EmptyTable,
@@ -7404,6 +7442,25 @@ Table_Card = {
     monsterID = {31268},
     BuffEffect = {
       buff = {55980}
+    },
+    NoShow = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable
+  },
+  [23234] = {
+    id = 23234,
+    Name = "##1270231",
+    Quality = 3,
+    Position = 5,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23234",
+    monsterID = {31288},
+    BuffEffect = {
+      buff = {56530}
     },
     NoShow = 1,
     TFComposeDate = _EmptyTable,
@@ -11513,44 +11570,6 @@ Table_Card = {
     LotteryDate = _EmptyTable,
     ServerID = _EmptyTable
   },
-  [23208] = {
-    id = 23208,
-    Name = "##1268813",
-    Quality = 4,
-    Position = 7,
-    CardType = 1,
-    Anchor = _EmptyTable,
-    Picture = "card_23208",
-    monsterID = {31219},
-    BuffEffect = {
-      buff = {55750}
-    },
-    NoShow = 1,
-    TFComposeDate = _EmptyTable,
-    TFLotteryDate = _EmptyTable,
-    ComposeDate = _EmptyTable,
-    LotteryDate = _EmptyTable,
-    ServerID = _EmptyTable
-  },
-  [23212] = {
-    id = 23212,
-    Name = "##1268814",
-    Quality = 4,
-    Position = 2,
-    CardType = 1,
-    Anchor = _EmptyTable,
-    Picture = "card_23212",
-    monsterID = {31223},
-    BuffEffect = {
-      buff = {55790}
-    },
-    NoShow = 1,
-    TFComposeDate = _EmptyTable,
-    TFLotteryDate = _EmptyTable,
-    ComposeDate = _EmptyTable,
-    LotteryDate = _EmptyTable,
-    ServerID = _EmptyTable
-  },
   [23184] = {
     id = 23184,
     Name = "##1275119",
@@ -11581,6 +11600,44 @@ Table_Card = {
     monsterID = {31222},
     BuffEffect = {
       buff = {55780}
+    },
+    NoShow = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable
+  },
+  [23210] = {
+    id = 23210,
+    Name = "##1282108",
+    Quality = 4,
+    Position = 6,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23210",
+    monsterID = {31221},
+    BuffEffect = {
+      buff = {55770}
+    },
+    NoShow = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable
+  },
+  [23264] = {
+    id = 23264,
+    Name = "##1282109",
+    Quality = 4,
+    Position = 3,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23264",
+    monsterID = {31316},
+    BuffEffect = {
+      buff = {56760, 56761}
     },
     NoShow = 1,
     TFComposeDate = _EmptyTable,

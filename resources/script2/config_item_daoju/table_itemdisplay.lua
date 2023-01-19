@@ -244,13 +244,28 @@ Table_ItemDisplay = {
     Type = 1,
     NoDisplay = _EmptyTable
   },
-  [3006914] = {
-    id = 3006914,
+  [3007017] = {
+    id = 3007017,
     Type = 1,
     NoDisplay = _EmptyTable
   },
-  [3006915] = {
-    id = 3006915,
+  [3007040] = {
+    id = 3007040,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3007743] = {
+    id = 3007743,
+    Type = 2,
+    NoDisplay = _EmptyTable
+  },
+  [3007643] = {
+    id = 3007643,
+    Type = 2,
+    NoDisplay = _EmptyTable
+  },
+  [3007657] = {
+    id = 3007657,
     Type = 1,
     NoDisplay = _EmptyTable
   },
@@ -271,6 +286,16 @@ Table_ItemDisplay = {
   },
   [3006928] = {
     id = 3006928,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3006914] = {
+    id = 3006914,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3006915] = {
+    id = 3006915,
     Type = 1,
     NoDisplay = _EmptyTable
   },

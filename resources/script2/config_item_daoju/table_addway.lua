@@ -5588,56 +5588,6 @@ Table_AddWay = {
     BeginTime = "",
     EndTime = ""
   },
-  [1004] = {
-    id = 1004,
-    NameEn = "##123952",
-    Icon = "item_3707",
-    Type = 4,
-    Materialdisplay = 0,
-    Search1 = {
-      "Table_Reward",
-      "item",
-      {
-        {
-          "team",
-          "compare",
-          "=",
-          1972
-        }
-      }
-    },
-    Search2 = _EmptyTable,
-    Search3 = _EmptyTable,
-    Desc = "##123950",
-    GotoMode = _EmptyTable,
-    BeginTime = "",
-    EndTime = ""
-  },
-  [1005] = {
-    id = 1005,
-    NameEn = "##124066",
-    Icon = "item_3635",
-    Type = 4,
-    Materialdisplay = 0,
-    Search1 = {
-      "Table_Reward",
-      "item",
-      {
-        {
-          "team",
-          "compare",
-          "=",
-          1972
-        }
-      }
-    },
-    Search2 = _EmptyTable,
-    Search3 = _EmptyTable,
-    Desc = "##123907",
-    GotoMode = _EmptyTable,
-    BeginTime = "",
-    EndTime = ""
-  },
   [1006] = {
     id = 1006,
     NameEn = "##124080",
@@ -10078,6 +10028,31 @@ Table_AddWay = {
     Search2 = _EmptyTable,
     Search3 = _EmptyTable,
     Desc = "##1193895",
+    GotoMode = _EmptyTable,
+    BeginTime = "",
+    EndTime = ""
+  },
+  [4063] = {
+    id = 4063,
+    NameEn = "##1269053",
+    Icon = "item_800701",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          3007186
+        }
+      }
+    },
+    Search2 = _EmptyTable,
+    Search3 = _EmptyTable,
+    Desc = "##1269119",
     GotoMode = _EmptyTable,
     BeginTime = "",
     EndTime = ""

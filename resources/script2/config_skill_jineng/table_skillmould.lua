@@ -587,6 +587,12 @@ Table_SkillMould = {
     Atktype = 1,
     ProfessionPos = _EmptyTable
   },
+  [194001] = {
+    id = 194001,
+    Pos = {18, 3},
+    Atktype = 1,
+    ProfessionPos = _EmptyTable
+  },
   [186001] = {
     id = 186001,
     Pos = {22, 2},

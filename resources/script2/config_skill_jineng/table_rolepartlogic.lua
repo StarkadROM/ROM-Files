@@ -4263,6 +4263,48 @@ Table_RolePartLogic = {
         0
       }
     }
+  },
+  [3007043] = {
+    id = 3007043,
+    Logic = 2,
+    Params = {
+      duration = 0.3,
+      inner_range = 0.2,
+      outter_range = 0.3,
+      offset = {
+        -0.65,
+        0.35,
+        0
+      }
+    }
+  },
+  [48145] = {
+    id = 48145,
+    Logic = 2,
+    Params = {
+      duration = 0.3,
+      inner_range = 0.2,
+      outter_range = 0.3,
+      offset = {
+        -0.77,
+        0.24,
+        0
+      }
+    }
+  },
+  [3007163] = {
+    id = 3007163,
+    Logic = 2,
+    Params = {
+      duration = 0.3,
+      inner_range = 0.2,
+      outter_range = 0.3,
+      offset = {
+        -0.77,
+        0.24,
+        0
+      }
+    }
   }
 }
 Table_RolePartLogic_fields = {

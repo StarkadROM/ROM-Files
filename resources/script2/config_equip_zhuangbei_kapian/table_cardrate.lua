@@ -7,6 +7,9 @@ Table_CardRate = {
       1
     },
     Cost = 10000,
+    Reward = {
+      {5128, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -23,6 +26,9 @@ Table_CardRate = {
       2
     },
     Cost = 10000,
+    Reward = {
+      {5128, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -39,6 +45,9 @@ Table_CardRate = {
       2
     },
     Cost = 10000,
+    Reward = {
+      {5128, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -55,6 +64,9 @@ Table_CardRate = {
       2
     },
     Cost = 10000,
+    Reward = {
+      {5128, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -71,6 +83,9 @@ Table_CardRate = {
       3
     },
     Cost = 10000,
+    Reward = {
+      {5129, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -87,6 +102,9 @@ Table_CardRate = {
       3
     },
     Cost = 10000,
+    Reward = {
+      {5129, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -103,6 +121,9 @@ Table_CardRate = {
       3
     },
     Cost = 10000,
+    Reward = {
+      {5129, 1}
+    },
     ExtraReward = {
       {
         52836,
@@ -119,6 +140,9 @@ Table_CardRate = {
       3
     },
     Cost = 10000,
+    Reward = {
+      {5129, 2}
+    },
     ExtraReward = {
       {
         52836,
@@ -135,6 +159,9 @@ Table_CardRate = {
       3
     },
     Cost = 10000,
+    Reward = {
+      {5129, 2}
+    },
     ExtraReward = {
       {
         52836,
@@ -151,6 +178,9 @@ Table_CardRate = {
       3
     },
     Cost = 10000,
+    Reward = {
+      {5129, 3}
+    },
     ExtraReward = {
       {
         52836,
@@ -164,6 +194,7 @@ Table_CardRate_fields = {
   "id",
   "quality",
   "Cost",
+  "Reward",
   "ExtraReward"
 }
 return Table_CardRate

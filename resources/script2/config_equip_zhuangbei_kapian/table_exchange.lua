@@ -5842,6 +5842,13 @@ Table_Exchange = {
     Category = 1013,
     ShowTime = 7200
   },
+  [23210] = {
+    id = 23210,
+    NameZh = "##1282108",
+    Trade = 1,
+    Category = 1015,
+    ShowTime = 7200
+  },
   [23211] = {
     id = 23211,
     NameZh = "##1275120",
@@ -5938,6 +5945,13 @@ Table_Exchange = {
     NameZh = "##1253666",
     Trade = 1,
     Category = 1010,
+    ShowTime = 7200
+  },
+  [23264] = {
+    id = 23264,
+    NameZh = "##1282109",
+    Trade = 1,
+    Category = 1012,
     ShowTime = 7200
   },
   [24001] = {
@@ -19375,6 +19389,13 @@ Table_Exchange = {
     Category = 1052,
     ShowTime = 1800
   },
+  [800701] = {
+    id = 800701,
+    NameZh = "##1269053",
+    Trade = 1,
+    Category = 1052,
+    ShowTime = 1800
+  },
   [900001] = {
     id = 900001,
     NameZh = "##113402",
@@ -19700,6 +19721,14 @@ Table_Exchange = {
   [1000550] = {
     id = 1000550,
     NameZh = "##1251710",
+    Trade = 1,
+    Overlap = 0,
+    Category = 1020,
+    ShowTime = 7200
+  },
+  [1000590] = {
+    id = 1000590,
+    NameZh = "##1264542",
     Trade = 1,
     Overlap = 0,
     Category = 1020,
@@ -20219,6 +20248,14 @@ Table_Exchange = {
     Category = 1020,
     ShowTime = 7200
   },
+  [3007052] = {
+    id = 3007052,
+    NameZh = "##1264347",
+    Trade = 1,
+    Overlap = 0,
+    Category = 1020,
+    ShowTime = 7200
+  },
   [3007381] = {
     id = 3007381,
     NameZh = "##1261742",
@@ -20257,6 +20294,20 @@ Table_Exchange = {
   [3007741] = {
     id = 3007741,
     NameZh = "##1268656",
+    Trade = 1,
+    Category = 1020,
+    ShowTime = 7200
+  },
+  [3007861] = {
+    id = 3007861,
+    NameZh = "##1279435",
+    Trade = 1,
+    Category = 1020,
+    ShowTime = 7200
+  },
+  [3007971] = {
+    id = 3007971,
+    NameZh = "##1282110",
     Trade = 1,
     Category = 1020,
     ShowTime = 7200
@@ -21675,6 +21726,12 @@ Table_Exchange = {
     Trade = 1,
     Category = 1042
   },
+  [3001303] = {
+    id = 3001303,
+    NameZh = "##282419",
+    Trade = 1,
+    Category = 1044
+  },
   [3001304] = {
     id = 3001304,
     NameZh = "##282354",
@@ -22088,6 +22145,12 @@ Table_Exchange = {
     NameZh = "##1266579",
     Trade = 1,
     Category = 1043
+  },
+  [3007421] = {
+    id = 3007421,
+    NameZh = "##1268766",
+    Trade = 1,
+    Category = 1044
   },
   [3031284] = {
     id = 3031284,
@@ -25957,6 +26020,9 @@ setmetatable(Table_Exchange[23208], {
 setmetatable(Table_Exchange[23209], {
   __index = Table_Exchange[100]
 })
+setmetatable(Table_Exchange[23210], {
+  __index = Table_Exchange[100]
+})
 setmetatable(Table_Exchange[23211], {
   __index = Table_Exchange[100]
 })
@@ -25997,6 +26063,9 @@ setmetatable(Table_Exchange[23230], {
   __index = Table_Exchange[100]
 })
 setmetatable(Table_Exchange[23231], {
+  __index = Table_Exchange[100]
+})
+setmetatable(Table_Exchange[23264], {
   __index = Table_Exchange[100]
 })
 setmetatable(Table_Exchange[24001], {
@@ -31411,6 +31480,9 @@ setmetatable(Table_Exchange[800611], {
 setmetatable(Table_Exchange[800612], {
   __index = Table_Exchange[100]
 })
+setmetatable(Table_Exchange[800701], {
+  __index = Table_Exchange[100]
+})
 setmetatable(Table_Exchange[900001], {
   __index = Table_Exchange[100]
 })
@@ -31550,6 +31622,9 @@ setmetatable(Table_Exchange[1000503], {
   __index = Table_Exchange[100]
 })
 setmetatable(Table_Exchange[1000550], {
+  __index = Table_Exchange[100]
+})
+setmetatable(Table_Exchange[1000590], {
   __index = Table_Exchange[100]
 })
 setmetatable(Table_Exchange[3000167], {
@@ -31753,6 +31828,9 @@ setmetatable(Table_Exchange[3006170], {
 setmetatable(Table_Exchange[3006424], {
   __index = Table_Exchange[100]
 })
+setmetatable(Table_Exchange[3007052], {
+  __index = Table_Exchange[100]
+})
 setmetatable(Table_Exchange[3007381], {
   __index = Table_Exchange[100]
 })
@@ -31769,6 +31847,12 @@ setmetatable(Table_Exchange[3007646], {
   __index = Table_Exchange[100]
 })
 setmetatable(Table_Exchange[3007741], {
+  __index = Table_Exchange[100]
+})
+setmetatable(Table_Exchange[3007861], {
+  __index = Table_Exchange[100]
+})
+setmetatable(Table_Exchange[3007971], {
   __index = Table_Exchange[100]
 })
 setmetatable(Table_Exchange[3031167], {
@@ -32482,6 +32566,9 @@ setmetatable(Table_Exchange[3000706], {
 setmetatable(Table_Exchange[3001301], {
   __index = Table_Exchange[25130]
 })
+setmetatable(Table_Exchange[3001303], {
+  __index = Table_Exchange[25130]
+})
 setmetatable(Table_Exchange[3001304], {
   __index = Table_Exchange[25130]
 })
@@ -32687,6 +32774,9 @@ setmetatable(Table_Exchange[3006830], {
   __index = Table_Exchange[25130]
 })
 setmetatable(Table_Exchange[3006831], {
+  __index = Table_Exchange[25130]
+})
+setmetatable(Table_Exchange[3007421], {
   __index = Table_Exchange[25130]
 })
 setmetatable(Table_Exchange[3031284], {

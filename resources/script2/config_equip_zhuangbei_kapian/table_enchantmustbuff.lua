@@ -1979,6 +1979,202 @@ Table_EnchantMustBuff = {
       }
     }
   },
+  [77] = {
+    id = 77,
+    ItemID = 7422,
+    Position = {
+      "Shield",
+      "Eikon",
+      "Bracer",
+      "Bracelet",
+      "Orb"
+    },
+    Effect = {
+      {
+        BuffID = 500153,
+        AttrType = "Str",
+        AttrType2 = "Dex",
+        Weight = 50
+      },
+      {
+        BuffID = 500154,
+        AttrType = "Str",
+        AttrType2 = "Dex",
+        Weight = 25
+      }
+    }
+  },
+  [78] = {
+    id = 78,
+    ItemID = 7423,
+    Position = {
+      "Shield",
+      "Eikon",
+      "Bracer",
+      "Bracelet",
+      "Orb"
+    },
+    Effect = {
+      {
+        BuffID = 500133,
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        Weight = 50
+      },
+      {
+        BuffID = 500134,
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        Weight = 25
+      }
+    }
+  },
+  [79] = {
+    id = 79,
+    ItemID = 7424,
+    Position = {
+      "Shield",
+      "Eikon",
+      "Bracer",
+      "Bracelet",
+      "Orb"
+    },
+    Effect = {
+      {
+        BuffID = 500053,
+        AttrType = "Cri",
+        AttrType2 = "Def",
+        Weight = 50
+      },
+      {
+        BuffID = 500054,
+        AttrType = "Cri",
+        AttrType2 = "Def",
+        Weight = 25
+      }
+    }
+  },
+  [80] = {
+    id = 80,
+    ItemID = 7425,
+    Position = {"Mouth"},
+    Effect = {
+      {
+        BuffID = 500123,
+        AttrType = "EquipASPD",
+        AttrType2 = "CriDamPer",
+        Weight = 50
+      },
+      {
+        BuffID = 500124,
+        AttrType = "EquipASPD",
+        AttrType2 = "CriDamPer",
+        Weight = 25
+      }
+    }
+  },
+  [81] = {
+    id = 81,
+    ItemID = 7426,
+    Position = {"Mouth"},
+    Effect = {
+      {
+        BuffID = 500113,
+        AttrType = "CriDefPer",
+        AttrType2 = "Vit",
+        Weight = 50
+      },
+      {
+        BuffID = 500114,
+        AttrType = "CriDefPer",
+        AttrType2 = "Vit",
+        Weight = 25
+      }
+    }
+  },
+  [82] = {
+    id = 82,
+    ItemID = 7427,
+    Position = {
+      "Shield",
+      "Eikon",
+      "Bracer",
+      "Bracelet",
+      "Orb"
+    },
+    Effect = {
+      {
+        BuffID = 500154,
+        AttrType = "Str",
+        AttrType2 = "Dex",
+        Weight = 25
+      }
+    }
+  },
+  [83] = {
+    id = 83,
+    ItemID = 7428,
+    Position = {
+      "Shield",
+      "Eikon",
+      "Bracer",
+      "Bracelet",
+      "Orb"
+    },
+    Effect = {
+      {
+        BuffID = 500134,
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        Weight = 25
+      }
+    }
+  },
+  [84] = {
+    id = 84,
+    ItemID = 7429,
+    Position = {
+      "Shield",
+      "Eikon",
+      "Bracer",
+      "Bracelet",
+      "Orb"
+    },
+    Effect = {
+      {
+        BuffID = 500054,
+        AttrType = "Cri",
+        AttrType2 = "Def",
+        Weight = 25
+      }
+    }
+  },
+  [85] = {
+    id = 85,
+    ItemID = 7430,
+    Position = {"Mouth"},
+    Effect = {
+      {
+        BuffID = 500124,
+        AttrType = "EquipASPD",
+        AttrType2 = "CriDamPer",
+        Weight = 25
+      }
+    }
+  },
+  [86] = {
+    id = 86,
+    ItemID = 7431,
+    Position = {"Mouth"},
+    Effect = {
+      {
+        BuffID = 500114,
+        AttrType = "CriDefPer",
+        AttrType2 = "Vit",
+        Weight = 25
+      }
+    }
+  },
   [65] = {
     id = 65,
     ItemID = 7407,
@@ -2336,202 +2532,6 @@ Table_EnchantMustBuff = {
         AttrType = "Cri",
         AttrType2 = "Def",
         Weight = 50
-      }
-    }
-  },
-  [77] = {
-    id = 77,
-    ItemID = 7422,
-    Position = {
-      "Shield",
-      "Eikon",
-      "Bracer",
-      "Bracelet",
-      "Orb"
-    },
-    Effect = {
-      {
-        BuffID = 500153,
-        AttrType = "Str",
-        AttrType2 = "Dex",
-        Weight = 50
-      },
-      {
-        BuffID = 500154,
-        AttrType = "Str",
-        AttrType2 = "Dex",
-        Weight = 25
-      }
-    }
-  },
-  [78] = {
-    id = 78,
-    ItemID = 7423,
-    Position = {
-      "Shield",
-      "Eikon",
-      "Bracer",
-      "Bracelet",
-      "Orb"
-    },
-    Effect = {
-      {
-        BuffID = 500133,
-        AttrType = "Int",
-        AttrType2 = "MaxSpPer",
-        Weight = 50
-      },
-      {
-        BuffID = 500134,
-        AttrType = "Int",
-        AttrType2 = "MaxSpPer",
-        Weight = 25
-      }
-    }
-  },
-  [79] = {
-    id = 79,
-    ItemID = 7424,
-    Position = {
-      "Shield",
-      "Eikon",
-      "Bracer",
-      "Bracelet",
-      "Orb"
-    },
-    Effect = {
-      {
-        BuffID = 500053,
-        AttrType = "Cri",
-        AttrType2 = "Def",
-        Weight = 50
-      },
-      {
-        BuffID = 500054,
-        AttrType = "Cri",
-        AttrType2 = "Def",
-        Weight = 25
-      }
-    }
-  },
-  [80] = {
-    id = 80,
-    ItemID = 7425,
-    Position = {"Mouth"},
-    Effect = {
-      {
-        BuffID = 500123,
-        AttrType = "EquipASPD",
-        AttrType2 = "CriDamPer",
-        Weight = 50
-      },
-      {
-        BuffID = 500124,
-        AttrType = "EquipASPD",
-        AttrType2 = "CriDamPer",
-        Weight = 25
-      }
-    }
-  },
-  [81] = {
-    id = 81,
-    ItemID = 7426,
-    Position = {"Mouth"},
-    Effect = {
-      {
-        BuffID = 500113,
-        AttrType = "CriDefPer",
-        AttrType2 = "Vit",
-        Weight = 50
-      },
-      {
-        BuffID = 500114,
-        AttrType = "CriDefPer",
-        AttrType2 = "Vit",
-        Weight = 25
-      }
-    }
-  },
-  [82] = {
-    id = 82,
-    ItemID = 7427,
-    Position = {
-      "Shield",
-      "Eikon",
-      "Bracer",
-      "Bracelet",
-      "Orb"
-    },
-    Effect = {
-      {
-        BuffID = 500154,
-        AttrType = "Str",
-        AttrType2 = "Dex",
-        Weight = 25
-      }
-    }
-  },
-  [83] = {
-    id = 83,
-    ItemID = 7428,
-    Position = {
-      "Shield",
-      "Eikon",
-      "Bracer",
-      "Bracelet",
-      "Orb"
-    },
-    Effect = {
-      {
-        BuffID = 500134,
-        AttrType = "Int",
-        AttrType2 = "MaxSpPer",
-        Weight = 25
-      }
-    }
-  },
-  [84] = {
-    id = 84,
-    ItemID = 7429,
-    Position = {
-      "Shield",
-      "Eikon",
-      "Bracer",
-      "Bracelet",
-      "Orb"
-    },
-    Effect = {
-      {
-        BuffID = 500054,
-        AttrType = "Cri",
-        AttrType2 = "Def",
-        Weight = 25
-      }
-    }
-  },
-  [85] = {
-    id = 85,
-    ItemID = 7430,
-    Position = {"Mouth"},
-    Effect = {
-      {
-        BuffID = 500124,
-        AttrType = "EquipASPD",
-        AttrType2 = "CriDamPer",
-        Weight = 25
-      }
-    }
-  },
-  [86] = {
-    id = 86,
-    ItemID = 7431,
-    Position = {"Mouth"},
-    Effect = {
-      {
-        BuffID = 500114,
-        AttrType = "CriDefPer",
-        AttrType2 = "Vit",
-        Weight = 25
       }
     }
   },

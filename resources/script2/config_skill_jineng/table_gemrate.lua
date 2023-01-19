@@ -5620,6 +5620,84 @@ Table_GemRate = {
       0
     }
   },
+  [379110] = {
+    id = 379110,
+    ClassJudge = 21,
+    ClassType = {615},
+    Quality = 4,
+    CheckWeight = 0,
+    FuseWeight = 100,
+    NeedGem = {
+      1,
+      3,
+      0
+    }
+  },
+  [379120] = {
+    id = 379120,
+    ClassJudge = 21,
+    ClassType = {615},
+    Quality = 4,
+    CheckWeight = 0,
+    FuseWeight = 100,
+    NeedGem = {
+      2,
+      3,
+      0
+    }
+  },
+  [379130] = {
+    id = 379130,
+    ClassJudge = 21,
+    ClassType = {615},
+    Quality = 4,
+    CheckWeight = 0,
+    FuseWeight = 100,
+    NeedGem = {
+      3,
+      3,
+      0
+    }
+  },
+  [379140] = {
+    id = 379140,
+    ClassJudge = 21,
+    ClassType = {615},
+    Quality = 3,
+    CheckWeight = 0,
+    FuseWeight = 100,
+    NeedGem = {
+      3,
+      3,
+      0
+    }
+  },
+  [379150] = {
+    id = 379150,
+    ClassJudge = 21,
+    ClassType = {615},
+    Quality = 3,
+    CheckWeight = 0,
+    FuseWeight = 100,
+    NeedGem = {
+      2,
+      3,
+      0
+    }
+  },
+  [379160] = {
+    id = 379160,
+    ClassJudge = 21,
+    ClassType = {615},
+    Quality = 3,
+    CheckWeight = 0,
+    FuseWeight = 100,
+    NeedGem = {
+      1,
+      3,
+      0
+    }
+  },
   [379210] = {
     id = 379210,
     ClassJudge = 22,
